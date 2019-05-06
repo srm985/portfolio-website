@@ -1,0 +1,49 @@
+{
+  "name": "portfolio-website",
+  "private": true,
+  "description": "Gatsby config test.",
+  "version": "0.1.0",
+  "author": "Sean McQuay",
+  "dependencies": {
+    "gatsby": "^2.4.2",
+    "gatsby-image": "^2.0.41",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.0",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.36",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "del": "^4.1.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "gulp": "^4.0.2",
+    "gulp-bump": "^3.1.3",
+    "gulp-eslint": "^5.0.0",
+    "gulp-hub": "^4.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-run": "^1.7.1",
+    "gulp-sass-lint": "^1.4.0",
+    "inquirer": "^6.3.1",
+    "prettier": "^1.17.0",
+    "require-dir": "^1.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
+  }
+}
