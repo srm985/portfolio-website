@@ -31,11 +31,7 @@ const {
 const hub = new HubRegistry([`${tasksDirectory}/*.js`]);
 gulp.registry(hub);
 
-gulp.task(lint, (callback) => {
-    gulp.parallel(lintJS, lintCSS);
-
-    callback();
-});
+gulp.task(lint, gulp.parallel(lintJS, lintCSS));
 
 gulp.task(watch, () => {
     gulp.watch(`${srcDirectory}/**/*.js`, gulp.series(lintJS));
