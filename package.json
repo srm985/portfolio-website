@@ -1,8 +1,4 @@
 {
-  "name": "portfolio-website",
-  "private": true,
-  "description": "Gatsby config test.",
-  "version": "0.1.0",
   "author": "Sean McQuay",
   "dependencies": {
     "gatsby": "^2.4.2",
@@ -20,6 +16,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
   },
+  "description": "Gatsby config test.",
   "devDependencies": {
     "del": "^4.1.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -33,19 +30,28 @@
     "gulp-if": "^2.0.2",
     "gulp-run": "^1.7.1",
     "gulp-sass-lint": "^1.4.0",
+    "husky": "^2.2.0",
     "inquirer": "^6.3.1",
     "prettier": "^1.17.0",
     "require-dir": "^1.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp lint"
+    }
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
+  "name": "portfolio-website",
+  "private": true,
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve"
-  }
+    "serve": "gatsby serve",
+    "start": "npm run develop"
+  },
+  "version": "0.1.0"
 }
