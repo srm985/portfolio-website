@@ -7,17 +7,22 @@ const {
         production
     },
     directories: {
+        srcDirectory,
         tasksDirectory
     },
     environmentalVariables: {
         buildEnvironment
     },
     tasks: {
+        buildProduction,
         develop,
+        gatsbyBuild,
         gatsbyDevelop,
+        gatsbyServe,
         lint,
         lintCSS,
         lintJS,
+        serve,
         watch
     }
 } = require('./config.js')();
@@ -26,18 +31,36 @@ const {
 const hub = new HubRegistry([`${tasksDirectory}/*.js`]);
 gulp.registry(hub);
 
-gulp.task(lint, () => {
+gulp.task(lint, (callback) => {
     gulp.parallel(lintJS, lintCSS);
+
+    callback();
 });
 
 gulp.task(watch, () => {
-    gulp.watch(`src/**/*.js`, lint);
+    gulp.watch(`${srcDirectory}/**/*.js`, gulp.series(lintJS));
+
+    gulp.watch(`${srcDirectory}/**/*.scss`, gulp.series(lintCSS));
 });
 
 gulp.task(develop, (callback) => {
     process.env[buildEnvironment] = development;
 
-    gulp.parallel(lint, gatsbyDevelop, watch);
+    return gulp.parallel(lint, gatsbyDevelop, watch)(callback);
+});
+
+gulp.task(serve, (callback) => {
+    process.env[buildEnvironment] = production;
+
+    gulp.series(gatsbyServe);
+
+    callback();
+});
+
+gulp.task(buildProduction, (callback) => {
+    process.env[buildEnvironment] = production;
+
+    gulp.series(lint, gatsbyBuild);
 
     callback();
 });

@@ -3,9 +3,8 @@ const run = require('gulp-run');
 
 const {
     tasks: {
-        gatsbyDevelop
+        gatsbyServe
     }
 } = require('../config.js')();
 
-
-gulp.task(gatsbyDevelop, () => run('gatsby develop').exec());
+gulp.task(gatsbyServe, () => run('gatsby serve').exec());
