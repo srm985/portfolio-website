@@ -27,6 +27,7 @@ module.exports = () => ({
         lint: 'lint',
         lintCSS: 'lint-css',
         lintJS: 'lint-js',
+        preCommit: 'pre-commit',
         serve: 'serve',
         watch: 'watch'
     },

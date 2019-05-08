@@ -22,6 +22,7 @@ const {
         lint,
         lintCSS,
         lintJS,
+        preCommit,
         serve,
         watch
     }
@@ -34,9 +35,13 @@ gulp.registry(hub);
 gulp.task(lint, gulp.parallel(lintJS, lintCSS));
 
 gulp.task(watch, () => {
-    gulp.watch(`${srcDirectory}/**/*.js`, gulp.series(lintJS));
+    gulp.watch(`${srcDirectory}/**/*.js`, () => {
+        gulp.parallel(lintJS);
+    });
 
-    gulp.watch(`${srcDirectory}/**/*.scss`, gulp.series(lintCSS));
+    gulp.watch(`${srcDirectory}/**/*.scss`, () => {
+        gulp.parallel(lintCSS);
+    });
 });
 
 gulp.task(develop, (callback) => {
@@ -48,15 +53,17 @@ gulp.task(develop, (callback) => {
 gulp.task(serve, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(gatsbyServe);
-
-    callback();
+    gulp.series(gatsbyServe)(callback);
 });
 
 gulp.task(buildProduction, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(lint, gatsbyBuild);
+    gulp.series(lint, gatsbyBuild)(callback);
+});
 
-    callback();
+gulp.task(preCommit, (callback) => {
+    process.env[buildEnvironment] = production;
+
+    gulp.series(lintJS, lintCSS)(callback)
 });
