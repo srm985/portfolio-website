@@ -32,7 +32,12 @@ const {
 const hub = new HubRegistry([`${tasksDirectory}/*.js`]);
 gulp.registry(hub);
 
-gulp.task(lint, gulp.parallel(lintJS, lintCSS));
+gulp.task(lint, (callback) => {
+    // This allows us to run parallel tasks to completion, even with errors.
+    gulp._settle = true;
+
+    gulp.parallel(lintJS, lintCSS)(callback);
+});
 
 gulp.task(watch, () => {
     gulp.watch(`${srcDirectory}/**/*.js`, () => {
@@ -65,5 +70,5 @@ gulp.task(buildProduction, (callback) => {
 gulp.task(preCommit, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(lintJS, lintCSS)(callback)
+    gulp.series(lint)(callback);
 });
