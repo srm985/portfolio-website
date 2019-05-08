@@ -25,7 +25,8 @@ gulp.task(lintJS, () => {
             '!.cache/**/*'
         ]
     )
-        .pipe(eslint())
+        .pipe(eslint({ fix: true }))
         .pipe(eslint.format())
-        .pipe(gulpIf(shouldFailOnError, eslint.failAfterError()));
+        .pipe(gulpIf(shouldFailOnError, eslint.failAfterError()))
+        .pipe(gulp.dest('./'));
 });

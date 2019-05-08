@@ -16,7 +16,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
   },
-  "description": "Gatsby config test.",
+  "description": "Personal portfolio website V2.",
   "devDependencies": {
     "del": "^4.1.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -37,7 +37,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gulp lint"
+      "pre-commit": "gulp pre-commit"
     }
   },
   "keywords": [
@@ -45,13 +45,12 @@
   ],
   "license": "MIT",
   "name": "portfolio-website",
-  "private": true,
+  "private": false,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "serve": "gatsby serve",
+    "build": "gulp build-prod",
+    "develop": "gulp develop",
+    "serve": "gulp serve",
     "start": "npm run develop"
   },
-  "version": "0.1.0"
+  "version": "1.0.0"
 }
