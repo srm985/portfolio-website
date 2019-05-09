@@ -47,10 +47,12 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,scss}": [
-      "gulp pre-commit",
-      "git add"
-    ],
+    "linters": {
+      "*.{js,scss}": [
+        "eslint",
+        "git add"
+      ]
+    },
     "concurrent": false
   },
   "name": "portfolio-website",
