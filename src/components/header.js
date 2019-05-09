@@ -5,8 +5,8 @@ import React from 'react';
 const Header = ({ siteTitle }) => (
     <header
         style={{
-            background: `rebeccapurple`,
-            marginBottom: `1.45rem`
+            background: 'rebeccapurple',
+            marginBottom: '1.45rem'
         }}
     >
         <div
@@ -22,10 +22,10 @@ const Header = ({ siteTitle }) => (
                 }}
             >
                 <Link
-                    to="/"
+                    to={'/'}
                     style={{
-                        color: `white`,
-                        textDecoration: `none`
+                        color: 'white',
+                        textDecoration: 'none'
                     }}
                 >
                     {siteTitle}
@@ -40,7 +40,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-    siteTitle: ``
+    siteTitle: ''
 };
 
 export default Header;

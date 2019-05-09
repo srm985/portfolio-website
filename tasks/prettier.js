@@ -7,9 +7,9 @@ const {
     tasks: { prettier: prettierTask }
 } = require('../config.js')();
 
-gulp.task(prettierTask, () => {
-    return gulp
+gulp.task(prettierTask, () =>
+    gulp
         .src(['**/*.js', '!.cache/**/*', '!dist/**/*', '!node_modules/**/*', '!public/**/*'])
         .pipe(prettier(prettierConfig))
-        .pipe(gulp.dest('./'));
-});
+        .pipe(gulp.dest('./'))
+);

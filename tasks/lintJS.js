@@ -12,7 +12,7 @@ gulp.task(lintJS, () => {
     const shouldFailOnError = process.env[buildEnvironment] === production;
 
     return gulp
-        .src(['**/*.js', '!node_modules/**/*', '!dist/**/*', '!.cache/**/*'])
+        .src(['**/*.js', '!node_modules/**/*', '!public/**/*', '!dist/**/*', '!.cache/**/*'])
         .pipe(eslint({ fix: true }))
         .pipe(eslint.format())
         .pipe(gulpIf(shouldFailOnError, eslint.failAfterError()))

@@ -51,6 +51,7 @@
     "build": "gulp build-prod",
     "develop": "gulp develop",
     "lint": "gulp lint",
+    "prettier": "gulp prettier",
     "serve": "gulp serve",
     "start": "npm run develop"
   },
