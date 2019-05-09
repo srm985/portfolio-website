@@ -73,10 +73,12 @@ gulp.task(prePush, (callback) => {
 
         const isValidBranch = branchNamePattern.test(branchName);
 
-        if (isValidBranch) {
-            callback();
-        } else {
+        if (!isValidBranch) {
             throw new Error(`Branch naming should follow the pattern: ${branchNamePattern}`);
         }
+    }).catch(() => {
+        throw new Error('Something went wrong while trying to verify the branch name.');
+    }).finally(() => {
+        callback();
     });
 });
