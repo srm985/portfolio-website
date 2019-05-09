@@ -90,4 +90,4 @@ gulp.task(prePush, () => new Promise((resolve, reject) => {
     }).catch(() => {
         reject(new Error('Something went wrong while trying to verify the branch name.\n'));
     });
-}))
+}));
