@@ -33,18 +33,25 @@
     "gulp-sass-lint": "^1.4.0",
     "husky": "^2.2.0",
     "inquirer": "^6.3.1",
+    "lint-staged": "^8.1.6",
     "require-dir": "^1.2.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gulp pre-commit",
+      "pre-commit": "lint-staged",
       "pre-push": "gulp pre-push"
     }
   },
   "keywords": [
-    "gatsby"
+    "portfolio"
   ],
   "license": "MIT",
+  "lint-staged": {
+    "*.{js,scss}": [
+      "gulp pre-commit",
+      "git add"
+    ]
+  },
   "name": "portfolio-website",
   "private": false,
   "scripts": {
