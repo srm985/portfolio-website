@@ -18,16 +18,12 @@ const query = graphql`
     }
 `;
 
-const SEO = ({
-    title, description, image, pathname, article
-}) => (
+const SEO = ({ title, description, image, pathname, article }) => (
     <StaticQuery
         query={query}
         render={({
             site: {
-                siteMetadata: {
-                    defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage, twitterUsername
-                }
+                siteMetadata: { defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage, twitterUsername }
             }
         }) => {
             const seo = {
