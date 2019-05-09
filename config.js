@@ -1,4 +1,20 @@
+const MAIN_BRANCH_NAMES = [
+    'develop',
+    'master'
+];
+
+const BRANCH_PREFIX_NAMES = [
+    'bugfix',
+    'feature',
+    'hotfix',
+    'release',
+    'test'
+];
+
+const branchRegex = new RegExp(`^(${MAIN_BRANCH_NAMES.join('|')})|((${BRANCH_PREFIX_NAMES.join('|')})/(([a-z]+((-[a-z]+)+)?)|(\\d+\\.\\d+\\.\\d+)))$`);
+
 module.exports = () => ({
+    branchNamePattern: branchRegex,
     buildTypes: {
         development: 'DEVELOPMENT',
         production: 'PRODUCTION'
@@ -28,6 +44,7 @@ module.exports = () => ({
         lintCSS: 'lint-css',
         lintJS: 'lint-js',
         preCommit: 'pre-commit',
+        prePush: 'pre-push',
         prettier: 'prettier',
         serve: 'serve',
         watch: 'watch'

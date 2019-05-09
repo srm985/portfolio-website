@@ -1,7 +1,9 @@
+const branch = require('git-branch');
 const gulp = require('gulp');
 const HubRegistry = require('gulp-hub');
 
 const {
+    branchNamePattern,
     buildTypes: {
         development, production
     },
@@ -12,7 +14,7 @@ const {
         buildEnvironment
     },
     tasks: {
-        buildProduction, develop, gatsbyBuild, gatsbyDevelop, gatsbyServe, lint, lintCSS, lintJS, preCommit, serve, watch, prettier
+        buildProduction, develop, gatsbyBuild, gatsbyDevelop, gatsbyServe, lint, lintCSS, lintJS, preCommit, prePush, serve, watch, prettier
     }
 } = require('./config.js')();
 
@@ -30,12 +32,12 @@ gulp.task(lint, (callback) => {
 });
 
 gulp.task(watch, () => {
-    gulp.watch(`${srcDirectory}/**/*.js`, () => {
-        gulp.parallel(lintJS);
+    gulp.watch(`${srcDirectory}/**/*.js`, (callback) => {
+        gulp.parallel(lintJS)(callback);
     });
 
-    gulp.watch(`${srcDirectory}/**/*.scss`, () => {
-        gulp.parallel(lintCSS);
+    gulp.watch(`${srcDirectory}/**/*.scss`, (callback) => {
+        gulp.parallel(lintCSS)(callback);
     });
 });
 
@@ -54,11 +56,27 @@ gulp.task(serve, (callback) => {
 gulp.task(buildProduction, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(lint, gatsbyBuild)(callback);
+    gulp.series(prettier, lint, gatsbyBuild)(callback);
 });
 
 gulp.task(preCommit, (callback) => {
     process.env[buildEnvironment] = production;
 
     gulp.series(prettier, lint)(callback);
+});
+
+gulp.task(prePush, (callback) => {
+    branch().then((branchName) => {
+        console.log({
+            branchName
+        });
+
+        const isValidBranch = branchNamePattern.test(branchName);
+
+        if (isValidBranch) {
+            callback();
+        } else {
+            throw new Error(`Branch naming should follow the pattern: ${branchNamePattern}`);
+        }
+    });
 });

@@ -15,7 +15,7 @@ const {
 } = require('../config.js')();
 
 gulp.task(lintJS, () => {
-    const shouldFailOnError = process.env[buildEnvironment] === production;
+    const isProductionBuild = process.env[buildEnvironment] === production;
 
     return gulp
         .src([
@@ -27,10 +27,10 @@ gulp.task(lintJS, () => {
         ])
         .pipe(
             eslint({
-                fix: true
+                fix: isProductionBuild
             })
         )
         .pipe(eslint.format())
-        .pipe(gulpIf(shouldFailOnError, eslint.failAfterError()))
-        .pipe(gulp.dest('./'));
+        .pipe(gulpIf(isProductionBuild, eslint.failAfterError()))
+        .pipe(gulpIf(isProductionBuild, gulp.dest('./')));
 });

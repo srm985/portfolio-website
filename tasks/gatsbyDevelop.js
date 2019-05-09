@@ -7,4 +7,6 @@ const {
     }
 } = require('../config.js')();
 
-gulp.task(gatsbyDevelop, () => run('gatsby develop').exec());
+gulp.task(gatsbyDevelop, () => run('gatsby develop', {
+    verbosity: 3
+}).exec());
