@@ -49,7 +49,7 @@
   "lint-staged": {
     "linters": {
       "*.{js,scss}": [
-        "npm run test",
+        "gulp --tasks",
         "git add"
       ]
     },
