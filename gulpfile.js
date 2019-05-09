@@ -5,16 +5,29 @@ const HubRegistry = require('gulp-hub');
 const {
     branchNamePattern,
     buildTypes: {
-        development, production
+        development,
+        production
     },
     directories: {
-        srcDirectory, tasksDirectory
+        srcDirectory,
+        tasksDirectory
     },
     environmentalVariables: {
         buildEnvironment
     },
     tasks: {
-        buildProduction, develop, gatsbyBuild, gatsbyDevelop, gatsbyServe, lint, lintCSS, lintJS, preCommit, prePush, serve, watch, prettier
+        buildProduction,
+        develop,
+        gatsbyBuild,
+        gatsbyDevelop,
+        gatsbyServe,
+        lint,
+        lintCSS,
+        lintJS,
+        preCommit,
+        prePush,
+        serve,
+        watch
     }
 } = require('./config.js')();
 
@@ -56,32 +69,25 @@ gulp.task(serve, (callback) => {
 gulp.task(buildProduction, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(prettier, lint, gatsbyBuild)(callback);
+    gulp.series(lint, gatsbyBuild)(callback);
 });
 
 gulp.task(preCommit, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(prettier, lint)(callback);
+    gulp.series(lint)(callback);
 });
 
-gulp.task(prePush, (callback) => {
-    branch()
-        .then((branchName) => {
-            console.log({
-                branchName
-            });
+gulp.task(prePush, () => new Promise((resolve, reject) => {
+    branch().then((branchName) => {
+        const isValidBranch = branchNamePattern.test(branchName);
 
-            const isValidBranch = branchNamePattern.test(branchName);
-
-            if (!isValidBranch) {
-                throw new Error(`Branch naming should follow the pattern: ${branchNamePattern}`);
-            }
-        })
-        .catch(() => {
-            throw new Error('Something went wrong while trying to verify the branch name.');
-        })
-        .finally(() => {
-            callback();
-        });
-});
+        if (isValidBranch) {
+            resolve();
+        } else {
+            reject(new Error(`Branch naming should follow the pattern: ${branchNamePattern}\n`));
+        }
+    }).catch(() => {
+        reject(new Error('Something went wrong while trying to verify the branch name.\n'));
+    });
+}))

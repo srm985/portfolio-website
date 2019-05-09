@@ -29,12 +29,10 @@
     "gulp-eslint": "^5.0.0",
     "gulp-hub": "^4.2.0",
     "gulp-if": "^2.0.2",
-    "gulp-prettier": "^2.1.0",
     "gulp-run": "^1.7.1",
     "gulp-sass-lint": "^1.4.0",
     "husky": "^2.2.0",
     "inquirer": "^6.3.1",
-    "prettier": "^1.17.0",
     "require-dir": "^1.2.0"
   },
   "husky": {
@@ -53,7 +51,6 @@
     "build": "gulp build-prod",
     "develop": "gulp develop",
     "lint": "gulp lint",
-    "prettier": "gulp prettier",
     "serve": "gulp serve",
     "start": "npm run develop",
     "watch": "gulp watch"

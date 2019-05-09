@@ -45,7 +45,6 @@ module.exports = () => ({
         lintJS: 'lint-js',
         preCommit: 'pre-commit',
         prePush: 'pre-push',
-        prettier: 'prettier',
         serve: 'serve',
         watch: 'watch'
     },
