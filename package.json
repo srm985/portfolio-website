@@ -38,7 +38,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "gulp  pre-commit",
       "pre-push": "gulp pre-push"
     }
   },
@@ -47,18 +47,14 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "linters": {
-      "*.{js,scss}": [
-        "npm run test",
-        "git add"
-      ]
-    },
-    "concurrent": false
+    "*.{js,scss}": [
+      "gulp pre-commit",
+      "git add"
+    ]
   },
   "name": "portfolio-website",
   "private": false,
   "scripts": {
-    "test": "gulp test",
     "build": "gulp build-prod",
     "develop": "gulp develop",
     "lint": "gulp lint",
