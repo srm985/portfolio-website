@@ -50,7 +50,8 @@
     "*.{js,scss}": [
       "gulp pre-commit",
       "git add"
-    ]
+    ],
+    "concurrent": false
   },
   "name": "portfolio-website",
   "private": false,
