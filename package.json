@@ -49,7 +49,7 @@
   "lint-staged": {
     "linters": {
       "*.{js,scss}": [
-        "eslint",
+        "npm run test",
         "git add"
       ]
     },
@@ -58,6 +58,7 @@
   "name": "portfolio-website",
   "private": false,
   "scripts": {
+    "test": "gulp test",
     "build": "gulp build-prod",
     "develop": "gulp develop",
     "lint": "gulp lint",
