@@ -4,12 +4,18 @@ const prettier = require('gulp-prettier');
 const prettierConfig = require('../.prettierrc.js');
 
 const {
-    tasks: { prettier: prettierTask }
+    tasks: {
+        prettier: prettierTask
+    }
 } = require('../config.js')();
 
-gulp.task(prettierTask, () =>
-    gulp
-        .src(['**/*.js', '!.cache/**/*', '!dist/**/*', '!node_modules/**/*', '!public/**/*'])
-        .pipe(prettier(prettierConfig))
-        .pipe(gulp.dest('./'))
-);
+gulp.task(prettierTask, () => gulp
+    .src([
+        '**/*.js',
+        '!.cache/**/*',
+        '!dist/**/*',
+        '!node_modules/**/*',
+        '!public/**/*'
+    ])
+    .pipe(prettier(prettierConfig))
+    .pipe(gulp.dest('./')));

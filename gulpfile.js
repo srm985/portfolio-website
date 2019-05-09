@@ -2,14 +2,24 @@ const gulp = require('gulp');
 const HubRegistry = require('gulp-hub');
 
 const {
-    buildTypes: { development, production },
-    directories: { srcDirectory, tasksDirectory },
-    environmentalVariables: { buildEnvironment },
-    tasks: { buildProduction, develop, gatsbyBuild, gatsbyDevelop, gatsbyServe, lint, lintCSS, lintJS, preCommit, serve, watch }
+    buildTypes: {
+        development, production
+    },
+    directories: {
+        srcDirectory, tasksDirectory
+    },
+    environmentalVariables: {
+        buildEnvironment
+    },
+    tasks: {
+        buildProduction, develop, gatsbyBuild, gatsbyDevelop, gatsbyServe, lint, lintCSS, lintJS, preCommit, serve, watch, prettier
+    }
 } = require('./config.js')();
 
 // Initialize our tasks drectory.
-const hub = new HubRegistry([`${tasksDirectory}/*.js`]);
+const hub = new HubRegistry([
+    `${tasksDirectory}/*.js`
+]);
 gulp.registry(hub);
 
 gulp.task(lint, (callback) => {
@@ -50,5 +60,5 @@ gulp.task(buildProduction, (callback) => {
 gulp.task(preCommit, (callback) => {
     process.env[buildEnvironment] = production;
 
-    gulp.series(lint)(callback);
+    gulp.series(prettier, lint)(callback);
 });

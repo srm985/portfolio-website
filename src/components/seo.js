@@ -1,7 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {
+    Helmet
+} from 'react-helmet';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import {
+    StaticQuery, graphql
+} from 'gatsby';
 
 const query = graphql`
     query SEO {
@@ -18,12 +22,16 @@ const query = graphql`
     }
 `;
 
-const SEO = ({ title, description, image, pathname, article }) => (
+const SEO = ({
+    title, description, image, pathname, article
+}) => (
     <StaticQuery
         query={query}
         render={({
             site: {
-                siteMetadata: { defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage, twitterUsername }
+                siteMetadata: {
+                    defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage, twitterUsername
+                }
             }
         }) => {
             const seo = {

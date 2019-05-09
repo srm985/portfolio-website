@@ -3,17 +3,33 @@ const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 
 const {
-    buildTypes: { production },
-    environmentalVariables: { buildEnvironment },
-    tasks: { lintJS }
+    buildTypes: {
+        production
+    },
+    environmentalVariables: {
+        buildEnvironment
+    },
+    tasks: {
+        lintJS
+    }
 } = require('../config.js')();
 
 gulp.task(lintJS, () => {
     const shouldFailOnError = process.env[buildEnvironment] === production;
 
     return gulp
-        .src(['**/*.js', '!node_modules/**/*', '!public/**/*', '!dist/**/*', '!.cache/**/*'])
-        .pipe(eslint({ fix: true }))
+        .src([
+            '**/*.js',
+            '!.cache/**/*',
+            '!dist/**/*',
+            '!node_modules/**/*',
+            '!public/**/*'
+        ])
+        .pipe(
+            eslint({
+                fix: true
+            })
+        )
         .pipe(eslint.format())
         .pipe(gulpIf(shouldFailOnError, eslint.failAfterError()))
         .pipe(gulp.dest('./'));

@@ -3,11 +3,21 @@ const gulpIf = require('gulp-if');
 const sassLint = require('gulp-sass-lint');
 
 const {
-    buildTypes: { production },
-    configFiles: { sassConfig },
-    directories: { srcDirectory },
-    environmentalVariables: { buildEnvironment },
-    tasks: { lintCSS }
+    buildTypes: {
+        production
+    },
+    configFiles: {
+        sassConfig
+    },
+    directories: {
+        srcDirectory
+    },
+    environmentalVariables: {
+        buildEnvironment
+    },
+    tasks: {
+        lintCSS
+    }
 } = require('../config.js')();
 
 gulp.task(lintCSS, () => {
@@ -15,7 +25,11 @@ gulp.task(lintCSS, () => {
 
     return gulp
         .src(`${srcDirectory}/**/*.scss`)
-        .pipe(sassLint({ configFile: sassConfig }))
+        .pipe(
+            sassLint({
+                configFile: sassConfig
+            })
+        )
         .pipe(sassLint.format())
         .pipe(gulpIf(shouldFailOnError, sassLint.failOnError()));
 });
