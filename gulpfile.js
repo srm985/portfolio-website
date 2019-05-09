@@ -66,19 +66,22 @@ gulp.task(preCommit, (callback) => {
 });
 
 gulp.task(prePush, (callback) => {
-    branch().then((branchName) => {
-        console.log({
-            branchName
+    branch()
+        .then((branchName) => {
+            console.log({
+                branchName
+            });
+
+            const isValidBranch = branchNamePattern.test(branchName);
+
+            if (!isValidBranch) {
+                throw new Error(`Branch naming should follow the pattern: ${branchNamePattern}`);
+            }
+        })
+        .catch(() => {
+            throw new Error('Something went wrong while trying to verify the branch name.');
+        })
+        .finally(() => {
+            callback();
         });
-
-        const isValidBranch = branchNamePattern.test(branchName);
-
-        if (!isValidBranch) {
-            throw new Error(`Branch naming should follow the pattern: ${branchNamePattern}`);
-        }
-    }).catch(() => {
-        throw new Error('Something went wrong while trying to verify the branch name.');
-    }).finally(() => {
-        callback();
-    });
 });
