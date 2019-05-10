@@ -5,6 +5,8 @@ import {
 
 import Layout from '../components/layout';
 
+console.log('hello');
+
 const SecondPage = () => (
     <Layout>
         <h1>Hi from the second page</h1>

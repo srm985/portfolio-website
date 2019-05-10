@@ -18,7 +18,10 @@
   },
   "description": "Personal portfolio website V2.",
   "devDependencies": {
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
     "del": "^4.1.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -34,12 +37,14 @@
     "husky": "^2.2.0",
     "inquirer": "^6.3.1",
     "lint-staged": "^8.1.6",
-    "require-dir": "^1.2.0"
+    "onchange": "^5.2.0",
+    "require-dir": "^1.2.0",
+    "sass-lint": "^1.13.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gulp  pre-commit",
-      "pre-push": "gulp pre-push"
+      "pre-commit": "cross-env FORCE_COLOR=true lint-staged",
+      "pre-push": ""
     }
   },
   "keywords": [
@@ -47,20 +52,28 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,scss}": [
-      "gulp pre-commit",
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "sass-lint -v -q",
       "git add"
     ]
   },
   "name": "portfolio-website",
   "private": false,
   "scripts": {
-    "build": "gulp build-prod",
-    "develop": "gulp develop",
-    "lint": "gulp lint",
-    "serve": "gulp serve",
+    "build": "npm run lint --silent && gatsby build",
+    "develop": "concurrently \"npm:lint --silent\" \"gatsby develop\" \"npm:lint --silent\"",
+    "lint": "concurrently \"npm:lint:js --silent\" \"npm:lint:scss --silent\"",
+    "lint:js": "eslint src/**/*.js",
+    "lint:scss": "sass-lint -v -q src/**/*.scss",
+    "serve": "gatsby serve",
     "start": "npm run develop",
-    "watch": "gulp watch"
+    "watch": "concurrently \"npm:watch:js --silent\" \"npm:watch:scss --silent\"",
+    "watch:js": "onchange \"src/**/*.js\" -- npm run lint:js --silent",
+    "watch:scss": "onchange \"src/**/*.scss\" -- npm run lint:scss --silent"
   },
   "version": "1.0.0"
 }
