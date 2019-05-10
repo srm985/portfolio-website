@@ -34,7 +34,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cross-env FORCE_COLOR=true lint-staged",
-      "pre-push": "branch-naming-check ^(develop|master)|((bugfix|feature|hotfix|release|test)\/(([a-z]+((-[a-z]+)+)?)|(\\d+\\.\\d+\\.\\d+)))$"
+      "pre-push": "branch-naming-check ^(develop|master)|((bugfix|feature|hotfix|release|test)/(([a-z]+((-[a-z]+)+)?)|(\\d+\\.\\d+\\.\\d+)))$"
     }
   },
   "keywords": [
