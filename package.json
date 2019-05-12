@@ -18,9 +18,9 @@
   },
   "description": "Personal portfolio website V2.",
   "devDependencies": {
-    "@innocells/branch-naming-check": "^1.0.0",
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
+    "current-git-branch": "^1.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
@@ -34,7 +34,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "cross-env FORCE_COLOR=true lint-staged",
-      "pre-push": "branch-naming-check '^(develop|master)|((bugfix|feature|hotfix|release|test)\/(([a-z]+((-[a-z]+)+)?)|(\\d+\\.\\d+\\.\\d+)))$'"
+      "pre-push": "node ./scripts/branchCheck.js"
     }
   },
   "keywords": [
