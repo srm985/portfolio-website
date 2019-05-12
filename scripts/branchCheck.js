@@ -19,6 +19,8 @@ const BRANCH_PREFIX_NAMES = [
     const currentBranchName = branchName();
 
     if (!branchRegex.test(currentBranchName)) {
-        throw new Error(`Branch naming convention must adhere to ${branchRegex}`);
+        console.error(`\nBranch naming convention must adhere to ${branchRegex}\n`);
+
+        process.exit(1);
     }
 }());
