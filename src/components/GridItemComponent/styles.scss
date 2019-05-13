@@ -1,0 +1,62 @@
+@import '../../styles/constants';
+
+.GridItemComponent {
+    grid-column-end: 13;
+    grid-column-start: 1;
+
+    &__small {
+        @for $column from 1 through 13 {
+            @media only screen and (min-width: $breakpoint-small) {
+                &--start-#{$column} {
+                    grid-column-start: $column;
+                }
+
+                &--stop-#{$column} {
+                    grid-column-end: $column;
+                }
+            }
+        }
+    }
+
+    &__medium {
+        @for $column from 1 through 13 {
+            @media only screen and (min-width: $breakpoint-medium) {
+                &--start-#{$column} {
+                    grid-column-start: $column;
+                }
+
+                &--stop-#{$column} {
+                    grid-column-end: $column;
+                }
+            }
+        }
+    }
+
+    &__large {
+        @for $column from 1 through 13 {
+            @media only screen and (min-width: $breakpoint-large) {
+                &--start-#{$column} {
+                    grid-column-start: $column;
+                }
+
+                &--stop-#{$column} {
+                    grid-column-end: $column;
+                }
+            }
+        }
+    }
+
+    &__extraLarge {
+        @for $column from 1 through 13 {
+            @media only screen and (min-width: $breakpoint-extra-large) {
+                &--start-#{$column} {
+                    grid-column-start: $column;
+                }
+
+                &--stop-#{$column} {
+                    grid-column-end: $column;
+                }
+            }
+        }
+    }
+}
