@@ -55,7 +55,7 @@
   "private": false,
   "scripts": {
     "build": "npm run lint --silent && gatsby build",
-    "develop": "concurrently \"npm:lint --silent\" \"gatsby develop\" \"npm:lint --silent\"",
+    "develop": "concurrently \"npm:lint --silent\" \"gatsby develop\" \"npm:watch --silent\"",
     "lint": "concurrently \"npm:lint:js --silent\" \"npm:lint:scss --silent\"",
     "lint:js": "eslint src/**/*.js",
     "lint:scss": "sass-lint -v -q src/**/*.scss",
