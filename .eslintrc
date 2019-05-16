@@ -39,7 +39,9 @@
             {
                 "devDependencies": [
                     "./*.js",
-                    "./scripts/**/*.js"
+                    "./.storybook/**/*.js",
+                    "./scripts/**/*.js",
+                    "./src/**/stories.js"
                 ]
             }
         ],
