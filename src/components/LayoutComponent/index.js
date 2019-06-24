@@ -12,14 +12,16 @@ import './styles.scss';
 
 const LayoutComponent = (props) => {
     const {
-        children
+        children,
+        hasFooter,
+        hasHeader
     } = props;
 
     return (
         <div className={LayoutComponent.displayName}>
-            <Header />
+            {hasHeader && <Header />}
             {children}
-            <Footer />
+            {hasFooter && <Footer />}
         </div>
     );
 };
@@ -27,7 +29,14 @@ const LayoutComponent = (props) => {
 LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    hasFooter: PropTypes.bool,
+    hasHeader: PropTypes.bool
+};
+
+LayoutComponent.defaultProps = {
+    hasFooter: true,
+    hasHeader: true
 };
 
 export default LayoutComponent;
