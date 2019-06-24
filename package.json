@@ -3,6 +3,7 @@
   "dependencies": {
     "gatsby": "^2.10.4",
     "gatsby-image": "^2.2.3",
+    "gatsby-plugin-google-analytics": "^2.1.0",
     "gatsby-plugin-manifest": "^2.2.0",
     "gatsby-plugin-offline": "^2.2.0",
     "gatsby-plugin-postcss": "^2.1.0",
@@ -20,6 +21,7 @@
   "description": "Personal portfolio website V2.",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-info": "^5.1.9",
@@ -28,7 +30,9 @@
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-gatsby": "^0.2.0",
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "current-git-branch": "^1.1.0",
@@ -38,8 +42,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.14.1",
     "husky": "^2.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
     "lint-staged": "^8.2.1",
     "onchange": "^6.0.0",
+    "react-test-renderer": "^16.8.6",
     "sass-lint": "^1.13.1"
   },
   "husky": {
@@ -65,7 +72,7 @@
   "name": "portfolio-website",
   "private": false,
   "scripts": {
-    "build": "npm run lint --silent && gatsby build",
+    "build": "concurrently --raw \"npm:lint --silent\" \"npm:test\" && gatsby build",
     "develop": "concurrently --raw \"npm:lint --silent\" \"gatsby develop --port 3000\" \"npm:watch --silent\"",
     "lint:fix": "eslint ./*.js src/**/*.js .storybook/*.js --fix",
     "lint": "concurrently --raw \"npm:lint:js --silent\" \"npm:lint:scss --silent\"",
@@ -75,6 +82,7 @@
     "start": "npm run develop",
     "storybook": "start-storybook --port 6060",
     "storybook:build": "build-storybook -c .storybook -o storybook-dist",
+    "test": "jest src/",
     "watch": "concurrently --raw \"npm:watch:js --silent\" \"npm:watch:scss --silent\"",
     "watch:js": "onchange \"src/**/*.js\" -- npm run lint:js --silent",
     "watch:scss": "onchange \"src/**/*.scss\" -- npm run lint:scss --silent"

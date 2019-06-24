@@ -24,6 +24,16 @@ module.exports = {
                 theme_color: '#663399'
             },
             resolve: 'gatsby-plugin-manifest'
+        },
+        {
+            options: {
+                anonymize: true,
+                cookieDomain: 'auto',
+                head: false,
+                respectDNT: true,
+                trackingId: 'UA-86885981-1'
+            },
+            resolve: 'gatsby-plugin-google-analytics'
         }
     ],
     siteMetadata: {

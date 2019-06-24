@@ -4,7 +4,7 @@ A static website generated from [Gatsby](https://www.gatsbyjs.org/) and [React](
 
 ## Getting Started
 
-### Running
+### Running / Developing
 
 ```
 npm install
@@ -22,6 +22,7 @@ npm run build
 
 ```
 npm install
+npm run build
 npm run serve
 ```
 
@@ -31,9 +32,15 @@ This project leverages [Gatsby](https://www.gatsbyjs.org/), which sits atop [Rea
 
 ## Design Architecture
 
-This project follows a `CDD (Component-Driven Development)` philosophy, where `components` are defined as our smallest, reusable building blocks. Components may or may not contain state, but typically will not. Components may contain the composition of other components.
+#### Components
+
+This project follows a `CDD (Component-Driven Development)` philosophy, where `components` are defined as our smallest, reusable building blocks. Components may or may not contain state, but typically should not. Components may contain the composition of other components.
+
+#### Templates
 
 From components, the next step up is `templates`. Templates typically contain reusable page layouts. For example, all projects use the same layout. Some templates may be one-offs however, such as the landing page or a contact page.
+
+#### Pages
 
 Finally, we leverage `pages` to define out website architecture. Pages identify our routing structure and contain page-specific data, but should not contain any logic or styling. Their use is to simply mate page data with the styling of a given template.
 
@@ -45,9 +52,9 @@ Finally, we leverage `pages` to define out website architecture. Pages identify 
 
 ### Adding Stories
 
-In each existing component, you will find a `stories.js` file. This file contains all stories related to that given component. When creating a new component, generate a new `stories.js` file and require it in `/.storybook/config.js`.
+In each existing component, you will find a `stories.js` file. This file contains all stories related to that given component. When creating a new component, generate a new `stories.js` and populate with all component options.
 
-### Running
+### Running / Developing
 
 Running Storybook allows us to develop new React components in isolation. To run an instance, issue the following commands:
 
