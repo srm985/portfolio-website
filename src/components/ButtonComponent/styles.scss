@@ -1,0 +1,12 @@
+.ButtonComponent {
+    cursor: pointer;
+
+    border: none;
+
+    &--inline {
+        margin: 0;
+        padding: 0;
+
+        background-color: transparent;
+    }
+}

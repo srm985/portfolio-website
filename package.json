@@ -51,7 +51,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cross-env FORCE_COLOR=true lint-staged",
+      "pre-commit": "cross-env FORCE_COLOR=true concurrently --raw \"npm:test\" \"lint-staged\"",
       "pre-push": "node ./scripts/branchCheck.js"
     }
   },

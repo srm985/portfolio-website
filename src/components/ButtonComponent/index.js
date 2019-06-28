@@ -4,8 +4,12 @@ import React from 'react';
 import classNames from '../../utils/classNames';
 
 import {
-    BUTTON_TYPES,
-    BUTTON_TYPE_BUTTON
+    BUTTON_STYLE_TYPE_INLINE,
+    BUTTON_STYLE_TYPE_PRIMARY,
+    BUTTON_STYLE_TYPE_SECONDARY,
+    BUTTON_STYLE_TYPES,
+    BUTTON_TYPE_BUTTON,
+    BUTTON_TYPES
 } from './config';
 
 import './styles.scss';
@@ -13,10 +17,8 @@ import './styles.scss';
 const ButtonComponent = (props) => {
     const {
         href,
-        isInline,
-        isPrimary,
-        isSecondary,
         label,
+        styleType,
         type
     } = props;
 
@@ -27,9 +29,9 @@ const ButtonComponent = (props) => {
     const buttonClassNames = classNames(
         ButtonComponent.displayName,
         {
-            [`${ButtonComponent.displayName}--inline`]: isInline,
-            [`${ButtonComponent.displayName}--primary`]: isPrimary,
-            [`${ButtonComponent.displayName}--secondary`]: isSecondary
+            [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
+            [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
+            [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
         }
     );
 
@@ -61,19 +63,15 @@ const ButtonComponent = (props) => {
 
 ButtonComponent.propTypes = {
     href: PropTypes.string,
-    isInline: PropTypes.bool,
-    isPrimary: PropTypes.bool,
-    isSecondary: PropTypes.bool,
     label: PropTypes.string,
+    styleType: PropTypes.oneOf(BUTTON_STYLE_TYPES),
     type: PropTypes.oneOf(BUTTON_TYPES)
 };
 
 ButtonComponent.defaultProps = {
     href: '',
-    isInline: false,
-    isPrimary: true,
-    isSecondary: false,
     label: '',
+    styleType: BUTTON_STYLE_TYPE_PRIMARY,
     type: BUTTON_TYPE_BUTTON
 };
 
