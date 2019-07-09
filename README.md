@@ -42,7 +42,7 @@ From components, the next step up is `templates`. Templates typically contain re
 
 #### Pages
 
-Finally, we leverage `pages` to define out website architecture. Pages identify our routing structure and contain page-specific data, but should not contain any logic or styling. Their use is to simply mate page data with the styling of a given template.
+Finally, we leverage `pages` to define our website architecture. Pages identify our routing structure and contain page-specific data, but should not contain any logic or styling. Their use is to simply mate page data with the styling of a given template.
 
 ## Storybook
 

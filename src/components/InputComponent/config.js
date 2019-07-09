@@ -1,4 +1,3 @@
-export const INPUT_TYPE_COLOR = 'color';
 export const INPUT_TYPE_DATE = 'date';
 export const INPUT_TYPE_DATETIMELOCAL = 'datetime-local';
 export const INPUT_TYPE_EMAIL = 'email';
@@ -14,7 +13,6 @@ export const INPUT_TYPE_URL = 'url';
 export const INPUT_TYPE_WEEK = 'week';
 
 export const INPUT_TYPES = [
-    INPUT_TYPE_COLOR,
     INPUT_TYPE_DATE,
     INPUT_TYPE_DATETIMELOCAL,
     INPUT_TYPE_EMAIL,

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 import './styles.scss';
 
 const GridItemComponent = (props) => {
@@ -16,7 +18,10 @@ const GridItemComponent = (props) => {
         ] = columns[columnSize];
 
         if (startColumn && stopColumn) {
-            return `${GridItemComponent.displayName}__${columnSize}--start-${startColumn} ${GridItemComponent.displayName}__${columnSize}--stop-${stopColumn}`;
+            return classNames(
+                `${GridItemComponent.displayName}__${columnSize}--start-${startColumn}`,
+                `${GridItemComponent.displayName}__${columnSize}--stop-${stopColumn}`
+            );
         }
 
         return '';
