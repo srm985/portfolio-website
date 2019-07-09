@@ -13,10 +13,13 @@
         width: 100%;
         padding: 0 15px;
 
-        grid-gap: 30px;
+        grid-gap: 20px 0;
 
         @media only screen and (min-width: $breakpoint-small) {
             max-width: $max-width-small;
+            padding: 0;
+
+            grid-gap: 20px 30px;
         }
 
         @media only screen and (min-width: $breakpoint-medium) {

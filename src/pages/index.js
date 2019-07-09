@@ -14,6 +14,24 @@ const IndexPage = () => (
         <h1>Hello world!</h1>
         <Grid>
             <GridItem columns={{
+                small: [
+                    1,
+                    7
+                ]
+            }}
+            >
+                <div style={tempStyles} />
+            </GridItem>
+            <GridItem columns={{
+                small: [
+                    7,
+                    13
+                ]
+            }}
+            >
+                <div style={tempStyles} />
+            </GridItem>
+            <GridItem columns={{
                 medium: [
                     1,
                     7
