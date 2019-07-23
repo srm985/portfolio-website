@@ -6,12 +6,12 @@ import {
     text
 } from '@storybook/addon-knobs';
 
-import LayoutComponent from './index';
+import Layout from './index';
 
-const stories = storiesOf(LayoutComponent.displayName, module);
+const stories = storiesOf(Layout.displayName, module);
 
 stories.add('with text', () => {
     const label = text('Label', 'Hello World');
 
-    return (<LayoutComponent>{label}</LayoutComponent>);
+    return (<Layout>{label}</Layout>);
 });

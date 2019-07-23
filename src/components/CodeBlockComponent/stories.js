@@ -3,9 +3,9 @@ import {
     storiesOf
 } from '@storybook/react';
 
-import CodeBlockComponent from './index';
+import CodeBlock from './index';
 
-const stories = storiesOf(CodeBlockComponent.displayName, module);
+const stories = storiesOf(CodeBlock.displayName, module);
 
 stories.add('default', () => {
     const code = `
@@ -49,6 +49,10 @@ stories.add('default', () => {
     export default InputComponent;`;
 
     return (
-        <CodeBlockComponent>{code}</CodeBlockComponent>
+        <div style={{
+            padding: '40px'
+        }}>
+            <CodeBlock>{code}</CodeBlock>
+        </div>
     );
 });

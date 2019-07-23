@@ -2,7 +2,7 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './prismTheme.scss';
+import '../../vendor/prismTheme.scss';
 import './styles.scss';
 
 const CodeBlockComponent = (props) => {

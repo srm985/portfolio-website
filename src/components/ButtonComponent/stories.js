@@ -7,7 +7,7 @@ import {
     text
 } from '@storybook/addon-knobs';
 
-import ButtonComponent from './index';
+import Button from './index';
 
 import {
     BUTTON_STYLE_TYPE_INLINE,
@@ -16,7 +16,7 @@ import {
     BUTTON_STYLE_TYPES
 } from './config';
 
-const stories = storiesOf(ButtonComponent.displayName, module);
+const stories = storiesOf(Button.displayName, module);
 
 stories.add('button - inline', () => {
     const label = text('label', 'Inline Button');
@@ -30,7 +30,7 @@ stories.add('button - inline', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_INLINE);
 
     return (
-        <ButtonComponent
+        <Button
             label={label}
             styleType={styleType}
         />
@@ -49,7 +49,7 @@ stories.add('button - primary', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_PRIMARY);
 
     return (
-        <ButtonComponent
+        <Button
             label={label}
             styleType={styleType}
         />
@@ -68,7 +68,7 @@ stories.add('button - secondary', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_SECONDARY);
 
     return (
-        <ButtonComponent
+        <Button
             label={label}
             styleType={styleType}
         />
@@ -87,7 +87,7 @@ stories.add('link - inline', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_INLINE);
 
     return (
-        <ButtonComponent
+        <Button
             href={'#'}
             label={label}
             styleType={styleType}
@@ -107,7 +107,7 @@ stories.add('link - primary', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_PRIMARY);
 
     return (
-        <ButtonComponent
+        <Button
             href={'#'}
             label={label}
             styleType={styleType}
@@ -127,7 +127,7 @@ stories.add('link - secondary', () => {
     const styleType = select('styleType', styleTypeList, BUTTON_STYLE_TYPE_SECONDARY);
 
     return (
-        <ButtonComponent
+        <Button
             href={'#'}
             label={label}
             styleType={styleType}
