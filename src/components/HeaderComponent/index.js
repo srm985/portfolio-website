@@ -1,33 +1,96 @@
 import React from 'react';
 
+import Button from '../ButtonComponent';
+
 import {
-    Link
-} from 'gatsby';
+    BUTTON_STYLE_TYPE_INLINE
+} from '../ButtonComponent/config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const HeaderComponent = () => {
-    const {
-        displayName
-    } = HeaderComponent;
+class HeaderComponent extends React.PureComponent {
+    constructor(props) {
+        super(props);
 
-    return (
-        <header className={displayName}>
-            <span className={`${displayName}__logo`}>Sean McQuay</span>
-            <ul className={`${displayName}__navigation`}>
-                <li className={`${displayName}__navigation--link`}>
-                    <Link to={'/'}>About</Link>
-                </li>
-                <li className={`${displayName}__navigation--link`}>
-                    <Link to={'/'}>Work</Link>
-                </li>
-                <li className={`${displayName}__navigation--link`}>
-                    <Link to={'/'}>Contact</Link>
-                </li>
-            </ul>
-        </header>
-    );
-};
+        this.state = {
+            hasScrolled: false
+        };
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = (event) => {
+        const {
+            body,
+            documentElement
+        } = document;
+
+        const hasScrolled = !!(body.scrollTop || documentElement.scrollTop);
+
+        console.log({ hasScrolled });
+
+        this.setState({
+            hasScrolled
+        });
+    }
+
+    render() {
+        const {
+            hasScrolled
+        } = this.state;
+
+        const {
+            displayName
+        } = HeaderComponent;
+
+        const componentClassNames = classNames(
+            displayName,
+            {
+                [`${displayName}--scrolled`]: hasScrolled
+            }
+        );
+
+        return (
+            <header className={componentClassNames}>
+                <span className={`${displayName}__logo`}>Sean McQuay</span>
+                <ul className={`${displayName}__navigation`}>
+                    <li>
+                        <Button
+                            className={`${displayName}__navigation-link`}
+                            href={'/'}
+                            label={'About'}
+                            styleType={BUTTON_STYLE_TYPE_INLINE}
+                        />
+                    </li>
+                    <li>
+                        <Button
+                            className={`${displayName}__navigation-link`}
+                            href={'/'}
+                            label={'Work'}
+                            styleType={BUTTON_STYLE_TYPE_INLINE}
+                        />
+                    </li>
+                    <li>
+                        <Button
+                            className={`${displayName}__navigation-link`}
+                            href={'/'}
+                            label={'Contact'}
+                            styleType={BUTTON_STYLE_TYPE_INLINE}
+                        />
+                    </li>
+                </ul>
+            </header>
+        );
+    }
+}
 
 HeaderComponent.displayName = 'HeaderComponent';
 

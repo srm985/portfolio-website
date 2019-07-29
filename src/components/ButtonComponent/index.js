@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import {
+    Link
+} from 'gatsby';
+
 import classNames from '../../utils/classNames';
 
 import {
@@ -16,6 +20,7 @@ import './styles.scss';
 
 const ButtonComponent = (props) => {
     const {
+        className,
         href,
         label,
         styleType,
@@ -28,6 +33,7 @@ const ButtonComponent = (props) => {
 
     const buttonClassNames = classNames(
         ButtonComponent.displayName,
+        className,
         {
             [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
             [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
@@ -35,17 +41,38 @@ const ButtonComponent = (props) => {
         }
     );
 
+    const renderLinkType = () => {
+        const {
+            isInternalURL
+        } = props;
+
+        return (
+            isInternalURL
+                ? (
+                    <Link
+                        className={buttonClassNames}
+                        to={href}
+                    >
+                        {buttonLabel}
+                    </Link>
+                )
+                : (
+                    <a
+                        className={buttonClassNames}
+                        href={href}
+                    >
+                        {buttonLabel}
+                    </a>
+                )
+        );
+    };
+
     return (
         <>
             {
                 href
                     ? (
-                        <a
-                            className={buttonClassNames}
-                            href={href}
-                        >
-                            {buttonLabel}
-                        </a>
+                        renderLinkType()
                     )
                     : (
                         // eslint-disable-next-line react/button-has-type
@@ -62,14 +89,18 @@ const ButtonComponent = (props) => {
 };
 
 ButtonComponent.propTypes = {
+    className: PropTypes.string,
     href: PropTypes.string,
+    isInternalURL: PropTypes.bool,
     label: PropTypes.string,
     styleType: PropTypes.oneOf(BUTTON_STYLE_TYPES),
     type: PropTypes.oneOf(BUTTON_TYPES)
 };
 
 ButtonComponent.defaultProps = {
+    className: '',
     href: '',
+    isInternalURL: true,
     label: '',
     styleType: BUTTON_STYLE_TYPE_PRIMARY,
     type: BUTTON_TYPE_BUTTON
