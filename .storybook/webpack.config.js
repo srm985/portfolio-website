@@ -40,8 +40,6 @@ module.exports = async ({
         }
     };
 
-    delete config.resolve.alias['core-js'];
-
     // Return the altered config.
     return config;
 };
