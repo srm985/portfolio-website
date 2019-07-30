@@ -22,6 +22,7 @@ const ButtonComponent = (props) => {
     const {
         className,
         href,
+        isInternalURL,
         label,
         styleType,
         type
@@ -41,31 +42,25 @@ const ButtonComponent = (props) => {
         }
     );
 
-    const renderLinkType = () => {
-        const {
-            isInternalURL
-        } = props;
-
-        return (
-            isInternalURL
-                ? (
-                    <Link
-                        className={buttonClassNames}
-                        to={href}
-                    >
-                        {buttonLabel}
-                    </Link>
-                )
-                : (
-                    <a
-                        className={buttonClassNames}
-                        href={href}
-                    >
-                        {buttonLabel}
-                    </a>
-                )
-        );
-    };
+    const renderLinkType = () => (
+        isInternalURL
+            ? (
+                <Link
+                    className={buttonClassNames}
+                    to={href}
+                >
+                    {buttonLabel}
+                </Link>
+            )
+            : (
+                <a
+                    className={buttonClassNames}
+                    href={href}
+                >
+                    {buttonLabel}
+                </a>
+            )
+    );
 
     return (
         <>

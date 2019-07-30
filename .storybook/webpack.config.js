@@ -1,8 +1,10 @@
 const path = require('path');
 
-module.exports = async ({
-    config
-}) => {
+module.exports = async (options) => {
+    const {
+        config
+    } = options;
+
     config.module.rules.push({
         include: path.resolve(__dirname, '../'),
         test: /\.scss$/,
@@ -22,12 +24,12 @@ module.exports = async ({
             {
                 loader: 'babel-loader',
                 options: {
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties'
+                    ],
                     presets: [
                         '@babel/preset-react',
                         '@babel/preset-env'
-                    ],
-                    plugins: [
-                        '@babel/plugin-proposal-class-properties'
                     ]
                 }
             }
@@ -35,17 +37,14 @@ module.exports = async ({
     });
 
     config.resolve = {
+        alias: {
+            'core-js/modules': path.resolve(__dirname, 'node_modules/@storybook/core/node_modules/core-js/modules')
+        },
         mainFields: [
             'browser',
             'module',
             'main'
-        ],
-        alias: {
-            'core-js/modules': path.resolve(
-                __dirname,
-                'node_modules/@storybook/core/node_modules/core-js/modules',
-            )
-        }
+        ]
     };
 
     // Return the altered config.

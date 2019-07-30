@@ -12,14 +12,11 @@ const CodeBlockComponent = (props) => {
 
     const styledCode = Prism.highlight(children, Prism.languages.javascript, 'jsx');
 
-    console.log({
-        children
-    });
-
     return (
         <pre className={CodeBlockComponent.displayName}>
             <code
                 className={'language-jsx'}
+                // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: styledCode
                 }}
@@ -29,5 +26,13 @@ const CodeBlockComponent = (props) => {
 };
 
 CodeBlockComponent.displayName = 'CodeBlockComponent';
+
+CodeBlockComponent.propTypes = {
+    children: PropTypes.node
+};
+
+CodeBlockComponent.defaultProps = {
+    children: ''
+};
 
 export default CodeBlockComponent;
