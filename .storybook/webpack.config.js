@@ -14,29 +14,37 @@ module.exports = async ({
     });
 
     config.module.rules.push({
-        exclude: [/node_modules\/(?!(gatsby)\/)/],
+        exclude: [
+            /node_modules\/(?!(gatsby)\/)/
+        ],
         test: /\.js$/,
-        use: [{
-            loader: 'babel-loader',
-            options: {
-                presets: [
-                    '@babel/preset-react',
-                    '@babel/preset-env'
-                ],
-                plugins: [
-                    '@babel/plugin-proposal-class-properties'
-                ]
+        use: [
+            {
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-react',
+                        '@babel/preset-env'
+                    ],
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties'
+                    ]
+                }
             }
-        }]
+        ]
     });
 
     config.resolve = {
-        mainFields: ['browser', 'module', 'main'],
+        mainFields: [
+            'browser',
+            'module',
+            'main'
+        ],
         alias: {
             'core-js/modules': path.resolve(
                 __dirname,
                 'node_modules/@storybook/core/node_modules/core-js/modules',
-            ),
+            )
         }
     };
 

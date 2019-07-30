@@ -3,7 +3,9 @@ import React from 'react';
 import './styles.scss';
 
 const FooterComponent = () => (
-    <p>Footer</p>
+    <footer className={FooterComponent.displayName} />
 );
+
+FooterComponent.displayName = 'FooterComponent';
 
 export default FooterComponent;

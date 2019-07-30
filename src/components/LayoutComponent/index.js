@@ -4,8 +4,9 @@ import React from 'react';
 import Footer from '../FooterComponent';
 import Header from '../HeaderComponent';
 
+import classNames from '../../utils/classNames';
+
 // Global SCSS Files
-import '../../styles/constants.scss';
 import '../../styles/styles.scss';
 
 import './styles.scss';
@@ -17,10 +18,21 @@ const LayoutComponent = (props) => {
         hasHeader
     } = props;
 
+    const {
+        displayName
+    } = LayoutComponent;
+
+    const mainContentClassNames = classNames(
+        `${displayName}__main`,
+        `${displayName}__main--has-header`
+    );
+
     return (
-        <div className={LayoutComponent.displayName}>
+        <div className={displayName}>
             {hasHeader && <Header />}
-            {children}
+            <main className={mainContentClassNames}>
+                {children}
+            </main>
             {hasFooter && <Footer />}
         </div>
     );

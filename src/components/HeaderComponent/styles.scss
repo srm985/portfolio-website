@@ -1,4 +1,4 @@
-@import '../../styles/constants.scss';
+@import '../../styles/constants';
 
 .HeaderComponent {
     position: fixed;
@@ -11,17 +11,21 @@
 
     box-sizing: border-box;
     width: 100%;
-    height: 50px;
+    height: $header-height;
     padding: 0 $padding-large;
 
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+
+    color: $color-white;
+    background-color: rgba($color-white, 0);
 
     &--scrolled {
-        background-color: $color-white;
+        color: $color-gray-dark;
+        background-color: rgba($color-white, 1);
     }
 
     &__logo {
-        color: $color-white;
+        color: inherit;
     }
 
     &__navigation {
@@ -35,6 +39,6 @@
     }
 
     &__navigation-link {
-        color: $color-white;
+        color: inherit;
     }
 }

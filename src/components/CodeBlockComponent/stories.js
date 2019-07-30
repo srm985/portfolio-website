@@ -51,7 +51,8 @@ stories.add('default', () => {
     return (
         <div style={{
             padding: '40px'
-        }}>
+        }}
+        >
             <CodeBlock>{code}</CodeBlock>
         </div>
     );

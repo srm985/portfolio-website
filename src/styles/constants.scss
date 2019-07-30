@@ -11,12 +11,12 @@ $max-width-large: 960px;
 $max-width-extra-large: 1140px;
 
 // Application Colors
-$color-blue: blue;
+$color-blue: #00f;
 $color-gray-dark: #333;
 $color-gray-light: #555;
-$color-green: green;
-$color-orange: orange;
-$color-red: red;
+$color-green: #008000;
+$color-orange: #ffa500;
+$color-red: #f00;
 $color-white: #eff7ff;
 
 // Font Sizes
@@ -29,3 +29,9 @@ $border-radius-default: 5px;
 // Padding
 $padding-small: 10px;
 $padding-large: 20px;
+
+// Header Height
+$header-height: 50px;
+
+// Footer Height
+$footer-height: 50px;

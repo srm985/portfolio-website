@@ -27,7 +27,7 @@ class HeaderComponent extends React.PureComponent {
         document.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll = (event) => {
+    handleScroll = () => {
         const {
             body,
             documentElement
@@ -35,7 +35,9 @@ class HeaderComponent extends React.PureComponent {
 
         const hasScrolled = !!(body.scrollTop || documentElement.scrollTop);
 
-        console.log({ hasScrolled });
+        console.log({
+            hasScrolled
+        });
 
         this.setState({
             hasScrolled
