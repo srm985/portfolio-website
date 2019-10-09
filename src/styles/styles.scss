@@ -1,8 +1,16 @@
+@import './constants';
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
 body {
+    box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+
+    color: $color-black;
 }
 
 h1,

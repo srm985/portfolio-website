@@ -11,13 +11,17 @@ $max-width-large: 960px;
 $max-width-extra-large: 1140px;
 
 // Application Colors
-$color-blue: #00f;
-$color-gray-dark: #333;
-$color-gray-light: #555;
-$color-green: #008000;
-$color-orange: #ffa500;
-$color-red: #f00;
-$color-white: #eff7ff;
+$color-black: #262626;
+$color-blue: #2980b9;
+$color-gray-dark: #7f8c8d;
+$color-gray-light: #ecf0f1;
+$color-green: #27ae60;
+$color-orange: #e67e22;
+$color-red: #e74c3c;
+$color-white: #fff;
+
+// Font Families
+$font-stack: 'Lato', sans-serif;
 
 // Font Sizes
 $font-size-regular: 16px;
@@ -35,3 +39,5 @@ $header-height: 50px;
 
 // Footer Height
 $footer-height: 50px;
+
+// Z-Index

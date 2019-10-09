@@ -20,6 +20,7 @@ import './styles.scss';
 
 const ButtonComponent = (props) => {
     const {
+        children,
         className,
         href,
         isInternalURL,
@@ -28,14 +29,24 @@ const ButtonComponent = (props) => {
         type
     } = props;
 
+    console.log(children, label);
+
     const buttonLabel = (
-        <span>{label}</span>
+        children
+            ? (
+
+                <>{children}</>
+            )
+            : (
+                <span>{label}</span>
+            )
     );
 
     const buttonClassNames = classNames(
         ButtonComponent.displayName,
         className,
         {
+            [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
             [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
             [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
             [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
@@ -84,6 +95,7 @@ const ButtonComponent = (props) => {
 };
 
 ButtonComponent.propTypes = {
+    children: PropTypes.node,
     className: PropTypes.string,
     href: PropTypes.string,
     isInternalURL: PropTypes.bool,
@@ -93,6 +105,7 @@ ButtonComponent.propTypes = {
 };
 
 ButtonComponent.defaultProps = {
+    children: '',
     className: '',
     href: '',
     isInternalURL: true,

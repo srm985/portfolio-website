@@ -89,6 +89,7 @@ stories.add('link - inline', () => {
     return (
         <Button
             href={'#'}
+            isInternalURL={false}
             label={label}
             styleType={styleType}
         />
@@ -109,6 +110,7 @@ stories.add('link - primary', () => {
     return (
         <Button
             href={'#'}
+            isInternalURL={false}
             label={label}
             styleType={styleType}
         />
@@ -129,6 +131,7 @@ stories.add('link - secondary', () => {
     return (
         <Button
             href={'#'}
+            isInternalURL={false}
             label={label}
             styleType={styleType}
         />

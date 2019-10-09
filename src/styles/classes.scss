@@ -1,0 +1,64 @@
+$spacing-unit: 8px;
+
+// Generate margin and padding classes.
+@for $i from 1 through 8 {
+    .mt--#{$i} {
+        margin-top: #{$spacing-unit * $i};
+    }
+
+    .mr--#{$i} {
+        margin-right: #{$spacing-unit * $i};
+    }
+
+    .mb--#{$i} {
+        margin-bottom: #{$spacing-unit * $i};
+    }
+
+    .ml--#{$i} {
+        margin-left: #{$spacing-unit * $i};
+    }
+
+    .mx--#{$i} {
+        margin-right: #{$spacing-unit * $i};
+        margin-left: #{$spacing-unit * $i};
+    }
+
+    .my--#{$i} {
+        margin-top: #{$spacing-unit * $i};
+        margin-bottom: #{$spacing-unit * $i};
+    }
+
+    .m--#{$i} {
+        margin: #{$spacing-unit * $i};
+    }
+
+    .pt--#{$i} {
+        padding-top: #{$spacing-unit * $i};
+    }
+
+    .pr--#{$i} {
+        padding-right: #{$spacing-unit * $i};
+    }
+
+    .pb--#{$i} {
+        padding-bottom: #{$spacing-unit * $i};
+    }
+
+    .pl--#{$i} {
+        padding-left: #{$spacing-unit * $i};
+    }
+
+    .px--#{$i} {
+        padding-right: #{$spacing-unit * $i};
+        padding-left: #{$spacing-unit * $i};
+    }
+
+    .py--#{$i} {
+        padding-top: #{$spacing-unit * $i};
+        padding-bottom: #{$spacing-unit * $i};
+    }
+
+    .p--#{$i} {
+        padding: #{$spacing-unit * $i};
+    }
+}

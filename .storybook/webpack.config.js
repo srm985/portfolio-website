@@ -37,9 +37,6 @@ module.exports = async (options) => {
     });
 
     config.resolve = {
-        alias: {
-            'core-js/modules': path.resolve(__dirname, 'node_modules/@storybook/core/node_modules/core-js/modules')
-        },
         mainFields: [
             'browser',
             'module',
