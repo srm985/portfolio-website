@@ -11,9 +11,9 @@
 
         box-sizing: border-box;
         width: 100%;
-        padding: 0 15px;
 
         grid-gap: 20px 0;
+        grid-template-columns: repeat(12, 1fr);
 
         @media only screen and (min-width: $breakpoint-small) {
             max-width: $max-width-small;

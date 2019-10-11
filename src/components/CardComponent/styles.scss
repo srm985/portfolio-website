@@ -1,0 +1,12 @@
+@import '../../styles/constants';
+
+.CardComponent {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 200px;
+    padding: 20px;
+
+    border-radius: 5px;
+    background-color: $color-white;
+    box-shadow: 0 3px 5px $color-gray-dark;
+}

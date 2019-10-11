@@ -39,10 +39,10 @@ GridItemComponent.displayName = 'GridItemComponent';
 GridItemComponent.propTypes = {
     children: PropTypes.node.isRequired,
     columns: PropTypes.shape({
-        extraLarge: PropTypes.shape([]),
-        large: PropTypes.shape([]),
-        medium: PropTypes.shape([]),
-        small: PropTypes.shape([])
+        extraLarge: PropTypes.arrayOf(PropTypes.number),
+        large: PropTypes.arrayOf(PropTypes.number),
+        medium: PropTypes.arrayOf(PropTypes.number),
+        small: PropTypes.arrayOf(PropTypes.number)
     })
 };
 

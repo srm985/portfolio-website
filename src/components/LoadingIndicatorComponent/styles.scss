@@ -1,0 +1,117 @@
+@import '../../styles/constants';
+$colors: $color-red, $color-blue, $color-green, $color-orange;
+$dot-quantity: 3;
+$dot-size: 20px;
+$frame-percent: 7%;
+$indicator-size: 80px;
+$overlap: 3%;
+$rotation: 360deg;
+$dot-color: $color-gray-dark;
+
+
+%animated {
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.LoadingIndicatorComponent {
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-gray-light;
+
+    &--full-screen {
+        position: fixed;
+    }
+
+    &--bounded {
+        position: absolute;
+    }
+
+    &__loading-box {
+        @extend %animated;
+
+        position: relative;
+
+        box-sizing: border-box;
+        width: $indicator-size;
+        height: $indicator-size;
+
+        animation-name: animation-rotate;
+    }
+
+    &__dot {
+        @extend %animated;
+
+        position: absolute;
+        top: calc(50% - #{$dot-size / 2});
+
+        width: $dot-size;
+        height: $dot-size;
+
+        border-radius: 50%;
+        background-color: $dot-color;
+
+        @for $dot-number from 1 through $dot-quantity {
+            &-#{$dot-number} {
+                left: #{(($indicator-size / 2) * ($dot-number - 1)) - (($dot-number - 1) * ($dot-size / 2))};
+
+                animation-name: animation-grow-#{$dot-number};
+            }
+        }
+    }
+}
+
+@for $i from 1 through $dot-quantity {
+    @keyframes animation-grow-#{$i} {
+        @for $j from 1 through length($colors) {
+            $current-offset: $overlap * ($i - 1);
+            $frame-offset: $frame-percent * (($j - 1) * $dot-quantity) + ($frame-percent * $i);
+
+            #{$frame-offset - $frame-percent - $current-offset} {
+                transform: scale(1);
+
+                background-color: $dot-color;
+            }
+
+
+            #{$frame-offset - $current-offset} {
+                transform: scale(1.4);
+
+                background-color: nth($colors, $j);
+            }
+
+            #{$frame-offset + $frame-percent - $current-offset} {
+                transform: scale(1);
+
+                background-color: $dot-color;
+            }
+        }
+    }
+}
+
+@keyframes animation-rotate {
+    @for $i from 1 through length($colors) {
+        $offset: $frame-percent * $dot-quantity * $i;
+
+        #{$offset - $overlap} {
+            transform: rotate(#{$rotation * ($i - 1)});
+        }
+
+        #{$offset} {
+            @if $i == length($colors) {
+                transform: rotate(#{$rotation * ($i - 1)});
+            } @else {
+                transform: rotate(#{$rotation * $i});
+            }
+        }
+    }
+}

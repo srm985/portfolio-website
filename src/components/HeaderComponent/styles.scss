@@ -17,11 +17,11 @@
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 
     color: $color-white;
-    background-color: rgba($color-white, 0);
+    background-color: adjust-color($color-white, $alpha: -1);
 
     &--scrolled {
         color: $color-gray-dark;
-        background-color: rgba($color-white, 1);
+        background-color: $color-white;
     }
 
     &__logo {
