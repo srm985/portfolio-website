@@ -1,3 +1,6 @@
+// Minimum Spacing Unit
+$planck-length: 8px;
+
 // Breakpoints
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
@@ -31,8 +34,8 @@ $font-size-small: 12px;
 $border-radius-default: 5px;
 
 // Padding
-$padding-small: 10px;
-$padding-large: 20px;
+$padding-small: $planck-length;
+$padding-large: #{2 * $planck-length};
 
 // Header Height
 $header-height: 50px;
@@ -41,8 +44,3 @@ $header-height: 50px;
 $footer-height: 50px;
 
 // Z-Index
-$z-index-loading-indicator: 9999;
-$z-index-modal: 9998;
-$z-index-header: 9997;
-$z-index-footer: 9996;
-$z-index-fab-button: 9995;

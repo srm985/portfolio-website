@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
 
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
 
@@ -17,6 +18,14 @@
             flex-grow: 1;
 
             width: 100%;
+        }
+
+        &--has-header {
+            padding-top: $header-height;
+        }
+
+        &--has-footer {
+            padding-bottom: $header-height;
         }
     }
 }

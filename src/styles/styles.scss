@@ -22,3 +22,66 @@ a,
 p {
     margin: 0;
 }
+
+// Generate margin and padding classes.
+@for $i from 1 through 8 {
+    .mt--#{$i} {
+        margin-top: #{$planck-length * $i};
+    }
+
+    .mr--#{$i} {
+        margin-right: #{$planck-length * $i};
+    }
+
+    .mb--#{$i} {
+        margin-bottom: #{$planck-length * $i};
+    }
+
+    .ml--#{$i} {
+        margin-left: #{$planck-length * $i};
+    }
+
+    .mx--#{$i} {
+        margin-right: #{$planck-length * $i};
+        margin-left: #{$planck-length * $i};
+    }
+
+    .my--#{$i} {
+        margin-top: #{$planck-length * $i};
+        margin-bottom: #{$planck-length * $i};
+    }
+
+    .m--#{$i} {
+        margin: #{$planck-length * $i};
+    }
+
+    .pt--#{$i} {
+        padding-top: #{$planck-length * $i};
+    }
+
+    .pr--#{$i} {
+        padding-right: #{$planck-length * $i};
+    }
+
+    .pb--#{$i} {
+        padding-bottom: #{$planck-length * $i};
+    }
+
+    .pl--#{$i} {
+        padding-left: #{$planck-length * $i};
+    }
+
+    .px--#{$i} {
+        padding-right: #{$planck-length * $i};
+        padding-left: #{$planck-length * $i};
+    }
+
+    .py--#{$i} {
+        padding-top: #{$planck-length * $i};
+        padding-bottom: #{$planck-length * $i};
+    }
+
+    .p--#{$i} {
+        padding: #{$planck-length * $i};
+    }
+}

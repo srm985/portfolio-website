@@ -24,7 +24,10 @@ const LayoutComponent = (props) => {
 
     const mainContentClassNames = classNames(
         `${displayName}__main`,
-        `${displayName}__main--has-header`
+        {
+            [`${displayName}__main--has-footer`]: hasFooter,
+            [`${displayName}__main--has-header`]: hasHeader
+        }
     );
 
     return (

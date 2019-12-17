@@ -81,7 +81,7 @@
     "lint:fix": "eslint ./*.js src/**/*.js .storybook/*.js --fix",
     "lint": "concurrently --raw \"npm:lint:js --silent\" \"npm:lint:scss --silent\"",
     "lint:js": "eslint ./*.js src/**/*.js .storybook/*.js --ignore-pattern /src/vendor/*",
-    "lint:scss": "sass-lint -v -q src/**/*.scss --ignore src/vendor/*",
+    "lint:scss": "sass-lint src/styles/**/*.scss -v -q --ignore src/vendor/*",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "cross-env NODE_ENV=production concurrently --raw \"start-storybook --port 6060\" \"npm:watch --silent\"",

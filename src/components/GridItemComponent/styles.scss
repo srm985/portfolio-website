@@ -4,6 +4,10 @@
     grid-column-end: 13;
     grid-column-start: 1;
 
+    & > * {
+        width: 100%;
+    }
+
     &__small {
         @for $column from 1 through 13 {
             @media only screen and (min-width: $breakpoint-small) {
