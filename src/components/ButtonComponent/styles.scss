@@ -2,20 +2,18 @@
 @import '../../styles/mixins';
 
 %button {
-    font-size: $font-size-regular;
-    line-height: $font-size-regular;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-sizing: border-box;
     min-width: 120px;
     height: 40px;
     padding: 0 10px;
 
-    text-decoration: none;
+    font-size: $font-size-regular;
+    line-height: $font-size-regular;
     text-transform: uppercase;
+    text-decoration: none;
 
     border-radius: $border-radius-default;
 }
@@ -23,21 +21,22 @@
 .ButtonComponent {
     font-family: $font-stack;
 
-    cursor: pointer;
-    transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
-
     border: none;
     outline: none;
+    cursor: pointer;
+
+    transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
 
     &--primary {
         @extend %button;
 
         color: $color-white;
+
         background-color: $color-blue;
 
         &:hover {
-            @include is-desktop {
-                background-color: darken($color-blue, 10%);
+            @include is-desktop() {
+                background-color: darken($color: $color-blue, $amount: 10%);
             }
         }
     }
@@ -46,26 +45,27 @@
         @extend %button;
 
         color: $color-blue;
-        border: solid 1px $color-blue;
+
         background-color: transparent;
+        border: solid 1px $color-blue;
 
         &:hover {
-            @include is-desktop {
+            @include is-desktop() {
                 color: $color-white;
+
                 background-color: $color-blue;
             }
         }
     }
 
     &--inline {
-        font-size: inherit;
-
         margin: 0;
         padding: 0;
 
+        color: $color-blue;
+        font-size: inherit;
         text-decoration: underline;
 
-        color: $color-blue;
         background-color: transparent;
     }
 

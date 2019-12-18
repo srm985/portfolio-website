@@ -2,13 +2,12 @@
 
 .LayoutComponent {
     display: flex;
-    overflow-x: hidden;
     flex-direction: column;
     justify-content: space-between;
-
     box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 
     &__main {
         display: flex;
@@ -16,7 +15,6 @@
 
         & > * {
             flex-grow: 1;
-
             width: 100%;
         }
 

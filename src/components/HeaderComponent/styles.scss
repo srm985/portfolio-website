@@ -8,19 +8,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     box-sizing: border-box;
     width: 100%;
     height: $header-height;
     padding: 0 $padding-large;
 
-    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
-
     color: $color-white;
-    background-color: adjust-color($color-white, $alpha: -1);
+
+    background-color: adjust-color($color: $color-white, $alpha: -1);
+
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 
     &--scrolled {
         color: $color-gray-dark;
+
         background-color: $color-white;
     }
 
@@ -32,7 +33,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         min-width: 200px;
 
         list-style: none;

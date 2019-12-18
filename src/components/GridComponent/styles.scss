@@ -3,33 +3,26 @@
 .GridComponent {
     display: flex;
     justify-content: center;
-
     width: 100%;
 
     &__grid {
         display: grid;
-
+        grid-gap: 20px 0;
+        grid-template-columns: repeat(12, 1fr);
         box-sizing: border-box;
         width: 100%;
 
-        grid-gap: 20px 0;
-        grid-template-columns: repeat(12, 1fr);
-
         @media only screen and (min-width: $breakpoint-small) {
+            grid-gap: 20px 30px;
             max-width: $max-width-small;
             padding: 0;
-
-            grid-gap: 20px 30px;
         }
-
         @media only screen and (min-width: $breakpoint-medium) {
             max-width: $max-width-medium;
         }
-
         @media only screen and (min-width: $breakpoint-large) {
             max-width: $max-width-large;
         }
-
         @media only screen and (min-width: $breakpoint-extra-large) {
             max-width: $max-width-extra-large;
         }

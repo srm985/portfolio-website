@@ -1,8 +1,8 @@
 @import '../../styles/constants';
 
 .GridItemComponent {
-    grid-column-end: 13;
     grid-column-start: 1;
+    grid-column-end: 13;
 
     & > * {
         width: 100%;

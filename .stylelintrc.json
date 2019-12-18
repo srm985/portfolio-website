@@ -1,14 +1,40 @@
 {
+    "extends": [
+        "stylelint-config-rational-order"
+    ],
+    "plugins": [
+        "stylelint-scss"
+    ],
     "rules": {
-        "at-rule-empty-line-before": "always",
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "after-same-name",
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment"
+                ],
+                "ignoreAtRules": [
+                    "else"
+                ]
+            }
+        ],
         "at-rule-name-case": "lower",
         "at-rule-name-space-after": "always",
-        "at-rule-no-unknown": true,
         "at-rule-no-vendor-prefix": true,
         "at-rule-semicolon-newline-after": "always",
         "at-rule-semicolon-space-before": "never",
         "block-closing-brace-empty-line-before": "never",
-        "block-closing-brace-newline-after": "always",
+        "block-closing-brace-newline-after": [
+            "always",
+            {
+                "ignoreAtRules": [
+                    "if"
+                ]
+            }
+        ],
         "block-closing-brace-newline-before": "always",
         "block-no-empty": true,
         "block-opening-brace-newline-after": "always",
@@ -25,23 +51,20 @@
         "declaration-bang-space-after": "never",
         "declaration-bang-space-before": "always",
         "declaration-block-no-duplicate-properties": true,
-        "declaration-block-no-redundant-longhand-properties": true,
         "declaration-block-no-shorthand-property-overrides": true,
         "declaration-block-semicolon-newline-after": "always",
         "declaration-block-semicolon-newline-before": "never-multi-line",
-        "declaration-block-semicolon-space-after": "never",
         "declaration-block-semicolon-space-before": "never",
         "declaration-block-single-line-max-declarations": 1,
         "declaration-block-trailing-semicolon": "always",
         "declaration-colon-newline-after": "always-multi-line",
         "declaration-colon-space-after": "always",
         "declaration-colon-space-before": "never",
-        "declaration-empty-line-before": "never",
         "declaration-no-important": true,
         "font-family-name-quotes": "always-where-required",
         "font-family-no-duplicate-names": true,
         "font-family-no-missing-generic-family-keyword": true,
-        "font-weight-notation": "named",
+        "font-weight-notation": "named-where-possible",
         "function-calc-no-invalid": true,
         "function-calc-no-unspaced-operator": true,
         "function-comma-newline-after": "always-multi-line",
@@ -59,9 +82,8 @@
         "indentation": 4,
         "keyframe-declaration-no-important": true,
         "length-zero-no-unit": true,
-        "linebreaks": "windows",
         "max-empty-lines": 1,
-        "max-nesting-depth": 3,
+        "max-nesting-depth": 4,
         "media-feature-colon-space-after": "always",
         "media-feature-colon-space-before": "never",
         "media-feature-name-case": "lower",
@@ -87,10 +109,77 @@
         "number-leading-zero": "always",
         "number-max-precision": 2,
         "number-no-trailing-zeros": true,
+        "plugin/rational-order": [
+            true,
+            {
+                "border-in-box-model": false,
+                "empty-line-between-groups": true
+            }
+        ],
         "property-case": "lower",
         "property-no-unknown": true,
         "property-no-vendor-prefix": true,
-        "rule-empty-line-before": "always",
+        "rule-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "first-nested"
+                ]
+            }
+        ],
+        "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+        "scss/at-else-closing-brace-space-after": "always-intermediate",
+        "scss/at-else-empty-line-before": "never",
+        "scss/at-else-if-parentheses-space-before": "always",
+        "scss/at-extend-no-missing-placeholder": true,
+        "scss/at-function-named-arguments": "always",
+        "scss/at-function-parentheses-space-before": "always",
+        "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+        "scss/at-if-closing-brace-space-after": "always-intermediate",
+        "scss/at-if-no-null": true,
+        "scss/at-import-no-partial-leading-underscore": true,
+        "scss/at-import-partial-extension": "never",
+        "scss/at-mixin-argumentless-call-parentheses": "always",
+        "scss/at-mixin-named-arguments": "never",
+        "scss/at-mixin-parentheses-space-before": "never",
+        "scss/at-rule-no-unknown": true,
+        "scss/declaration-nested-properties": "never",
+        "scss/declaration-nested-properties-no-divided-groups": true,
+        "scss/dollar-variable-colon-newline-after": "always-multi-line",
+        "scss/dollar-variable-colon-space-after": "always-single-line",
+        "scss/dollar-variable-colon-space-before": "never",
+        "scss/dollar-variable-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "after-comment",
+                    "after-dollar-variable",
+                    "first-nested"
+                ]
+            }
+        ],
+        "scss/dollar-variable-no-missing-interpolation": true,
+        "scss/double-slash-comment-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "first-nested"
+                ],
+                "ignore": [
+                    "between-comments"
+                ]
+            }
+        ],
+        "scss/double-slash-comment-whitespace-inside": "always",
+        "scss/function-quote-no-quoted-strings-inside": true,
+        "scss/function-unquote-no-unquoted-strings-inside": true,
+        "scss/map-keys-quotes": "always",
+        "scss/media-feature-value-dollar-variable": "always",
+        "scss/no-duplicate-dollar-variables": true,
+        "scss/no-duplicate-mixins": true,
+        "scss/operator-no-newline-after": true,
+        "scss/operator-no-unspaced": true,
+        "scss/selector-nest-combinators": "always",
         "selector-attribute-brackets-space-inside": "never",
         "selector-attribute-operator-space-after": "always",
         "selector-attribute-operator-space-before": "always",
@@ -129,6 +218,9 @@
         "unit-case": "lower",
         "unit-no-unknown": true,
         "unit-whitelist": [
+            "%",
+            "deg",
+            "fr",
             "px",
             "s",
             "vh",
