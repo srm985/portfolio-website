@@ -72,7 +72,7 @@
       "git add"
     ],
     "*.scss": [
-      "sass-lint -v -q --ignore src/vendor/*",
+      "stylelint --syntax scss --color --allow-empty-input --fix",
       "git add"
     ]
   },
