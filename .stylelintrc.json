@@ -126,7 +126,7 @@
                     "first-nested"
                 ],
                 "ignore": [
-                    "comment"
+                    "after-comment"
                 ]
             }
         ],
