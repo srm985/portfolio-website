@@ -124,6 +124,9 @@
             {
                 "except": [
                     "first-nested"
+                ],
+                "ignore": [
+                    "comment"
                 ]
             }
         ],

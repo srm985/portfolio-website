@@ -1,4 +1,5 @@
 @import '../../styles/constants';
+
 $colors: $color-red, $color-blue, $color-green, $color-orange;
 $dot-quantity: 3;
 $dot-size: 20px;
@@ -60,7 +61,7 @@ $dot-color: $color-gray-dark;
 
         @for $dot-number from 1 through $dot-quantity {
             &-#{$dot-number} {
-                left: #{(($indicator-size / 2) * ($dot-number - 1)) - (($dot-number - 1) * ($dot-size / 2))};
+                left: (($indicator-size / 2) * ($dot-number - 1)) - (($dot-number - 1) * ($dot-size / 2));
 
                 animation-name: animation-grow-#{$dot-number};
             }
@@ -74,16 +75,19 @@ $dot-color: $color-gray-dark;
             $current-offset: $overlap * ($i - 1);
             $frame-offset: $frame-percent * (($j - 1) * $dot-quantity) + ($frame-percent * $i);
 
+            /* stylelint-disable-next-line scss/selector-nest-combinators */
             #{$frame-offset - $frame-percent - $current-offset} {
                 background-color: $dot-color;
                 transform: scale(1);
             }
 
+            /* stylelint-disable-next-line scss/selector-nest-combinators */
             #{$frame-offset - $current-offset} {
-                background-color: nth($colors, $j);
+                background-color: nth($list: $colors, $n: $j);
                 transform: scale(1.4);
             }
 
+            /* stylelint-disable-next-line scss/selector-nest-combinators */
             #{$frame-offset + $frame-percent - $current-offset} {
                 background-color: $dot-color;
                 transform: scale(1);
@@ -96,10 +100,12 @@ $dot-color: $color-gray-dark;
     @for $i from 1 through length($colors) {
         $offset: $frame-percent * $dot-quantity * $i;
 
+        /* stylelint-disable-next-line scss/selector-nest-combinators */
         #{$offset - $overlap} {
             transform: rotate(#{$rotation * ($i - 1)});
         }
 
+        /* stylelint-disable-next-line scss/selector-nest-combinators */
         #{$offset} {
             @if $i == length($colors) {
                 transform: rotate(#{$rotation * ($i - 1)});
