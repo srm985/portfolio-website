@@ -53,6 +53,7 @@
     "react-test-renderer": "^16.12.0",
     "stylelint": "^12.0.0",
     "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-declaration-block-no-ignored-properties": "^2.2.0",
     "stylelint-order": "^3.1.1",
     "stylelint-scss": "^3.13.0"
   },
@@ -89,7 +90,6 @@
     "start": "npm run develop",
     "storybook": "cross-env NODE_ENV=production concurrently --raw \"start-storybook --port 6060\" \"npm:watch --silent\"",
     "storybook:build": "cross-env NODE_ENV=production build-storybook -c .storybook -o storybook-dist",
-    "stylelint": "stylelint src/**/*.scss --syntax scss --color --allow-empty-input",
     "test": "jest src/",
     "watch": "concurrently --raw \"npm:watch:js --silent\" \"npm:watch:scss --silent\"",
     "watch:js": "onchange \"src/**/*.js\" -- npm run lint:js --silent",

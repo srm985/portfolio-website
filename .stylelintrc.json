@@ -3,7 +3,8 @@
         "stylelint-config-rational-order"
     ],
     "plugins": [
-        "stylelint-scss"
+        "stylelint-scss",
+        "stylelint-declaration-block-no-ignored-properties"
     ],
     "rules": {
         "at-rule-empty-line-before": [
@@ -54,6 +55,7 @@
         "declaration-block-no-shorthand-property-overrides": true,
         "declaration-block-semicolon-newline-after": "always",
         "declaration-block-semicolon-newline-before": "never-multi-line",
+        "declaration-block-semicolon-space-after": "always-single-line",
         "declaration-block-semicolon-space-before": "never",
         "declaration-block-single-line-max-declarations": 1,
         "declaration-block-trailing-semicolon": "always",
@@ -109,6 +111,7 @@
         "number-leading-zero": "always",
         "number-max-precision": 2,
         "number-no-trailing-zeros": true,
+        "plugin/declaration-block-no-ignored-properties": true,
         "plugin/rational-order": [
             true,
             {
@@ -187,6 +190,13 @@
         "selector-attribute-operator-space-after": "always",
         "selector-attribute-operator-space-before": "always",
         "selector-attribute-quotes": "always",
+        "selector-class-pattern": [
+            "^([a-zA-Z]+(\\-[a-zA-Z]+)*)((\\_\\_[a-zA-Z]+(\\-[a-zA-Z]+)*(\\-\\-[a-zA-Z]+(\\-[a-zA-Z]+)*)?)?|(\\-\\-[a-zA-Z]+(\\-[a-zA-Z]+)*)?)?$",
+            {
+                "message": "Class name should follow BEM notation: ReactComponent__some-element--and-modifier",
+                "resolveNestedSelectors": true
+            }
+        ],
         "selector-combinator-space-after": "always",
         "selector-combinator-space-before": "always",
         "selector-descendant-combinator-no-non-space": true,
