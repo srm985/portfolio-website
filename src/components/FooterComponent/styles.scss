@@ -1,6 +1,8 @@
 @import '../../styles/constants';
 
 .FooterComponent {
+    z-index: $z-index-footer;
+
     width: 100%;
     height: $footer-height;
 

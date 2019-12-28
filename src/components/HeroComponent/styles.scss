@@ -1,0 +1,46 @@
+@import '../../styles/constants';
+
+.HeroComponent {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+
+    &--half {
+        height: 50vh;
+    }
+
+    &__hero-image {
+        height: 100%;
+    }
+
+    &__hero-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0.8;
+
+        pointer-events: none;
+
+        &--black {
+            background-color: $color-black;
+        }
+
+        &--blue {
+            background-color: $color-blue;
+        }
+
+        &--green {
+            background-color: $color-green;
+        }
+
+        &--red {
+            background-color: $color-red;
+        }
+    }
+}

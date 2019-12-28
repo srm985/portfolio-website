@@ -46,6 +46,9 @@ $header-height: 50px;
 $footer-height: 50px;
 
 // Z-Index
-$z-index-fab-button: 9998;
+$z-index-modal: 9999;
+$z-index-header: 9998;
+$z-index-footer: 9997;
+$z-index-fab-button: 9996;
 
 /* stylelint-enable */
