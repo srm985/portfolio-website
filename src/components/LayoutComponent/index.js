@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {
+    Helmet
+} from 'react-helmet';
 
 import Footer from '../FooterComponent';
 import Header from '../HeaderComponent';
@@ -15,7 +18,8 @@ const LayoutComponent = (props) => {
     const {
         children,
         hasFooter,
-        hasHeader
+        hasHeader,
+        pageTitle
     } = props;
 
     const {
@@ -32,6 +36,10 @@ const LayoutComponent = (props) => {
 
     return (
         <div className={displayName}>
+            <Helmet
+                defer={false}
+                title={pageTitle}
+            />
             {hasHeader && <Header />}
             <main className={mainContentClassNames}>
                 {children}
@@ -46,7 +54,8 @@ LayoutComponent.displayName = 'LayoutComponent';
 LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
     hasFooter: PropTypes.bool,
-    hasHeader: PropTypes.bool
+    hasHeader: PropTypes.bool,
+    pageTitle: PropTypes.string.isRequired
 };
 
 LayoutComponent.defaultProps = {

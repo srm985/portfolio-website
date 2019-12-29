@@ -19,11 +19,12 @@ const IndexPage = (props) => {
     } = props;
 
     const {
-        heroImage
+        heroImage,
+        pageTitle
     } = destructureNetlifyCMS(data);
 
     return (
-        <Layout>
+        <Layout pageTitle={pageTitle}>
             <Hero
                 alt={'placeholder image'}
                 defaultSource={heroImage}
@@ -40,9 +41,9 @@ export const query = graphql`
         node {
           childMarkdownRemark {
             frontmatter {
-              image
-              intro
-              title
+              heroImage
+              heroTitle
+              pageTitle
           }
         }
       }
@@ -52,9 +53,9 @@ export const query = graphql`
 
 IndexPage.propTypes = {
     data: PropTypes.shape({
-        image: PropTypes.string,
-        intro: PropTypes.string,
-        title: PropTypes.string
+        heroImage: PropTypes.string,
+        heroTitle: PropTypes.string,
+        pageTitle: PropTypes.string
     })
 };
 
