@@ -1,6 +1,6 @@
 ---
-title: Test Title
-intro: This is some sort of test text.
-image: /assets/gatsby-astronaut.png
+pageTitle: Sean McQuay
+heroTitle: Welcome!
+heroImage: /assets/gatsby-astronaut.png
 ---
 
