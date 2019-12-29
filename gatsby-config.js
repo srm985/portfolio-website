@@ -12,6 +12,7 @@ module.exports = {
         'gatsby-plugin-postcss',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
+        'gatsby-plugin-netlify-cms',
         {
             options: {
                 background_color: '#663399',
