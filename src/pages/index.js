@@ -19,14 +19,14 @@ const IndexPage = (props) => {
     } = props;
 
     const {
-        image
+        heroImage
     } = destructureNetlifyCMS(data);
 
     return (
         <Layout>
             <Hero
                 alt={'placeholder image'}
-                defaultSource={image}
+                defaultSource={heroImage}
                 overlayColor={OVERLAY_BLACK}
             />
         </Layout>
