@@ -2,3 +2,5 @@
 /node_modules/
 /public/
 /storybook-dist/
+
+package-lock.json

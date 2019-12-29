@@ -4,10 +4,18 @@ module.exports = {
         {
             options: {
                 name: 'images',
-                path: `${__dirname}/src/images`
+                path: `${__dirname}/static/assets`
             },
             resolve: 'gatsby-source-filesystem'
         },
+        {
+            options: {
+                name: 'content',
+                path: `${__dirname}/static/content`
+            },
+            resolve: 'gatsby-source-filesystem'
+        },
+        'gatsby-transformer-remark',
         'gatsby-plugin-sass',
         'gatsby-plugin-postcss',
         'gatsby-transformer-sharp',
