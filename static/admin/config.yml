@@ -32,3 +32,18 @@ collections:
           - { label: Page Title, name: pageTitle, widget: string }
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
+      - label: '404 Page'
+        name: '404'
+        file: 'static/content/404.md'
+        fields:
+          - { label: Page Title, name: pageTitle, widget: string }
+  - label: 'Globals'
+    name: 'globals'
+    files:
+      - label: 'Header'
+        name: 'header'
+        file: 'static/content/header.md'
+        widget: 'list'
+        fields:
+          - { label: URL Name, name: urlName, widget: string }
+          - { label: URL, name: url, widget: relation }
