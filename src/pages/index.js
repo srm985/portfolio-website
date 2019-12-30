@@ -42,34 +42,31 @@ const IndexPage = (props) => {
 };
 
 export const query = graphql`
-  query {
-    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "home"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              heroImage {
-                childImageSharp {
-                  fluid(maxWidth: 1600) {
-                    src
-                  }
+    query {
+        allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "home"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            heroImage {
+                                childImageSharp {
+                                    fluid(maxWidth: 1600) {
+                                        src
+                                    }
+                                }
+                            }
+                            heroTitle
+                            pageTitle
+                        }
+                    }
                 }
-              }
-              heroTitle
-              pageTitle
-          }
+            }
         }
-      }
     }
-  }
-}`;
+`;
 
 IndexPage.propTypes = {
-    data: PropTypes.shape({
-        heroImage: PropTypes.string,
-        heroTitle: PropTypes.string,
-        pageTitle: PropTypes.string
-    })
+    data: PropTypes.shape({})
 };
 
 IndexPage.defaultProps = {

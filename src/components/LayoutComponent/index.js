@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
+    graphql,
+    StaticQuery
+} from 'gatsby';
+import {
     Helmet
 } from 'react-helmet';
 
@@ -40,7 +44,33 @@ const LayoutComponent = (props) => {
                 defer={false}
                 title={pageTitle}
             />
-            {hasHeader && <Header />}
+            {
+                hasHeader && (
+                    <StaticQuery
+                        query={
+                            graphql`
+                                query {
+                                    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "header"}}) {
+                                        edges {
+                                            node {
+                                                childMarkdownRemark {
+                                                    frontmatter {
+                                                        headerLinks {
+                                                            pageName
+                                                            pageURL
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            `
+                        }
+                        render={(data) => <Header data={data} />}
+                    />
+                )
+            }
             <main className={mainContentClassNames}>
                 {children}
             </main>

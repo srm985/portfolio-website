@@ -49,5 +49,5 @@ collections:
             name: 'headerLinks'
             widget: 'list'
             fields:
-              - { label: Link Name, name: linkName, widget: string }
+              - { label: Page Name, name: pageName, widget: string }
               - { label: Page URL, name: pageURL, widget: string }
