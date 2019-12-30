@@ -44,7 +44,10 @@ collections:
         label: 'Header'
         name: 'header'
         file: 'static/content/header.md'
-        widget: 'list'
         fields:
-          - { label: URL Name, name: urlName, widget: string }
-          - { label: URL, name: url, widget: string }
+          - label: 'Header Links'
+            name: 'headerLinks'
+            widget: 'list'
+            fields:
+              - { label: Link Name, name: linkName, widget: string }
+              - { label: Page URL, name: pageURL, widget: string }

@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    graphql
+} from 'gatsby';
 
 import Button from '../ButtonComponent';
 
@@ -42,8 +45,12 @@ class HeaderComponent extends React.PureComponent {
 
     render() {
         const {
-            hasScrolled
-        } = this.state;
+            state: {
+                hasScrolled
+            }
+        } = this;
+
+        console.log('props:', this.props);
 
         const {
             displayName
@@ -89,6 +96,21 @@ class HeaderComponent extends React.PureComponent {
         );
     }
 }
+
+export const query = graphql`
+  query {
+    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "header"}}) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              headerLinks
+          }
+        }
+      }
+    }
+  }
+}`;
 
 HeaderComponent.displayName = 'HeaderComponent';
 
