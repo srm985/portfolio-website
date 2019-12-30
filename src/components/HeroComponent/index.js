@@ -1,5 +1,7 @@
+import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+
 
 import classNames from '../../utils/classNames';
 
@@ -37,13 +39,11 @@ const HeroComponent = (props) => {
 
     return (
         <div className={componentClassNames}>
-            <picture>
-                <img
-                    alt={alt}
-                    className={`${displayName}__hero-image`}
-                    src={defaultSource}
-                />
-            </picture>
+            <Image
+                alt={alt}
+                className={`${displayName}__hero-image`}
+                fluid={defaultSource}
+            />
             {
                 overlayColor && (
                     <div className={overlayClassNames} />

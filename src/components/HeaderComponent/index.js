@@ -35,10 +35,6 @@ class HeaderComponent extends React.PureComponent {
 
         const hasScrolled = !!(body.scrollTop || documentElement.scrollTop);
 
-        console.log({
-            hasScrolled
-        });
-
         this.setState({
             hasScrolled
         });

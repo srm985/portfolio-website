@@ -29,8 +29,6 @@ const ButtonComponent = (props) => {
         type
     } = props;
 
-    console.log(children, label);
-
     const buttonLabel = (
         children
             ? (

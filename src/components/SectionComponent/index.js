@@ -13,11 +13,11 @@ const SectionComponent = (props) => {
     } = SectionComponent;
 
     return (
-        <div className={displayName}>
+        <section className={displayName}>
             {
                 children
             }
-        </div>
+        </section>
     );
 };
 

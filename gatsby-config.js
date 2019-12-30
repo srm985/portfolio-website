@@ -23,6 +23,12 @@ module.exports = {
         'gatsby-plugin-netlify-cms',
         {
             options: {
+                cmsConfig: '/static/admin/config.yml'
+            },
+            resolve: 'gatsby-plugin-netlify-cms-paths'
+        },
+        {
+            options: {
                 background_color: '#663399',
                 display: 'minimal-ui',
                 icon: 'src/images/gatsby-icon.png',

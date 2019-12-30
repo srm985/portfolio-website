@@ -6,6 +6,7 @@ import {
 
 import Hero from '../components/HeroComponent';
 import Layout from '../components/LayoutComponent';
+import Section from '../components/SectionComponent';
 
 import {
     OVERLAY_BLACK
@@ -19,7 +20,11 @@ const IndexPage = (props) => {
     } = props;
 
     const {
-        heroImage,
+        heroImage: {
+            childImageSharp: {
+                fluid
+            }
+        },
         pageTitle
     } = destructureNetlifyCMS(data);
 
@@ -27,9 +32,11 @@ const IndexPage = (props) => {
         <Layout pageTitle={pageTitle}>
             <Hero
                 alt={'placeholder image'}
-                defaultSource={heroImage}
+                defaultSource={fluid}
                 overlayColor={OVERLAY_BLACK}
             />
+            <Section />
+            <Section />
         </Layout>
     );
 };
@@ -41,7 +48,13 @@ export const query = graphql`
         node {
           childMarkdownRemark {
             frontmatter {
-              heroImage
+              heroImage {
+                childImageSharp {
+                  fluid(maxWidth: 1600) {
+                    src
+                  }
+                }
+              }
               heroTitle
               pageTitle
           }

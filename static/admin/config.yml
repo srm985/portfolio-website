@@ -15,6 +15,20 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - {label: Page Title, name: pageTitle, widget: string}
-          - {label: Hero Title, name: heroTitle, widget: string}
-          - {label: Hero Image, name: heroImage, widget: image}
+          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Image, name: heroImage, widget: image }
+      - label: 'Portfolio Page'
+        name: 'portfolio'
+        file: 'static/content/portfolio.md'
+        fields:
+          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Image, name: heroImage, widget: image }
+      - label: 'Contact Page'
+        name: 'contact'
+        file: 'static/content/contact.md'
+        fields:
+          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Image, name: heroImage, widget: image }
