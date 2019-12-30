@@ -40,7 +40,8 @@ collections:
   - label: 'Globals'
     name: 'globals'
     files:
-      - label: 'Header'
+      - allow_add: true
+        label: 'Header'
         name: 'header'
         file: 'static/content/header.md'
         widget: 'list'
