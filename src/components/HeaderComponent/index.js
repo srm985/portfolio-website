@@ -98,23 +98,7 @@ class HeaderComponent extends React.Component {
             <header className={componentClassNames}>
                 <span className={`${displayName}__logo`}>Sean McQuay</span>
                 <ul className={`${displayName}__navigation`}>
-
-                    <li>
-                        <Button
-                            className={`${displayName}__navigation-link`}
-                            href={'/'}
-                            label={'Work'}
-                            styleType={BUTTON_STYLE_TYPE_INLINE}
-                        />
-                    </li>
-                    <li>
-                        <Button
-                            className={`${displayName}__navigation-link`}
-                            href={'/'}
-                            label={'Contact'}
-                            styleType={BUTTON_STYLE_TYPE_INLINE}
-                        />
-                    </li>
+                    {this.renderLinks()}
                 </ul>
             </header>
         );
