@@ -94,6 +94,9 @@ class HeaderComponent extends React.Component {
 
     render() {
         const {
+            props: {
+                data
+            },
             state: {
                 hasScrolled
             }
@@ -102,6 +105,10 @@ class HeaderComponent extends React.Component {
         const {
             displayName
         } = HeaderComponent;
+
+        const {
+            logoCopy
+        } = destructureNetlifyCMS(data);
 
         const componentClassNames = classNames(
             displayName,
@@ -117,7 +124,7 @@ class HeaderComponent extends React.Component {
                         className={`${displayName}__logo-icon`}
                         icon={logoIcon}
                     />
-                    <p>SEAN MCQUAY</p>
+                    <p>{logoCopy}</p>
                 </div>
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
