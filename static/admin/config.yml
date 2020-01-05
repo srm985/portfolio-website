@@ -56,7 +56,7 @@ collections:
         name: 'footer'
         file: 'static/content/footer.md'
         fields:
-          - { label: Footer Copy, name: footerCopy, widget: string }
+          - { label: Footer Copy, name: footerCopy, widget: text }
           - { label: LinkedIn URL, name: linkedInURL, widget: string }
           - { label: GitHub URL, name: gitHubURL, widget: string }
           - { label: Stack Overflow URL, name: stackOverflowURL, widget: string }
