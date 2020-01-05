@@ -32,7 +32,7 @@ module.exports = {
             options: {
                 background_color: '#663399',
                 display: 'minimal-ui',
-                // This path is relative to the root of the site.
+                icon: 'src/assets/icons/logo.png',
                 name: 'gatsby-starter-default',
                 short_name: 'starter',
                 start_url: '/',

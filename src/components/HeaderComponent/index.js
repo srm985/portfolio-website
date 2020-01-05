@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
+import Icon from '../IconComponent';
 
 import {
     BUTTON_STYLE_TYPE_INLINE
@@ -9,6 +10,10 @@ import {
 
 import classNames from '../../utils/classNames';
 import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
+
+import {
+    logoIcon
+} from '../../assets/icons';
 
 import './styles.scss';
 
@@ -46,12 +51,26 @@ class HeaderComponent extends React.Component {
         const {
             props: {
                 data
+            },
+            state: {
+                hasScrolled
             }
         } = this;
 
         const {
+            displayName
+        } = HeaderComponent;
+
+        const {
             headerLinks = []
         } = destructureNetlifyCMS(data);
+
+        const linkClassNames = classNames(
+            `${displayName}__navigation-link`,
+            {
+                [`${displayName}__navigation-link--scrolled`]: hasScrolled
+            }
+        );
 
         return headerLinks.map((headerLink) => {
             const {
@@ -59,15 +78,11 @@ class HeaderComponent extends React.Component {
                 pageURL
             } = headerLink;
 
-            const {
-                displayName
-            } = HeaderComponent;
-
             return (
                 <li key={pageURL}>
                     <Button
                         activeLinkClassName={`${displayName}__navigation-link--active`}
-                        className={`${displayName}__navigation-link`}
+                        className={linkClassNames}
                         href={pageURL}
                         label={pageName}
                         styleType={BUTTON_STYLE_TYPE_INLINE}
@@ -97,7 +112,13 @@ class HeaderComponent extends React.Component {
 
         return (
             <header className={componentClassNames}>
-                <span className={`${displayName}__logo`}>Sean McQuay</span>
+                <div className={`${displayName}__logo`}>
+                    <Icon
+                        className={`${displayName}__logo-icon`}
+                        icon={logoIcon}
+                    />
+                    <p>SEAN MCQUAY</p>
+                </div>
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
                 </ul>

@@ -45,6 +45,7 @@ collections:
         name: 'header'
         file: 'static/content/header.md'
         fields:
+          - { label: Logo Copy, name: logoCopy, widget: string }
           - label: 'Header Links'
             name: 'headerLinks'
             widget: 'list'

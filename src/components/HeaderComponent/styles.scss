@@ -15,19 +15,31 @@
     padding: 0 $padding-large;
 
     color: $color-white;
+    font-family: $font-stack;
 
     background-color: adjust-color($color: $color-white, $alpha: -1);
 
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 
     &--scrolled {
-        color: $color-gray-dark;
+        color: $color-black;
 
-        background-color: $color-white;
+        background-color: rgba($color-white, 0.8);
     }
 
     &__logo {
+        display: flex;
+        align-items: center;
+
         color: inherit;
+        font-weight: bold;
+        font-size: $font-size-large;
+    }
+
+    &__logo-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: $planck-length;
     }
 
     &__navigation {
@@ -58,6 +70,12 @@
             transition: width $transition-timing-function-default $transition-slow;
 
             content: '';
+        }
+
+        &--scrolled {
+            &::before {
+                background-color: $color-black;
+            }
         }
 
         &--active {

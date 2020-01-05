@@ -29,6 +29,7 @@ $color-white: #fff;
 $font-stack: 'Lato', sans-serif;
 
 // Font Sizes
+$font-size-large: 22px;
 $font-size-regular: 16px;
 $font-size-small: 12px;
 
@@ -41,7 +42,7 @@ $padding-small: $planck-length;
 $padding-large: #{2 * $planck-length};
 
 // Header Height
-$header-height: 50px;
+$header-height: #{$planck-length * 8};
 
 // Footer Height
 $footer-height: 50px;
