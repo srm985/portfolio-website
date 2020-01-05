@@ -55,7 +55,7 @@
 
             background-color: $color-white;
 
-            transition: width $transition-timing-function-default $transition-fast;
+            transition: width $transition-timing-function-default $transition-slow;
 
             content: '';
         }

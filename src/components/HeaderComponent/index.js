@@ -56,7 +56,7 @@ class HeaderComponent extends React.Component {
         } = window;
 
         const {
-            headerLinks
+            headerLinks = []
         } = destructureNetlifyCMS(data);
 
         return headerLinks.map((headerLink) => {
@@ -79,7 +79,7 @@ class HeaderComponent extends React.Component {
             );
 
             return (
-                <li>
+                <li key={pageURL}>
                     <Button
                         className={navigationLinkClassNames}
                         href={pageURL}

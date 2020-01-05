@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 import './styles.scss';
 
 const IconComponent = (props) => {
     const {
-        handleClick,
+        className,
         icon
     } = props;
 
@@ -13,29 +15,34 @@ const IconComponent = (props) => {
         displayName
     } = IconComponent;
 
+    const componentClassNames = classNames(
+        displayName,
+        className
+    );
+
+    const svgAttributes = {
+        fill: 'currentColor',
+        height: 50,
+        viewBox: '0 0 50 50',
+        width: 50
+    };
+
     return (
-        <div
-            className={displayName}
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-                __html: icon
-            }}
-            onClick={handleClick}
-            role={'button'}
-            tabIndex={0}
-        />
+        <div className={componentClassNames}>
+            {icon(svgAttributes)}
+        </div>
     );
 };
 
 IconComponent.displayName = 'IconComponent';
 
 IconComponent.propTypes = {
-    handleClick: PropTypes.func,
-    icon: PropTypes.string.isRequired
+    className: PropTypes.string,
+    icon: PropTypes.func.isRequired
 };
 
 IconComponent.defaultProps = {
-    handleClick: () => { }
+    className: ''
 };
 
 export default IconComponent;

@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-    graphql,
-    StaticQuery
-} from 'gatsby';
-import {
     Helmet
 } from 'react-helmet';
 
@@ -12,6 +8,8 @@ import Footer from '../FooterComponent';
 import Header from '../HeaderComponent';
 
 import classNames from '../../utils/classNames';
+
+import Query from './queries';
 
 // Global SCSS Files
 import '../../styles/styles.scss';
@@ -21,8 +19,10 @@ import './styles.scss';
 const LayoutComponent = (props) => {
     const {
         children,
+        footerQuery: footerData,
         hasFooter,
         hasHeader,
+        headerQuery: headerData,
         pageTitle
     } = props;
 
@@ -45,36 +45,14 @@ const LayoutComponent = (props) => {
                 title={pageTitle}
             />
             {
-                hasHeader && (
-                    <StaticQuery
-                        query={
-                            graphql`
-                                query {
-                                    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "header"}}) {
-                                        edges {
-                                            node {
-                                                childMarkdownRemark {
-                                                    frontmatter {
-                                                        headerLinks {
-                                                            pageName
-                                                            pageURL
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            `
-                        }
-                        render={(data) => <Header data={data} />}
-                    />
-                )
+                hasHeader && <Header data={headerData} />
             }
             <main className={mainContentClassNames}>
                 {children}
             </main>
-            {hasFooter && <Footer />}
+            {
+                hasFooter && <Footer data={footerData} />
+            }
         </div>
     );
 };
@@ -83,14 +61,24 @@ LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
+    footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
     hasHeader: PropTypes.bool,
+    headerQuery: PropTypes.shape({}),
     pageTitle: PropTypes.string.isRequired
 };
 
 LayoutComponent.defaultProps = {
+    footerQuery: {},
     hasFooter: true,
-    hasHeader: true
+    hasHeader: true,
+    headerQuery: {}
 };
 
-export default LayoutComponent;
+const LayoutComponentConnected = (props) => (
+    <Query>
+        <LayoutComponent {...props} />
+    </Query>
+);
+
+export default LayoutComponentConnected;

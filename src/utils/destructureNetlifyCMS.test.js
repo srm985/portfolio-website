@@ -1,20 +1,18 @@
 import destructureNetlifyCMS from './destructureNetlifyCMS';
 
 const MOCKED_RESPONSE = {
-    allFile: {
-        edges: [
-            {
-                node: {
-                    childMarkdownRemark: {
-                        frontmatter: {
-                            bar: 1,
-                            foo: 2
-                        }
+    edges: [
+        {
+            node: {
+                childMarkdownRemark: {
+                    frontmatter: {
+                        bar: 1,
+                        foo: 2
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 };
 
 describe('Util destructureNetlifyCMS', () => {

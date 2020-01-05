@@ -3,8 +3,36 @@
 .FooterComponent {
     z-index: $z-index-footer;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
     width: 100%;
-    height: $footer-height;
+    padding: #{$planck-length * 2};
 
     background-color: $color-orange;
+
+    &__copy {
+        margin-bottom: #{$planck-length * 2};
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    &__link-icon {
+        width: 30px;
+        height: 30px;
+
+        color: $color-white;
+
+        transition: transform $transition-timing-function-default $transition-fast;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }

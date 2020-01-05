@@ -16,7 +16,9 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const IndexPage = (props) => {
     const {
-        data
+        data: {
+            pageQuery
+        } = {}
     } = props;
 
     const {
@@ -26,7 +28,7 @@ const IndexPage = (props) => {
             }
         },
         pageTitle
-    } = destructureNetlifyCMS(data);
+    } = destructureNetlifyCMS(pageQuery);
 
     return (
         <Layout pageTitle={pageTitle}>
@@ -43,7 +45,7 @@ const IndexPage = (props) => {
 
 export const query = graphql`
     query {
-        allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "home"}}) {
+        pageQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "home"}}) {
             edges {
                 node {
                     childMarkdownRemark {

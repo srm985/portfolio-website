@@ -127,6 +127,9 @@
         "react/jsx-one-expression-per-line": [
             0
         ],
+        "react/jsx-props-no-spreading": [
+            0
+        ],
         "react/no-did-update-set-state": [
             0
         ],

@@ -25,9 +25,14 @@ const ButtonComponent = (props) => {
         href,
         isInternalURL,
         label,
+        shouldOpenInNewTab,
         styleType,
         type
     } = props;
+
+    const {
+        displayName
+    } = ButtonComponent;
 
     const buttonLabel = (
         children
@@ -41,7 +46,7 @@ const ButtonComponent = (props) => {
     );
 
     const buttonClassNames = classNames(
-        ButtonComponent.displayName,
+        displayName,
         className,
         {
             [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
@@ -50,6 +55,8 @@ const ButtonComponent = (props) => {
             [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
         }
     );
+
+    const targetType = !isInternalURL && shouldOpenInNewTab ? '_blank' : '';
 
     const renderLinkType = () => (
         isInternalURL
@@ -65,6 +72,8 @@ const ButtonComponent = (props) => {
                 <a
                     className={buttonClassNames}
                     href={href}
+                    rel={'noopener noreferrer'}
+                    target={targetType}
                 >
                     {buttonLabel}
                 </a>
@@ -98,6 +107,7 @@ ButtonComponent.propTypes = {
     href: PropTypes.string,
     isInternalURL: PropTypes.bool,
     label: PropTypes.string,
+    shouldOpenInNewTab: PropTypes.bool,
     styleType: PropTypes.oneOf(BUTTON_STYLE_TYPES),
     type: PropTypes.oneOf(BUTTON_TYPES)
 };
@@ -108,6 +118,7 @@ ButtonComponent.defaultProps = {
     href: '',
     isInternalURL: true,
     label: '',
+    shouldOpenInNewTab: true,
     styleType: BUTTON_STYLE_TYPE_PRIMARY,
     type: BUTTON_TYPE_BUTTON
 };

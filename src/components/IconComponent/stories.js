@@ -7,15 +7,6 @@ import IconComponent from './index';
 
 const stories = storiesOf(IconComponent.displayName, module);
 
-stories.add('default', () => {
-    const clickEvent = () => {
-        alert('icon clicked');
-    };
-
-    return (
-        <IconComponent
-            handleClick={clickEvent}
-            icon={''}
-        />
-    );
-});
+stories.add('default', () => (
+    <IconComponent icon={''} />
+));
