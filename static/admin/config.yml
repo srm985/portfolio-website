@@ -51,3 +51,12 @@ collections:
             fields:
               - { label: Page Name, name: pageName, widget: string }
               - { label: Page URL, name: pageURL, widget: string }
+      - allow_add: true
+        label: 'Footer'
+        name: 'footer'
+        file: 'static/content/footer.md'
+        fields:
+          - { label: Footer Copy, name: footerCopy, widget: string }
+          - { label: LinkedIn URL, name: linkedInURL, widget: string }
+          - { label: GitHub URL, name: gitHubURL, widget: string }
+          - { label: Stack Overflow URL, name: stackOverflowURL, widget: string }

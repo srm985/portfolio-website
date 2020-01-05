@@ -40,6 +40,36 @@
     }
 
     &__navigation-link {
+        position: relative;
+
         color: inherit;
+        text-decoration: none;
+
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 0;
+            height: $border-thickness-default;
+
+            background-color: $color-white;
+
+            transition: width $transition-timing-function-default $transition-fast;
+
+            content: '';
+        }
+
+        &--active {
+            &::before {
+                width: 75%;
+            }
+        }
+
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
     }
 }

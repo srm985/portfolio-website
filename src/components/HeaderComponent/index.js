@@ -50,6 +50,12 @@ class HeaderComponent extends React.Component {
         } = this;
 
         const {
+            location: {
+                pathname = ''
+            } = {}
+        } = window;
+
+        const {
             headerLinks
         } = destructureNetlifyCMS(data);
 
@@ -63,10 +69,19 @@ class HeaderComponent extends React.Component {
                 displayName
             } = HeaderComponent;
 
+            const isCurrentPage = pathname.replace(/^\//, '').toLowerCase() === pageURL.replace(/^\//, '').toLowerCase();
+
+            const navigationLinkClassNames = classNames(
+                `${displayName}__navigation-link`,
+                {
+                    [`${displayName}__navigation-link--active`]: isCurrentPage
+                }
+            );
+
             return (
                 <li>
                     <Button
-                        className={`${displayName}__navigation-link`}
+                        className={navigationLinkClassNames}
                         href={pageURL}
                         label={pageName}
                         styleType={BUTTON_STYLE_TYPE_INLINE}

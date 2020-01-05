@@ -33,6 +33,7 @@ $font-size-regular: 16px;
 $font-size-small: 12px;
 
 // Borders
+$border-thickness-default: 1px;
 $border-radius-default: 5px;
 
 // Padding
@@ -50,5 +51,9 @@ $z-index-modal: 9999;
 $z-index-header: 9998;
 $z-index-footer: 9997;
 $z-index-fab-button: 9996;
+
+// Transitions
+$transition-timing-function-default: ease-in-out;
+$transition-fast: 0.15s;
 
 /* stylelint-enable */
