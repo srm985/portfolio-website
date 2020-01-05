@@ -1,4 +1,5 @@
 ---
+logoCopy: SEAN MCQUAY
 headerLinks:
   - pageName: Home
     pageURL: /
