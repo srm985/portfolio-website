@@ -20,6 +20,7 @@ import './styles.scss';
 
 const ButtonComponent = (props) => {
     const {
+        activeLinkClassName,
         children,
         className,
         href,
@@ -62,6 +63,7 @@ const ButtonComponent = (props) => {
         isInternalURL
             ? (
                 <Link
+                    activeClassName={activeLinkClassName}
                     className={buttonClassNames}
                     to={href}
                 >
@@ -102,6 +104,7 @@ const ButtonComponent = (props) => {
 };
 
 ButtonComponent.propTypes = {
+    activeLinkClassName: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
     href: PropTypes.string,
@@ -113,6 +116,7 @@ ButtonComponent.propTypes = {
 };
 
 ButtonComponent.defaultProps = {
+    activeLinkClassName: '',
     children: '',
     className: '',
     href: '',
