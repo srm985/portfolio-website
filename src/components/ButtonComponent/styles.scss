@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    min-width: 120px;
-    height: 40px;
-    padding: 0 10px;
+    min-width: #{$planck-length * 15};
+    height: #{$planck-length * 5};
+    padding: 0 #{$planck-length};
 
     font-size: $font-size-regular;
     line-height: $font-size-regular;
@@ -25,7 +25,7 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
+    transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow;
 
     &--primary {
         @extend %button;

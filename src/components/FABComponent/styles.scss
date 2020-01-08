@@ -1,12 +1,12 @@
 @import '../../styles/constants';
 @import '../../styles/mixins';
 
-$fab-diameter: 40px;
+$fab-diameter: #{$planck-length * 5};
 
 .FABComponent {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: #{$planck-length * 2};
+    bottom: #{$planck-length * 2};
     z-index: $z-index-fab-button;
 
     display: flex;
