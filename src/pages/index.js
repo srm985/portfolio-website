@@ -6,6 +6,8 @@ import {
 
 import IndexPageTemplate from '../templates/IndexPageTemplate';
 
+import Layout from '../components/LayoutComponent';
+
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const IndexPage = (props) => {
@@ -18,7 +20,9 @@ const IndexPage = (props) => {
     const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
-        <IndexPageTemplate {...pageData} />
+        <Layout {...pageData}>
+            <IndexPageTemplate />
+        </Layout>
     );
 };
 

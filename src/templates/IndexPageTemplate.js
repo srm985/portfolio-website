@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Hero from '../components/HeroComponent';
-import Layout from '../components/LayoutComponent';
 import Section from '../components/SectionComponent';
 
 import {
@@ -15,12 +14,11 @@ const IndexPageTemplate = (props) => {
             childImageSharp: {
                 fluid
             }
-        },
-        pageTitle
+        }
     } = props;
 
     return (
-        <Layout pageTitle={pageTitle}>
+        <>
             <Hero
                 alt={'placeholder image'}
                 defaultSource={fluid}
@@ -28,7 +26,7 @@ const IndexPageTemplate = (props) => {
             />
             <Section />
             <Section />
-        </Layout>
+        </>
     );
 };
 
@@ -37,13 +35,11 @@ IndexPageTemplate.propTypes = {
         childImageSharp: PropTypes.shape({
             fluid: PropTypes.shape({})
         })
-    }),
-    pageTitle: PropTypes.string
+    })
 };
 
 IndexPageTemplate.defaultProps = {
-    heroImage: {},
-    pageTitle: ''
+    heroImage: {}
 };
 
 export default IndexPageTemplate;

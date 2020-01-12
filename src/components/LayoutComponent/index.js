@@ -52,7 +52,11 @@ const LayoutComponent = (props) => {
                 hasHeader && <Header {...headerData} />
             }
             <main className={mainContentClassNames}>
-                {children}
+                {
+                    React.cloneElement(children, {
+                        ...props
+                    })
+                }
             </main>
             {
                 hasFooter && <Footer {...footerData} />

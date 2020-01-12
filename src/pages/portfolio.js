@@ -6,6 +6,8 @@ import {
 
 import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
 
+import Layout from '../components/LayoutComponent';
+
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const PortfolioPage = (props) => {
@@ -16,7 +18,9 @@ const PortfolioPage = (props) => {
     const pageData = destructureNetlifyCMS(data);
 
     return (
-        <PortfolioPageTemplate {...pageData} />
+        <Layout {...pageData}>
+            <PortfolioPageTemplate />
+        </Layout>
     );
 };
 

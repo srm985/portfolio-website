@@ -6,6 +6,8 @@ import {
 
 import ContactPageTemplate from '../templates/ContactPageTemplate';
 
+import Layout from '../components/LayoutComponent';
+
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const ContactPage = (props) => {
@@ -16,7 +18,9 @@ const ContactPage = (props) => {
     const pageData = destructureNetlifyCMS(data);
 
     return (
-        <ContactPageTemplate {...pageData} />
+        <Layout {...pageData}>
+            <ContactPageTemplate />
+        </Layout>
     );
 };
 
