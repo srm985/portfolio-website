@@ -128,7 +128,10 @@ class HeaderComponent extends React.Component {
 HeaderComponent.displayName = 'HeaderComponent';
 
 HeaderComponent.propTypes = {
-    headerLinks: PropTypes.arrayOf(PropTypes.string),
+    headerLinks: PropTypes.arrayOf(PropTypes.shape({
+        pageName: PropTypes.string,
+        pageURL: PropTypes.string
+    })),
     logoCopy: PropTypes.string
 };
 

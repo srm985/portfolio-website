@@ -23,15 +23,11 @@ collections:
         file: 'static/content/portfolio.md'
         fields:
           - { label: Page Title, name: pageTitle, widget: string }
-          - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero Image, name: heroImage, widget: image }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
           - { label: Page Title, name: pageTitle, widget: string }
-          - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero Image, name: heroImage, widget: image }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'
@@ -60,4 +56,8 @@ collections:
           - { label: Footer Copy, name: footerCopy, widget: text }
           - { label: LinkedIn URL, name: linkedInURL, widget: string }
           - { label: GitHub URL, name: gitHubURL, widget: string }
-          - { label: Stack Overflow URL, name: stackOverflowURL, widget: string }
+          - {
+              label: Stack Overflow URL,
+              name: stackOverflowURL,
+              widget: string,
+            }

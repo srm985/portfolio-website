@@ -4,13 +4,7 @@ import {
     graphql
 } from 'gatsby';
 
-import Hero from '../components/HeroComponent';
-import Layout from '../components/LayoutComponent';
-import Section from '../components/SectionComponent';
-
-import {
-    OVERLAY_BLACK
-} from '../components/HeroComponent/config';
+import IndexPageTemplate from '../templates/IndexPageTemplate';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
@@ -21,25 +15,10 @@ const IndexPage = (props) => {
         } = {}
     } = props;
 
-    const {
-        heroImage: {
-            childImageSharp: {
-                fluid
-            }
-        },
-        pageTitle
-    } = destructureNetlifyCMS(pageQuery);
+    const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
-        <Layout pageTitle={pageTitle}>
-            <Hero
-                alt={'placeholder image'}
-                defaultSource={fluid}
-                overlayColor={OVERLAY_BLACK}
-            />
-            <Section />
-            <Section />
-        </Layout>
+        <IndexPageTemplate {...pageData} />
     );
 };
 

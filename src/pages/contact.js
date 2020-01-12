@@ -4,7 +4,7 @@ import {
     graphql
 } from 'gatsby';
 
-import Layout from '../components/LayoutComponent';
+import ContactPageTemplate from '../templates/ContactPageTemplate';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
@@ -13,18 +13,16 @@ const ContactPage = (props) => {
         data
     } = props;
 
-    const {
-        pageTitle
-    } = destructureNetlifyCMS(data);
+    const pageData = destructureNetlifyCMS(data);
 
     return (
-        <Layout pageTitle={pageTitle} />
+        <ContactPageTemplate {...pageData} />
     );
 };
 
 export const query = graphql`
   query {
-    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "portfolio"}}) {
+    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "contact"}}) {
       edges {
         node {
           childMarkdownRemark {

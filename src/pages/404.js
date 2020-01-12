@@ -1,14 +1,9 @@
 import React from 'react';
 
-import Layout from '../components/LayoutComponent';
+import NotFoundPageTemplate from '../templates/404PageTemplate';
 
 const NotFoundPage = () => (
-    <Layout
-        hasFooter={false}
-        hasHeader={false}
-    >
-        <h1>NOT FOUND</h1>
-    </Layout>
+    <NotFoundPageTemplate />
 );
 
 export default NotFoundPage;

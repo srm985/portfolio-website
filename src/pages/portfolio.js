@@ -4,7 +4,7 @@ import {
     graphql
 } from 'gatsby';
 
-import Layout from '../components/LayoutComponent';
+import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
@@ -13,12 +13,10 @@ const PortfolioPage = (props) => {
         data
     } = props;
 
-    const {
-        pageTitle
-    } = destructureNetlifyCMS(data);
+    const pageData = destructureNetlifyCMS(data);
 
     return (
-        <Layout pageTitle={pageTitle} />
+        <PortfolioPageTemplate {...pageData} />
     );
 };
 

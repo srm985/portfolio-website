@@ -39,16 +39,8 @@ const LayoutComponent = (props) => {
         }
     );
 
-    console.log({
-        headerQuery
-    });
-
     const headerData = destructureNetlifyCMS(headerQuery);
     const footerData = destructureNetlifyCMS(footerQuery);
-
-    console.log({
-        headerData
-    });
 
     return (
         <div className={displayName}>

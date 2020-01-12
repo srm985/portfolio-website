@@ -8,8 +8,6 @@ import {
     BUTTON_STYLE_TYPE_INLINE
 } from '../ButtonComponent/config';
 
-import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
-
 import {
     gitHubIcon,
     linkedInIcon,
@@ -20,19 +18,15 @@ import './styles.scss';
 
 const FooterComponent = (props) => {
     const {
-        data
+        footerCopy,
+        gitHubURL,
+        linkedInURL,
+        stackOverflowURL
     } = props;
 
     const {
         displayName
     } = FooterComponent;
-
-    const {
-        footerCopy,
-        gitHubURL,
-        linkedInURL,
-        stackOverflowURL
-    } = destructureNetlifyCMS(data);
 
     const renderLinkButton = (linkIcon, linkURL) => (
         <Button
@@ -68,11 +62,17 @@ const FooterComponent = (props) => {
 FooterComponent.displayName = 'FooterComponent';
 
 FooterComponent.propTypes = {
-    data: PropTypes.shape({})
+    footerCopy: PropTypes.string,
+    gitHubURL: PropTypes.string,
+    linkedInURL: PropTypes.string,
+    stackOverflowURL: PropTypes.string
 };
 
 FooterComponent.defaultProps = {
-    data: {}
+    footerCopy: '',
+    gitHubURL: '',
+    linkedInURL: '',
+    stackOverflowURL: ''
 };
 
 export default FooterComponent;
