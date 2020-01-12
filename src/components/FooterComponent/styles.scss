@@ -10,7 +10,9 @@
     width: 100%;
     padding: #{$planck-length * 2};
 
-    background-color: $color-orange;
+    color: $color-white;
+
+    background-color: $color-black;
 
     &__copy {
         margin-bottom: #{$planck-length * 2};

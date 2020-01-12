@@ -1,143 +1,70 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
-import Button from '../ButtonComponent';
-import Icon from '../IconComponent';
+import HeaderDesktop from '../HeaderDesktopComponent';
+import HeaderMobile from '../HeaderMobileComponent';
 
-import {
-    BUTTON_STYLE_TYPE_INLINE
-} from '../ButtonComponent/config';
-
-import classNames from '../../utils/classNames';
-
-import {
-    logoIcon
-} from '../../assets/icons';
-
-import './styles.scss';
+import stylingConstants from '../../styles/constants.scss';
 
 class HeaderComponent extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            hasScrolled: false
+            isMobile: false
         };
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+
+        this.handleResize();
     }
 
     componentWillUnmount() {
-        document.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
     }
 
-    handleScroll = () => {
+    handleResize = () => {
         const {
-            body,
-            documentElement
-        } = document;
-
-        const hasScrolled = !!(body.scrollTop || documentElement.scrollTop);
-
-        this.setState({
-            hasScrolled
-        });
-    }
-
-    renderLinks = () => {
-        const {
-            props: {
-                headerLinks
-            },
             state: {
-                hasScrolled
+                isMobile
             }
         } = this;
 
         const {
-            displayName
-        } = HeaderComponent;
+            breakpointMedium = 0
+        } = stylingConstants;
 
-        const linkClassNames = classNames(
-            `${displayName}__navigation-link`,
-            {
-                [`${displayName}__navigation-link--scrolled`]: hasScrolled
-            }
-        );
+        const {
+            innerWidth: viewportWidth
+        } = window;
 
-        return headerLinks.map((headerLink) => {
-            const {
-                pageName,
-                pageURL
-            } = headerLink;
+        const isViewportMobile = viewportWidth < parseInt(breakpointMedium, 10);
+        const hasViewportTypeChanged = isViewportMobile !== isMobile;
 
-            return (
-                <li key={pageURL}>
-                    <Button
-                        activeLinkClassName={`${displayName}__navigation-link--active`}
-                        className={linkClassNames}
-                        href={pageURL}
-                        label={pageName}
-                        styleType={BUTTON_STYLE_TYPE_INLINE}
-                    />
-                </li>
-            );
-        });
+        if (hasViewportTypeChanged) {
+            this.setState({
+                isMobile: isViewportMobile
+            });
+        }
     }
 
     render() {
         const {
-            props: {
-                logoCopy
-            },
+            props,
             state: {
-                hasScrolled
+                isMobile
             }
         } = this;
 
-        const {
-            displayName
-        } = HeaderComponent;
-
-        const componentClassNames = classNames(
-            displayName,
-            {
-                [`${displayName}--scrolled`]: hasScrolled
-            }
-        );
-
         return (
-            <header className={componentClassNames}>
-                <div className={`${displayName}__logo`}>
-                    <Icon
-                        className={`${displayName}__logo-icon`}
-                        icon={logoIcon}
-                    />
-                    <p>{logoCopy}</p>
-                </div>
-                <ul className={`${displayName}__navigation`}>
-                    {this.renderLinks()}
-                </ul>
-            </header>
+            isMobile ? (
+                <HeaderMobile {...props} />
+            ) : (
+                <HeaderDesktop {...props} />
+            )
         );
     }
 }
-
-HeaderComponent.displayName = 'HeaderComponent';
-
-HeaderComponent.propTypes = {
-    headerLinks: PropTypes.arrayOf(PropTypes.shape({
-        pageName: PropTypes.string,
-        pageURL: PropTypes.string
-    })),
-    logoCopy: PropTypes.string
-};
-
-HeaderComponent.defaultProps = {
-    headerLinks: [],
-    logoCopy: ''
-};
 
 export default HeaderComponent;

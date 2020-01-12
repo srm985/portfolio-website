@@ -42,10 +42,6 @@ const LayoutComponent = (props) => {
     const headerData = destructureNetlifyCMS(headerQuery);
     const footerData = destructureNetlifyCMS(footerQuery);
 
-    console.log({
-        props
-    });
-
     return (
         <div className={displayName}>
             <Helmet

@@ -19,10 +19,6 @@ const ContactPage = (props) => {
 
     const pageData = destructureNetlifyCMS(pageQuery);
 
-    console.log({
-        pageData
-    });
-
     return (
         <Layout {...pageData}>
             <ContactPageTemplate />

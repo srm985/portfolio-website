@@ -1,7 +1,7 @@
 @import './constants';
 
 @mixin is-desktop {
-    @media only screen and (min-width: $breakpoint-small) {
+    @media only screen and (min-width: $breakpoint-medium) {
         @content;
     }
 }
