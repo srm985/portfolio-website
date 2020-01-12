@@ -42,6 +42,10 @@ const LayoutComponent = (props) => {
     const headerData = destructureNetlifyCMS(headerQuery);
     const footerData = destructureNetlifyCMS(footerQuery);
 
+    console.log({
+        props
+    });
+
     return (
         <div className={displayName}>
             <Helmet
@@ -73,14 +77,15 @@ LayoutComponent.propTypes = {
     hasFooter: PropTypes.bool,
     hasHeader: PropTypes.bool,
     headerQuery: PropTypes.shape({}),
-    pageTitle: PropTypes.string.isRequired
+    pageTitle: PropTypes.string
 };
 
 LayoutComponent.defaultProps = {
     footerQuery: {},
     hasFooter: true,
     hasHeader: true,
-    headerQuery: {}
+    headerQuery: {},
+    pageTitle: ''
 };
 
 const LayoutComponentConnected = (props) => (

@@ -12,10 +12,12 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const PortfolioPage = (props) => {
     const {
-        data
+        data: {
+            pageQuery
+        } = {}
     } = props;
 
-    const pageData = destructureNetlifyCMS(data);
+    const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
         <Layout {...pageData}>
@@ -25,19 +27,28 @@ const PortfolioPage = (props) => {
 };
 
 export const query = graphql`
-  query {
-    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "portfolio"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              pageTitle
-          }
+    query {
+        pageQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "portfolio"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            heroImage {
+                                childImageSharp {
+                                    fluid(maxWidth: 1600) {
+                                        src
+                                    }
+                                }
+                            }
+                            heroTitle
+                            pageTitle
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-}`;
+`;
 
 PortfolioPage.propTypes = {
     data: PropTypes.shape({

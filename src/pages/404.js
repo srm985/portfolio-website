@@ -12,10 +12,12 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const NotFoundPage = (props) => {
     const {
-        data
+        data: {
+            pageQuery
+        } = {}
     } = props;
 
-    const pageData = destructureNetlifyCMS(data);
+    const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
         <Layout
@@ -29,19 +31,28 @@ const NotFoundPage = (props) => {
 };
 
 export const query = graphql`
-  query {
-    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "404"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              pageTitle
-          }
+    query {
+        pageQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "404"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            heroImage {
+                                childImageSharp {
+                                    fluid(maxWidth: 1600) {
+                                        src
+                                    }
+                                }
+                            }
+                            heroTitle
+                            pageTitle
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-}`;
+`;
 
 NotFoundPage.propTypes = {
     data: PropTypes.shape({

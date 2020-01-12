@@ -12,10 +12,16 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
 const ContactPage = (props) => {
     const {
-        data
+        data: {
+            pageQuery
+        } = {}
     } = props;
 
-    const pageData = destructureNetlifyCMS(data);
+    const pageData = destructureNetlifyCMS(pageQuery);
+
+    console.log({
+        pageData
+    });
 
     return (
         <Layout {...pageData}>
@@ -25,19 +31,28 @@ const ContactPage = (props) => {
 };
 
 export const query = graphql`
-  query {
-    allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "contact"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              pageTitle
-          }
+    query {
+        pageQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "contact"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            heroImage {
+                                childImageSharp {
+                                    fluid(maxWidth: 1600) {
+                                        src
+                                    }
+                                }
+                            }
+                            heroTitle
+                            pageTitle
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-}`;
+`;
 
 ContactPage.propTypes = {
     data: PropTypes.shape({
