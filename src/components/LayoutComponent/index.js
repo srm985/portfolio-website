@@ -8,6 +8,7 @@ import Footer from '../FooterComponent';
 import Header from '../HeaderComponent';
 
 import classNames from '../../utils/classNames';
+import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
 
 import Query from './queries';
 
@@ -19,10 +20,10 @@ import './styles.scss';
 const LayoutComponent = (props) => {
     const {
         children,
-        footerQuery: footerData,
+        footerQuery,
         hasFooter,
         hasHeader,
-        headerQuery: headerData,
+        headerQuery,
         pageTitle
     } = props;
 
@@ -38,6 +39,17 @@ const LayoutComponent = (props) => {
         }
     );
 
+    console.log({
+        headerQuery
+    });
+
+    const headerData = destructureNetlifyCMS(headerQuery);
+    const footerData = destructureNetlifyCMS(footerQuery);
+
+    console.log({
+        headerData
+    });
+
     return (
         <div className={displayName}>
             <Helmet
@@ -45,13 +57,13 @@ const LayoutComponent = (props) => {
                 title={pageTitle}
             />
             {
-                hasHeader && <Header data={headerData} />
+                hasHeader && <Header {...headerData} />
             }
             <main className={mainContentClassNames}>
                 {children}
             </main>
             {
-                hasFooter && <Footer data={footerData} />
+                hasFooter && <Footer {...footerData} />
             }
         </div>
     );

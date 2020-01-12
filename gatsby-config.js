@@ -1,6 +1,8 @@
 module.exports = {
     plugins: [
         'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sass',
+        'gatsby-plugin-postcss',
         {
             options: {
                 name: 'images',
@@ -16,18 +18,9 @@ module.exports = {
             resolve: 'gatsby-source-filesystem'
         },
         'gatsby-transformer-remark',
-        'gatsby-plugin-sass',
-        'gatsby-plugin-postcss',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         'gatsby-plugin-react-svg',
-        'gatsby-plugin-netlify-cms',
-        {
-            options: {
-                cmsConfig: '/static/admin/config.yml'
-            },
-            resolve: 'gatsby-plugin-netlify-cms-paths'
-        },
         {
             options: {
                 background_color: '#663399',
@@ -49,6 +42,18 @@ module.exports = {
                 trackingId: 'UA-86885981-1'
             },
             resolve: 'gatsby-plugin-google-analytics'
+        },
+        {
+            options: {
+                modulePath: `${__dirname}/src/cms/cms.js`
+            },
+            resolve: 'gatsby-plugin-netlify-cms'
+        },
+        {
+            options: {
+                cmsConfig: '/static/admin/config.yml'
+            },
+            resolve: 'gatsby-plugin-netlify-cms-paths'
         }
     ],
     siteMetadata: {

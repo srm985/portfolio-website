@@ -5,8 +5,12 @@ import {
 
 import IconComponent from './index';
 
+import {
+    logoIcon
+} from '../../assets/icons';
+
 const stories = storiesOf(IconComponent.displayName, module);
 
 stories.add('default', () => (
-    <IconComponent icon={''} />
+    <IconComponent icon={logoIcon} />
 ));

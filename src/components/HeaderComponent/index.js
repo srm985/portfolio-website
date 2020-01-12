@@ -9,7 +9,6 @@ import {
 } from '../ButtonComponent/config';
 
 import classNames from '../../utils/classNames';
-import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
 
 import {
     logoIcon
@@ -50,7 +49,7 @@ class HeaderComponent extends React.Component {
     renderLinks = () => {
         const {
             props: {
-                data
+                headerLinks
             },
             state: {
                 hasScrolled
@@ -60,10 +59,6 @@ class HeaderComponent extends React.Component {
         const {
             displayName
         } = HeaderComponent;
-
-        const {
-            headerLinks = []
-        } = destructureNetlifyCMS(data);
 
         const linkClassNames = classNames(
             `${displayName}__navigation-link`,
@@ -95,7 +90,7 @@ class HeaderComponent extends React.Component {
     render() {
         const {
             props: {
-                data
+                logoCopy
             },
             state: {
                 hasScrolled
@@ -105,10 +100,6 @@ class HeaderComponent extends React.Component {
         const {
             displayName
         } = HeaderComponent;
-
-        const {
-            logoCopy
-        } = destructureNetlifyCMS(data);
 
         const componentClassNames = classNames(
             displayName,
@@ -137,11 +128,13 @@ class HeaderComponent extends React.Component {
 HeaderComponent.displayName = 'HeaderComponent';
 
 HeaderComponent.propTypes = {
-    data: PropTypes.shape({})
+    headerLinks: PropTypes.arrayOf(PropTypes.string),
+    logoCopy: PropTypes.string
 };
 
 HeaderComponent.defaultProps = {
-    data: {}
+    headerLinks: [],
+    logoCopy: ''
 };
 
 export default HeaderComponent;
