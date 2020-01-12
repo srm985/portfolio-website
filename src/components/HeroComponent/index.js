@@ -55,7 +55,7 @@ const HeroComponent = (props) => {
 HeroComponent.propTypes = {
     alt: PropTypes.string.isRequired,
     defaultSource: PropTypes.shape({
-        src: PropTypes.string.isRequired
+        src: PropTypes.string
     }),
     isHalfHeight: PropTypes.bool,
     overlayColor: PropTypes.oneOf(OVERLAY_OPTIONS)

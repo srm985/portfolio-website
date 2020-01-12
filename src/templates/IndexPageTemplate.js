@@ -13,8 +13,8 @@ const IndexPageTemplate = (props) => {
         heroImage: {
             childImageSharp: {
                 fluid
-            }
-        }
+            } = {}
+        } = {}
     } = props;
 
     return (
