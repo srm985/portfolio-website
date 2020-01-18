@@ -5,7 +5,7 @@ import {
 } from 'react-helmet';
 
 import Footer from '../FooterComponent';
-import Header from '../HeaderComponent';
+import Navigation from '../NavigationComponent';
 
 import classNames from '../../utils/classNames';
 import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
@@ -22,8 +22,8 @@ const LayoutComponent = (props) => {
         children,
         footerQuery,
         hasFooter,
-        hasHeader,
-        headerQuery,
+        hasNavigation,
+        navigationQuery,
         pageTitle
     } = props;
 
@@ -35,11 +35,11 @@ const LayoutComponent = (props) => {
         `${displayName}__main`,
         {
             [`${displayName}__main--has-footer`]: hasFooter,
-            [`${displayName}__main--has-header`]: hasHeader
+            [`${displayName}__main--has-navigation`]: hasNavigation
         }
     );
 
-    const headerData = destructureNetlifyCMS(headerQuery);
+    const navigationData = destructureNetlifyCMS(navigationQuery);
     const footerData = destructureNetlifyCMS(footerQuery);
 
     return (
@@ -49,7 +49,7 @@ const LayoutComponent = (props) => {
                 title={pageTitle}
             />
             {
-                hasHeader && <Header {...headerData} />
+                hasNavigation && <Navigation {...navigationData} />
             }
             <main className={mainContentClassNames}>
                 {
@@ -71,16 +71,16 @@ LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
     footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
-    hasHeader: PropTypes.bool,
-    headerQuery: PropTypes.shape({}),
+    hasNavigation: PropTypes.bool,
+    navigationQuery: PropTypes.shape({}),
     pageTitle: PropTypes.string
 };
 
 LayoutComponent.defaultProps = {
     footerQuery: {},
     hasFooter: true,
-    hasHeader: true,
-    headerQuery: {},
+    hasNavigation: true,
+    navigationQuery: {},
     pageTitle: ''
 };
 

@@ -15,13 +15,13 @@ const Query = (props) => {
             query={
                 graphql`
                     query {
-                        headerQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "header"}}) {
+                        navigationQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "navigation"}}) {
                             edges {
                                 node {
                                     childMarkdownRemark {
                                         frontmatter {
                                             logoCopy
-                                            headerLinks {
+                                            navigationLinks {
                                                 pageName
                                                 pageURL
                                             }

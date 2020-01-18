@@ -16,7 +16,7 @@ import {
 
 import './styles.scss';
 
-class HeaderDesktopComponent extends React.Component {
+class NavigationDesktopComponent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -49,7 +49,7 @@ class HeaderDesktopComponent extends React.Component {
     renderLinks = () => {
         const {
             props: {
-                headerLinks
+                navigationLinks
             },
             state: {
                 hasScrolled
@@ -58,7 +58,7 @@ class HeaderDesktopComponent extends React.Component {
 
         const {
             displayName
-        } = HeaderDesktopComponent;
+        } = NavigationDesktopComponent;
 
         const linkClassNames = classNames(
             `${displayName}__navigation-link`,
@@ -67,11 +67,11 @@ class HeaderDesktopComponent extends React.Component {
             }
         );
 
-        return headerLinks.map((headerLink) => {
+        return navigationLinks.map((navigationLink) => {
             const {
                 pageName,
                 pageURL
-            } = headerLink;
+            } = navigationLink;
 
             return (
                 <li key={pageURL}>
@@ -99,7 +99,7 @@ class HeaderDesktopComponent extends React.Component {
 
         const {
             displayName
-        } = HeaderDesktopComponent;
+        } = NavigationDesktopComponent;
 
         const componentClassNames = classNames(
             displayName,
@@ -109,7 +109,7 @@ class HeaderDesktopComponent extends React.Component {
         );
 
         return (
-            <header className={componentClassNames}>
+            <navigation className={componentClassNames}>
                 <div className={`${displayName}__logo`}>
                     <Icon
                         className={`${displayName}__logo-icon`}
@@ -120,24 +120,24 @@ class HeaderDesktopComponent extends React.Component {
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
                 </ul>
-            </header>
+            </navigation>
         );
     }
 }
 
-HeaderDesktopComponent.displayName = 'HeaderDesktopComponent';
+NavigationDesktopComponent.displayName = 'NavigationDesktopComponent';
 
-HeaderDesktopComponent.propTypes = {
-    headerLinks: PropTypes.arrayOf(PropTypes.shape({
+NavigationDesktopComponent.propTypes = {
+    logoCopy: PropTypes.string,
+    navigationLinks: PropTypes.arrayOf(PropTypes.shape({
         pageName: PropTypes.string,
         pageURL: PropTypes.string
-    })),
-    logoCopy: PropTypes.string
+    }))
 };
 
-HeaderDesktopComponent.defaultProps = {
-    headerLinks: [],
-    logoCopy: ''
+NavigationDesktopComponent.defaultProps = {
+    logoCopy: '',
+    navigationLinks: []
 };
 
-export default HeaderDesktopComponent;
+export default NavigationDesktopComponent;

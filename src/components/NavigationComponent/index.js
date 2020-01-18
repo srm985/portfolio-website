@@ -1,11 +1,11 @@
 import React from 'react';
 
-import HeaderDesktop from '../HeaderDesktopComponent';
-import HeaderMobile from '../HeaderMobileComponent';
+import NavigationDesktop from '../NavigationDesktopComponent';
+import NavigationMobile from '../NavigationMobileComponent';
 
 import stylingConstants from '../../styles/constants.scss';
 
-class HeaderComponent extends React.Component {
+class NavigationComponent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -59,12 +59,12 @@ class HeaderComponent extends React.Component {
 
         return (
             isMobile ? (
-                <HeaderMobile {...props} />
+                <NavigationMobile {...props} />
             ) : (
-                <HeaderDesktop {...props} />
+                <NavigationDesktop {...props} />
             )
         );
     }
 }
 
-export default HeaderComponent;
+export default NavigationComponent;

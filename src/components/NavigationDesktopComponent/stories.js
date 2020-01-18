@@ -3,9 +3,9 @@ import {
     storiesOf
 } from '@storybook/react';
 
-import HeaderComponent from './index';
+import NavigationComponent from './index';
 
-const stories = storiesOf(HeaderComponent.displayName, module);
+const stories = storiesOf(NavigationComponent.displayName, module);
 
 stories.add('default', () => {
     const MOCKED_QUERY = {
@@ -14,7 +14,8 @@ stories.add('default', () => {
                 node: {
                     childMarkdownRemark: {
                         frontmatter: {
-                            headerLinks: [
+                            logoCopy: 'Demo Navigation',
+                            navigationLinks: [
                                 {
                                     pageName: 'DEMO_1',
                                     pageURL: ''
@@ -23,8 +24,7 @@ stories.add('default', () => {
                                     pageName: 'DEMO_2',
                                     pageURL: ''
                                 }
-                            ],
-                            logoCopy: 'Demo Header'
+                            ]
                         }
                     }
                 }
@@ -34,7 +34,7 @@ stories.add('default', () => {
 
     return (
         <div>
-            <HeaderComponent data={MOCKED_QUERY} />
+            <NavigationComponent data={MOCKED_QUERY} />
             <div style={{
                 backgroundColor: '#333',
                 height: '500px'

@@ -37,13 +37,13 @@ collections:
     name: 'globals'
     files:
       - allow_add: true
-        label: 'Header'
-        name: 'header'
-        file: 'static/content/header.md'
+        label: 'Navigation'
+        name: 'navigation'
+        file: 'static/content/navigation.md'
         fields:
           - { label: Logo Copy, name: logoCopy, widget: string }
-          - label: 'Header Links'
-            name: 'headerLinks'
+          - label: 'Navigation Links'
+            name: 'navigationLinks'
             widget: 'list'
             fields:
               - { label: Page Name, name: pageName, widget: string }

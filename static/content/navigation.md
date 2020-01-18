@@ -1,6 +1,6 @@
 ---
 logoCopy: SEAN MCQUAY
-headerLinks:
+navigationLinks:
   - pageName: Home
     pageURL: /
   - pageName: Work
@@ -8,4 +8,3 @@ headerLinks:
   - pageName: Contact
     pageURL: /contact
 ---
-

@@ -11,7 +11,7 @@ import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
 
 // Global Components
 import Footer from '../components/FooterComponent';
-import Header from '../components/HeaderComponent';
+import Navigation from '../components/NavigationComponent';
 
 CMS.registerPreviewTemplate('contact', (
     <PreviewTemplate>
@@ -43,8 +43,8 @@ CMS.registerPreviewTemplate('footer', (
     </PreviewTemplate>
 ));
 
-CMS.registerPreviewTemplate('header', (
+CMS.registerPreviewTemplate('navigation', (
     <PreviewTemplate>
-        <Header />
+        <Navigation />
     </PreviewTemplate>
 ));

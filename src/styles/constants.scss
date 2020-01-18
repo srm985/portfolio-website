@@ -41,17 +41,16 @@ $border-radius-default: 5px;
 $padding-small: $planck-length;
 $padding-large: #{2 * $planck-length};
 
-// Header Height
-$header-height: #{$planck-length * 8};
-
-// Footer Height
-$footer-height: 50px;
+// Navigation Height
+$navigation-height-desktop: #{$planck-length * 8};
+$navigation-height-mobile: #{$planck-length * 6};
 
 // Z-Index
 $z-index-modal: 9999;
-$z-index-header: 9998;
-$z-index-footer: 9997;
-$z-index-fab-button: 9996;
+$z-index-navigation: 9998;
+$z-index-navigation-menu: 9997;
+$z-index-footer: 9996;
+$z-index-fab-button: 9995;
 
 // Transitions
 $transition-timing-function-default: ease-in-out;

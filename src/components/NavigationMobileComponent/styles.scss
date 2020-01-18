@@ -1,20 +1,47 @@
 @import '../../styles/constants';
 
-.HeaderMobileComponent {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: $z-index-header;
+.NavigationMobileComponent {
+    &__navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: $z-index-navigation;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 100%;
-    height: #{$planck-length * 6};
-    padding: 0 $planck-length;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        height: $navigation-height-mobile;
+        padding: 0 $planck-length;
 
-    background-color: $color-white;
+        background-color: $color-white;
+
+        &--open {
+            box-shadow: 0 3px 5px $color-gray-dark;
+        }
+    }
+
+    &__navigation-menu {
+        position: absolute;
+        top: $navigation-height-mobile;
+        left: 0;
+        z-index: $z-index-navigation-menu;
+
+        box-sizing: border-box;
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+        padding: #{$planck-length * 2};
+        overflow: hidden;
+
+        list-style: none;
+        background-color: $color-white;
+
+        &--open {
+            max-height: 1000px;
+        }
+    }
 
     &__control-button {
         display: flex;

@@ -23,7 +23,7 @@ const NotFoundPage = (props) => {
         <Layout
             {...pageData}
             hasFooter={false}
-            hasHeader={false}
+            hasNavigation={false}
         >
             <NotFoundPageTemplate />
         </Layout>

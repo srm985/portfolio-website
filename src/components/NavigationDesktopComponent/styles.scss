@@ -1,17 +1,17 @@
 @import '../../styles/constants';
 
-.HeaderDesktopComponent {
+.NavigationDesktopComponent {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: $z-index-header;
+    z-index: $z-index-navigation;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
-    height: $header-height;
+    height: $navigation-height-desktop;
     padding: 0 $padding-large;
 
     color: $color-white;
