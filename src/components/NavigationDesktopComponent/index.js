@@ -109,7 +109,7 @@ class NavigationDesktopComponent extends React.Component {
         );
 
         return (
-            <navigation className={componentClassNames}>
+            <nav className={componentClassNames}>
                 <div className={`${displayName}__logo`}>
                     <Icon
                         className={`${displayName}__logo-icon`}
@@ -120,7 +120,7 @@ class NavigationDesktopComponent extends React.Component {
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
                 </ul>
-            </navigation>
+            </nav>
         );
     }
 }
