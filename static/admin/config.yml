@@ -70,7 +70,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: pageName, label: Page Name, widget: string }
+      - { name: pageTitle, label: Page Title, widget: string }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
