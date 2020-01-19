@@ -1,10 +1,9 @@
 import React from 'react';
 
-const ProjectTemplate = (props) => {
+const ProjectTemplate = () => {
     const {
         displayName
     } = ProjectTemplate;
-    console.log(props);
 
     return (
         <div className={displayName}>

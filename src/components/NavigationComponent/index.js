@@ -3,7 +3,7 @@ import React from 'react';
 import NavigationDesktop from '../NavigationDesktopComponent';
 import NavigationMobile from '../NavigationMobileComponent';
 
-import stylingConstants from '../../styles/constants.scss';
+import isMobileDevice from '../../utils/isMobileDevice';
 
 class NavigationComponent extends React.Component {
     constructor(props) {
@@ -32,14 +32,10 @@ class NavigationComponent extends React.Component {
         } = this;
 
         const {
-            breakpointMedium = 0
-        } = stylingConstants;
-
-        const {
             innerWidth: viewportWidth
         } = window;
 
-        const isViewportMobile = viewportWidth < parseInt(breakpointMedium, 10);
+        const isViewportMobile = isMobileDevice(viewportWidth);
         const hasViewportTypeChanged = isViewportMobile !== isMobile;
 
         if (hasViewportTypeChanged) {

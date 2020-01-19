@@ -57,14 +57,4 @@ $transition-timing-function-default: ease-in-out;
 $transition-fast: 0.05s;
 $transition-slow: 0.15s;
 
-// Exported constants can be imported into JavaScript.
-
-/* stylelint-disable */
-:export {
-    breakpointExtraLarge: $breakpoint-extra-large;
-    breakpointLarge: $breakpoint-large;
-    breakpointMedium: $breakpoint-medium;
-    breakpointSmall: $breakpoint-small;
-}
-
 /* stylelint-enable */

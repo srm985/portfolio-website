@@ -9,10 +9,6 @@ import Layout from '../components/LayoutComponent';
 import ProjectTemplate from '../templates/ProjectTemplate';
 
 const ProjectTemplateConnected = (props) => {
-    console.log({
-        props
-    });
-
     const {
         data: {
             pageQuery: {
@@ -34,6 +30,7 @@ export const query = graphql`
             frontmatter {
                 date
                 description
+                pageTitle
                 path
                 title
             }
