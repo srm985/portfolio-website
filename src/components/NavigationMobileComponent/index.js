@@ -32,6 +32,8 @@ class NavigationMobileComponent extends React.Component {
         });
     }
 
+    handleKeyPress = () => {}
+
     renderLinks = () => {
         const {
             props: {
@@ -114,6 +116,9 @@ class NavigationMobileComponent extends React.Component {
                     <div
                         className={controlButtonClassNames}
                         onClick={this.handleMenuToggle}
+                        onKeyPress={this.handleKeyPress}
+                        role={'button'}
+                        tabIndex={0}
                     >
                         <div>
                             <span />

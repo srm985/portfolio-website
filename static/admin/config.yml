@@ -61,3 +61,13 @@ collections:
               name: stackOverflowURL,
               widget: string,
             }
+  - create: true
+    folder: static/content/projects
+    label: Projects
+    name: projects
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: body, label: Body, widget: markdown }
