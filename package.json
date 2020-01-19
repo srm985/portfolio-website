@@ -85,7 +85,7 @@
   "name": "portfolio-website",
   "private": false,
   "scripts": {
-    "build": "concurrently --raw \"npm:lint:fix --silent\" \"npm:test\" && gatsby build",
+    "build": "concurrently --raw \"npm:lint --silent\" \"npm:test\" && gatsby build",
     "develop": "cross-env NODE_ENV=development concurrently --raw \"npm:lint --silent\" \"gatsby develop --port 3000\" \"npm:watch --silent\"",
     "lint": "concurrently --raw \"npm:lint:js --silent\" \"npm:lint:scss --silent\"",
     "lint:fix": "concurrently --raw \"eslint ./*.js src/**/*.js .storybook/*.js --fix\" \"stylelint src/**/*.scss --syntax scss --color --allow-empty-input --fix\"",
