@@ -63,7 +63,9 @@ collections:
             }
   - create: true
     folder: static/content/projects
+    identifier_field: path
     label: Projects
+    label_singular: Project
     name: projects
     fields:
       - { name: path, label: Path }
