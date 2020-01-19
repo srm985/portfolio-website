@@ -8,8 +8,6 @@ import Layout from '../components/LayoutComponent';
 
 import ProjectTemplate from '../templates/ProjectTemplate';
 
-import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
-
 const ProjectTemplateConnected = (props) => {
     console.log({
         props
