@@ -10,13 +10,13 @@ exports.onCreateNode = ({
     } = actions;
     if (node.internal.type === 'MarkdownRemark') {
         const slug = createFilePath({
-            node,
+            basePath: 'pages',
             getNode,
-            basePath: 'pages'
+            node
         });
         createNodeField({
-            node,
             name: 'slug',
+            node,
             value: slug
         });
     }
