@@ -1,12 +1,17 @@
 import React from 'react';
 
-import Layout from '../components/LayoutComponent';
+const ProjectTemplate = (props) => {
+    const {
+        displayName
+    } = ProjectTemplate;
+    console.log(props);
 
-const ProjectTemplate = () => (
-    <Layout>
-        <p>test</p>
-    </Layout>
-);
+    return (
+        <div className={displayName}>
+            <p>test</p>
+        </div>
+    );
+};
 
 ProjectTemplate.displayName = 'ProjectTemplate';
 
