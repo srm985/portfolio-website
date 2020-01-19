@@ -17,11 +17,11 @@ const ProjectTemplateConnected = (props) => {
 
     const {
         data: {
-            pageQuery
+            pageQuery: {
+                frontmatter: pageData
+            }
         } = {}
     } = props;
-
-    const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
         <Layout {...pageData}>
@@ -32,7 +32,7 @@ const ProjectTemplateConnected = (props) => {
 
 export const query = graphql`
     query($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
+        pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
                 date
                 description
