@@ -8,6 +8,7 @@ import ContactPageTemplate from '../templates/ContactPageTemplate';
 import IndexPageTemplate from '../templates/IndexPageTemplate';
 import NotFoundPageTemplate from '../templates/404PageTemplate';
 import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
+import ProjectTemplate from '../templates/ProjectTemplate';
 
 // Global Components
 import Footer from '../components/FooterComponent';
@@ -34,6 +35,12 @@ CMS.registerPreviewTemplate('404', (
 CMS.registerPreviewTemplate('portfolio', (
     <PreviewTemplate>
         <PortfolioPageTemplate />
+    </PreviewTemplate>
+));
+
+CMS.registerPreviewTemplate('projects', (
+    <PreviewTemplate>
+        <ProjectTemplate />
     </PreviewTemplate>
 ));
 

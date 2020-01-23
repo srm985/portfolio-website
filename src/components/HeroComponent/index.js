@@ -22,10 +22,13 @@ const HeroComponent = (props) => {
         displayName
     } = HeroComponent;
 
+    const hasImage = Object.keys(defaultSource) > 0;
+
     const componentClassNames = classNames(
         displayName,
         {
-            [`${displayName}--half`]: isHalfHeight
+            [`${displayName}--half`]: isHalfHeight,
+            [`${displayName}--has-image`]: hasImage
         }
     );
 
@@ -38,11 +41,13 @@ const HeroComponent = (props) => {
 
     return (
         <div className={componentClassNames}>
-            <Image
-                alt={alt}
-                className={`${displayName}__hero-image`}
-                fluid={defaultSource}
-            />
+            {hasImage && (
+                <Image
+                    alt={alt}
+                    className={`${displayName}__hero-image`}
+                    fluid={defaultSource}
+                />
+            )}
             {
                 overlayColor && (
                     <div className={overlayClassNames} />

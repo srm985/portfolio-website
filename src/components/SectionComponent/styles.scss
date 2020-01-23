@@ -2,4 +2,12 @@
 
 .SectionComponent {
     padding: #{$planck-length * 2} 0;
+
+    &--dark {
+        background-color: $color-gray-dark;
+    }
+
+    &--light {
+        background-color: $color-white;
+    }
 }

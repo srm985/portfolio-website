@@ -1,19 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 import './styles.scss';
 
 const SectionComponent = (props) => {
     const {
-        children
+        children,
+        isDark,
+        isLight
     } = props;
 
     const {
         displayName
     } = SectionComponent;
 
+    const componentClassNames = classNames(
+        displayName,
+        {
+            [`${displayName}--dark`]: isDark,
+            [`${displayName}--light`]: isLight && !isDark
+        }
+    );
+
     return (
-        <section className={displayName}>
+        <section className={componentClassNames}>
             {
                 children
             }
@@ -24,11 +36,15 @@ const SectionComponent = (props) => {
 SectionComponent.displayName = 'SectionComponent';
 
 SectionComponent.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    isDark: PropTypes.bool,
+    isLight: PropTypes.bool
 };
 
 SectionComponent.defaultProps = {
-    children: ''
+    children: '',
+    isDark: false,
+    isLight: true
 };
 
 export default SectionComponent;
