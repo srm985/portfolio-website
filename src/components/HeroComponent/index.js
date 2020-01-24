@@ -22,7 +22,7 @@ const HeroComponent = (props) => {
         displayName
     } = HeroComponent;
 
-    const hasImage = Object.keys(defaultSource) > 0;
+    const hasImage = Object.keys(defaultSource).length > 0;
 
     const componentClassNames = classNames(
         displayName,
