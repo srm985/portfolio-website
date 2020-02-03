@@ -1,7 +1,9 @@
 @import '../../styles/constants';
 
 .SectionComponent {
-    padding: #{$planck-length * 2} 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: #{$planck-length * 2};
 
     &--dark {
         background-color: $color-gray-dark;

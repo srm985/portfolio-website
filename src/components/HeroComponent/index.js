@@ -5,6 +5,7 @@ import React from 'react';
 import classNames from '../../utils/classNames';
 
 import {
+    OVERLAY_BLACK,
     OVERLAY_OPTIONS
 } from './config';
 
@@ -13,6 +14,7 @@ import './styles.scss';
 const HeroComponent = (props) => {
     const {
         alt,
+        children,
         defaultSource,
         isHalfHeight,
         overlayColor
@@ -53,12 +55,20 @@ const HeroComponent = (props) => {
                     <div className={overlayClassNames} />
                 )
             }
+            {
+                children && (
+                    <div className={`${displayName}__content`}>
+                        {children}
+                    </div>
+                )
+            }
         </div>
     );
 };
 
 HeroComponent.propTypes = {
     alt: PropTypes.string.isRequired,
+    children: PropTypes.node,
     defaultSource: PropTypes.shape({
         src: PropTypes.string
     }),
@@ -67,9 +77,10 @@ HeroComponent.propTypes = {
 };
 
 HeroComponent.defaultProps = {
+    children: '',
     defaultSource: {},
     isHalfHeight: false,
-    overlayColor: ''
+    overlayColor: OVERLAY_BLACK
 };
 
 HeroComponent.displayName = 'HeroComponent';

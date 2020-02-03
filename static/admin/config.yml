@@ -17,6 +17,7 @@ collections:
         fields:
           - { label: Page Title, name: pageTitle, widget: string }
           - { label: Hero Title, name: heroTitle, widget: string }
+          - { label: Hero Subtitle, name: heroSubtitle, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
       - label: 'Portfolio Page'
         name: 'portfolio'

@@ -3,6 +3,7 @@ import React from 'react';
 
 import Hero from '../components/HeroComponent';
 import Section from '../components/SectionComponent';
+import SkillBadge from '../components/SkillBadgeComponent';
 
 import {
     OVERLAY_BLACK
@@ -14,7 +15,9 @@ const IndexPageTemplate = (props) => {
             childImageSharp: {
                 fluid
             } = {}
-        } = {}
+        } = {},
+        heroSubtitle,
+        heroTitle
     } = props;
 
     return (
@@ -23,9 +26,13 @@ const IndexPageTemplate = (props) => {
                 alt={'placeholder image'}
                 defaultSource={fluid}
                 overlayColor={OVERLAY_BLACK}
-            />
-            <Section />
-            <Section />
+            >
+                <h1>{heroTitle}</h1>
+                <h2>{heroSubtitle}</h2>
+            </Hero>
+            <Section>
+                <SkillBadge />
+            </Section>
         </>
     );
 };
@@ -35,11 +42,15 @@ IndexPageTemplate.propTypes = {
         childImageSharp: PropTypes.shape({
             fluid: PropTypes.shape({})
         })
-    })
+    }),
+    heroSubtitle: PropTypes.string,
+    heroTitle: PropTypes.string
 };
 
 IndexPageTemplate.defaultProps = {
-    heroImage: {}
+    heroImage: {},
+    heroSubtitle: '',
+    heroTitle: ''
 };
 
 export default IndexPageTemplate;

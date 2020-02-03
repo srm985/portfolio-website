@@ -21,7 +21,6 @@ const PortfolioPageTemplate = (props) => {
 
     const renderProjectTiles = () => projectList.map((projectData) => {
         const GRID_WIDTH = 12;
-
         const GRID_WIDTH_MEDIUM = 3;
 
         const {
