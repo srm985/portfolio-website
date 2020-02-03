@@ -19,6 +19,8 @@
 }
 
 .ButtonComponent {
+    float: left;
+
     font-family: $font-stack;
 
     border: none;
@@ -26,6 +28,10 @@
     cursor: pointer;
 
     transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow;
+
+    & + .ButtonComponent {
+        margin-left: #{$planck-length * 2};
+    }
 
     &--primary {
         @extend %button;
