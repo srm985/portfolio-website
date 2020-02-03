@@ -62,3 +62,52 @@
         padding: #{$planck-length * $i};
     }
 }
+
+// Create color helper classes.
+.color-blue {
+    color: $color-blue;
+}
+
+.color-black {
+    color: $color-black;
+}
+
+.color-green {
+    color: $color-green;
+}
+
+.color-orange {
+    color: $color-orange;
+}
+
+.color-red {
+    color: $color-red;
+}
+
+.color-white {
+    color: $color-white;
+}
+
+.background-color-blue {
+    background-color: $color-blue;
+}
+
+.background-color-black {
+    background-color: $color-black;
+}
+
+.background-color-green {
+    background-color: $color-green;
+}
+
+.background-color-orange {
+    background-color: $color-orange;
+}
+
+.background-color-red {
+    background-color: $color-red;
+}
+
+.background-color-white {
+    background-color: $color-white;
+}
