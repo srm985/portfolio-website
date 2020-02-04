@@ -20,6 +20,7 @@ collections:
           - { label: Hero Subtitle, name: heroSubtitle, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
           - label: Skills Sections List
+            label_singular: Skills List
             name: skillsSectionList
             name_singular: skillsList
             widget: list
