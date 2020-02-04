@@ -43,6 +43,13 @@ export const query = graphql`
                             heroSubtitle
                             heroTitle
                             pageTitle
+                            skillsSectionList {
+                                sectionLabel
+                                skillsList {
+                                    icon
+                                    label
+                                }
+                            }
                         }
                     }
                 }
