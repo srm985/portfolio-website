@@ -19,6 +19,17 @@ collections:
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Subtitle, name: heroSubtitle, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
+          - label: Skills Sections List
+            name: skillsSectionList
+            widget: list
+            fields:
+              - { label: Section Label, name: sectionLabel, widget: string }
+              - label: Skills List
+                name: skillsSectionList
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: string }
+                  - { label: Label, name: label, widget: string }
       - label: 'Portfolio Page'
         name: 'portfolio'
         file: 'static/content/portfolio.md'

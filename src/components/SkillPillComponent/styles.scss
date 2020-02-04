@@ -1,0 +1,52 @@
+@import '../../styles/constants';
+
+$icon-container-width: #{$planck-length * 4};
+$pill-padding: #{$planck-length * 2};
+$pill-height: #{$planck-length * 4};
+$border: solid $border-thickness-default $color-gray-very-dark;
+$border-radius: calc(#{$pill-height} / 2);
+
+.SkillPillComponent {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: fit-content;
+    height: $pill-height;
+    padding: 0 $pill-padding 0 calc(#{$icon-container-width} + #{$pill-padding});
+
+    color: $color-white;
+    font-weight: bold;
+    font-size: $font-size-regular;
+    line-height: $font-size-regular;
+
+    background-color: $color-gray-very-dark;
+    border: $border;
+    border-radius: $border-radius;
+    box-shadow: 0 3px 5px $color-gray-dark;
+    cursor: default;
+
+    user-select: none;
+
+    &__icon-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: $icon-container-width;
+        height: 100%;
+
+        background-color: $color-white;
+        border: $border;
+        border-radius: $border-radius 0 0 $border-radius;
+    }
+
+    &__icon {
+        width: 20px;
+    }
+}

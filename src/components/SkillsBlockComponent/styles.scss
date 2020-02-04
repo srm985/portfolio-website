@@ -1,0 +1,27 @@
+@import '../../styles/constants';
+
+.SkillsBlockComponent {
+    margin-bottom: #{$planck-length * 2};
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__skills-section-label {
+        margin-bottom: $planck-length;
+    }
+
+    &__skills-section {
+        display: flex;
+        margin-left: -#{$planck-length * 2};
+    }
+
+    .SkillPillComponent {
+        margin-top: #{$planck-length * 2};
+        margin-left: #{$planck-length * 2};
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
