@@ -58,7 +58,13 @@ IndexPageTemplate.propTypes = {
     }),
     heroSubtitle: PropTypes.string,
     heroTitle: PropTypes.string,
-    skillsSectionList: PropTypes.arrayOf({})
+    skillsSectionList: PropTypes.arrayOf(PropTypes.shape({
+        sectionLabel: PropTypes.string,
+        skillsList: PropTypes.arrayOf(PropTypes.shape({
+            icon: PropTypes.string,
+            label: PropTypes.string
+        }))
+    }))
 };
 
 IndexPageTemplate.defaultProps = {

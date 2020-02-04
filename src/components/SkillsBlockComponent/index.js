@@ -23,6 +23,7 @@ const SkillsBlockComponent = (props) => {
         return (
             <SkillPill
                 icon={icon}
+                key={label}
                 label={label}
             />
         );
@@ -35,7 +36,10 @@ const SkillsBlockComponent = (props) => {
         } = skillsBlockDetails;
 
         return (
-            <div className={`${displayName}__skills-section-block`}>
+            <div
+                className={`${displayName}__skills-section-block`}
+                key={sectionLabel}
+            >
                 <h3 className={`${displayName}__skills-section-label`}>{sectionLabel}</h3>
                 <div className={`${displayName}__skills-section`}>
                     {
