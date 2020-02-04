@@ -21,6 +21,7 @@ collections:
           - { label: Hero Image, name: heroImage, widget: image }
           - label: Skills Sections List
             name: skillsSectionList
+            name_singular: skillsList
             widget: list
             fields:
               - { label: Section Label, name: sectionLabel, widget: string }
