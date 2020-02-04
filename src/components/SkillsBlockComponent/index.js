@@ -14,10 +14,10 @@ const SkillsBlockComponent = (props) => {
         displayName
     } = SkillsBlockComponent;
 
-    const renderSkillPill = (skillDetails) => {
+    const renderSkillPill = (skillDetails = {}) => {
         const {
-            icon,
-            label
+            icon = '',
+            label = ''
         } = skillDetails;
 
         return (
@@ -29,10 +29,10 @@ const SkillsBlockComponent = (props) => {
         );
     };
 
-    const renderSkillsBlock = (skillsBlockDetails) => {
+    const renderSkillsBlock = (skillsBlockDetails = {}) => {
         const {
-            sectionLabel,
-            skillsList
+            sectionLabel = '',
+            skillsList = []
         } = skillsBlockDetails;
 
         return (
