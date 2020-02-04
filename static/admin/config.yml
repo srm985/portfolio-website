@@ -25,7 +25,7 @@ collections:
             fields:
               - { label: Section Label, name: sectionLabel, widget: string }
               - label: Skills List
-                name: skillsSList
+                name: skillsList
                 widget: list
                 fields:
                   - { label: Icon, name: icon, widget: string }
