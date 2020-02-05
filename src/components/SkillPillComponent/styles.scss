@@ -47,6 +47,7 @@ $border-radius: calc(#{$pill-height} / 2);
     }
 
     &__icon {
-        width: #{$planck-length * 2};
+        width: 14px;
+        margin-left: 2px;
     }
 }
