@@ -1,8 +1,8 @@
 @import '../../styles/constants';
 
-$icon-container-width: #{$planck-length * 4};
-$pill-padding: #{$planck-length * 2};
-$pill-height: #{$planck-length * 4};
+$icon-container-width: #{$planck-length * 3};
+$pill-padding: #{$planck-length};
+$pill-height: #{$planck-length * 3};
 $border: solid $border-thickness-default $color-gray-very-dark;
 $border-radius: calc(#{$pill-height} / 2);
 
@@ -14,32 +14,32 @@ $border-radius: calc(#{$pill-height} / 2);
     box-sizing: border-box;
     width: fit-content;
     height: $pill-height;
-    padding: 0 $pill-padding 0 calc(#{$icon-container-width} + #{$pill-padding});
+    padding: 0 #{$planck-length * 2} 0 calc(#{$icon-container-width} + #{$planck-length});
 
     color: $color-white;
     font-weight: bold;
-    font-size: $font-size-regular;
-    line-height: $font-size-regular;
+    font-size: 14px;
+    line-height: 14px;
 
     background-color: $color-gray-very-dark;
     border: $border;
     border-radius: $border-radius;
-    box-shadow: 0 3px 5px $color-gray-dark;
+    box-shadow: 1px 3px 3px $color-gray-dark;
     cursor: default;
 
     user-select: none;
 
     &__icon-container {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -1px;
+        left: -1px;
 
         display: flex;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
         width: $icon-container-width;
-        height: 100%;
+        height: calc(100% + 2px);
 
         background-color: $color-white;
         border: $border;
@@ -47,6 +47,6 @@ $border-radius: calc(#{$pill-height} / 2);
     }
 
     &__icon {
-        width: 20px;
+        width: #{$planck-length * 2};
     }
 }
