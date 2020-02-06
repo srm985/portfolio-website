@@ -19,6 +19,27 @@ collections:
           - { label: Hero Title, name: heroTitle, widget: string }
           - { label: Hero Subtitle, name: heroSubtitle, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
+          - {
+              label: Skills Section Title,
+              name: skillsSectionTitle,
+              widget: string,
+            }
+          - {
+              label: Skills Search Label,
+              name: skillsSearchLabel,
+              widget: string,
+            }
+          - {
+              label: Skills Search Name,
+              name: skillsSearchName,
+              widget: string,
+            }
+          - {
+              label: Skills Search Placeholder,
+              name: skillsSearchPlaceholder,
+              widget: string,
+            }
+          - { label: Skill Not Found, name: skillNotFound, widget: string }
           - label: Skills Sections List
             label_singular: Skills List
             name: skillsSectionList
