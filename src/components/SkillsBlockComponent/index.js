@@ -58,6 +58,14 @@ class SkillsBlockComponent extends React.Component {
 
     renderSkillsBlock = (skillsBlockDetails = {}) => {
         const {
+            props: {
+                content: {
+                    skillNotFound
+                }
+            }
+        } = this;
+
+        const {
             sectionLabel = '',
             skillsList = []
         } = skillsBlockDetails;
@@ -79,7 +87,7 @@ class SkillsBlockComponent extends React.Component {
                         generatedSkillPills.length ? (
                             generatedSkillPills
                         ) : (
-                            <p>Sorry, no relevant skills found...</p>
+                            <p>{skillNotFound}</p>
                         )
                     }
                 </div>
@@ -90,7 +98,13 @@ class SkillsBlockComponent extends React.Component {
     render() {
         const {
             props: {
-                skillsSectionList
+                content: {
+                    skillsSearchLabel,
+                    skillsSearchName,
+                    skillsSearchPlaceholder,
+                    skillsSectionList,
+                    skillsSectionTitle
+                }
             }
         } = this;
 
@@ -100,12 +114,12 @@ class SkillsBlockComponent extends React.Component {
 
         return (
             <div className={displayName}>
-                <h3 className={`${displayName}__title`}>{'Do I have the skills you need?'}</h3>
+                <h3 className={`${displayName}__title`}>{skillsSectionTitle}</h3>
                 <Input
                     handleChange={this.handleSkillSearchKeywordChange}
-                    label={'Find a skill!'}
-                    name={'skillSearchbar'}
-                    placeholder={'Search'}
+                    label={skillsSearchLabel}
+                    name={skillsSearchName}
+                    placeholder={skillsSearchPlaceholder}
                     type={INPUT_TYPE_SEARCH}
                 />
                 {
@@ -119,17 +133,25 @@ class SkillsBlockComponent extends React.Component {
 SkillsBlockComponent.displayName = 'SkillsBlockComponent';
 
 SkillsBlockComponent.propTypes = {
-    skillsSectionList: PropTypes.arrayOf(PropTypes.shape({
-        sectionLabel: PropTypes.string,
-        skillsList: PropTypes.arrayOf(PropTypes.shape({
-            icon: PropTypes.string,
-            label: PropTypes.string
-        }))
-    }))
+    content: PropTypes.shape({
+        skillNotFound: PropTypes.string,
+        skillsSearchLabel: PropTypes.string,
+        skillsSearchName: PropTypes.string,
+        skillsSearchPlaceholder: PropTypes.string,
+        skillsSectionList: PropTypes.arrayOf(PropTypes.shape({
+            sectionLabel: PropTypes.string,
+            skillsList: PropTypes.arrayOf(PropTypes.shape({
+                icon: PropTypes.string,
+                label: PropTypes.string
+            }))
+        })),
+        skillsSectionTitle: PropTypes.string
+    })
+
 };
 
 SkillsBlockComponent.defaultProps = {
-    skillsSectionList: []
+    content: {}
 };
 
 export default SkillsBlockComponent;

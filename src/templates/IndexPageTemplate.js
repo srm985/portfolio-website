@@ -15,14 +15,16 @@ import {
 
 const IndexPageTemplate = (props) => {
     const {
-        heroImage: {
-            childImageSharp: {
-                fluid
-            } = {}
-        } = {},
-        heroSubtitle,
-        heroTitle,
-        skillsSectionList
+        content,
+        content: {
+            heroImage: {
+                childImageSharp: {
+                    fluid
+                } = {}
+            } = {},
+            heroSubtitle,
+            heroTitle
+        }
     } = props;
 
     return (
@@ -44,34 +46,26 @@ const IndexPageTemplate = (props) => {
                 />
             </Hero>
             <Section>
-                <SkillsBlock skillsSectionList={skillsSectionList} />
+                <SkillsBlock content={content} />
             </Section>
         </>
     );
 };
 
 IndexPageTemplate.propTypes = {
-    heroImage: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({})
-        })
-    }),
-    heroSubtitle: PropTypes.string,
-    heroTitle: PropTypes.string,
-    skillsSectionList: PropTypes.arrayOf(PropTypes.shape({
-        sectionLabel: PropTypes.string,
-        skillsList: PropTypes.arrayOf(PropTypes.shape({
-            icon: PropTypes.string,
-            label: PropTypes.string
-        }))
-    }))
+    content: PropTypes.shape({
+        heroImage: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
+        }),
+        heroSubtitle: PropTypes.string,
+        heroTitle: PropTypes.string
+    })
 };
 
 IndexPageTemplate.defaultProps = {
-    heroImage: {},
-    heroSubtitle: '',
-    heroTitle: '',
-    skillsSectionList: []
+    content: {}
 };
 
 export default IndexPageTemplate;

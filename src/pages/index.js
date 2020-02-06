@@ -20,7 +20,7 @@ const IndexPage = (props) => {
     const pageData = destructureNetlifyCMS(pageQuery);
 
     return (
-        <Layout {...pageData}>
+        <Layout content={pageData}>
             <IndexPageTemplate />
         </Layout>
     );
@@ -43,6 +43,11 @@ export const query = graphql`
                             heroSubtitle
                             heroTitle
                             pageTitle
+                            skillsSectionTitle
+                            skillsSearchLabel
+                            skillsSearchName
+                            skillsSearchPlaceholder
+                            skillNotFound
                             skillsSectionList {
                                 sectionLabel
                                 skillsList {
