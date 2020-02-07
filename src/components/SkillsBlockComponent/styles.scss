@@ -1,6 +1,10 @@
 @import '../../styles/constants';
 
 .SkillsBlockComponent {
+    &__title {
+        margin-bottom: #{$planck-length * 3};
+    }
+
     &__skills-section-block {
         margin-bottom: #{$planck-length * 4};
 
@@ -16,14 +20,14 @@
     &__skills-section {
         display: flex;
         margin-left: -#{$planck-length * 2};
-    }
 
-    .SkillPillComponent {
-        margin-top: #{$planck-length * 1};
-        margin-left: #{$planck-length * 2};
+        & > * {
+            margin-top: #{$planck-length * 1};
+            margin-left: #{$planck-length * 2};
 
-        &:last-of-type {
-            margin-right: 0;
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
     }
 }

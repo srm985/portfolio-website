@@ -111,3 +111,12 @@
 .background-color-white {
     background-color: $color-white;
 }
+
+%padding-wrapper {
+    box-sizing: border-box;
+    padding: #{$planck-length * 3} #{$planck-length * 2} #{$planck-length * 5};
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        padding: #{$planck-length * 3} #{$planck-length * 3} #{$planck-length * 5};
+    }
+}

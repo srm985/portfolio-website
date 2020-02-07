@@ -1,4 +1,5 @@
 @import '../../styles/constants';
+@import '../../styles/classes';
 
 .HeroComponent {
     position: relative;
@@ -6,7 +7,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
 
@@ -53,7 +53,11 @@
     }
 
     &__content {
+        @extend %padding-wrapper;
+
         position: absolute;
+
+        width: 100%;
 
         color: $color-white;
     }

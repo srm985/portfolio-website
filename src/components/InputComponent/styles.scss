@@ -3,6 +3,7 @@
 .InputComponent {
     display: inline-block;
     width: 100%;
+    max-width: #{$planck-length * 60};
 
     &__label {
         display: inline-block;

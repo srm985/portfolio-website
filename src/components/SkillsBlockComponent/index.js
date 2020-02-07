@@ -116,6 +116,7 @@ class SkillsBlockComponent extends React.Component {
             <div className={displayName}>
                 <h3 className={`${displayName}__title`}>{skillsSectionTitle}</h3>
                 <Input
+                    className={'mb--3'}
                     handleChange={this.handleSkillSearchKeywordChange}
                     label={skillsSearchLabel}
                     name={skillsSearchName}

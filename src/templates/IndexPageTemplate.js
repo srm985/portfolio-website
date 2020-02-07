@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../components/ButtonComponent';
+import Grid from '../components/GridComponent';
+import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
 import Section from '../components/SectionComponent';
 import SkillsBlock from '../components/SkillsBlockComponent';
@@ -34,19 +36,67 @@ const IndexPageTemplate = (props) => {
                 defaultSource={fluid}
                 overlayColor={OVERLAY_BLACK}
             >
-                <h1 className={'mb--2'}>{heroTitle}</h1>
-                <h2 className={'mb--5'}>{heroSubtitle}</h2>
-                <Button
-                    label={'Résumé'}
-                    styleType={BUTTON_STYLE_TYPE_SECONDARY}
-                />
-                <Button
-                    label={'Contact Me'}
-                    styleType={BUTTON_STYLE_TYPE_SECONDARY}
-                />
+                <Grid>
+                    <GridItem
+                        columns={{
+                            large: [
+                                1,
+                                9
+                            ],
+                            medium: [
+                                1,
+                                11
+                            ]
+                        }}
+                    >
+                        <h1 className={'mb--2'}>{heroTitle}</h1>
+                        <h2 className={'mb--5'}>{heroSubtitle}</h2>
+                    </GridItem>
+                    <GridItem
+                        columns={{
+                            medium: [
+                                1,
+                                4
+                            ]
+                        }}
+                    >
+                        <Button
+                            label={'Résumé'}
+                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                        />
+                    </GridItem>
+                    <GridItem
+                        columns={{
+                            medium: [
+                                4,
+                                7
+                            ]
+                        }}
+                    >
+                        <Button
+                            label={'Contact Me'}
+                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                        />
+                    </GridItem>
+                </Grid>
             </Hero>
             <Section>
-                <SkillsBlock content={content} />
+                <Grid>
+                    <GridItem
+                        columns={{
+                            large: [
+                                1,
+                                9
+                            ],
+                            medium: [
+                                1,
+                                11
+                            ]
+                        }}
+                    >
+                        <SkillsBlock content={content} />
+                    </GridItem>
+                </Grid>
             </Section>
         </>
     );
