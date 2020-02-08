@@ -3,8 +3,8 @@
 .CardComponent {
     box-sizing: border-box;
     width: 100%;
-    min-height: 200px;
-    padding: 20px;
+    min-height: #{$planck-length * 25};
+    padding: #{$planck-length * 2};
 
     background-color: $color-white;
     border-radius: $border-radius-default;

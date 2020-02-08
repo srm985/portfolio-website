@@ -1,30 +1,40 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 import './styles.scss';
 
 const CardComponent = (props) => {
     const {
-        children
+        children,
+        className
     } = props;
 
     const {
         displayName
     } = CardComponent;
 
+    const componentClassNames = classNames(
+        displayName,
+        className
+    );
+
     return (
-        <section className={displayName}>
+        <section className={componentClassNames}>
             {children}
         </section>
     );
 };
 
 CardComponent.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    className: PropTypes.string
 };
 
 CardComponent.defaultProps = {
-    children: ''
+    children: '',
+    className: ''
 };
 
 CardComponent.displayName = 'CardComponent';

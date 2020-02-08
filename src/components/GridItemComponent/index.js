@@ -5,30 +5,47 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
+const COLUMN_PROP_TYPES = PropTypes.shape({
+    columns: PropTypes.number,
+    start: PropTypes.number,
+    stop: PropTypes.number
+});
+
 const GridItemComponent = (props) => {
     const {
-        children,
-        columns
+        breakpoints,
+        children
     } = props;
 
-    const gridClassNames = Object.keys(columns).map((columnSize) => {
-        const [
-            startColumn,
-            stopColumn
-        ] = columns[columnSize];
+    const {
+        displayName
+    } = GridItemComponent;
 
-        if (startColumn && stopColumn) {
-            return classNames(
-                `${GridItemComponent.displayName}__${columnSize}--start-${startColumn}`,
-                `${GridItemComponent.displayName}__${columnSize}--stop-${stopColumn}`
-            );
+    const gridClassNames = [];
+
+    Object.keys(breakpoints).forEach((columnSize) => {
+        const {
+            [columnSize]: {
+                columns,
+                start,
+                stop
+            } = {}
+        } = breakpoints;
+
+        if (columns) {
+            gridClassNames.push(`${displayName}__${columnSize}--span-${columns}`);
+        } else if (start && stop) {
+            gridClassNames.push(`${displayName}__${columnSize}--start-${start} ${displayName}__${columnSize}--stop-${stop}`);
         }
+    });
 
-        return '';
-    }).filter((column) => column.length);
+    const componentClassNames = classNames(
+        displayName,
+        ...gridClassNames
+    );
 
     return (
-        <div className={`${GridItemComponent.displayName} ${gridClassNames}`}>
+        <div className={componentClassNames}>
             {children}
         </div>
     );
@@ -37,22 +54,17 @@ const GridItemComponent = (props) => {
 GridItemComponent.displayName = 'GridItemComponent';
 
 GridItemComponent.propTypes = {
-    children: PropTypes.node.isRequired,
-    columns: PropTypes.shape({
-        extraLarge: PropTypes.arrayOf(PropTypes.number),
-        large: PropTypes.arrayOf(PropTypes.number),
-        medium: PropTypes.arrayOf(PropTypes.number),
-        small: PropTypes.arrayOf(PropTypes.number)
-    })
+    breakpoints: PropTypes.shape({
+        extraLarge: COLUMN_PROP_TYPES,
+        large: COLUMN_PROP_TYPES,
+        medium: COLUMN_PROP_TYPES,
+        small: COLUMN_PROP_TYPES
+    }),
+    children: PropTypes.node.isRequired
 };
 
 GridItemComponent.defaultProps = {
-    columns: {
-        extraLarge: [],
-        large: [],
-        medium: [],
-        small: []
-    }
+    breakpoints: { }
 };
 
 export default GridItemComponent;

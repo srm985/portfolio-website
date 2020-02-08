@@ -38,26 +38,25 @@ const IndexPageTemplate = (props) => {
             >
                 <Grid>
                     <GridItem
-                        columns={{
-                            large: [
-                                1,
-                                9
-                            ],
-                            medium: [
-                                1,
-                                11
-                            ]
+                        breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 9
+                            },
+                            medium: {
+                                start: 1,
+                                stop: 11
+                            }
                         }}
                     >
                         <h1 className={'mb--2'}>{heroTitle}</h1>
                         <h2 className={'mb--5'}>{heroSubtitle}</h2>
                     </GridItem>
                     <GridItem
-                        columns={{
-                            medium: [
-                                1,
-                                4
-                            ]
+                        breakpoints={{
+                            medium: {
+                                columns: 3
+                            }
                         }}
                     >
                         <Button
@@ -66,11 +65,10 @@ const IndexPageTemplate = (props) => {
                         />
                     </GridItem>
                     <GridItem
-                        columns={{
-                            medium: [
-                                4,
-                                7
-                            ]
+                        breakpoints={{
+                            medium: {
+                                columns: 3
+                            }
                         }}
                     >
                         <Button
@@ -83,15 +81,15 @@ const IndexPageTemplate = (props) => {
             <Section>
                 <Grid>
                     <GridItem
-                        columns={{
-                            large: [
-                                1,
-                                9
-                            ],
-                            medium: [
-                                1,
-                                11
-                            ]
+                        breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 9
+                            },
+                            medium: {
+                                start: 1,
+                                stop: 11
+                            }
                         }}
                     >
                         <SkillsBlock content={content} />

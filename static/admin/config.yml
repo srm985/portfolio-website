@@ -58,6 +58,7 @@ collections:
         file: 'static/content/portfolio.md'
         fields:
           - { label: Page Title, name: pageTitle, widget: string }
+          - { label: View Project CTA, name: viewProjectCTA, widget: string }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'
@@ -107,5 +108,6 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: pageTitle, label: Page Title, widget: string }
       - { name: title, label: Title }
+      - { name: excerpt, label: Excerpt, widget: markdown }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }

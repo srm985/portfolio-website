@@ -1,0 +1,49 @@
+@import '../../styles/constants';
+
+.PortfolioItemComponent {
+    position: relative;
+
+    width: 100%;
+    height: #{$planck-length * 60};
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 50%;
+        height: 100%;
+
+        background-color: $color-blue;
+    }
+
+    &__card {
+        position: absolute;
+        top: 15%;
+        right: 0;
+
+        width: 60%;
+    }
+
+    &__card-title {
+        z-index: 1;
+
+        // position: relative;
+
+        font-size: 40px;
+    }
+
+    &__title-underline {
+        z-index: 2;
+
+        width: calc(100% + #{$planck-length * 6});
+        height: #{$planck-length * 3};
+        margin: -#{$planck-length * 2} 0 #{$planck-length * 2} -#{$planck-length * 6};
+
+        background-color: $color-green;
+    }
+
+    &__button {
+        float: right;
+    }
+}
