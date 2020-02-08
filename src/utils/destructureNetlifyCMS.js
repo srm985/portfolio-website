@@ -1,17 +1,31 @@
 const destructureNetlifyCMS = (queryPayload = {}) => {
     const {
-        edges: [
-            {
-                node: {
-                    childMarkdownRemark: {
-                        frontmatter: extractedPayload = {}
-                    } = {}
-                } = {}
-            } = {}
-        ] = []
+        edges = []
     } = queryPayload;
 
-    return extractedPayload;
+    const extractedFieldsList = edges.map((edge) => {
+        const {
+            node: {
+                childMarkdownRemark: {
+                    fields = {},
+                    frontmatter = {}
+                } = {}
+            } = {}
+        } = edge;
+
+        return ({
+            ...fields,
+            ...frontmatter
+        });
+    });
+
+    const [
+        firstEntry
+    ] = extractedFieldsList;
+
+    return firstEntry ? extractedFieldsList : [
+        {}
+    ];
 };
 
 export default destructureNetlifyCMS;

@@ -39,8 +39,12 @@ const LayoutComponent = (props) => {
         }
     );
 
-    const navigationData = destructureNetlifyCMS(navigationQuery);
-    const footerData = destructureNetlifyCMS(footerQuery);
+    const [
+        navigationData
+    ] = destructureNetlifyCMS(navigationQuery);
+    const [
+        footerData
+    ] = destructureNetlifyCMS(footerQuery);
 
     return (
         <div className={displayName}>

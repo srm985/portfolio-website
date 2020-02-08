@@ -17,7 +17,9 @@ const IndexPage = (props) => {
         } = {}
     } = props;
 
-    const pageData = destructureNetlifyCMS(pageQuery);
+    const [
+        pageData
+    ] = destructureNetlifyCMS(pageQuery);
 
     return (
         <Layout content={pageData}>

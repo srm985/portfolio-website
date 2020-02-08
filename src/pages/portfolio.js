@@ -13,15 +13,19 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 const PortfolioPage = (props) => {
     const {
         data: {
-            pageQuery
+            pageQuery,
+            projectListQuery
         } = {}
     } = props;
 
-    const pageData = destructureNetlifyCMS(pageQuery);
+    const pageData = destructureNetlifyCMS(pageQuery)[0];
+    const projectList = destructureNetlifyCMS(projectListQuery);
+
+    console.log(projectListQuery);
 
     return (
         <Layout {...pageData}>
-            <PortfolioPageTemplate />
+            <PortfolioPageTemplate projectList={projectList} />
         </Layout>
     );
 };
@@ -42,6 +46,22 @@ export const query = graphql`
                             }
                             heroTitle
                             pageTitle
+                            viewProjectCTA
+                        }
+                    }
+                }
+            }
+        }
+        projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {excerpt: {ne: ""}}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            excerpt
+                            title
                         }
                     }
                 }
