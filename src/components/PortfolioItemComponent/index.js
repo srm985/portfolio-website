@@ -21,6 +21,7 @@ class PortfolioItemComponent extends React.Component {
         const {
             props: {
                 excerpt,
+                slug,
                 title,
                 viewProjectCTA
             },
@@ -32,6 +33,9 @@ class PortfolioItemComponent extends React.Component {
         const {
             displayName
         } = PortfolioItemComponent;
+
+        // Drop the final forward slash for accurate analytics tracking.
+        const formattedLink = slug.replace(/\/$/, '');
 
         const componentClassNames = classNames(
             displayName,
@@ -46,9 +50,13 @@ class PortfolioItemComponent extends React.Component {
                 <Card className={`${displayName}__card`}>
                     <h2 className={`${displayName}__card-title`}>{title}</h2>
                     <div className={`${displayName}__title-underline`} />
+                    <h3>{'My Role'}</h3>
+                    <p className={`${displayName}__role`}>{'Front-End Developer'}</p>
+                    <h3>{'What We Did'}</h3>
                     <p className={`${displayName}__excerpt`}>{excerpt}</p>
                     <Button
                         className={`${displayName}__button`}
+                        href={formattedLink}
                         label={viewProjectCTA}
                     />
                 </Card>
@@ -61,12 +69,14 @@ PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
     excerpt: PropTypes.string,
+    slug: PropTypes.string,
     title: PropTypes.string,
     viewProjectCTA: PropTypes.string
 };
 
 PortfolioItemComponent.defaultProps = {
     excerpt: '',
+    slug: '',
     title: '',
     viewProjectCTA: ''
 };

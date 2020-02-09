@@ -104,10 +104,12 @@ collections:
     label_singular: Project
     name: projects
     fields:
-      - { name: path, label: Path }
+      - { name: path, label: Path, widget: string }
       - { name: date, label: Date, widget: date }
       - { name: pageTitle, label: Page Title, widget: string }
-      - { name: title, label: Title }
-      - { name: excerpt, label: Excerpt, widget: markdown }
-      - { name: description, label: Description }
+      - { name: title, label: Title, widget: string }
+      - { name: role, label: Role, widget: string }
+      - { name: excerpt, label: Excerpt, widget: string }
+      - { name: projectThumbnail, label: Project Thumbnail, widget: image }
+      - { name: description, label: Description, widget: string }
       - { name: body, label: Body, widget: markdown }

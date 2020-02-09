@@ -28,8 +28,6 @@
     &__card-title {
         z-index: 1;
 
-        // position: relative;
-
         font-size: 40px;
     }
 
@@ -41,6 +39,14 @@
         margin: -#{$planck-length * 2} 0 #{$planck-length * 2} -#{$planck-length * 6};
 
         background-color: $color-green;
+    }
+
+    &__excerpt {
+        margin-bottom: $planck-length;
+    }
+
+    &__role {
+        margin-bottom: $planck-length;
     }
 
     &__button {

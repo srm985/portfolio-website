@@ -13,20 +13,27 @@ const PortfolioPageTemplate = (props) => {
         viewProjectCTA
     } = props;
 
-    const renderProjectTiles = () => projectList.map((projectData) => (
-        <GridItem
-            breakpoints={{
-                large: {
-                    columns: 6
-                }
-            }}
-        >
-            <PortfolioItem
-                {...projectData}
-                viewProjectCTA={viewProjectCTA}
-            />
-        </GridItem>
-    ));
+    const renderProjectTiles = () => projectList.map((projectData) => {
+        const {
+            slug
+        } = projectData;
+
+        return (
+            <GridItem
+                breakpoints={{
+                    large: {
+                        columns: 6
+                    }
+                }}
+                key={slug}
+            >
+                <PortfolioItem
+                    {...projectData}
+                    viewProjectCTA={viewProjectCTA}
+                />
+            </GridItem>
+        );
+    });
 
     return (
         <>
@@ -41,7 +48,7 @@ const PortfolioPageTemplate = (props) => {
 };
 
 PortfolioPageTemplate.propTypes = {
-    projectList: PropTypes.arrayOf(PropTypes.number),
+    projectList: PropTypes.arrayOf(PropTypes.shape({})),
     viewProjectCTA: PropTypes.string
 };
 
