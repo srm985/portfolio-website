@@ -21,11 +21,16 @@ const PortfolioPage = (props) => {
     const pageData = destructureNetlifyCMS(pageQuery)[0];
     const projectList = destructureNetlifyCMS(projectListQuery);
 
-    console.log(projectListQuery);
+    console.log({
+        projectList
+    });
 
     return (
-        <Layout {...pageData}>
-            <PortfolioPageTemplate projectList={projectList} />
+        <Layout content={pageData}>
+            <PortfolioPageTemplate content={{
+                projectList
+            }}
+            />
         </Layout>
     );
 };
@@ -40,7 +45,7 @@ export const query = graphql`
                             heroImage {
                                 childImageSharp {
                                     fluid(maxWidth: 1600) {
-                                        src
+                                        ...GatsbyImageSharpFluid_noBase64
                                     }
                                 }
                             }
@@ -61,6 +66,14 @@ export const query = graphql`
                         }
                         frontmatter {
                             excerpt
+                            projectThumbnail {
+                                childImageSharp {
+                                    fluid(maxWidth: 600) {
+                                        ...GatsbyImageSharpFluid_noBase64
+                                    }
+                                }
+                            }
+                            role
                             title
                         }
                     }

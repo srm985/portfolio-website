@@ -60,7 +60,7 @@ class SkillsBlockComponent extends React.Component {
         const {
             props: {
                 content: {
-                    skillNotFound
+                    skillNotFound = ''
                 }
             }
         } = this;
@@ -99,11 +99,11 @@ class SkillsBlockComponent extends React.Component {
         const {
             props: {
                 content: {
-                    skillsSearchLabel,
-                    skillsSearchName,
-                    skillsSearchPlaceholder,
-                    skillsSectionList,
-                    skillsSectionTitle
+                    skillsSearchLabel = '',
+                    skillsSearchName = '',
+                    skillsSearchPlaceholder = '',
+                    skillsSectionList = [],
+                    skillsSectionTitle = ''
                 }
             }
         } = this;

@@ -9,8 +9,10 @@ import Hero from '../components/HeroComponent';
 
 const PortfolioPageTemplate = (props) => {
     const {
-        projectList,
-        viewProjectCTA
+        content: {
+            projectList = [],
+            viewProjectCTA = ''
+        }
     } = props;
 
     const renderProjectTiles = () => projectList.map((projectData) => {
@@ -48,13 +50,14 @@ const PortfolioPageTemplate = (props) => {
 };
 
 PortfolioPageTemplate.propTypes = {
-    projectList: PropTypes.arrayOf(PropTypes.shape({})),
-    viewProjectCTA: PropTypes.string
+    content: PropTypes.shape({
+        projectList: PropTypes.arrayOf(PropTypes.shape({})),
+        viewProjectCTA: PropTypes.string
+    })
 };
 
 PortfolioPageTemplate.defaultProps = {
-    projectList: [],
-    viewProjectCTA: ''
+    content: {}
 };
 
 export default PortfolioPageTemplate;

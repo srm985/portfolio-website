@@ -38,7 +38,7 @@ export const query = graphql`
                             heroImage {
                                 childImageSharp {
                                     fluid(maxWidth: 1600) {
-                                        src
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }

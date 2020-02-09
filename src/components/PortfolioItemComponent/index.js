@@ -1,8 +1,17 @@
+import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
+
+import {
+    BUTTON_STYLE_TYPE_SECONDARY
+} from '../ButtonComponent/config';
+import {
+    BACKGROUND_COLOR_BLUE
+} from '../CardComponent/config';
 
 import classNames from '../../utils/classNames';
 
@@ -17,10 +26,32 @@ class PortfolioItemComponent extends React.Component {
         };
     }
 
+    handleVisibilityChange=(isVisible) => {
+        this.setState((previousState) => {
+            const {
+                isVisible: wasVisible
+            } = previousState;
+
+            if (isVisible === wasVisible) {
+                return null;
+            }
+
+            return ({
+                isVisible
+            });
+        });
+    }
+
     render() {
         const {
             props: {
                 excerpt,
+                projectThumbnail: {
+                    childImageSharp: {
+                        fluid
+                    } = {}
+                },
+                role,
                 slug,
                 title,
                 viewProjectCTA
@@ -44,23 +75,52 @@ class PortfolioItemComponent extends React.Component {
             }
         );
 
+        const titleClassNames = classNames(
+            `${displayName}__card-title`,
+            {
+                [`${displayName}__card-title--visible`]: isVisible
+            }
+        );
+
+        const imageClassNames = classNames(
+            `${displayName}__image`,
+            {
+                [`${displayName}__image--visible`]: isVisible
+            }
+        );
+
         return (
-            <div className={componentClassNames}>
-                <div className={`${displayName}__image`} />
-                <Card className={`${displayName}__card`}>
-                    <h2 className={`${displayName}__card-title`}>{title}</h2>
-                    <div className={`${displayName}__title-underline`} />
-                    <h3>{'My Role'}</h3>
-                    <p className={`${displayName}__role`}>{'Front-End Developer'}</p>
-                    <h3>{'What We Did'}</h3>
-                    <p className={`${displayName}__excerpt`}>{excerpt}</p>
-                    <Button
-                        className={`${displayName}__button`}
-                        href={formattedLink}
-                        label={viewProjectCTA}
+            <VisibilitySensor
+                minTopValue={200}
+                onChange={this.handleVisibilityChange}
+                partialVisibility
+                resizeCheck
+            >
+                <div className={componentClassNames}>
+                    <Image
+                        alt={'alt'}
+                        className={imageClassNames}
+                        fluid={fluid}
                     />
-                </Card>
-            </div>
+                    <Card
+                        backgroundColor={BACKGROUND_COLOR_BLUE}
+                        className={`${displayName}__card`}
+                    >
+                        <h2 className={titleClassNames}>{title}</h2>
+                        <h3>{'My Role'}</h3>
+                        <p className={`${displayName}__role`}>{role}</p>
+                        <h3>{'What We Did'}</h3>
+                        <p className={`${displayName}__excerpt`}>{excerpt}</p>
+                        <Button
+                            className={`${displayName}__button`}
+                            href={formattedLink}
+                            isColorProfileDark={false}
+                            label={viewProjectCTA}
+                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                        />
+                    </Card>
+                </div>
+            </VisibilitySensor>
         );
     }
 }
@@ -69,6 +129,12 @@ PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
     excerpt: PropTypes.string,
+    projectThumbnail: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+            fluid: PropTypes.shape({})
+        })
+    }),
+    role: PropTypes.string,
     slug: PropTypes.string,
     title: PropTypes.string,
     viewProjectCTA: PropTypes.string
@@ -76,6 +142,8 @@ PortfolioItemComponent.propTypes = {
 
 PortfolioItemComponent.defaultProps = {
     excerpt: '',
+    projectThumbnail: {},
+    role: '',
     slug: '',
     title: '',
     viewProjectCTA: ''

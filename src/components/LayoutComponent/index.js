@@ -20,11 +20,19 @@ import './styles.scss';
 const LayoutComponent = (props) => {
     const {
         children,
+        children: {
+            props: {
+                content: extractedContent = {}
+            } = {}
+        },
+        content,
+        content: {
+            pageTitle
+        },
         footerQuery,
         hasFooter,
         hasNavigation,
-        navigationQuery,
-        pageTitle
+        navigationQuery
     } = props;
 
     const {
@@ -58,7 +66,10 @@ const LayoutComponent = (props) => {
             <main className={mainContentClassNames}>
                 {
                     React.cloneElement(children, {
-                        ...props
+                        content: {
+                            ...content,
+                            ...extractedContent
+                        }
                     })
                 }
             </main>
@@ -73,19 +84,21 @@ LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
+    content: PropTypes.shape({
+        pageTitle: PropTypes.string
+    }),
     footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
     hasNavigation: PropTypes.bool,
-    navigationQuery: PropTypes.shape({}),
-    pageTitle: PropTypes.string
+    navigationQuery: PropTypes.shape({})
 };
 
 LayoutComponent.defaultProps = {
+    content: {},
     footerQuery: {},
     hasFooter: true,
     hasNavigation: true,
-    navigationQuery: {},
-    pageTitle: ''
+    navigationQuery: {}
 };
 
 const LayoutComponentConnected = (props) => (

@@ -1,12 +1,37 @@
 @import '../../styles/constants';
 
+$darken-constant: 10%;
+
 .CardComponent {
     box-sizing: border-box;
     width: 100%;
     min-height: #{$planck-length * 25};
     padding: #{$planck-length * 2};
 
-    background-color: $color-white;
+    color: $color-white;
+
     border-radius: $border-radius-default;
     box-shadow: 0 3px 5px $color-gray-dark;
+
+    &--background-blue {
+        background-color: darken($color: $color-blue, $amount: $darken-constant);
+    }
+
+    &--background-green {
+        background-color: darken($color: $color-green, $amount: $darken-constant);
+    }
+
+    &--background-orange {
+        background-color: darken($color: $color-orange, $amount: $darken-constant);
+    }
+
+    &--background-red {
+        background-color: darken($color: $color-red, $amount: $darken-constant);
+    }
+
+    &--background-white {
+        color: $color-black;
+
+        background-color: darken($color: $color-white, $amount: $darken-constant);
+    }
 }

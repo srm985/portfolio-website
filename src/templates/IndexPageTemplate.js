@@ -54,8 +54,13 @@ const IndexPageTemplate = (props) => {
                     </GridItem>
                     <GridItem
                         breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 3
+                            },
                             medium: {
-                                columns: 3
+                                start: 1,
+                                stop: 4
                             }
                         }}
                     >
@@ -66,8 +71,13 @@ const IndexPageTemplate = (props) => {
                     </GridItem>
                     <GridItem
                         breakpoints={{
+                            large: {
+                                start: 3,
+                                stop: 5
+                            },
                             medium: {
-                                columns: 3
+                                start: 4,
+                                stop: 7
                             }
                         }}
                     >

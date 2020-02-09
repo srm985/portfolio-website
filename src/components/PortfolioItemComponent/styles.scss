@@ -15,6 +15,16 @@
         height: 100%;
 
         background-color: $color-blue;
+        transform: scaleX(0);
+
+        animation-name: animation-image;
+        animation-duration: 0.2s;
+        animation-play-state: paused;
+        animation-fill-mode: forwards;
+
+        &--visible {
+            animation-play-state: running;
+        }
     }
 
     &__card {
@@ -26,30 +36,87 @@
     }
 
     &__card-title {
-        z-index: 1;
-
-        font-size: 40px;
-    }
-
-    &__title-underline {
+        position: relative;
         z-index: 2;
 
-        width: calc(100% + #{$planck-length * 6});
-        height: #{$planck-length * 3};
-        margin: -#{$planck-length * 2} 0 #{$planck-length * 2} -#{$planck-length * 6};
+        margin-bottom: #{$planck-length * 2};
 
-        background-color: $color-green;
-    }
+        font-size: 40px;
+        text-shadow: 1px 1px 2px $color-black;
 
-    &__excerpt {
-        margin-bottom: $planck-length;
+        &::before {
+            position: absolute;
+            right: 0;
+            bottom: -$planck-length;
+            z-index: -1;
+
+            width: calc(100% + #{$planck-length * 6});
+            height: #{$planck-length * 3};
+
+            background-color: $color-blue;
+            transform: scaleX(0);
+            transform-origin: right;
+
+            animation-name: animation-underline;
+            animation-duration: 0.2s;
+            animation-play-state: paused;
+            animation-delay: 0.1s;
+            animation-fill-mode: forwards;
+
+            content: '';
+        }
+
+        &--visible {
+            &::before {
+                animation-play-state: running;
+            }
+        }
     }
 
     &__role {
         margin-bottom: $planck-length;
     }
 
+    &__excerpt {
+        margin-bottom: #{$planck-length * 3};
+    }
+
     &__button {
         float: right;
+    }
+}
+
+@keyframes animation-image {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(0.2);
+    }
+
+    75% {
+        transform: scaleX(0.5);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes animation-underline {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(0.2);
+    }
+
+    75% {
+        transform: scaleX(0.5);
+    }
+
+    100% {
+        transform: scaleX(1);
     }
 }

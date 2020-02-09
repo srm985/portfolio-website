@@ -24,6 +24,7 @@ const ButtonComponent = (props) => {
         children,
         className,
         href,
+        isColorProfileDark,
         isInternalURL,
         label,
         shouldOpenInNewTab,
@@ -51,8 +52,14 @@ const ButtonComponent = (props) => {
         className,
         {
             [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
+            [`${ButtonComponent.displayName}--inline-dark`]: styleType === BUTTON_STYLE_TYPE_INLINE && isColorProfileDark,
+            [`${ButtonComponent.displayName}--inline-light`]: styleType === BUTTON_STYLE_TYPE_INLINE && !isColorProfileDark,
             [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
+            [`${ButtonComponent.displayName}--primary-dark`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && isColorProfileDark,
+            [`${ButtonComponent.displayName}--primary-light`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && !isColorProfileDark,
             [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
+            [`${ButtonComponent.displayName}--secondary-dark`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && isColorProfileDark,
+            [`${ButtonComponent.displayName}--secondary-light`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && !isColorProfileDark,
             [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
         }
     );
@@ -108,6 +115,7 @@ ButtonComponent.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     href: PropTypes.string,
+    isColorProfileDark: PropTypes.bool,
     isInternalURL: PropTypes.bool,
     label: PropTypes.string,
     shouldOpenInNewTab: PropTypes.bool,
@@ -120,6 +128,7 @@ ButtonComponent.defaultProps = {
     children: '',
     className: '',
     href: '',
+    isColorProfileDark: true,
     isInternalURL: true,
     label: '',
     shouldOpenInNewTab: true,

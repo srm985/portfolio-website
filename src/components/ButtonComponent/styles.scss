@@ -36,13 +36,29 @@
     &--primary {
         @extend %button;
 
-        color: $color-white;
+        &-dark {
+            color: $color-white;
 
-        background-color: $color-blue;
+            background-color: $color-blue;
 
-        &:hover {
-            @include is-desktop() {
-                background-color: darken($color: $color-blue, $amount: 10%);
+            &:hover {
+                @include is-desktop() {
+                    background-color: darken($color: $color-blue, $amount: 10%);
+                }
+            }
+        }
+
+        &-light {
+            color: $color-blue;
+
+            background-color: $color-white;
+
+            &:hover {
+                @include is-desktop() {
+                    color: $color-white;
+
+                    background-color: $color-blue;
+                }
             }
         }
     }
@@ -53,13 +69,34 @@
         color: $color-blue;
 
         background-color: transparent;
-        border: solid 1px $color-blue;
+        border-style: solid;
+        border-width: 1px;
 
-        &:hover {
-            @include is-desktop() {
-                color: $color-white;
+        &-dark {
+            color: $color-blue;
 
-                background-color: $color-blue;
+            border-color: $color-blue;
+
+            &:hover {
+                @include is-desktop() {
+                    color: $color-white;
+
+                    background-color: $color-blue;
+                }
+            }
+        }
+
+        &-light {
+            color: $color-white;
+
+            border-color: $color-white;
+
+            &:hover {
+                @include is-desktop() {
+                    color: $color-blue;
+
+                    background-color: $color-white;
+                }
             }
         }
     }
@@ -68,11 +105,18 @@
         margin: 0;
         padding: 0;
 
-        color: $color-blue;
         font-size: inherit;
         text-decoration: underline;
 
         background-color: transparent;
+
+        &-dark {
+            color: $color-blue;
+        }
+
+        &-light {
+            color: $color-white;
+        }
     }
 
     &--anchor {
