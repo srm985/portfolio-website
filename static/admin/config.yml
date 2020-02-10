@@ -111,5 +111,5 @@ collections:
       - { name: role, label: Role, widget: string }
       - { name: excerpt, label: Excerpt, widget: string }
       - { name: projectThumbnail, label: Project Thumbnail, widget: image }
-      - { name: description, label: Description, widget: string }
+      - { name: description, label: Description, widget: text }
       - { name: body, label: Body, widget: markdown }

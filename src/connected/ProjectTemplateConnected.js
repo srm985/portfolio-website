@@ -18,7 +18,7 @@ const ProjectTemplateConnected = (props) => {
     } = props;
 
     return (
-        <Layout {...pageData}>
+        <Layout content={pageData}>
             <ProjectTemplate />
         </Layout>
     );
