@@ -20,7 +20,10 @@ const Query = (props) => {
                                 node {
                                     childMarkdownRemark {
                                         frontmatter {
-                                            logoCopy
+                                            headerLogoCopy
+                                            headerLogoIcon {
+                                                publicURL
+                                            }
                                             navigationLinks {
                                                 pageName
                                                 pageURL

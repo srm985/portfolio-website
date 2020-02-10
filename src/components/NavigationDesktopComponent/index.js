@@ -10,10 +10,6 @@ import {
 
 import classNames from '../../utils/classNames';
 
-import {
-    logoIcon
-} from '../../assets/icons';
-
 import './styles.scss';
 
 class NavigationDesktopComponent extends React.Component {
@@ -90,7 +86,10 @@ class NavigationDesktopComponent extends React.Component {
     render() {
         const {
             props: {
-                logoCopy
+                headerLogoCopy,
+                headerLogoIcon: {
+                    publicURL: iconURL = ''
+                }
             },
             state: {
                 hasScrolled
@@ -113,9 +112,9 @@ class NavigationDesktopComponent extends React.Component {
                 <div className={`${displayName}__logo`}>
                     <Icon
                         className={`${displayName}__logo-icon`}
-                        icon={logoIcon}
+                        iconURL={iconURL}
                     />
-                    <p>{logoCopy}</p>
+                    <p>{headerLogoCopy}</p>
                 </div>
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
@@ -128,7 +127,10 @@ class NavigationDesktopComponent extends React.Component {
 NavigationDesktopComponent.displayName = 'NavigationDesktopComponent';
 
 NavigationDesktopComponent.propTypes = {
-    logoCopy: PropTypes.string,
+    headerLogoCopy: PropTypes.string,
+    headerLogoIcon: PropTypes.shape({
+        publicURL: PropTypes.string
+    }),
     navigationLinks: PropTypes.arrayOf(PropTypes.shape({
         pageName: PropTypes.string,
         pageURL: PropTypes.string
@@ -136,7 +138,8 @@ NavigationDesktopComponent.propTypes = {
 };
 
 NavigationDesktopComponent.defaultProps = {
-    logoCopy: '',
+    headerLogoCopy: '',
+    headerLogoIcon: {},
     navigationLinks: []
 };
 
