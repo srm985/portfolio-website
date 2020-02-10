@@ -17,7 +17,7 @@ const PreviewTemplate = (props) => {
         displayName
     } = PreviewTemplate;
 
-    const data = entry.getIn([
+    const content = entry.getIn([
         'data'
     ]).toJS();
 
@@ -25,7 +25,7 @@ const PreviewTemplate = (props) => {
         <div className={displayName}>
             {
                 React.cloneElement(children, {
-                    ...data
+                    content
                 })
             }
         </div>
