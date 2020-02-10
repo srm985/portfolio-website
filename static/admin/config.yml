@@ -112,4 +112,5 @@ collections:
       - { name: excerpt, label: Excerpt, widget: string }
       - { name: projectThumbnail, label: Project Thumbnail, widget: image }
       - { name: description, label: Description, widget: text }
-      - { name: body, label: Body, widget: markdown }
+      - { name: sectionTitleTechnology, label: Section Title: Technology, widget: string }
+      - { name: sectionBodyTechnology, label: Section Body: Technology, widget: markdown }
