@@ -5,44 +5,73 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const IconComponent = (props) => {
-    const {
-        className,
-        icon
-    } = props;
+class IconComponent extends React.Component {
+    constructor(props) {
+        super(props);
 
-    const {
-        displayName
-    } = IconComponent;
+        this.state = {
+            svgImage: ''
+        };
+    }
 
-    const componentClassNames = classNames(
-        displayName,
-        className
-    );
+    componentDidMount() {
+        const {
+            props: {
+                iconURL
+            }
+        } = this;
 
-    const svgAttributes = {
-        fill: 'currentColor',
-        height: 50,
-        viewBox: '0 0 50 50',
-        width: 50
-    };
+        this.fetchIcon(iconURL);
+    }
 
-    return (
-        <div className={componentClassNames}>
-            {icon(svgAttributes)}
-        </div>
-    );
-};
+    fetchIcon=(iconURL) => {
+        fetch(iconURL).then((response) => response.text()).then((svgImage) => {
+            this.setState({
+                svgImage
+            });
+        });
+    }
+
+    render() {
+        const {
+            props: {
+                className
+            },
+            state: {
+                svgImage
+            }
+        } = this;
+
+        const {
+            displayName
+        } = IconComponent;
+
+        const componentClassNames = classNames(
+            displayName,
+            className
+        );
+
+        return (
+            <span
+                className={componentClassNames}
+                dangerouslySetInnerHTML={{
+                    __html: svgImage
+                }}
+            />
+        );
+    }
+}
 
 IconComponent.displayName = 'IconComponent';
 
 IconComponent.propTypes = {
     className: PropTypes.string,
-    icon: PropTypes.func.isRequired
+    iconURL: PropTypes.string
 };
 
 IconComponent.defaultProps = {
-    className: ''
+    className: '',
+    iconURL: ''
 };
 
 export default IconComponent;

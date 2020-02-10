@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Icon from '../IconComponent';
+
 import './styles.scss';
 
 const FABComponent = (props) => {
@@ -19,11 +21,9 @@ const FABComponent = (props) => {
             onClick={handleClick}
             type={'button'}
         >
-            <span
+            <Icon
                 className={`${displayName}__icon`}
-                style={{
-                    backgroundImage: `url('${icon}')`
-                }}
+                iconURL={icon}
             />
         </button>
     );
