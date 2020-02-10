@@ -100,6 +100,7 @@ collections:
         name: 'footer'
         file: 'static/content/footer.md'
         fields:
+          - { label: 'Footer Copy', name: 'footerCopy', widget: string }
           - label: 'Social Media Links'
             label_singular: 'Social Media Link'
             name: 'socialMediaLinks'
