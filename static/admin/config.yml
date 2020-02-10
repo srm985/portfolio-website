@@ -87,6 +87,7 @@ collections:
         file: 'static/content/navigation.md'
         fields:
           - { label: Logo Copy, name: logoCopy, widget: string }
+          - { label: Logo Icon, name: headerLogoIcon, widget: image }
           - label: 'Navigation Links'
             name: 'navigationLinks'
             widget: 'list'
@@ -98,14 +99,14 @@ collections:
         name: 'footer'
         file: 'static/content/footer.md'
         fields:
-          - { label: Footer Copy, name: footerCopy, widget: text }
-          - { label: LinkedIn URL, name: linkedInURL, widget: string }
-          - { label: GitHub URL, name: gitHubURL, widget: string }
-          - {
-              label: Stack Overflow URL,
-              name: stackOverflowURL,
-              widget: string,
-            }
+          - label: 'Social Media Links'
+          - label_singular: 'Social Media Link'
+            name: 'socialMediaLink'
+            widget: 'list'
+            fields:
+              - { label: 'Social Medium Name', name: socialMediumName, widget: string }
+              - { label: 'Social Medium URL', name: socialMediumURL, widget: string }
+              - { label: 'Social Medium Icon', name: socialMediumIcon, widget: image }
   - create: true
     folder: static/content/projects
     identifier_field: path
