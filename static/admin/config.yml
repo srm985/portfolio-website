@@ -59,6 +59,15 @@ collections:
         fields:
           - { label: Page Title, name: pageTitle, widget: string }
           - { label: View Project CTA, name: viewProjectCTA, widget: string }
+      - label: 'Project Page'
+        name: 'project'
+        file: 'static/content/project.md'
+        fields:
+          - {
+              label: 'Return Button Image',
+              name: returnButtonImage,
+              widget: image,
+            }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'
