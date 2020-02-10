@@ -57,7 +57,7 @@ export const query = graphql`
                 }
             }
         }
-        projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {excerpt: {ne: ""}}}) {
+        projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {frontmatter: {excerpt: {ne: null}}}}) {
             edges {
                 node {
                     childMarkdownRemark {
