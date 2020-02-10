@@ -104,13 +104,21 @@ collections:
     label_singular: Project
     name: projects
     fields:
-      - { name: path, label: Path, widget: string }
-      - { name: date, label: Date, widget: date }
-      - { name: pageTitle, label: Page Title, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: role, label: Role, widget: string }
-      - { name: excerpt, label: Excerpt, widget: string }
-      - { name: projectThumbnail, label: Project Thumbnail, widget: image }
-      - { name: description, label: Description, widget: text }
-      - { name: sectionTitleTechnology, label: Section Title: Technology, widget: string }
-      - { name: sectionBodyTechnology, label: Section Body: Technology, widget: markdown }
+      - { name: path, label: 'Path', widget: string }
+      - { name: date, label: 'Date', widget: date }
+      - { name: pageTitle, label: 'Page Title', widget: string }
+      - { name: title, label: 'Title', widget: string }
+      - { name: role, label: 'Role', widget: string }
+      - { name: excerpt, label: 'Excerpt', widget: string }
+      - { name: projectThumbnail, label: 'Project Thumbnail', widget: image }
+      - { name: description, label: 'Description', widget: text }
+      - {
+          name: sectionTitleTechnology,
+          label: 'Section Title: Technology',
+          widget: string,
+        }
+      - {
+          name: sectionBodyTechnology,
+          label: 'Section Body: Technology',
+          widget: markdown,
+        }
