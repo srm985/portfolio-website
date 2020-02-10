@@ -12,6 +12,9 @@ const ProjectTemplate = (props) => {
     const {
         content: {
             description = '',
+            returnButtonImage: {
+                publicURL = ''
+            } = {},
             sectionBodyTechnology = '',
             sectionTitleTechnology = '',
             title = ''
@@ -47,7 +50,7 @@ const ProjectTemplate = (props) => {
                 <h3>{sectionTitleTechnology}</h3>
                 <ReactMarkdown source={sectionBodyTechnology} />
             </Section>
-            <FAB />
+            <FAB icon={publicURL} />
         </div>
     );
 };
@@ -57,6 +60,9 @@ ProjectTemplate.displayName = 'ProjectTemplate';
 ProjectTemplate.propTypes = {
     content: PropTypes.shape({
         description: PropTypes.string,
+        returnButtonImage: PropTypes.shape({
+            publicURL: PropTypes.string
+        }),
         sectionBodyTechnology: PropTypes.node,
         sectionTitleTechnology: PropTypes.string,
         title: PropTypes.string

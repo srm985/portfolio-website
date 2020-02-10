@@ -8,17 +8,28 @@ import Layout from '../components/LayoutComponent';
 
 import ProjectTemplate from '../templates/ProjectTemplate';
 
+import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
+
 const ProjectTemplateConnected = (props) => {
     const {
         data: {
             pageQuery: {
                 frontmatter: pageData
-            }
+            },
+            templateGlobalsQuery
         } = {}
     } = props;
 
+    const [
+        templateGlobalData
+    ] = destructureNetlifyCMS(templateGlobalsQuery);
+
     return (
-        <Layout content={pageData}>
+        <Layout content={{
+            ...templateGlobalData,
+            ...pageData
+        }}
+        >
             <ProjectTemplate />
         </Layout>
     );
@@ -35,6 +46,19 @@ export const query = graphql`
                 sectionBodyTechnology
                 sectionTitleTechnology
                 title
+            }
+        }
+        templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "project"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            returnButtonImage {
+                                publicURL
+                            }
+                        }
+                    }
+                }
             }
         }
     }

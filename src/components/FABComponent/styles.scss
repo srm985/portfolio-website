@@ -29,24 +29,12 @@ $fab-diameter: #{$planck-length * 6};
         }
     }
 
-    & > span {
-        position: relative;
+    &__icon {
+        width: #{$planck-length * 3};
+        height: #{$planck-length * 3};
 
-        display: inline-block;
-        width: 3px;
-        height: 15px;
+        background-size: cover;
 
-        background-color: $color-white;
-
-        &::before {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-
-            background-color: inherit;
-            transform: rotate(90deg);
-
-            content: '';
-        }
+        fill: $color-white;
     }
 }
