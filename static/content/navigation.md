@@ -1,5 +1,6 @@
 ---
-logoCopy: SEAN MCQUAY
+headerLogoCopy: SEAN MCQUAY
+headerLogoIcon: /assets/logo.svg
 navigationLinks:
   - pageName: Home
     pageURL: /
@@ -8,3 +9,4 @@ navigationLinks:
   - pageName: Contact
     pageURL: /contact
 ---
+
