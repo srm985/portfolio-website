@@ -1,3 +1,4 @@
+import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -5,7 +6,9 @@ import './styles.scss';
 
 const FABComponent = (props) => {
     const {
-        handleClick
+        alt,
+        handleClick,
+        icon
     } = props;
 
     const {
@@ -18,7 +21,10 @@ const FABComponent = (props) => {
             onClick={handleClick}
             type={'button'}
         >
-            <span />
+            <Image
+                alt={alt}
+                fixed={icon}
+            />
         </button>
     );
 };
@@ -26,11 +32,14 @@ const FABComponent = (props) => {
 FABComponent.displayName = 'FABComponent';
 
 FABComponent.propTypes = {
-    handleClick: PropTypes.func
+    alt: PropTypes.string.isRequired,
+    handleClick: PropTypes.func,
+    icon: PropTypes.shape({})
 };
 
 FABComponent.defaultProps = {
-    handleClick: () => { }
+    handleClick: () => { },
+    icon: {}
 };
 
 export default FABComponent;

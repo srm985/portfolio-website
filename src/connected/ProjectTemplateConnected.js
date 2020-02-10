@@ -32,6 +32,8 @@ export const query = graphql`
                 description
                 pageTitle
                 path
+                sectionBodyTechnology
+                sectionTitleTechnology
                 title
             }
         }

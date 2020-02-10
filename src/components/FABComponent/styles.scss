@@ -1,7 +1,7 @@
 @import '../../styles/constants';
 @import '../../styles/mixins';
 
-$fab-diameter: #{$planck-length * 5};
+$fab-diameter: #{$planck-length * 6};
 
 .FABComponent {
     position: fixed;

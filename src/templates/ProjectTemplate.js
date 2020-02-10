@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
+import FAB from '../components/FABComponent';
 import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
@@ -9,11 +11,16 @@ import Section from '../components/SectionComponent';
 const ProjectTemplate = (props) => {
     const {
         content: {
-            body,
             description = '',
+            sectionBodyTechnology = '',
+            sectionTitleTechnology = '',
             title = ''
         }
     } = props;
+
+    console.log({
+        props
+    });
 
     const {
         displayName
@@ -37,8 +44,10 @@ const ProjectTemplate = (props) => {
                 </Grid>
             </Hero>
             <Section>
-                {body}
+                <h3>{sectionTitleTechnology}</h3>
+                <ReactMarkdown source={sectionBodyTechnology} />
             </Section>
+            <FAB />
         </div>
     );
 };
@@ -47,8 +56,9 @@ ProjectTemplate.displayName = 'ProjectTemplate';
 
 ProjectTemplate.propTypes = {
     content: PropTypes.shape({
-        body: PropTypes.node,
         description: PropTypes.string,
+        sectionBodyTechnology: PropTypes.node,
+        sectionTitleTechnology: PropTypes.string,
         title: PropTypes.string
     })
 };
