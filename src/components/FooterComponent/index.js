@@ -35,6 +35,7 @@ const FooterComponent = (props) => {
             <Button
                 href={socialMediumURL}
                 isInternalURL={false}
+                key={socialMediumURL}
                 screenReaderLabel={socialMediumName}
                 styleType={BUTTON_STYLE_TYPE_INLINE}
             >

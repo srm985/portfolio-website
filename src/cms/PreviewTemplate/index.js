@@ -18,8 +18,13 @@ const PreviewTemplate = (props) => {
     } = PreviewTemplate;
 
     const content = entry.getIn([
-        'data'
+        'data',
+        'image'
     ]).toJS();
+
+    console.log({
+        content
+    });
 
     return (
         <div className={displayName}>
