@@ -12,8 +12,10 @@ import './styles.scss';
 
 const FooterComponent = (props) => {
     const {
-        footerCopy,
-        socialMediaLinks
+        content: {
+            footerCopy = '',
+            socialMediaLinks = []
+        }
     } = props;
 
     const {
@@ -22,7 +24,9 @@ const FooterComponent = (props) => {
 
     const renderLinkButtons = () => socialMediaLinks.map((linkInformation) => {
         const {
-            socialMediumIcon,
+            socialMediumIcon: {
+                publicURL: iconURL
+            } = {},
             socialMediumName,
             socialMediumURL
         } = linkInformation;
@@ -36,7 +40,7 @@ const FooterComponent = (props) => {
             >
                 <Icon
                     className={`${displayName}__link-icon`}
-                    icon={socialMediumIcon}
+                    iconURL={iconURL}
                 />
             </Button>
         );
@@ -57,17 +61,18 @@ const FooterComponent = (props) => {
 FooterComponent.displayName = 'FooterComponent';
 
 FooterComponent.propTypes = {
-    footerCopy: PropTypes.string,
-    socialMediaLinks: PropTypes.arrayOf(PropTypes.shape({
-        socialMediumIcon: PropTypes.string,
-        socialMediumName: PropTypes.string,
-        socialMediumURL: PropTypes.string
-    }))
+    content: PropTypes.shape({
+        footerCopy: PropTypes.string,
+        socialMediaLinks: PropTypes.arrayOf(PropTypes.shape({
+            socialMediumIcon: PropTypes.string,
+            socialMediumName: PropTypes.string,
+            socialMediumURL: PropTypes.string
+        }))
+    })
 };
 
 FooterComponent.defaultProps = {
-    footerCopy: '',
-    socialMediaLinks: []
+    content: {}
 };
 
 export default FooterComponent;

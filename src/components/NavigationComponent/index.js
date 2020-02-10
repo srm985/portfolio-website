@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import NavigationDesktop from '../NavigationDesktopComponent';
@@ -47,7 +48,9 @@ class NavigationComponent extends React.Component {
 
     render() {
         const {
-            props,
+            props: {
+                content = {}
+            },
             state: {
                 isMobile
             }
@@ -55,12 +58,20 @@ class NavigationComponent extends React.Component {
 
         return (
             isMobile ? (
-                <NavigationMobile {...props} />
+                <NavigationMobile {...content} />
             ) : (
-                <NavigationDesktop {...props} />
+                <NavigationDesktop {...content} />
             )
         );
     }
 }
+
+NavigationComponent.propTypes = {
+    content: PropTypes.shape({})
+};
+
+NavigationComponent.defaultProps = {
+    content: {}
+};
 
 export default NavigationComponent;

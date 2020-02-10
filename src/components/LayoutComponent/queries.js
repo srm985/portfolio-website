@@ -36,9 +36,13 @@ const Query = (props) => {
                                     childMarkdownRemark {
                                         frontmatter {
                                             footerCopy
-                                            gitHubURL
-                                            linkedInURL
-                                            stackOverflowURL
+                                            socialMediaLinks {
+                                                socialMediumIcon {
+                                                    publicURL
+                                                }
+                                                socialMediumName
+                                                socialMediumURL
+                                            }
                                         }
                                     }
                                 }

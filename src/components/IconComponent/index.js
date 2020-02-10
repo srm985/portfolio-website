@@ -21,10 +21,28 @@ class IconComponent extends React.Component {
             }
         } = this;
 
-        this.fetchIcon(iconURL);
+        if (iconURL) {
+            this.fetchIcon(iconURL);
+        }
     }
 
-    fetchIcon=(iconURL) => {
+    componentDidUpdate(previousProps) {
+        const {
+            props: {
+                iconURL: iconURLNew
+            }
+        } = this;
+
+        const {
+            iconURL: iconURLOld
+        } = previousProps;
+
+        if (iconURLNew && iconURLNew !== iconURLOld) {
+            this.fetchIcon(iconURLNew);
+        }
+    }
+
+    fetchIcon = (iconURL) => {
         fetch(iconURL).then((response) => response.text()).then((svgImage) => {
             this.setState({
                 svgImage

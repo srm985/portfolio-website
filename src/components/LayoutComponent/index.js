@@ -48,10 +48,10 @@ const LayoutComponent = (props) => {
     );
 
     const [
-        navigationData
+        navigationContent
     ] = destructureNetlifyCMS(navigationQuery);
     const [
-        footerData
+        footerContent
     ] = destructureNetlifyCMS(footerQuery);
 
     return (
@@ -61,7 +61,7 @@ const LayoutComponent = (props) => {
                 title={pageTitle}
             />
             {
-                hasNavigation && <Navigation {...navigationData} />
+                hasNavigation && <Navigation content={navigationContent} />
             }
             <main className={mainContentClassNames}>
                 {
@@ -74,7 +74,7 @@ const LayoutComponent = (props) => {
                 }
             </main>
             {
-                hasFooter && <Footer {...footerData} />
+                hasFooter && <Footer content={footerContent} />
             }
         </div>
     );
