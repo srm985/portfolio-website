@@ -8,51 +8,46 @@ import {
     BUTTON_STYLE_TYPE_INLINE
 } from '../ButtonComponent/config';
 
-import {
-    gitHubIcon,
-    linkedInIcon,
-    stackOverflowIcon
-} from '../../assets/icons';
-
 import './styles.scss';
 
 const FooterComponent = (props) => {
     const {
         footerCopy,
-        gitHubURL,
-        linkedInURL,
-        stackOverflowURL
+        socialMediaLinks
     } = props;
 
     const {
         displayName
     } = FooterComponent;
 
-    const renderLinkButton = (linkIcon, linkURL) => (
-        <Button
-            href={linkURL}
-            isInternalURL={false}
-            styleType={BUTTON_STYLE_TYPE_INLINE}
-        >
-            <Icon
-                className={`${displayName}__link-icon`}
-                icon={linkIcon}
-            />
-        </Button>
-    );
+    const renderLinkButtons = () => socialMediaLinks.map((linkInformation) => {
+        const {
+            socialMediumIcon,
+            socialMediumName,
+            socialMediumURL
+        } = linkInformation;
+
+        return (
+            <Button
+                href={socialMediumURL}
+                isInternalURL={false}
+                screenReaderLabel={socialMediumName}
+                styleType={BUTTON_STYLE_TYPE_INLINE}
+            >
+                <Icon
+                    className={`${displayName}__link-icon`}
+                    icon={socialMediumIcon}
+                />
+            </Button>
+        );
+    });
 
     return (
         <footer className={displayName}>
             <p className={`${displayName}__copy`}>{footerCopy}</p>
             <div className={`${displayName}__links`}>
                 {
-                    linkedInURL && renderLinkButton(linkedInIcon, linkedInURL)
-                }
-                {
-                    stackOverflowURL && renderLinkButton(stackOverflowIcon, stackOverflowURL)
-                }
-                {
-                    gitHubURL && renderLinkButton(gitHubIcon, gitHubURL)
+                    renderLinkButtons()
                 }
             </div>
         </footer>
@@ -63,16 +58,16 @@ FooterComponent.displayName = 'FooterComponent';
 
 FooterComponent.propTypes = {
     footerCopy: PropTypes.string,
-    gitHubURL: PropTypes.string,
-    linkedInURL: PropTypes.string,
-    stackOverflowURL: PropTypes.string
+    socialMediaLinks: PropTypes.arrayOf(PropTypes.shape({
+        socialMediumIcon: PropTypes.string,
+        socialMediumName: PropTypes.string,
+        socialMediumURL: PropTypes.string
+    }))
 };
 
 FooterComponent.defaultProps = {
     footerCopy: '',
-    gitHubURL: '',
-    linkedInURL: '',
-    stackOverflowURL: ''
+    socialMediaLinks: []
 };
 
 export default FooterComponent;

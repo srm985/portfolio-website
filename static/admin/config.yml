@@ -15,50 +15,50 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - { label: Page Title, name: pageTitle, widget: string }
-          - { label: Hero Title, name: heroTitle, widget: string }
-          - { label: Hero Subtitle, name: heroSubtitle, widget: string }
-          - { label: Hero Image, name: heroImage, widget: image }
+          - { label: 'Page Title', name: pageTitle, widget: string }
+          - { label: 'Hero Title', name: heroTitle, widget: string }
+          - { label: 'Hero Subtitle', name: heroSubtitle, widget: string }
+          - { label: 'Hero Image', name: heroImage, widget: image }
           - {
-              label: Skills Section Title,
+              label: 'Skills Section Title',
               name: skillsSectionTitle,
               widget: string,
             }
           - {
-              label: Skills Search Label,
+              label: 'Skills Search Label',
               name: skillsSearchLabel,
               widget: string,
             }
           - {
-              label: Skills Search Name,
+              label: 'Skills Search Name',
               name: skillsSearchName,
               widget: string,
             }
           - {
-              label: Skills Search Placeholder,
+              label: 'Skills Search Placeholder',
               name: skillsSearchPlaceholder,
               widget: string,
             }
-          - { label: Skill Not Found, name: skillNotFound, widget: string }
+          - { label: 'Skill Not Found', name: skillNotFound, widget: string }
           - label: Skills Sections List
             label_singular: Skills List
             name: skillsSectionList
             name_singular: skillsList
             widget: list
             fields:
-              - { label: Section Label, name: sectionLabel, widget: string }
+              - { label: 'Section Label', name: sectionLabel, widget: string }
               - label: Skills List
                 name: skillsList
                 widget: list
                 fields:
-                  - { label: Icon, name: icon, widget: string }
-                  - { label: Label, name: label, widget: string }
+                  - { label: 'Icon', name: icon, widget: string }
+                  - { label: 'Label', name: label, widget: string }
       - label: 'Portfolio Page'
         name: 'portfolio'
         file: 'static/content/portfolio.md'
         fields:
-          - { label: Page Title, name: pageTitle, widget: string }
-          - { label: View Project CTA, name: viewProjectCTA, widget: string }
+          - { label: 'Page Title', name: pageTitle, widget: string }
+          - { label: 'View Project CTA', name: viewProjectCTA, widget: string }
       - label: 'Project Page'
         name: 'project'
         file: 'static/content/project.md'
@@ -72,12 +72,12 @@ collections:
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
-          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: 'Page Title', name: pageTitle, widget: string }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'
         fields:
-          - { label: Page Title, name: pageTitle, widget: string }
+          - { label: 'Page Title', name: pageTitle, widget: string }
   - label: 'Globals'
     name: 'globals'
     files:
@@ -86,14 +86,15 @@ collections:
         name: 'navigation'
         file: 'static/content/navigation.md'
         fields:
-          - { label: Logo Copy, name: logoCopy, widget: string }
-          - { label: Logo Icon, name: headerLogoIcon, widget: image }
+          - { label: 'Logo Copy', name: headerLogoCopy, widget: string }
+          - { label: 'Logo Icon', name: headerLogoIcon, widget: image }
           - label: 'Navigation Links'
+          - label_singular: 'Navigation Link'
             name: 'navigationLinks'
             widget: 'list'
             fields:
-              - { label: Page Name, name: pageName, widget: string }
-              - { label: Page URL, name: pageURL, widget: string }
+              - { label: 'Page Name', name: pageName, widget: string }
+              - { label: 'Page URL', name: pageURL, widget: string }
       - allow_add: true
         label: 'Footer'
         name: 'footer'
