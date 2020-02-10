@@ -18,8 +18,7 @@ const PreviewTemplate = (props) => {
     } = PreviewTemplate;
 
     const content = entry.getIn([
-        'data',
-        'image'
+        'data'
     ]).toJS();
 
     console.log({
