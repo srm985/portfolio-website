@@ -89,7 +89,7 @@ collections:
           - { label: 'Logo Copy', name: headerLogoCopy, widget: string }
           - { label: 'Logo Icon', name: headerLogoIcon, widget: image }
           - label: 'Navigation Links'
-          - label_singular: 'Navigation Link'
+            label_singular: 'Navigation Link'
             name: 'navigationLinks'
             widget: 'list'
             fields:
@@ -101,7 +101,7 @@ collections:
         file: 'static/content/footer.md'
         fields:
           - label: 'Social Media Links'
-          - label_singular: 'Social Media Link'
+            label_singular: 'Social Media Link'
             name: 'socialMediaLinks'
             widget: 'list'
             fields:

@@ -27,6 +27,7 @@ const ButtonComponent = (props) => {
         isColorProfileDark,
         isInternalURL,
         label,
+        screenReaderLabel,
         shouldOpenInNewTab,
         styleType,
         type
@@ -71,6 +72,7 @@ const ButtonComponent = (props) => {
             ? (
                 <Link
                     activeClassName={activeLinkClassName}
+                    aria-label={screenReaderLabel}
                     className={buttonClassNames}
                     to={href}
                 >
@@ -79,6 +81,7 @@ const ButtonComponent = (props) => {
             )
             : (
                 <a
+                    aria-label={screenReaderLabel}
                     className={buttonClassNames}
                     href={href}
                     rel={'noopener noreferrer'}
@@ -99,6 +102,7 @@ const ButtonComponent = (props) => {
                     : (
                         // eslint-disable-next-line react/button-has-type
                         <button
+                            aria-label={screenReaderLabel}
                             className={buttonClassNames}
                             type={type}
                         >
@@ -118,6 +122,7 @@ ButtonComponent.propTypes = {
     isColorProfileDark: PropTypes.bool,
     isInternalURL: PropTypes.bool,
     label: PropTypes.string,
+    screenReaderLabel: PropTypes.string,
     shouldOpenInNewTab: PropTypes.bool,
     styleType: PropTypes.oneOf(BUTTON_STYLE_TYPES),
     type: PropTypes.oneOf(BUTTON_TYPES)
@@ -131,6 +136,7 @@ ButtonComponent.defaultProps = {
     isColorProfileDark: true,
     isInternalURL: true,
     label: '',
+    screenReaderLabel: '',
     shouldOpenInNewTab: true,
     styleType: BUTTON_STYLE_TYPE_PRIMARY,
     type: BUTTON_TYPE_BUTTON
