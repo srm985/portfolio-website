@@ -101,7 +101,7 @@ collections:
         fields:
           - label: 'Social Media Links'
           - label_singular: 'Social Media Link'
-            name: 'socialMediaLink'
+            name: 'socialMediaLinks'
             widget: 'list'
             fields:
               - { label: 'Social Medium Name', name: socialMediumName, widget: string }
