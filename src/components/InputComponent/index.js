@@ -3,6 +3,7 @@ import React from 'react';
 
 import {
     INPUT_TYPE_TEXT,
+    INPUT_TYPE_TEXTAREA,
     INPUT_TYPES
 } from './config';
 
@@ -30,6 +31,20 @@ const InputComponent = (props) => {
         className
     );
 
+    const defaultFieldAttributes = {
+        className: `${displayName}__input`,
+        defaultValue,
+        id: name,
+        name,
+        onChange: handleChange,
+        placeholder
+    };
+
+    const textareaClassNames = classNames(
+        `${displayName}__input`,
+        `${displayName}__input--textarea`
+    );
+
     return (
         <label
             className={componentClassNames}
@@ -43,15 +58,20 @@ const InputComponent = (props) => {
                     </span>
                 )
             }
-            <input
-                className={`${displayName}__input`}
-                defaultValue={defaultValue}
-                id={name}
-                name={name}
-                onChange={handleChange}
-                placeholder={placeholder}
-                type={type}
-            />
+            {
+                type === INPUT_TYPE_TEXTAREA ? (
+                    <textarea
+                        {...defaultFieldAttributes}
+                        className={textareaClassNames}
+                    />
+                ) : (
+                    <input
+                        {...defaultFieldAttributes}
+                        className={`${displayName}__input`}
+                        type={type}
+                    />
+                )
+            }
         </label>
     );
 };

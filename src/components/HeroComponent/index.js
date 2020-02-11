@@ -15,6 +15,7 @@ const HeroComponent = (props) => {
     const {
         alt,
         children,
+        className,
         defaultSource,
         isHalfHeight,
         overlayColor
@@ -27,6 +28,7 @@ const HeroComponent = (props) => {
     const hasImage = Object.keys(defaultSource).length > 0;
 
     const componentClassNames = classNames(
+        className,
         displayName,
         {
             [`${displayName}--half`]: isHalfHeight,
@@ -69,6 +71,7 @@ const HeroComponent = (props) => {
 HeroComponent.propTypes = {
     alt: PropTypes.string,
     children: PropTypes.node,
+    className: PropTypes.string,
     defaultSource: PropTypes.shape({}),
     isHalfHeight: PropTypes.bool,
     overlayColor: PropTypes.oneOf(OVERLAY_OPTIONS)
@@ -77,6 +80,7 @@ HeroComponent.propTypes = {
 HeroComponent.defaultProps = {
     alt: '',
     children: '',
+    className: '',
     defaultSource: {},
     isHalfHeight: false,
     overlayColor: OVERLAY_BLACK

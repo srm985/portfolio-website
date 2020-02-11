@@ -3,22 +3,26 @@
 .InputComponent {
     display: inline-block;
     width: 100%;
-    max-width: #{$planck-length * 60};
+    max-width: #{$planck-length * 70};
 
     &__label {
         display: inline-block;
-        margin-bottom: 8px;
+        margin-bottom: $planck-length;
     }
 
     &__input {
         box-sizing: border-box;
         width: 100%;
-        height: 30px;
-        padding-right: 7px;
-        padding-left: 7px;
+        height: #{$planck-length * 4};
+        padding-right: $planck-length;
+        padding-left: $planck-length;
 
         border: solid 1px $color-gray-dark;
         border-radius: $border-radius-default;
         outline: none;
+
+        &--textarea {
+            min-height: #{$planck-length * 10};
+        }
     }
 }

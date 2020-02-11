@@ -9,6 +9,7 @@ export const INPUT_TYPE_RANGE = 'range';
 export const INPUT_TYPE_SEARCH = 'search';
 export const INPUT_TYPE_TEL = 'tel';
 export const INPUT_TYPE_TEXT = 'text';
+export const INPUT_TYPE_TEXTAREA = 'textarea';
 export const INPUT_TYPE_TIME = 'time';
 export const INPUT_TYPE_URL = 'url';
 export const INPUT_TYPE_WEEK = 'week';
@@ -25,6 +26,7 @@ export const INPUT_TYPES = [
     INPUT_TYPE_SEARCH,
     INPUT_TYPE_TEL,
     INPUT_TYPE_TEXT,
+    INPUT_TYPE_TEXTAREA,
     INPUT_TYPE_TIME,
     INPUT_TYPE_URL,
     INPUT_TYPE_WEEK
