@@ -32,6 +32,6 @@ $darken-constant: 10%;
     &--background-white {
         color: $color-black;
 
-        background-color: darken($color: $color-white, $amount: $darken-constant);
+        background-color: $color-white;
     }
 }

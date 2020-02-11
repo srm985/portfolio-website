@@ -1,6 +1,7 @@
 export const INPUT_TYPE_DATE = 'date';
 export const INPUT_TYPE_DATETIMELOCAL = 'datetime-local';
 export const INPUT_TYPE_EMAIL = 'email';
+export const INPUT_TYPE_HIDDEN = 'hidden';
 export const INPUT_TYPE_MONTH = 'month';
 export const INPUT_TYPE_NUMBER = 'number';
 export const INPUT_TYPE_PASSWORD = 'password';
@@ -16,6 +17,7 @@ export const INPUT_TYPES = [
     INPUT_TYPE_DATE,
     INPUT_TYPE_DATETIMELOCAL,
     INPUT_TYPE_EMAIL,
+    INPUT_TYPE_HIDDEN,
     INPUT_TYPE_MONTH,
     INPUT_TYPE_NUMBER,
     INPUT_TYPE_PASSWORD,
