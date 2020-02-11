@@ -23,7 +23,12 @@ const ContactPageTemplate = () => {
                 className={`${displayName}__form`}
                 data-netlify={'true'}
                 name={'contact-form'}
+                netlify-honeypot={'bot-field'}
             >
+                <input
+                    name={'bot-field'}
+                    type={'hidden'}
+                />
                 <Input name={'name'} />
                 <Input
                     name={'email'}
