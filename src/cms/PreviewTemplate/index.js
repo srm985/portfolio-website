@@ -21,10 +21,6 @@ const PreviewTemplate = (props) => {
         'data'
     ]).toJS();
 
-    console.log({
-        content
-    });
-
     return (
         <div className={displayName}>
             {
