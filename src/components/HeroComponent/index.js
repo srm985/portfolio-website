@@ -43,18 +43,18 @@ const HeroComponent = (props) => {
 
     return (
         <div className={componentClassNames}>
-            {hasImage && (
-                <Image
-                    alt={alt}
-                    className={`${displayName}__hero-image`}
-                    fluid={defaultSource}
-                />
-            )}
-            {
-                overlayColor && (
+            {hasImage ? (
+                <>
+                    <Image
+                        alt={alt}
+                        className={`${displayName}__hero-image`}
+                        fluid={defaultSource}
+                    />
                     <div className={overlayClassNames} />
-                )
-            }
+                </>
+            ) : (
+                <div className={`${displayName}__gradient`} />
+            )}
             {
                 children && (
                     <div className={`${displayName}__content`}>
