@@ -67,7 +67,7 @@ const HeroComponent = (props) => {
 };
 
 HeroComponent.propTypes = {
-    alt: PropTypes.string.isRequired,
+    alt: PropTypes.string,
     children: PropTypes.node,
     defaultSource: PropTypes.shape({}),
     isHalfHeight: PropTypes.bool,
@@ -75,6 +75,7 @@ HeroComponent.propTypes = {
 };
 
 HeroComponent.defaultProps = {
+    alt: '',
     children: '',
     defaultSource: {},
     isHalfHeight: false,
