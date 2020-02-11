@@ -20,6 +20,8 @@ const IndexPageTemplate = (props) => {
     const {
         content,
         content: {
+            aboutMeSectionBody = '',
+            aboutMeSectionTitle = '',
             heroImage: {
                 childImageSharp: {
                     fluid
@@ -90,8 +92,8 @@ const IndexPageTemplate = (props) => {
                 </Grid>
             </Hero>
             <Section>
-                <h3>{'What I Am About'}</h3>
-                <ReactMarkdown source={'Officia commodo exercitation deserunt ex duis ut exercitation. Ipsum id do est excepteur aliqua ullamco tempor sint laboris sint eu sint. Sint do ea sint laboris. Consectetur exercitation aliquip minim voluptate sunt. Excepteur minim est nostrud amet velit laborum quis pariatur et enim culpa.'} />
+                <h3 className={'mb--2'}>{aboutMeSectionTitle}</h3>
+                <ReactMarkdown source={aboutMeSectionBody} />
             </Section>
             <Section isDark>
                 <Grid>
@@ -117,6 +119,8 @@ const IndexPageTemplate = (props) => {
 
 IndexPageTemplate.propTypes = {
     content: PropTypes.shape({
+        aboutMeSectionBody: PropTypes.string,
+        aboutMeSectionTitle: PropTypes.string,
         heroImage: PropTypes.shape({
             childImageSharp: PropTypes.shape({
                 fluid: PropTypes.shape({})
