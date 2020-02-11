@@ -3,6 +3,18 @@ pageTitle: Sean McQuay | Home
 heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroImage: /assets/gatsby-astronaut.png
+aboutMeSectionTitle: What I'm About
+aboutMeSectionBody: >-
+  Quis esse nulla excepteur reprehenderit voluptate commodo est exercitation
+  incididunt. Fugiat incididunt aliquip adipisicing anim dolor nisi officia
+  mollit. Ut excepteur laboris consequat exercitation reprehenderit laboris
+  minim officia ullamco duis amet.
+
+
+  Ut consequat aliqua aliquip consequat magna ea. Tempor nisi deserunt deserunt
+  aliquip cillum ullamco cupidatat ipsum anim nisi ullamco qui dolore consequat.
+  Minim qui fugiat exercitation amet. Ullamco in consectetur id sunt eu et amet
+  aliqua aliqua aliquip. Lorem nulla laboris aute culpa qui irure.
 skillsSectionTitle: Do I have the skills you need?
 skillsSearchLabel: Find a skill!
 skillsSearchName: skillSearchbar
