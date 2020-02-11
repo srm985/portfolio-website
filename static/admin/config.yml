@@ -20,6 +20,16 @@ collections:
           - { label: 'Hero Subtitle', name: heroSubtitle, widget: string }
           - { label: 'Hero Image', name: heroImage, widget: image }
           - {
+              label: 'About Me Title',
+              name: aboutMeSectionTitle,
+              widget: string,
+            }
+          - {
+              label: 'About Me Body',
+              name: aboutMeSectionBody,
+              widget: markdown,
+            }
+          - {
               label: 'Skills Section Title',
               name: skillsSectionTitle,
               widget: string,
@@ -106,9 +116,21 @@ collections:
             name: 'socialMediaLinks'
             widget: 'list'
             fields:
-              - { label: 'Social Medium Name', name: socialMediumName, widget: string }
-              - { label: 'Social Medium URL', name: socialMediumURL, widget: string }
-              - { label: 'Social Medium Icon', name: socialMediumIcon, widget: image }
+              - {
+                  label: 'Social Medium Name',
+                  name: socialMediumName,
+                  widget: string,
+                }
+              - {
+                  label: 'Social Medium URL',
+                  name: socialMediumURL,
+                  widget: string,
+                }
+              - {
+                  label: 'Social Medium Icon',
+                  name: socialMediumIcon,
+                  widget: image,
+                }
   - create: true
     folder: static/content/projects
     identifier_field: path

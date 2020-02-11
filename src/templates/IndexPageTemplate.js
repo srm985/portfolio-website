@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import Button from '../components/ButtonComponent';
 import Grid from '../components/GridComponent';
@@ -89,6 +90,10 @@ const IndexPageTemplate = (props) => {
                 </Grid>
             </Hero>
             <Section>
+                <h3>{'What I Am About'}</h3>
+                <ReactMarkdown source={'Officia commodo exercitation deserunt ex duis ut exercitation. Ipsum id do est excepteur aliqua ullamco tempor sint laboris sint eu sint. Sint do ea sint laboris. Consectetur exercitation aliquip minim voluptate sunt. Excepteur minim est nostrud amet velit laborum quis pariatur et enim culpa.'} />
+            </Section>
+            <Section isDark>
                 <Grid>
                     <GridItem
                         breakpoints={{
