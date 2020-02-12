@@ -5,9 +5,15 @@
     width: 100%;
     max-width: #{$planck-length * 70};
 
+    font-family: $font-stack;
+
     &__label {
         display: inline-block;
         margin-bottom: $planck-length;
+    }
+
+    &__required-indicator {
+        color: $color-red;
     }
 
     &__input {
@@ -17,12 +23,20 @@
         padding-right: $planck-length;
         padding-left: $planck-length;
 
+        font-size: $font-size-regular;
+
         border: solid 1px $color-gray-dark;
         border-radius: $border-radius-default;
         outline: none;
 
         &--textarea {
-            min-height: #{$planck-length * 10};
+            height: #{$planck-length * 12};
+            padding-top: #{$planck-length / 2};
+            padding-bottom: #{$planck-length / 2};
+
+            font-family: inherit;
+
+            resize: none;
         }
     }
 }

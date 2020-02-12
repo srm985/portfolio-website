@@ -6,7 +6,7 @@ $darken-constant: 10%;
     box-sizing: border-box;
     width: 100%;
     min-height: #{$planck-length * 25};
-    padding: #{$planck-length * 2};
+    padding: #{$planck-length * 2} #{$planck-length * 3};
 
     color: $color-white;
 

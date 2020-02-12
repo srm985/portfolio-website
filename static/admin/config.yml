@@ -83,6 +83,7 @@ collections:
         file: 'static/content/contact.md'
         fields:
           - { label: 'Page Title', name: pageTitle, widget: string }
+          - { label: 'Hero Image', name: heroImageContactPage, widget: image }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'

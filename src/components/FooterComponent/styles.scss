@@ -8,14 +8,14 @@
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    padding: #{$planck-length * 2};
+    padding: #{$planck-length * 4} #{$planck-length * 2};
 
     color: $color-white;
 
     background-color: $color-black;
 
     &__copy {
-        margin-bottom: #{$planck-length * 2};
+        margin-bottom: #{$planck-length * 4};
     }
 
     &__links {

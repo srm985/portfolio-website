@@ -27,8 +27,8 @@ const ContactPageTemplate = () => {
                 <GridItem
                     breakpoints={{
                         large: {
-                            start: 6,
-                            stop: 11
+                            start: 7,
+                            stop: 12
                         },
                         medium: {
                             start: 5,
@@ -41,11 +41,13 @@ const ContactPageTemplate = () => {
                         <Form>
                             <Input
                                 className={'mb--2'}
+                                isRequired
                                 label={'Name'}
                                 name={'name'}
                             />
                             <Input
                                 className={'mb--2'}
+                                isRequired
                                 label={'Email'}
                                 name={'email'}
                                 type={INPUT_TYPE_EMAIL}
@@ -57,11 +59,13 @@ const ContactPageTemplate = () => {
                             />
                             <Input
                                 className={'mb--4'}
+                                isRequired
                                 label={'Message'}
                                 name={'message'}
                                 type={INPUT_TYPE_TEXTAREA}
                             />
                             <Button
+                                isAlignedRight
                                 label={'Submit'}
                                 type={BUTTON_TYPE_SUBMIT}
                             />
