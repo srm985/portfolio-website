@@ -10,6 +10,8 @@
     width: 100%;
     min-height: 100vh;
 
+    background: linear-gradient(90deg, rgba(12, 88, 100, 1) 0%, rgba(12, 88, 100, 1) 2%, rgba(12, 65, 100, 1) 100%);
+
     &--half {
         min-height: 50vh;
     }
@@ -21,6 +23,8 @@
 
         width: 100%;
         height: 100%;
+
+        opacity: 0.1;
     }
 
     &__hero-image-overlay {
@@ -36,7 +40,7 @@
         pointer-events: none;
 
         &--black {
-            background-color: $color-black;
+            // background-color: $color-black;
         }
 
         &--blue {
@@ -50,17 +54,6 @@
         &--red {
             background-color: $color-red;
         }
-    }
-
-    &__gradient {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        background: linear-gradient(90deg, rgba(12, 88, 100, 1) 0%, rgba(12, 88, 100, 1) 2%, rgba(12, 65, 100, 1) 100%);
     }
 
     &__content {

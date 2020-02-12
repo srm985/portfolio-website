@@ -24,7 +24,7 @@ const IndexPageTemplate = (props) => {
             aboutMeSectionTitle = '',
             heroImage: {
                 childImageSharp: {
-                    fluid
+                    fluid = {}
                 } = {}
             } = {},
             heroSubtitle,
@@ -68,6 +68,7 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            isColorProfileDark={false}
                             label={'Résumé'}
                             styleType={BUTTON_STYLE_TYPE_SECONDARY}
                         />
@@ -85,6 +86,7 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            isColorProfileDark={false}
                             label={'Contact Me'}
                             styleType={BUTTON_STYLE_TYPE_SECONDARY}
                         />

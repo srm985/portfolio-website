@@ -65,7 +65,9 @@ FooterComponent.propTypes = {
     content: PropTypes.shape({
         footerCopy: PropTypes.string,
         socialMediaLinks: PropTypes.arrayOf(PropTypes.shape({
-            socialMediumIcon: PropTypes.string,
+            socialMediumIcon: PropTypes.shape({
+                publicURL: PropTypes.string
+            }),
             socialMediumName: PropTypes.string,
             socialMediumURL: PropTypes.string
         }))

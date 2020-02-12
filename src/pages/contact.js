@@ -22,7 +22,7 @@ const ContactPage = (props) => {
     ] = destructureNetlifyCMS(pageQuery);
 
     return (
-        <Layout {...pageData}>
+        <Layout content={pageData}>
             <ContactPageTemplate />
         </Layout>
     );
@@ -35,7 +35,7 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImage {
+                            heroImageContactPage {
                                 childImageSharp {
                                     fluid(maxWidth: 1600) {
                                         ...GatsbyImageSharpFluid_noBase64

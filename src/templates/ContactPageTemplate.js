@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../components/ButtonComponent';
@@ -16,14 +17,37 @@ import {
     INPUT_TYPE_TEXTAREA
 } from '../components/InputComponent/config';
 
-const ContactPageTemplate = () => {
+const ContactPageTemplate = (props) => {
+    const {
+        content: {
+            heroImageContactPage: {
+                childImageSharp: {
+                    fluid = {}
+                } = {}
+            } = {}
+        }
+    } = props;
+
     const {
         displayName
     } = ContactPageTemplate;
 
     return (
-        <Hero className={displayName}>
+        <Hero
+            className={displayName}
+            defaultSource={fluid}
+        >
             <Grid>
+                <GridItem
+                    breakpoints={{
+                        large: {
+                            start: 1,
+                            stop: 6
+                        }
+                    }}
+                >
+                    <h1 className={'mb--4'}>{'Want to do something great together?'}</h1>
+                </GridItem>
                 <GridItem
                     breakpoints={{
                         large: {
@@ -37,8 +61,8 @@ const ContactPageTemplate = () => {
                     }}
                 >
                     <Card>
-                        <h2>{'Want to get in touch with me?'}</h2>
-                        <Form>
+                        <h2>{'Send me a message!'}</h2>
+                        <Form name={'contact-form'}>
                             <Input
                                 className={'mb--2'}
                                 isRequired
@@ -78,5 +102,19 @@ const ContactPageTemplate = () => {
 };
 
 ContactPageTemplate.displayName = 'ContactPageTemplate';
+
+ContactPageTemplate.propTypes = {
+    content: PropTypes.shape({
+        heroImageContactPage: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
+        })
+    })
+};
+
+ContactPageTemplate.defaultProps = {
+    content: {}
+};
 
 export default ContactPageTemplate;

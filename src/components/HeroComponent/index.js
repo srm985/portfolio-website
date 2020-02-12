@@ -45,7 +45,7 @@ const HeroComponent = (props) => {
 
     return (
         <div className={componentClassNames}>
-            {hasImage ? (
+            {hasImage && (
                 <>
                     <Image
                         alt={alt}
@@ -54,8 +54,6 @@ const HeroComponent = (props) => {
                     />
                     <div className={overlayClassNames} />
                 </>
-            ) : (
-                <div className={`${displayName}__gradient`} />
             )}
             {
                 children && (

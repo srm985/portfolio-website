@@ -82,7 +82,7 @@ exports.createPages = async (props) => {
 
             // Create pages for projects.
             if (isProjectSlug) {
-                const pageName = slug.replace(PROJECT_SLUG, '').replace(/\//g, '');
+                const pageName = slug.replace(PROJECT_SLUG, '').replace(/^\//, '');
 
                 createPage({
                     component: path.resolve('./src/connected/ProjectTemplateConnected.js'),
