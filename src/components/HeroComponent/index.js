@@ -11,12 +11,15 @@ import {
 
 import './styles.scss';
 
+const DEFAULT_OPACITY = 100;
+
 const HeroComponent = (props) => {
     const {
         alt,
         children,
         className,
         defaultSource,
+        imageOpacity,
         isHalfHeight,
         overlayColor
     } = props;
@@ -43,6 +46,12 @@ const HeroComponent = (props) => {
         }
     );
 
+    let opacity = DEFAULT_OPACITY / 100;
+
+    if (imageOpacity >= 0 && imageOpacity <= 100) {
+        opacity = imageOpacity / 100;
+    }
+
     return (
         <div className={componentClassNames}>
             {hasImage && (
@@ -51,6 +60,9 @@ const HeroComponent = (props) => {
                         alt={alt}
                         className={`${displayName}__hero-image`}
                         fluid={defaultSource}
+                        style={{
+                            opacity
+                        }}
                     />
                     <div className={overlayClassNames} />
                 </>
@@ -71,6 +83,7 @@ HeroComponent.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     defaultSource: PropTypes.shape({}),
+    imageOpacity: PropTypes.number,
     isHalfHeight: PropTypes.bool,
     overlayColor: PropTypes.oneOf(OVERLAY_OPTIONS)
 };
@@ -80,6 +93,7 @@ HeroComponent.defaultProps = {
     children: '',
     className: '',
     defaultSource: {},
+    imageOpacity: DEFAULT_OPACITY,
     isHalfHeight: false,
     overlayColor: OVERLAY_BLACK
 };

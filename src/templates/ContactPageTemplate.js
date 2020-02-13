@@ -24,7 +24,8 @@ const ContactPageTemplate = (props) => {
                 childImageSharp: {
                     fluid = {}
                 } = {}
-            } = {}
+            } = {},
+            heroImageOpacityContactPage
         }
     } = props;
 
@@ -36,6 +37,7 @@ const ContactPageTemplate = (props) => {
         <Hero
             className={displayName}
             defaultSource={fluid}
+            imageOpacity={heroImageOpacityContactPage}
         >
             <Grid>
                 <GridItem
@@ -109,7 +111,8 @@ ContactPageTemplate.propTypes = {
             childImageSharp: PropTypes.shape({
                 fluid: PropTypes.shape({})
             })
-        })
+        }),
+        heroImageOpacityContactPage: PropTypes.number
     })
 };
 

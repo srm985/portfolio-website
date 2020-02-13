@@ -44,6 +44,7 @@ export const query = graphql`
                                     }
                                 }
                             }
+                            heroImageOpacityHomePage
                             heroSubtitle
                             heroTitle
                             pageTitle

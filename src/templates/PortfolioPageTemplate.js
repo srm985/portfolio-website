@@ -10,6 +10,12 @@ import Hero from '../components/HeroComponent';
 const PortfolioPageTemplate = (props) => {
     const {
         content: {
+            heroImagePortfolioPage: {
+                childImageSharp: {
+                    fluid = {}
+                } = {}
+            } = {},
+            heroImageOpacityPortfolioPage,
             projectList = [],
             viewProjectCTA = ''
         }
@@ -39,7 +45,12 @@ const PortfolioPageTemplate = (props) => {
 
     return (
         <>
-            <Hero isHalfHeight />
+            <Hero
+                alt={'placeholder image'}
+                defaultSource={fluid}
+                imageOpacity={heroImageOpacityPortfolioPage}
+                isHalfHeight
+            />
             <Section>
                 <Grid>
                     {renderProjectTiles()}
@@ -51,6 +62,12 @@ const PortfolioPageTemplate = (props) => {
 
 PortfolioPageTemplate.propTypes = {
     content: PropTypes.shape({
+        heroImageOpacityPortfolioPage: PropTypes.number,
+        heroImagePortfolioPage: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
+        }),
         projectList: PropTypes.arrayOf(PropTypes.shape({})),
         viewProjectCTA: PropTypes.string
     })

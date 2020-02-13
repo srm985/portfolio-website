@@ -21,10 +21,6 @@ const PortfolioPage = (props) => {
     const pageData = destructureNetlifyCMS(pageQuery)[0];
     const projectList = destructureNetlifyCMS(projectListQuery);
 
-    console.log({
-        projectList
-    });
-
     return (
         <Layout content={pageData}>
             <PortfolioPageTemplate content={{
@@ -42,13 +38,14 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImage {
+                            heroImagePortfolioPage {
                                 childImageSharp {
                                     fluid(maxWidth: 1600) {
                                         ...GatsbyImageSharpFluid_noBase64
                                     }
                                 }
                             }
+                            heroImageOpacityPortfolioPage
                             heroTitle
                             pageTitle
                             viewProjectCTA

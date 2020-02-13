@@ -27,6 +27,7 @@ const IndexPageTemplate = (props) => {
                     fluid = {}
                 } = {}
             } = {},
+            heroImageOpacityHomePage,
             heroSubtitle,
             heroTitle
         }
@@ -37,6 +38,7 @@ const IndexPageTemplate = (props) => {
             <Hero
                 alt={'placeholder image'}
                 defaultSource={fluid}
+                imageOpacity={heroImageOpacityHomePage}
                 overlayColor={OVERLAY_BLACK}
             >
                 <Grid>
@@ -128,6 +130,7 @@ IndexPageTemplate.propTypes = {
                 fluid: PropTypes.shape({})
             })
         }),
+        heroImageOpacityHomePage: PropTypes.number,
         heroSubtitle: PropTypes.string,
         heroTitle: PropTypes.string
     })
