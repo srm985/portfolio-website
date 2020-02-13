@@ -20,6 +20,16 @@ collections:
           - { label: 'Hero Subtitle', name: heroSubtitle, widget: string }
           - { label: 'Hero Image', name: heroImage, widget: image }
           - {
+              label: 'Hero Image Opacity',
+              name: 'heroImageOpacityHomePage',
+              widget: 'number',
+              defaultValue: 100,
+              valueType: 'int',
+              min: 0,
+              max: 100,
+              step: 5,
+            }
+          - {
               label: 'About Me Title',
               name: aboutMeSectionTitle,
               widget: string,
@@ -69,6 +79,17 @@ collections:
         fields:
           - { label: 'Page Title', name: pageTitle, widget: string }
           - { label: 'View Project CTA', name: viewProjectCTA, widget: string }
+          - { label: 'Hero Image', name: heroImagePortfolioPage, widget: image }
+          - {
+              label: 'Hero Image Opacity',
+              name: 'heroImageOpacityPortfolioPage',
+              widget: 'number',
+              defaultValue: 100,
+              valueType: 'int',
+              min: 0,
+              max: 100,
+              step: 5,
+            }
       - label: 'Project Page'
         name: 'project'
         file: 'static/content/project.md'
@@ -84,6 +105,16 @@ collections:
         fields:
           - { label: 'Page Title', name: pageTitle, widget: string }
           - { label: 'Hero Image', name: heroImageContactPage, widget: image }
+          - {
+              label: 'Hero Image Opacity',
+              name: 'heroImageOpacityContactPage',
+              widget: 'number',
+              defaultValue: 100,
+              valueType: 'int',
+              min: 0,
+              max: 100,
+              step: 5,
+            }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'

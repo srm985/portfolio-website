@@ -29,6 +29,10 @@
         border-radius: $border-radius-default;
         outline: none;
 
+        &:focus {
+            border: solid 2px $color-blue;
+        }
+
         &--textarea {
             height: #{$planck-length * 12};
             padding-top: #{$planck-length / 2};
