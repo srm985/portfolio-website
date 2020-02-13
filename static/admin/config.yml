@@ -36,6 +36,44 @@ collections:
               widget: 'number',
             }
           - {
+              label: 'Hero Buttons',
+              name: 'heroButtonsHomePage',
+              widget: 'object',
+              fields:
+                - {
+                    label: 'Résumé Button',
+                    name: 'resumeButton',
+                    widget: 'object',
+                    fields:
+                      - {
+                          label: 'Label',
+                          name: 'label',
+                          widget: string
+                        }
+                      - {
+                          label: 'Link',
+                          name: 'link',
+                          widget: string
+                        }
+                  }
+                - {
+                    label: 'Contact Button',
+                    name: 'contactButton',
+                    widget: 'object',
+                    fields:
+                      - {
+                          label: 'Label',
+                          name: 'label',
+                          widget: string
+                        }
+                      - {
+                          label: 'Link',
+                          name: 'link',
+                          widget: string
+                        }
+                  }
+            }
+          - {
               label: 'About Me Title',
               name: aboutMeSectionTitle,
               widget: string,
