@@ -4,6 +4,13 @@ heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroImage: /assets/gatsby-astronaut.png
 heroImageOpacityHomePage: 50
+heroButtonsHomePage:
+  contactButton:
+    label: Contact Me
+    link: /contact/
+  resumeButton:
+    label: Résumé
+    link: /
 aboutMeSectionTitle: What I'm About
 aboutMeSectionBody: >-
   Quis esse nulla excepteur reprehenderit voluptate commodo est exercitation
