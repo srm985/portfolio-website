@@ -25,6 +25,7 @@ aboutMeSectionBody: >-
   aliquip cillum ullamco cupidatat ipsum anim nisi ullamco qui dolore consequat.
   Minim qui fugiat exercitation amet. Ullamco in consectetur id sunt eu et amet
   aliqua aliqua aliquip. Lorem nulla laboris aute culpa qui irure.
+aboutMeSectionImage: /assets/portrait-transparent.png
 skillsSectionTitle: Do I have the skills you need?
 skillsSearchLabel: Find a skill!
 skillsSearchName: skillSearchbar
