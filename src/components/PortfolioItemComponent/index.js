@@ -26,7 +26,7 @@ class PortfolioItemComponent extends React.Component {
         };
     }
 
-    handleVisibilityChange=(isVisible) => {
+    handleVisibilityChange = (isVisible) => {
         this.setState((previousState) => {
             const {
                 isVisible: wasVisible

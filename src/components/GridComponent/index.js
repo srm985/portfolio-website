@@ -1,16 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 import './styles.scss';
 
 const GridComponent = (props) => {
     const {
-        children
+        children,
+        className
     } = props;
 
+    const {
+        displayName
+    } = GridComponent;
+
+    const componentClassNames = classNames(
+        className,
+        displayName
+    );
+
     return (
-        <div className={GridComponent.displayName}>
-            <div className={`${GridComponent.displayName}__grid`}>
+        <div className={componentClassNames}>
+            <div className={`${displayName}__grid`}>
                 {children}
             </div>
         </div>
@@ -20,7 +32,12 @@ const GridComponent = (props) => {
 GridComponent.displayName = 'GridComponent';
 
 GridComponent.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
+};
+
+GridComponent.defaultProps = {
+    className: ''
 };
 
 export default GridComponent;
