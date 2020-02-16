@@ -121,6 +121,11 @@
         &-light {
             color: $color-white;
         }
+
+        &-inherit-styling {
+            color: inherit;
+            text-decoration: inherit;
+        }
     }
 
     &--anchor {

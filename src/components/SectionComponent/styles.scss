@@ -5,6 +5,7 @@
     @extend %padding-wrapper;
 
     width: 100%;
+    overflow: hidden;
 
     &--dark {
         background-color: $color-gray-light;
@@ -12,5 +13,9 @@
 
     &--light {
         background-color: $color-white;
+    }
+
+    &--full-bleed {
+        padding: 0;
     }
 }

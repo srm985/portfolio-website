@@ -15,20 +15,48 @@ $breakpoints: (
         width: 100%;
     }
 
+    &__offset {
+        display: none;
+    }
+
     @each $breakpoint, $breakpoint-value in $breakpoints {
         &__#{$breakpoint} {
-            @for $column from 1 through 13 {
+            @for $column from 0 through 13 {
                 @media only screen and (min-width: $breakpoint-value) {
                     &--start-#{$column} {
-                        grid-column-start: $column;
+                        @if ($column > 0) {
+                            grid-column-start: $column;
+                        }
                     }
 
                     &--stop-#{$column} {
-                        grid-column-end: $column;
+                        @if ($column > 0) {
+                            grid-column-end: $column;
+                        }
                     }
 
                     &--span-#{$column} {
-                        grid-column: auto / span $column;
+                        @if ($column > 0) {
+                            grid-column: auto / span $column;
+                        }
+                    }
+
+                    &--left-offset-#{$column} {
+                        @if ($column > 0) {
+                            display: inline-block;
+                            grid-column: auto / span $column;
+                        } @else {
+                            display: none;
+                        }
+                    }
+
+                    &--right-offset-#{$column} {
+                        @if ($column > 0) {
+                            display: inline-block;
+                            grid-column: auto / span $column;
+                        } @else {
+                            display: none;
+                        }
                     }
                 }
             }

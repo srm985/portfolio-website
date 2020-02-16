@@ -8,7 +8,9 @@ import './styles.scss';
 const SectionComponent = (props) => {
     const {
         children,
+        className,
         isDark,
+        isFullBleed,
         isLight
     } = props;
 
@@ -17,9 +19,11 @@ const SectionComponent = (props) => {
     } = SectionComponent;
 
     const componentClassNames = classNames(
+        className,
         displayName,
         {
             [`${displayName}--dark`]: isDark,
+            [`${displayName}--full-bleed`]: isFullBleed,
             [`${displayName}--light`]: isLight && !isDark
         }
     );
@@ -37,13 +41,17 @@ SectionComponent.displayName = 'SectionComponent';
 
 SectionComponent.propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
     isDark: PropTypes.bool,
+    isFullBleed: PropTypes.bool,
     isLight: PropTypes.bool
 };
 
 SectionComponent.defaultProps = {
     children: '',
+    className: '',
     isDark: false,
+    isFullBleed: false,
     isLight: true
 };
 

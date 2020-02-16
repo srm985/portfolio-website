@@ -19,7 +19,7 @@
 
     background-color: adjust-color($color: $color-white, $alpha: -1);
 
-    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+    transition: all 0.75s ease-in-out, color 0.75s ease-in-out;
 
     &--scrolled {
         color: $color-black;
@@ -67,7 +67,7 @@
 
             background-color: $color-white;
 
-            transition: width $transition-timing-function-default $transition-slow;
+            transition: width $transition-timing-function-default $transition-slow, background-color $transition-timing-function-default 2s;
 
             content: '';
         }

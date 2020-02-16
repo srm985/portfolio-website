@@ -7,6 +7,8 @@ import './styles.scss';
 
 const COLUMN_PROP_TYPES = PropTypes.shape({
     columns: PropTypes.number,
+    leftOffset: PropTypes.number,
+    rightOffset: PropTypes.number,
     start: PropTypes.number,
     stop: PropTypes.number
 });
@@ -22,20 +24,33 @@ const GridItemComponent = (props) => {
     } = GridItemComponent;
 
     const gridClassNames = [];
+    const leftOffsetClassList = [];
+    const rightOffsetClassList = [];
 
-    Object.keys(breakpoints).forEach((columnSize) => {
+    Object.keys(breakpoints).forEach((breakpointSize) => {
         const {
-            [columnSize]: {
+            [breakpointSize]: {
                 columns,
+                leftOffset,
+                rightOffset,
                 start,
                 stop
             } = {}
         } = breakpoints;
 
+        // Handle sizing of primary element.
         if (columns) {
-            gridClassNames.push(`${displayName}__${columnSize}--span-${columns}`);
+            gridClassNames.push(`${displayName}__${breakpointSize}--span-${columns}`);
         } else if (start && stop) {
-            gridClassNames.push(`${displayName}__${columnSize}--start-${start} ${displayName}__${columnSize}--stop-${stop}`);
+            gridClassNames.push(`${displayName}__${breakpointSize}--start-${start} ${displayName}__${breakpointSize}--stop-${stop}`);
+        }
+
+        // Handle generating any offset classes.
+        if (typeof leftOffset === 'number') {
+            leftOffsetClassList.push(`${displayName}__${breakpointSize}--left-offset-${leftOffset}`);
+        }
+        if (typeof rightOffset === 'number') {
+            rightOffsetClassList.push(`${displayName}__${breakpointSize}--right-offset-${rightOffset}`);
         }
     });
 
@@ -44,10 +59,25 @@ const GridItemComponent = (props) => {
         ...gridClassNames
     );
 
+    const leftOffsetClassNames = classNames(
+        `${displayName}__offset`,
+        `${displayName}__offset--left`,
+        ...leftOffsetClassList
+    );
+    const rightOffsetClassNames = classNames(
+        `${displayName}__offset`,
+        `${displayName}__offset--typeof right`,
+        ...rightOffsetClassList
+    );
+
     return (
-        <div className={componentClassNames}>
-            {children}
-        </div>
+        <>
+            <div className={leftOffsetClassNames} />
+            <div className={componentClassNames}>
+                {children}
+            </div>
+            <div className={rightOffsetClassNames} />
+        </>
     );
 };
 

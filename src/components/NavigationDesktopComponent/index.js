@@ -109,13 +109,19 @@ class NavigationDesktopComponent extends React.Component {
 
         return (
             <nav className={componentClassNames}>
-                <div className={`${displayName}__logo`}>
-                    <Icon
-                        className={`${displayName}__logo-icon`}
-                        iconURL={iconURL}
-                    />
-                    <p>{headerLogoCopy}</p>
-                </div>
+                <Button
+                    href={'/'}
+                    inheritStyling
+                    styleType={BUTTON_STYLE_TYPE_INLINE}
+                >
+                    <div className={`${displayName}__logo`}>
+                        <Icon
+                            className={`${displayName}__logo-icon`}
+                            iconURL={iconURL}
+                        />
+                        <p>{headerLogoCopy}</p>
+                    </div>
+                </Button>
                 <ul className={`${displayName}__navigation`}>
                     {this.renderLinks()}
                 </ul>

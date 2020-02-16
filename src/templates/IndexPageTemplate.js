@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import Button from '../components/ButtonComponent';
 import Grid from '../components/GridComponent';
@@ -8,6 +7,7 @@ import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
 import Section from '../components/SectionComponent';
 import SkillsBlock from '../components/SkillsBlockComponent';
+import WhoIAm from '../components/WhoIAmComponent';
 
 import {
     BUTTON_STYLE_TYPE_SECONDARY
@@ -95,9 +95,11 @@ const IndexPageTemplate = (props) => {
                     </GridItem>
                 </Grid>
             </Hero>
-            <Section>
-                <h3 className={'mb--2'}>{aboutMeSectionTitle}</h3>
-                <ReactMarkdown source={aboutMeSectionBody} />
+            <Section isFullBleed>
+                <WhoIAm
+                    aboutMeSectionBody={aboutMeSectionBody}
+                    aboutMeSectionTitle={aboutMeSectionTitle}
+                />
             </Section>
             <Section isDark>
                 <Grid>

@@ -29,8 +29,15 @@ const PortfolioPageTemplate = (props) => {
         return (
             <GridItem
                 breakpoints={{
+                    extraLarge: {
+                        columns: 6,
+                        leftOffset: 0,
+                        rightOffset: 0
+                    },
                     large: {
-                        columns: 6
+                        columns: 8,
+                        leftOffset: 2,
+                        rightOffset: 2
                     }
                 }}
                 key={slug}
