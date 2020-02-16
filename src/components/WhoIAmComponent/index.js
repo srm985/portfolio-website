@@ -6,6 +6,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
+import Title from '../TitleComponent';
 
 import classNames from '../../utils/classNames';
 
@@ -91,7 +92,11 @@ class WhoIAmComponent extends React.Component {
                                 }
                             }}
                         >
-                            <h3 className={'mb--2'}>{aboutMeSectionTitle}</h3>
+                            <Title
+                                className={'mb--2'}
+                                headingSize={3}
+                                title={aboutMeSectionTitle}
+                            />
                             <ReactMarkdown
                                 className={`${displayName}__body`}
                                 source={aboutMeSectionBody}

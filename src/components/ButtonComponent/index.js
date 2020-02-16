@@ -23,6 +23,7 @@ const ButtonComponent = (props) => {
         activeLinkClassName,
         children,
         className,
+        handleClick,
         href,
         inheritStyling,
         isAlignedRight,
@@ -108,6 +109,7 @@ const ButtonComponent = (props) => {
                         <button
                             aria-label={screenReaderLabel}
                             className={buttonClassNames}
+                            onClick={handleClick}
                             type={type}
                         >
                             {buttonLabel}
@@ -122,6 +124,7 @@ ButtonComponent.propTypes = {
     activeLinkClassName: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
+    handleClick: PropTypes.func,
     href: PropTypes.string,
     inheritStyling: PropTypes.bool,
     isAlignedRight: PropTypes.bool,
@@ -138,6 +141,7 @@ ButtonComponent.defaultProps = {
     activeLinkClassName: '',
     children: '',
     className: '',
+    handleClick: () => {},
     href: '',
     inheritStyling: false,
     isAlignedRight: false,

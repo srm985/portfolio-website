@@ -3,6 +3,7 @@ import React from 'react';
 
 import Input from '../InputComponent';
 import SkillPill from '../SkillPillComponent';
+import Title from '../TitleComponent';
 
 import {
     INPUT_TYPE_SEARCH
@@ -114,7 +115,11 @@ class SkillsBlockComponent extends React.Component {
 
         return (
             <div className={displayName}>
-                <h3 className={`${displayName}__title`}>{skillsSectionTitle}</h3>
+                <Title
+                    className={'mb--3'}
+                    headingSize={3}
+                    title={skillsSectionTitle}
+                />
                 <Input
                     className={'mb--3'}
                     handleChange={this.handleSkillSearchKeywordChange}

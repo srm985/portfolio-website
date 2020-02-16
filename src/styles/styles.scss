@@ -18,70 +18,95 @@ h2,
 h3,
 h4,
 h5,
+h6,
 a,
 p {
     margin: 0;
 }
 
-// Generate margin and padding classes.
-@for $i from 1 through 8 {
-    .mt--#{$i} {
-        margin-top: #{$planck-length * $i};
-    }
+h1 {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: 0;
 
-    .mr--#{$i} {
-        margin-right: #{$planck-length * $i};
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 80px;
+        letter-spacing: 1.2;
     }
+}
 
-    .mb--#{$i} {
-        margin-bottom: #{$planck-length * $i};
+h2 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 48px;
+        letter-spacing: 0;
     }
+}
 
-    .ml--#{$i} {
-        margin-left: #{$planck-length * $i};
+h3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0;
     }
+}
 
-    .mx--#{$i} {
-        margin-right: #{$planck-length * $i};
-        margin-left: #{$planck-length * $i};
+h4 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0;
     }
+}
 
-    .my--#{$i} {
-        margin-top: #{$planck-length * $i};
-        margin-bottom: #{$planck-length * $i};
+h5 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0;
     }
+}
 
-    .m--#{$i} {
-        margin: #{$planck-length * $i};
-    }
+h6 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5;
+}
 
-    .pt--#{$i} {
-        padding-top: #{$planck-length * $i};
-    }
+p {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
 
-    .pr--#{$i} {
-        padding-right: #{$planck-length * $i};
-    }
-
-    .pb--#{$i} {
-        padding-bottom: #{$planck-length * $i};
-    }
-
-    .pl--#{$i} {
-        padding-left: #{$planck-length * $i};
-    }
-
-    .px--#{$i} {
-        padding-right: #{$planck-length * $i};
-        padding-left: #{$planck-length * $i};
-    }
-
-    .py--#{$i} {
-        padding-top: #{$planck-length * $i};
-        padding-bottom: #{$planck-length * $i};
-    }
-
-    .p--#{$i} {
-        padding: #{$planck-length * $i};
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0;
     }
 }

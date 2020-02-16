@@ -1,0 +1,111 @@
+@import '../../styles/constants';
+
+$duration-progress-bar: 0.75s;
+$duration-heading: 0.75s;
+$progress-bar-complete-percentage: 50%;
+$delay-heading: $duration-progress-bar * ($progress-bar-complete-percentage / 100%);
+$delay-underline: ($delay-heading + $duration-heading) * 0.5;
+
+.TitleComponent {
+    position: relative;
+
+    width: fit-content;
+
+    &__heading {
+        opacity: 0;
+
+        animation-name: animation-text;
+        animation-duration: $duration-heading;
+        animation-play-state: paused;
+        animation-timing-function: $transition-timing-function-default;
+        animation-delay: $delay-heading;
+        animation-fill-mode: forwards;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+
+            width: #{$planck-length * 10};
+
+            border-bottom: solid $border-thickness-thick $color-blue;
+            transform: scaleX(0);
+            transform-origin: left;
+
+            animation-name: animation-underline;
+            animation-duration: 0.2s;
+            animation-play-state: paused;
+            animation-timing-function: $transition-timing-function-default;
+            animation-delay: $delay-underline;
+            animation-fill-mode: forwards;
+
+            content: '';
+        }
+
+        &--visible {
+            animation-play-state: running;
+
+            &::before {
+                animation-play-state: running;
+            }
+        }
+    }
+
+    &__progress-bar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: $color-black;
+
+        animation-name: animation-progress-bar;
+        animation-duration: $duration-progress-bar;
+        animation-play-state: paused;
+        animation-timing-function: $transition-timing-function-default;
+        animation-fill-mode: forwards;
+
+        &--visible {
+            animation-play-state: running;
+        }
+    }
+}
+
+@keyframes animation-text {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation-underline {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes animation-progress-bar {
+    0% {
+        width: 0;
+
+        opacity: 1;
+    }
+
+    #{$progress-bar-complete-percentage} {
+        width: 100%;
+
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

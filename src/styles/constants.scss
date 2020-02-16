@@ -36,6 +36,7 @@ $font-size-small: 12px;
 
 // Borders
 $border-thickness-default: 1px;
+$border-thickness-thick: #{$planck-length / 2};
 $border-radius-default: 5px;
 
 // Padding
@@ -54,7 +55,7 @@ $z-index-fab-button: 9996;
 $z-index-footer: 9995;
 
 // Transitions
-$transition-timing-function-default: ease-in-out;
+$transition-timing-function-default: cubic-bezier(0.05, 0.69, 0.14, 1);
 $transition-fast: 0.05s;
 $transition-slow: 0.15s;
 $transition-very-slow: 0.35s;
