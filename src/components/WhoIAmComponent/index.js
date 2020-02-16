@@ -1,3 +1,4 @@
+import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -10,6 +11,11 @@ import './styles.scss';
 const WhoIAmComponent = (props) => {
     const {
         aboutMeSectionBody,
+        aboutMeSectionImage: {
+            childImageSharp: {
+                fluid = {}
+            } = {}
+        } = {},
         aboutMeSectionTitle
     } = props;
 
@@ -43,6 +49,7 @@ const WhoIAmComponent = (props) => {
                     <div className={`${displayName}__decorator-slash`} />
                     <div className={`${displayName}__decorator-slash`} />
                 </div>
+                <Image fluid={fluid} />
             </div>
         </div>
     );
@@ -52,11 +59,17 @@ WhoIAmComponent.displayName = 'WhoIAmComponent';
 
 WhoIAmComponent.propTypes = {
     aboutMeSectionBody: PropTypes.string,
+    aboutMeSectionImage: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+            fluid: PropTypes.shape({})
+        })
+    }),
     aboutMeSectionTitle: PropTypes.string
 };
 
 WhoIAmComponent.defaultProps = {
     aboutMeSectionBody: '',
+    aboutMeSectionImage: {},
     aboutMeSectionTitle: ''
 };
 
