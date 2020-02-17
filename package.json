@@ -58,7 +58,7 @@
     "lint-staged": "^10.0.7",
     "onchange": "^6.1.0",
     "react-test-renderer": "^16.12.0",
-    "stylelint": "^13.2.0",
+    "stylelint": "^13.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-declaration-block-no-ignored-properties": "^2.2.0",
     "stylelint-order": "^4.0.0",

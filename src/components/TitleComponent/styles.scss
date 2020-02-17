@@ -81,7 +81,6 @@ $delay-underline: ($delay-heading + $duration-heading) * 0.5;
         opacity: 1;
     }
 }
-
 @keyframes animation-underline {
     0% {
         transform: scaleX(0);
@@ -91,7 +90,6 @@ $delay-underline: ($delay-heading + $duration-heading) * 0.5;
         transform: scaleX(1);
     }
 }
-
 @keyframes animation-progress-bar {
     0% {
         width: 0;
