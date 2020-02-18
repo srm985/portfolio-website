@@ -1,4 +1,5 @@
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -18,6 +19,79 @@ class ProjectSectionComponent extends React.Component {
         this.state = {
             isVisible: false
         };
+    }
+
+    renderProjectSection = () => {
+        const {
+            props: {
+                projectSectionList
+            }
+        } = this;
+
+        return projectSectionList.map((projectSection) => {
+            const {
+                projectSectionBody,
+                projectSectionImage: {
+                    childImageSharp: {
+                        fluid
+                    } = {}
+                },
+                projectSectionTitle
+            } = projectSection;
+
+            const {
+                displayName
+            } = ProjectSectionComponent;
+
+            return (
+                <>
+                    <GridItem
+                        breakpoints={{
+                            large: {
+                                start: 2,
+                                stop: 12
+                            },
+                            medium: {
+                                start: 2,
+                                stop: 12
+                            }
+                        }}
+                    >
+                        <Image
+                            alt={'alt'}
+                            className={`${displayName}__section-image`}
+                            fluid={fluid}
+                        />
+                    </GridItem>
+                    <GridItem
+                        breakpoints={{
+                            extraLarge: {
+                                start: 4,
+                                stop: 10
+                            },
+                            large: {
+                                start: 3,
+                                stop: 11
+                            },
+                            medium: {
+                                start: 2,
+                                stop: 12
+                            }
+                        }}
+                    >
+                        <Title
+                            className={'mb--3'}
+                            heading={projectSectionTitle}
+                            headingSize={2}
+                        />
+                        <ReactMarkdown
+                            className={`${displayName}__section-body`}
+                            source={projectSectionBody}
+                        />
+                    </GridItem>
+                </>
+            );
+        });
     }
 
     render() {
@@ -41,50 +115,7 @@ class ProjectSectionComponent extends React.Component {
         return (
             <Section className={componentClassNames}>
                 <Grid>
-                    <GridItem
-                        breakpoints={{
-                            large: {
-                                start: 3,
-                                stop: 10
-                            },
-                            medium: {
-                                start: 2,
-                                stop: 11
-                            }
-                        }}
-                    >
-                        <Image
-                            alt={'alt'}
-                            className={`${displayName}__section-image`}
-                            fluid={{}}
-                        />
-                    </GridItem>
-                    <GridItem
-                        breakpoints={{
-                            extraLarge: {
-                                start: 3,
-                                stop: 11
-                            },
-                            large: {
-                                start: 2,
-                                stop: 12
-                            },
-                            medium: {
-                                start: 2,
-                                stop: 12
-                            }
-                        }}
-                    >
-                        <Title
-                            className={'mb--3'}
-                            heading={'Some Import Details'}
-                            headingSize={2}
-                        />
-                        <ReactMarkdown
-                            className={`${displayName}__section-body`}
-                            source={'Excepteur velit elit voluptate laborum sunt. Aute est proident dolore officia dolor anim sunt laboris sit. Amet reprehenderit excepteur aute sit Lorem magna. Mollit laboris ad eu ut do. Velit enim duis duis laboris.'}
-                        />
-                    </GridItem>
+                    {this.renderProjectSection()}
                 </Grid>
             </Section>
         );
@@ -93,8 +124,20 @@ class ProjectSectionComponent extends React.Component {
 
 ProjectSectionComponent.displayName = 'ProjectSectionComponent';
 
-ProjectSectionComponent.propTypes = {};
+ProjectSectionComponent.propTypes = {
+    projectSectionList: PropTypes.arrayOf(PropTypes.shape({
+        projectSectionBody: PropTypes.string,
+        projectSectionImage: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
+        }),
+        projectSectionTitle: PropTypes.string
+    }))
+};
 
-ProjectSectionComponent.defaultProps = {};
+ProjectSectionComponent.defaultProps = {
+    projectSectionList: []
+};
 
 export default ProjectSectionComponent;

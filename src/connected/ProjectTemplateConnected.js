@@ -50,6 +50,7 @@ export const query = graphql`
                     }
                 }
                 projectSectionList {
+                    projectSectionTitle
                     projectSectionBody
                     projectSectionImage {
                         childImageSharp {

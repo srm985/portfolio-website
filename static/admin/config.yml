@@ -15,15 +15,11 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - { label: 'Page Title', name: pageTitle, widget: string }
-          - { label: 'Hero Title', name: heroTitle, widget: string }
-          - { label: 'Hero Subtitle', name: heroSubtitle, widget: string }
-          - {
-              label: 'Hero Image',
-              name: heroImage,
-              required: false,
-              widget: image,
-            }
+          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
+          - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
+          - { label: 'Hero Image', name: 'heroImage', required: false, widget: 'image' }
+          - { label: 'Hero Image Alt', name: 'heroImageAlt', required: false, widget: 'string' }
           - {
               defaultValue: 100,
               label: 'Hero Image Opacity',
@@ -75,36 +71,41 @@ collections:
               widget: 'image',
             }
           - {
+              label: 'About Me Image Alt',
+              name: 'aboutMeSectionImageAlt',
+              widget: 'string',
+            }
+          - {
               label: 'Skills Section Title',
-              name: skillsSectionTitle,
-              widget: string,
+              name: 'skillsSectionTitle',
+              widget: 'string',
             }
           - {
               label: 'Skills Search Label',
-              name: skillsSearchLabel,
-              widget: string,
+              name: 'skillsSearchLabel',
+              widget: 'string',
             }
           - {
               label: 'Skills Search Name',
-              name: skillsSearchName,
-              widget: string,
+              name: 'skillsSearchName',
+              widget: 'string',
             }
           - {
               label: 'Skills Search Placeholder',
-              name: skillsSearchPlaceholder,
-              widget: string,
+              name: 'skillsSearchPlaceholder',
+              widget: 'string',
             }
           - { label: 'Skill Not Found', name: skillNotFound, widget: string }
           - label: Skills Sections List
             label_singular: Skills List
-            name: skillsSectionList
+            name: 'skillsSectionList'
             name_singular: skillsList
-            widget: list
+            widget: 'list'
             fields:
               - { label: 'Section Label', name: sectionLabel, widget: string }
               - label: Skills List
-                name: skillsList
-                widget: list
+                name: 'skillsList'
+                widget: 'list'
                 fields:
                   - { label: 'Icon', name: icon, widget: string }
                   - { label: 'Label', name: label, widget: string }
@@ -116,9 +117,15 @@ collections:
           - { label: 'View Project CTA', name: viewProjectCTA, widget: string }
           - {
               label: 'Hero Image',
-              name: heroImagePortfolioPage,
+              name: 'heroImagePortfolioPage',
               required: false,
-              widget: image,
+              widget: 'image',
+            }
+          - {
+              label: 'Hero Image Alt',
+              name: 'heroImageAltPortfolioPage',
+              required: false,
+              widget: 'string',
             }
           - {
               defaultValue: 100,
@@ -137,8 +144,8 @@ collections:
         fields:
           - {
               label: 'Return Button Image',
-              name: returnButtonImage,
-              widget: image,
+              name: 'returnButtonImage',
+              widget: 'image',
             }
       - label: 'Contact Page'
         name: 'contact'
@@ -147,9 +154,15 @@ collections:
           - { label: 'Page Title', name: pageTitle, widget: string }
           - {
               label: 'Hero Image',
-              name: heroImageContactPage,
+              name: 'heroImageContactPage',
               required: false,
-              widget: image,
+              widget: 'image',
+            }
+          - {
+              label: 'Hero Image Alt',
+              name: 'heroImageAltContactPage',
+              required: false,
+              widget: 'string',
             }
           - {
               defaultValue: 100,
@@ -197,25 +210,25 @@ collections:
             fields:
               - {
                   label: 'Social Medium Name',
-                  name: socialMediumName,
-                  widget: string,
+                  name: 'socialMediumName',
+                  widget: 'string',
                 }
               - {
                   label: 'Social Medium URL',
-                  name: socialMediumURL,
-                  widget: string,
+                  name: 'socialMediumURL',
+                  widget: 'string',
                 }
               - {
                   label: 'Social Medium Icon',
-                  name: socialMediumIcon,
-                  widget: image,
+                  name: 'socialMediumIcon',
+                  widget: 'image',
                 }
   - create: true
     folder: static/content/projects
     identifier_field: path
-    label: Projects
+    label: 'Projects'
     label_singular: Project
-    name: projects
+    name: 'projects'
     fields:
       - { name: 'path', label: 'Path', widget: 'string' }
       - { name: 'pageTitle', label: 'Page Title', widget: 'string' }
@@ -224,20 +237,26 @@ collections:
       - { name: 'projectDate', label: 'Project Date', widget: 'date' }
       - { name: 'projectExcerpt', label: 'Project Excerpt', widget: 'text' }
       - {
-          name: projectThumbnailImage,
+          name: 'projectThumbnailImage',
           label: 'Project Thumbnail Image',
-          widget: image,
+          widget: 'image',
         }
-      - { name: projectHeroImage, label: 'Project Hero Image', widget: image }
       - {
-          name: projectDescription,
+          name: 'projectThumbnailImageAlt',
+          label: 'Project Thumbnail Image Alt',
+          widget: 'string',
+        }
+      - { name: projectHeroImage, label: 'Project Hero Image', widget: 'image' }
+      - { name: projectHeroImageAlt, label: 'Project Hero Image Alt', widget: 'string' }
+      - {
+          name: 'projectDescription',
           label: 'Project Description',
           widget: 'text',
         }
       - label: 'Project Skills'
         label_singular: 'Project Skill'
-        name: projectSkillsList
-        widget: list
+        name: 'projectSkillsList'
+        widget: 'list'
         fields:
           - { name: 'icon', label: 'Icon', widget: 'string' }
           - { name: 'label', label: 'Label', widget: 'string' }
@@ -250,6 +269,11 @@ collections:
               name: 'projectSectionImage',
               label: 'Project Section Image',
               widget: 'image',
+            }
+          - {
+              name: 'projectSectionImageAlt',
+              label: 'Project Section Image Alt',
+              widget: 'string',
             }
           - {
               name: 'projectSectionTitle',
