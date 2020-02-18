@@ -236,7 +236,7 @@ collections:
         }
       - label: 'Project Skills'
         label_singular: 'Project Skill'
-      - name: projectSkillsList
+        name: projectSkillsList
         widget: list
         fields:
           - { name: 'icon', label: 'Icon', widget: 'string' }
