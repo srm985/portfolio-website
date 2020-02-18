@@ -38,5 +38,6 @@ projectSectionList:
       proident. Amet elit nisi velit do et anim qui id eu qui ut aliqua deserunt
       duis.
     projectSectionImage: /assets/gatsby-astronaut.png
+    projectSectionTitle: Project Start
 ---
 
