@@ -1,23 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import FAB from '../components/FABComponent';
-import Grid from '../components/GridComponent';
-import GridItem from '../components/GridItemComponent';
-import Hero from '../components/HeroComponent';
-import Section from '../components/SectionComponent';
+import ProjectHeader from '../components/ProjectHeaderComponent';
+import ProjectSection from '../components/ProjectSectionComponent';
 
 const ProjectTemplate = (props) => {
     const {
         content: {
-            description = '',
             returnButtonImage: {
                 publicURL = ''
-            } = {},
-            sectionBodyTechnology = '',
-            sectionTitleTechnology = '',
-            title = ''
+            } = {}
         }
     } = props;
 
@@ -31,25 +24,8 @@ const ProjectTemplate = (props) => {
 
     return (
         <div className={displayName}>
-            <Hero isHalfHeight>
-                <Grid>
-                    <GridItem
-                        breakpoints={{
-                            medium: {
-                                start: 1,
-                                stop: 9
-                            }
-                        }}
-                    >
-                        <h1>{title}</h1>
-                        <h2>{description}</h2>
-                    </GridItem>
-                </Grid>
-            </Hero>
-            <Section>
-                <h3>{sectionTitleTechnology}</h3>
-                <ReactMarkdown source={sectionBodyTechnology} />
-            </Section>
+            <ProjectHeader />
+            <ProjectSection />
             <FAB icon={publicURL} />
         </div>
     );

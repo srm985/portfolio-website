@@ -217,21 +217,42 @@ collections:
     label_singular: Project
     name: projects
     fields:
-      - { name: path, label: 'Path', widget: string }
-      - { name: date, label: 'Date', widget: date }
-      - { name: pageTitle, label: 'Page Title', widget: string }
-      - { name: title, label: 'Title', widget: string }
-      - { name: role, label: 'Role', widget: string }
-      - { name: excerpt, label: 'Excerpt', widget: string }
-      - { name: projectThumbnail, label: 'Project Thumbnail', widget: image }
-      - { name: description, label: 'Description', widget: text }
+      - { name: 'path', label: 'Path', widget: 'string' }
+      - { name: 'pageTitle', label: 'Page Title', widget: 'string' }
+      - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
+      - { name: 'role', label: 'Role', widget: 'string' }
+      - { name: 'projectDate', label: 'Project Date', widget: 'date' }
+      - { name: projectExcerpt, label: 'Project Excerpt', widget: 'text' }
       - {
-          name: sectionTitleTechnology,
-          label: 'Section Title: Technology',
-          widget: string,
+          name: projectThumbnailImage,
+          label: 'Project Thumbnail Image',
+          widget: image,
         }
+      - { name: projectHeroImage, label: 'Project Hero Image', widget: image }
       - {
-          name: sectionBodyTechnology,
-          label: 'Section Body: Technology',
-          widget: markdown,
+          name: projectDescription,
+          label: 'Project Description',
+          widget: 'text',
         }
+      - label: 'Project Skills'
+        label_singular: 'Project Skill'
+      - name: projectSkillsList
+        widget: list
+        fields:
+          - { name: 'icon', label: 'Icon', widget: 'string' }
+          - { name: 'label', label: 'Label', widget: 'string' }
+      - label: 'Project Sections'
+        label_singular: 'Project Section'
+        name: 'projectSectionList'
+        widget: 'list'
+        fields:
+          - {
+              name: 'projectSectionImage',
+              label: 'Project Section Image',
+              widget: 'image',
+            }
+          - {
+              name: 'projectSectionBody',
+              label: 'Project Section Body',
+              widget: 'markdown',
+            }

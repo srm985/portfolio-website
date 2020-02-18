@@ -94,8 +94,9 @@ class WhoIAmComponent extends React.Component {
                         >
                             <Title
                                 className={'mb--2'}
+                                heading={aboutMeSectionTitle}
                                 headingSize={3}
-                                title={aboutMeSectionTitle}
+                                isAnimated
                             />
                             <ReactMarkdown
                                 className={`${displayName}__body`}

@@ -51,7 +51,7 @@ $decorator-slash-height: #{$planck-length * 4};
         width: 100%;
         height: $decorator-slash-height;
 
-        transition: transform ease-in-out 0.3s;
+        transition: transform $transition-timing-function-default 0.3s;
 
         &:nth-of-type(1) {
             background-color: $color-blue;

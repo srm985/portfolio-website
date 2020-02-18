@@ -2,19 +2,23 @@
 
 $duration-progress-bar: 0.75s;
 $duration-heading: 0.75s;
+$duration-underline: 0.2s;
 $progress-bar-complete-percentage: 50%;
 $delay-heading: $duration-progress-bar * ($progress-bar-complete-percentage / 100%);
 $delay-underline: ($delay-heading + $duration-heading) * 0.5;
+$delay-subheading: ($delay-underline + $duration-underline) * 0.9;
 
 .TitleComponent {
-    position: relative;
+    &__heading-block {
+        position: relative;
 
-    width: fit-content;
+        width: fit-content;
+    }
 
     &__heading {
         opacity: 0;
 
-        animation-name: animation-text;
+        animation-name: animation-heading;
         animation-duration: $duration-heading;
         animation-play-state: paused;
         animation-timing-function: $transition-timing-function-default;
@@ -34,7 +38,7 @@ $delay-underline: ($delay-heading + $duration-heading) * 0.5;
             transform-origin: left;
 
             animation-name: animation-underline;
-            animation-duration: 0.2s;
+            animation-duration: $duration-underline;
             animation-play-state: paused;
             animation-timing-function: $transition-timing-function-default;
             animation-delay: $delay-underline;
@@ -43,12 +47,45 @@ $delay-underline: ($delay-heading + $duration-heading) * 0.5;
             content: '';
         }
 
+        &--unanimated {
+            opacity: 1;
+
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+
+        &--unaccented {
+            &::before {
+                transform: scaleX(0);
+            }
+        }
+
         &--visible {
             animation-play-state: running;
 
             &::before {
                 animation-play-state: running;
             }
+        }
+    }
+
+    &__subheading {
+        opacity: 0;
+
+        animation-name: animation-subheading;
+        animation-duration: 0.3s;
+        animation-play-state: paused;
+        animation-timing-function: $transition-timing-function-default;
+        animation-delay: $delay-subheading;
+        animation-fill-mode: forwards;
+
+        &--visible {
+            animation-play-state: running;
+        }
+
+        &--unanimated {
+            opacity: 1;
         }
     }
 
@@ -72,7 +109,16 @@ $delay-underline: ($delay-heading + $duration-heading) * 0.5;
     }
 }
 
-@keyframes animation-text {
+@keyframes animation-heading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-subheading {
     0% {
         opacity: 0;
     }

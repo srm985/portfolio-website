@@ -8,6 +8,7 @@ import Form from '../components/FormComponent';
 import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
 import Input from '../components/InputComponent';
+import Title from '../components/TitleComponent';
 
 import {
     BUTTON_TYPE_SUBMIT
@@ -48,7 +49,11 @@ const ContactPageTemplate = (props) => {
                         }
                     }}
                 >
-                    <h1 className={'mb--4'}>{'Want to do something great together?'}</h1>
+                    <Title
+                        className={'mb--4'}
+                        heading={'Want to do something great together?'}
+                        headingSize={1}
+                    />
                 </GridItem>
                 <GridItem
                     breakpoints={{

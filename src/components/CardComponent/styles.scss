@@ -3,6 +3,7 @@
 $darken-constant: 10%;
 
 .CardComponent {
+    display: inline-block;
     box-sizing: border-box;
     width: 100%;
     min-height: #{$planck-length * 25};

@@ -7,6 +7,7 @@ import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
 import Section from '../components/SectionComponent';
 import SkillsBlock from '../components/SkillsBlockComponent';
+import Title from '../components/TitleComponent';
 import WhoIAm from '../components/WhoIAmComponent';
 
 import {
@@ -55,8 +56,13 @@ const IndexPageTemplate = (props) => {
                             }
                         }}
                     >
-                        <h1 className={'mb--2'}>{heroTitle}</h1>
-                        <h2 className={'mb--5'}>{heroSubtitle}</h2>
+                        <Title
+                            className={'mb--5'}
+                            heading={heroTitle}
+                            headingClassName={'mb--2'}
+                            headingSize={1}
+                            subheading={heroSubtitle}
+                        />
                     </GridItem>
                     <GridItem
                         breakpoints={{

@@ -35,9 +35,14 @@ class TitleComponent extends React.Component {
         const {
             props: {
                 className,
+                heading,
+                headingClassName,
                 headingSize,
+                isAnimated,
+                isUnaccented,
                 isVisibilityForced,
-                title
+                subheading,
+                subheadingClassName
             },
             state: {
                 isVisible
@@ -54,9 +59,21 @@ class TitleComponent extends React.Component {
         );
 
         const headingClassNames = classNames(
+            headingClassName,
             `${displayName}__heading`,
             {
+                [`${displayName}__heading--unaccented`]: isUnaccented,
+                [`${displayName}__heading--unanimated`]: !isAnimated,
                 [`${displayName}__heading--visible`]: typeof isVisibilityForced === 'boolean' ? isVisibilityForced : isVisible
+            }
+        );
+
+        const subheadingClassNames = classNames(
+            subheadingClassName,
+            `${displayName}__subheading`,
+            {
+                [`${displayName}__subheading--unanimated`]: !isAnimated,
+                [`${displayName}__subheading--visible`]: typeof isVisibilityForced === 'boolean' ? isVisibilityForced : isVisible
             }
         );
 
@@ -68,16 +85,23 @@ class TitleComponent extends React.Component {
         );
 
         const HeadingComponent = `h${headingSize}`;
+        const SubHeadingComponent = `h${headingSize + 1}`;
 
         return (
             <VisibilitySensor
+                active={isAnimated}
                 onChange={this.handleVisibilityChange}
                 partialVisibility
                 resizeCheck
             >
                 <div className={componentClassNames}>
-                    <HeadingComponent className={headingClassNames}>{title}</HeadingComponent>
-                    <div className={progressBarClassNames} />
+                    <div className={`${displayName}__heading-block`}>
+                        <HeadingComponent className={headingClassNames}>{heading}</HeadingComponent>
+                        <div className={progressBarClassNames} />
+                    </div>
+                    {
+                        subheading && <SubHeadingComponent className={subheadingClassNames}>{subheading}</SubHeadingComponent>
+                    }
                 </div>
             </VisibilitySensor>
         );
@@ -88,6 +112,8 @@ TitleComponent.displayName = 'TitleComponent';
 
 TitleComponent.propTypes = {
     className: PropTypes.string,
+    heading: PropTypes.string.isRequired,
+    headingClassName: PropTypes.string,
     headingSize: PropTypes.oneOf([
         1,
         2,
@@ -96,13 +122,21 @@ TitleComponent.propTypes = {
         5,
         6
     ]).isRequired,
+    isAnimated: PropTypes.bool,
+    isUnaccented: PropTypes.bool,
     isVisibilityForced: PropTypes.bool,
-    title: PropTypes.string.isRequired
+    subheading: PropTypes.string,
+    subheadingClassName: PropTypes.string
 };
 
 TitleComponent.defaultProps = {
     className: '',
-    isVisibilityForced: undefined
+    headingClassName: '',
+    isAnimated: false,
+    isUnaccented: false,
+    isVisibilityForced: undefined,
+    subheading: '',
+    subheadingClassName: ''
 };
 
 export default TitleComponent;

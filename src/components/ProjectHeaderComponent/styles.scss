@@ -1,0 +1,58 @@
+@import '../../styles/constants';
+
+.ProjectHeaderComponent {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &__section-half {
+        width: 50%;
+        height: 100%;
+
+        background-color: $color-gray-light;
+
+        &:first-of-type {
+            display: none;
+
+            @media only screen and (min-width: $breakpoint-medium) {
+                display: inline-block;
+            }
+        }
+
+        &:last-of-type {
+            flex: 1;
+
+            background-color: $color-white;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        margin-bottom: $planck-length;
+
+        border-bottom: solid 1px $color-black;
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: #{$planck-length * 2};
+    }
+}

@@ -117,8 +117,9 @@ class SkillsBlockComponent extends React.Component {
             <div className={displayName}>
                 <Title
                     className={'mb--3'}
+                    heading={skillsSectionTitle}
                     headingSize={3}
-                    title={skillsSectionTitle}
+                    isAnimated
                 />
                 <Input
                     className={'mb--3'}
