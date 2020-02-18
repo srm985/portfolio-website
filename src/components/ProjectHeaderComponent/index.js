@@ -1,3 +1,5 @@
+import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
@@ -25,6 +27,17 @@ class ProjectHeaderComponent extends React.Component {
 
     render() {
         const {
+            props: {
+                projectDate,
+                projectDescription,
+                projectHeroImage: {
+                    childImageSharp: {
+                        fluid = {}
+                    } = {}
+                } = {},
+                projectTitle,
+                role
+            },
             state: {
                 isVisible
             }
@@ -45,7 +58,11 @@ class ProjectHeaderComponent extends React.Component {
             <header className={displayName}>
                 <div className={`${displayName}__background`}>
                     <div className={`${displayName}__section-half`} />
-                    <div className={`${displayName}__section-half`} />
+                    <Image
+                        alt={'alt'}
+                        className={`${displayName}__section-half`}
+                        fluid={fluid}
+                    />
                 </div>
                 <Grid>
                     <GridItem
@@ -59,15 +76,15 @@ class ProjectHeaderComponent extends React.Component {
                         <Card className={contentClassNames}>
                             <Title
                                 className={`${displayName}__title`}
-                                heading={'Axure Redline Tool'}
+                                heading={projectTitle}
                                 headingSize={1}
                                 isUnaccented
                             />
                             <div className={`${displayName}__details`}>
-                                <span>{'Front-End Developer'}</span>
-                                <span>{'August 2019'}</span>
+                                <span>{role}</span>
+                                <span>{projectDate}</span>
                             </div>
-                            <p className={'mb--4'}>{'Laborum proident aliquip excepteur consequat minim enim. Quis aliquip magna aliquip esse nulla minim ipsum nulla nisi ullamco commodo aute amet. Adipisicing nulla est Lorem eiusmod laborum consectetur. Ut magna elit do labore ut reprehenderit minim qui consectetur culpa excepteur.'}</p>
+                            <p className={'mb--4'}>{projectDescription}</p>
                             <Button
                                 label={'Demo'}
                                 styleType={BUTTON_STYLE_TYPE_SECONDARY}
@@ -86,8 +103,24 @@ class ProjectHeaderComponent extends React.Component {
 
 ProjectHeaderComponent.displayName = 'ProjectHeaderComponent';
 
-ProjectHeaderComponent.propTypes = {};
+ProjectHeaderComponent.propTypes = {
+    projectDate: PropTypes.string,
+    projectDescription: PropTypes.string,
+    projectHeroImage: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+            fluid: PropTypes.shape({})
+        })
+    }),
+    projectTitle: PropTypes.string,
+    role: PropTypes.string
+};
 
-ProjectHeaderComponent.defaultProps = {};
+ProjectHeaderComponent.defaultProps = {
+    projectDate: '',
+    projectDescription: '',
+    projectHeroImage: {},
+    projectTitle: '',
+    role: ''
+};
 
 export default ProjectHeaderComponent;

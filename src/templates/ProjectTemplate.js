@@ -7,6 +7,7 @@ import ProjectSection from '../components/ProjectSectionComponent';
 
 const ProjectTemplate = (props) => {
     const {
+        content,
         content: {
             returnButtonImage: {
                 publicURL = ''
@@ -24,8 +25,8 @@ const ProjectTemplate = (props) => {
 
     return (
         <div className={displayName}>
-            <ProjectHeader />
-            <ProjectSection />
+            <ProjectHeader {...content} />
+            <ProjectSection {...content} />
             <FAB icon={publicURL} />
         </div>
     );
@@ -35,13 +36,9 @@ ProjectTemplate.displayName = 'ProjectTemplate';
 
 ProjectTemplate.propTypes = {
     content: PropTypes.shape({
-        description: PropTypes.string,
         returnButtonImage: PropTypes.shape({
             publicURL: PropTypes.string
-        }),
-        sectionBodyTechnology: PropTypes.node,
-        sectionTitleTechnology: PropTypes.string,
-        title: PropTypes.string
+        })
     })
 };
 
