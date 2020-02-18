@@ -45,15 +45,15 @@ class PortfolioItemComponent extends React.Component {
     render() {
         const {
             props: {
-                excerpt,
-                projectThumbnail: {
+                projectExcerpt,
+                projectThumbnailImage: {
                     childImageSharp: {
                         fluid
                     } = {}
                 },
+                projectTitle,
                 role,
                 slug,
-                title,
                 viewProjectCTA
             },
             state: {
@@ -106,11 +106,11 @@ class PortfolioItemComponent extends React.Component {
                         backgroundColor={BACKGROUND_COLOR_BLUE}
                         className={`${displayName}__card`}
                     >
-                        <h2 className={titleClassNames}>{title}</h2>
+                        <h2 className={titleClassNames}>{projectTitle}</h2>
                         <h3>{'My Role'}</h3>
                         <p className={`${displayName}__role`}>{role}</p>
                         <h3>{'What We Did'}</h3>
-                        <p className={`${displayName}__excerpt`}>{excerpt}</p>
+                        <p className={`${displayName}__excerpt`}>{projectExcerpt}</p>
                         <Button
                             className={`${displayName}__button`}
                             href={formattedLink}
@@ -128,24 +128,24 @@ class PortfolioItemComponent extends React.Component {
 PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
-    excerpt: PropTypes.string,
-    projectThumbnail: PropTypes.shape({
+    projectExcerpt: PropTypes.string,
+    projectThumbnailImage: PropTypes.shape({
         childImageSharp: PropTypes.shape({
             fluid: PropTypes.shape({})
         })
     }),
+    projectTitle: PropTypes.string,
     role: PropTypes.string,
     slug: PropTypes.string,
-    title: PropTypes.string,
     viewProjectCTA: PropTypes.string
 };
 
 PortfolioItemComponent.defaultProps = {
-    excerpt: '',
-    projectThumbnail: {},
+    projectExcerpt: '',
+    projectThumbnailImage: {},
+    projectTitle: '',
     role: '',
     slug: '',
-    title: '',
     viewProjectCTA: ''
 };
 

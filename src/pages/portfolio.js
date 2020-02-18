@@ -47,7 +47,7 @@ export const query = graphql`
                 }
             }
         }
-        projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {frontmatter: {excerpt: {ne: null}}}}) {
+        projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {frontmatter: {projectExcerpt: {ne: null}}}}) {
             edges {
                 node {
                     childMarkdownRemark {
@@ -55,16 +55,35 @@ export const query = graphql`
                             slug
                         }
                         frontmatter {
-                            excerpt
-                            projectThumbnail {
+                            pageTitle
+                            projectDescription
+                            projectExcerpt
+                            projectHeroImage {
+                                childImageSharp {
+                                    fluid(maxWidth: 1200) {
+                                        ...GatsbyImageSharpFluid_noBase64
+                                    }
+                                }
+                            }
+                            projectSectionList {
+                                projectSectionBody
+                                projectSectionImage {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1200) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
+                            }
+                            projectThumbnailImage {
                                 childImageSharp {
                                     fluid(maxWidth: 600) {
                                         ...GatsbyImageSharpFluid_noBase64
                                     }
                                 }
                             }
+                            projectTitle
                             role
-                            title
                         }
                     }
                 }

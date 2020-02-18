@@ -39,13 +39,35 @@ export const query = graphql`
     query($slug: String!) {
         pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
-                date
-                description
                 pageTitle
-                path
-                sectionBodyTechnology
-                sectionTitleTechnology
-                title
+                projectDescription
+                projectExcerpt
+                projectHeroImage {
+                    childImageSharp {
+                        fluid(maxWidth: 1200) {
+                            ...GatsbyImageSharpFluid_noBase64
+                        }
+                    }
+                }
+                projectSectionList {
+                    projectSectionBody
+                    projectSectionImage {
+                        childImageSharp {
+                            fluid(maxWidth: 1200) {
+                                ...GatsbyImageSharpFluid_noBase64
+                            }
+                        }
+                    }
+                }
+                projectThumbnailImage {
+                    childImageSharp {
+                        fluid(maxWidth: 600) {
+                            ...GatsbyImageSharpFluid_noBase64
+                        }
+                    }
+                }
+                projectTitle
+                role
             }
         }
         templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "project"}}) {

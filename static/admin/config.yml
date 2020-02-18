@@ -222,7 +222,7 @@ collections:
       - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
       - { name: 'role', label: 'Role', widget: 'string' }
       - { name: 'projectDate', label: 'Project Date', widget: 'date' }
-      - { name: projectExcerpt, label: 'Project Excerpt', widget: 'text' }
+      - { name: 'projectExcerpt', label: 'Project Excerpt', widget: 'text' }
       - {
           name: projectThumbnailImage,
           label: 'Project Thumbnail Image',
@@ -250,6 +250,11 @@ collections:
               name: 'projectSectionImage',
               label: 'Project Section Image',
               widget: 'image',
+            }
+          - {
+              name: 'projectSectionTitle',
+              label: 'Project Section Title',
+              widget: 'string',
             }
           - {
               name: 'projectSectionBody',
