@@ -13,8 +13,7 @@ import {
 } from '@storybook/addon-knobs';
 
 // Style Imports
-import '../src/styles/classes.scss';
-import '../src/styles/styles.scss';
+import '../src/styles/global.scss';
 
 // This must be first decorator.
 addDecorator(withInfo);

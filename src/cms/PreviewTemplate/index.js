@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 // Import global styles for those components not using the LayoutComponent.
-import '../../styles/classes.scss';
-import '../../styles/styles.scss';
+import '../../styles/global.scss';
 
 import './styles.scss';
 
