@@ -1,7 +1,7 @@
 import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
+import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';

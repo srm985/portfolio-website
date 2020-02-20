@@ -1,0 +1,29 @@
+@import '../../styles/global';
+
+.TextBlockComponent {
+    &--animated {
+        transform: translateX(#{$planck-length * 15});
+        opacity: 0;
+
+        animation-name: animation-text;
+        animation-duration: 0.5s;
+        animation-play-state: paused;
+        animation-timing-function: $transition-timing-function-default;
+        animation-fill-mode: forwards;
+    }
+
+    &--visible {
+        animation-play-state: running;
+    }
+}
+
+@keyframes animation-text {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

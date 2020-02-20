@@ -2,7 +2,7 @@ import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import VisibilitySensor from 'react-visibility-sensor';
+import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';

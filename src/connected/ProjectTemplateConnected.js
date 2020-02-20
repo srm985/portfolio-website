@@ -40,6 +40,7 @@ export const query = graphql`
         pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
                 pageTitle
+                projectDate
                 projectDescription
                 projectExcerpt
                 projectHeroImage {

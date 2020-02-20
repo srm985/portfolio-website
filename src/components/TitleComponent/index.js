@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
+import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 
 import classNames from '../../utils/classNames';
 
@@ -91,6 +91,7 @@ class TitleComponent extends React.Component {
             <VisibilitySensor
                 active={isAnimated}
                 onChange={this.handleVisibilityChange}
+                minTopValue={50}
                 partialVisibility
                 resizeCheck
             >

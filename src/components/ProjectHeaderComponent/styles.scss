@@ -1,6 +1,8 @@
 @import '../../styles/global';
 
 .ProjectHeaderComponent {
+    @extend %padding-wrapper;
+
     position: relative;
 
     display: flex;

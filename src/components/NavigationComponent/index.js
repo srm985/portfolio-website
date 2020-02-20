@@ -11,7 +11,7 @@ class NavigationComponent extends React.Component {
         super(props);
 
         this.state = {
-            isMobile: false
+            isMobile: true
         };
     }
 

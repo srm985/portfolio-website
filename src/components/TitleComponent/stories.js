@@ -13,17 +13,30 @@ import TitleComponent from './index';
 const stories = storiesOf(TitleComponent.displayName, module);
 
 stories.add('default', () => {
-    const heading = text('heading', 'Well Hello There!');
-    const headingSize = number('headingSize', 1);
+    const heading = text('heading', 'Heading');
     const isVisibilityForced = boolean('isVisibilityForced', false);
+
+    const headingSizes = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ];
 
     return (
         <>
-            <TitleComponent
-                heading={heading}
-                headingSize={headingSize}
-                isVisibilityForced={isVisibilityForced}
-            />
+            {
+                headingSizes.map((headingSize) => (
+                    <TitleComponent
+                        className={'mb--2'}
+                        heading={`${heading} - H${headingSize}`}
+                        headingSize={headingSize}
+                        isVisibilityForced={isVisibilityForced}
+                    />
+                ))
+            }
         </>
     );
 });

@@ -1,11 +1,11 @@
 import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
 import Section from '../SectionComponent';
+import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 
 import classNames from '../../utils/classNames';
@@ -44,7 +44,7 @@ class ProjectSectionComponent extends React.Component {
             } = ProjectSectionComponent;
 
             return (
-                <>
+                <React.Fragment key={projectSectionTitle}>
                     <GridItem
                         breakpoints={{
                             large: {
@@ -65,10 +65,6 @@ class ProjectSectionComponent extends React.Component {
                     </GridItem>
                     <GridItem
                         breakpoints={{
-                            extraLarge: {
-                                start: 4,
-                                stop: 10
-                            },
                             large: {
                                 start: 3,
                                 stop: 11
@@ -83,13 +79,15 @@ class ProjectSectionComponent extends React.Component {
                             className={'mb--3'}
                             heading={projectSectionTitle}
                             headingSize={2}
+                            isAnimated
                         />
-                        <ReactMarkdown
+                        <TextBlock
                             className={`${displayName}__section-body`}
-                            source={projectSectionBody}
+                            isAnimated
+                            text={projectSectionBody}
                         />
                     </GridItem>
-                </>
+                </React.Fragment>
             );
         });
     }

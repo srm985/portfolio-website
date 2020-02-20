@@ -25,6 +25,33 @@ class ProjectHeaderComponent extends React.Component {
         };
     }
 
+    renderDate = (date) => {
+        const projectDate = new Date(date);
+
+        const monthLookup = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        const {
+            [projectDate.getMonth()]: projectMonth
+        } = monthLookup;
+
+        return (
+            <span>{`${projectMonth} ${projectDate.getFullYear()}`}</span>
+        );
+    }
+
     render() {
         const {
             props: {
@@ -82,7 +109,7 @@ class ProjectHeaderComponent extends React.Component {
                             />
                             <div className={`${displayName}__details`}>
                                 <span>{role}</span>
-                                <span>{projectDate}</span>
+                                {this.renderDate(projectDate)}
                             </div>
                             <p className={'mb--4'}>{projectDescription}</p>
                             <Button
