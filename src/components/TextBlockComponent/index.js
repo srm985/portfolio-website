@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 import ReactMarkdown from 'react-markdown';
+
+import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
 
@@ -58,17 +59,12 @@ class TextBlockComponent extends React.Component {
         );
 
         return (
-            <VisibilitySensor
-                minTopValue={200}
-                onChange={this.handleVisibilityChange}
-                partialVisibility
-                resizeCheck
-            >
+            <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <ReactMarkdown
                     className={componentClassNames}
                     source={text}
                 />
-            </VisibilitySensor>
+            </VisibilityChecker>
         );
     }
 }

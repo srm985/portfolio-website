@@ -16,48 +16,43 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
     }
 
     &__heading {
-        opacity: 0;
-
-        animation-name: animation-heading;
-        animation-duration: $duration-heading;
-        animation-play-state: paused;
-        animation-timing-function: $transition-timing-function-default;
-        animation-delay: $delay-heading;
-        animation-fill-mode: forwards;
-
         &::before {
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
 
-            width: #{$planck-length * 10};
-
-            border-bottom: solid $border-thickness-thick $color-blue;
-            transform: scaleX(0);
-            transform-origin: left;
-
-            animation-name: animation-underline;
-            animation-duration: $duration-underline;
-            animation-play-state: paused;
-            animation-timing-function: $transition-timing-function-default;
-            animation-delay: $delay-underline;
-            animation-fill-mode: forwards;
-
             content: '';
         }
 
-        &--unanimated {
-            opacity: 1;
+        &--animated {
+            opacity: 0;
+
+            animation-name: animation-heading;
+            animation-duration: $duration-heading;
+            animation-play-state: paused;
+            animation-timing-function: $transition-timing-function-default;
+            animation-delay: $delay-heading;
+            animation-fill-mode: forwards;
 
             &::before {
-                transform: scaleX(1);
+                transform: scaleX(0);
+                transform-origin: left;
+
+                animation-name: animation-underline;
+                animation-duration: $duration-underline;
+                animation-play-state: paused;
+                animation-timing-function: $transition-timing-function-default;
+                animation-delay: $delay-underline;
+                animation-fill-mode: forwards;
             }
         }
 
-        &--unaccented {
+        &--accented {
             &::before {
-                transform: scaleX(0);
+                width: #{$planck-length * 10};
+
+                border-bottom: solid $border-thickness-thick $color-blue;
             }
         }
 
@@ -71,37 +66,37 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
     }
 
     &__subheading {
-        opacity: 0;
+        &--animated {
+            opacity: 0;
 
-        animation-name: animation-subheading;
-        animation-duration: 0.3s;
-        animation-play-state: paused;
-        animation-timing-function: $transition-timing-function-default;
-        animation-delay: $delay-subheading;
-        animation-fill-mode: forwards;
+            animation-name: animation-subheading;
+            animation-duration: 0.3s;
+            animation-play-state: paused;
+            animation-timing-function: $transition-timing-function-default;
+            animation-delay: $delay-subheading;
+            animation-fill-mode: forwards;
+        }
 
         &--visible {
             animation-play-state: running;
         }
-
-        &--unanimated {
-            opacity: 1;
-        }
     }
 
     &__progress-bar {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
+        &--animated {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
 
-        background-color: $color-black;
+            background-color: $color-black;
 
-        animation-name: animation-progress-bar;
-        animation-duration: $duration-progress-bar;
-        animation-play-state: paused;
-        animation-timing-function: $transition-timing-function-default;
-        animation-fill-mode: forwards;
+            animation-name: animation-progress-bar;
+            animation-duration: $duration-progress-bar;
+            animation-play-state: paused;
+            animation-timing-function: $transition-timing-function-default;
+            animation-fill-mode: forwards;
+        }
 
         &--visible {
             animation-play-state: running;

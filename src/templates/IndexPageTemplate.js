@@ -61,6 +61,7 @@ const IndexPageTemplate = (props) => {
                             heading={heroTitle}
                             headingClassName={'mb--2'}
                             headingSize={1}
+                            isAccented
                             subheading={heroSubtitle}
                         />
                     </GridItem>

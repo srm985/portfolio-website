@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
+
+import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
 
@@ -38,9 +39,8 @@ class TitleComponent extends React.Component {
                 heading,
                 headingClassName,
                 headingSize,
+                isAccented,
                 isAnimated,
-                isUnaccented,
-                isVisibilityForced,
                 subheading,
                 subheadingClassName
             },
@@ -62,9 +62,9 @@ class TitleComponent extends React.Component {
             headingClassName,
             `${displayName}__heading`,
             {
-                [`${displayName}__heading--unaccented`]: isUnaccented,
-                [`${displayName}__heading--unanimated`]: !isAnimated,
-                [`${displayName}__heading--visible`]: typeof isVisibilityForced === 'boolean' ? isVisibilityForced : isVisible
+                [`${displayName}__heading--accented`]: isAccented,
+                [`${displayName}__heading--animated`]: isAnimated,
+                [`${displayName}__heading--visible`]: isVisible
             }
         );
 
@@ -72,15 +72,16 @@ class TitleComponent extends React.Component {
             subheadingClassName,
             `${displayName}__subheading`,
             {
-                [`${displayName}__subheading--unanimated`]: !isAnimated,
-                [`${displayName}__subheading--visible`]: typeof isVisibilityForced === 'boolean' ? isVisibilityForced : isVisible
+                [`${displayName}__subheading--animated`]: isAnimated,
+                [`${displayName}__subheading--visible`]: isVisible
             }
         );
 
         const progressBarClassNames = classNames(
             `${displayName}__progress-bar`,
             {
-                [`${displayName}__progress-bar--visible`]: typeof isVisibilityForced === 'boolean' ? isVisibilityForced : isVisible
+                [`${displayName}__progress-bar--animated`]: isAnimated,
+                [`${displayName}__progress-bar--visible`]: isVisible
             }
         );
 
@@ -88,13 +89,7 @@ class TitleComponent extends React.Component {
         const SubHeadingComponent = `h${headingSize + 1}`;
 
         return (
-            <VisibilitySensor
-                active={isAnimated}
-                onChange={this.handleVisibilityChange}
-                minTopValue={50}
-                partialVisibility
-                resizeCheck
-            >
+            <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
                     <div className={`${displayName}__heading-block`}>
                         <HeadingComponent className={headingClassNames}>{heading}</HeadingComponent>
@@ -104,7 +99,7 @@ class TitleComponent extends React.Component {
                         subheading && <SubHeadingComponent className={subheadingClassNames}>{subheading}</SubHeadingComponent>
                     }
                 </div>
-            </VisibilitySensor>
+            </VisibilityChecker>
         );
     }
 }
@@ -123,9 +118,8 @@ TitleComponent.propTypes = {
         5,
         6
     ]).isRequired,
+    isAccented: PropTypes.bool,
     isAnimated: PropTypes.bool,
-    isUnaccented: PropTypes.bool,
-    isVisibilityForced: PropTypes.bool,
     subheading: PropTypes.string,
     subheadingClassName: PropTypes.string
 };
@@ -133,9 +127,8 @@ TitleComponent.propTypes = {
 TitleComponent.defaultProps = {
     className: '',
     headingClassName: '',
+    isAccented: false,
     isAnimated: false,
-    isUnaccented: false,
-    isVisibilityForced: undefined,
     subheading: '',
     subheadingClassName: ''
 };

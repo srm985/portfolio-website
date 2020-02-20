@@ -3,7 +3,6 @@ import {
     storiesOf
 } from '@storybook/react';
 import {
-    boolean,
     number,
     text
 } from '@storybook/addon-knobs';
@@ -14,7 +13,6 @@ const stories = storiesOf(TitleComponent.displayName, module);
 
 stories.add('default', () => {
     const heading = text('heading', 'Heading');
-    const isVisibilityForced = boolean('isVisibilityForced', false);
 
     const headingSizes = [
         1,
@@ -33,7 +31,7 @@ stories.add('default', () => {
                         className={'mb--2'}
                         heading={`${heading} - H${headingSize}`}
                         headingSize={headingSize}
-                        isVisibilityForced={isVisibilityForced}
+                        isAccented
                     />
                 ))
             }
@@ -44,7 +42,6 @@ stories.add('default', () => {
 stories.add('subheading', () => {
     const heading = text('heading', 'Well Hello There!');
     const headingSize = number('headingSize', 1);
-    const isVisibilityForced = boolean('isVisibilityForced', false);
     const subheading = text('subheading', 'Magna anim proident esse cillum adipisicing.');
 
     return (
@@ -52,7 +49,7 @@ stories.add('subheading', () => {
             <TitleComponent
                 heading={heading}
                 headingSize={headingSize}
-                isVisibilityForced={isVisibilityForced}
+                isAccented
                 subheading={subheading}
             />
         </>
@@ -62,15 +59,14 @@ stories.add('subheading', () => {
 stories.add('animated', () => {
     const heading = text('heading', 'Well Hello There!');
     const headingSize = number('headingSize', 1);
-    const isVisibilityForced = boolean('isVisibilityForced', false);
 
     return (
         <>
             <TitleComponent
                 heading={heading}
                 headingSize={headingSize}
+                isAccented
                 isAnimated
-                isVisibilityForced={isVisibilityForced}
             />
         </>
     );
@@ -79,7 +75,6 @@ stories.add('animated', () => {
 stories.add('animated with subheading', () => {
     const heading = text('heading', 'Well Hello There!');
     const headingSize = number('headingSize', 1);
-    const isVisibilityForced = boolean('isVisibilityForced', false);
     const subheading = text('subheading', 'Magna anim proident esse cillum adipisicing.');
 
     return (
@@ -87,8 +82,8 @@ stories.add('animated with subheading', () => {
             <TitleComponent
                 heading={heading}
                 headingSize={headingSize}
+                isAccented
                 isAnimated
-                isVisibilityForced={isVisibilityForced}
                 subheading={subheading}
             />
         </>

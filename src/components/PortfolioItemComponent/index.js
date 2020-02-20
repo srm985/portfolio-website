@@ -1,10 +1,10 @@
 import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
+import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import {
     BUTTON_STYLE_TYPE_SECONDARY
@@ -90,12 +90,7 @@ class PortfolioItemComponent extends React.Component {
         );
 
         return (
-            <VisibilitySensor
-                minTopValue={200}
-                onChange={this.handleVisibilityChange}
-                partialVisibility
-                resizeCheck
-            >
+            <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
                     <Image
                         alt={'alt'}
@@ -120,7 +115,7 @@ class PortfolioItemComponent extends React.Component {
                         />
                     </Card>
                 </div>
-            </VisibilitySensor>
+            </VisibilityChecker>
         );
     }
 }

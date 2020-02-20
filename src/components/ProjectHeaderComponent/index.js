@@ -105,7 +105,6 @@ class ProjectHeaderComponent extends React.Component {
                                 className={`${displayName}__title`}
                                 heading={projectTitle}
                                 headingSize={1}
-                                isUnaccented
                             />
                             <div className={`${displayName}__details`}>
                                 <span>{role}</span>

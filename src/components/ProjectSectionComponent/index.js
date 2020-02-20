@@ -79,6 +79,7 @@ class ProjectSectionComponent extends React.Component {
                             className={'mb--3'}
                             heading={projectSectionTitle}
                             headingSize={2}
+                            isAccented
                             isAnimated
                         />
                         <TextBlock

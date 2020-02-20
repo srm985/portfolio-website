@@ -2,11 +2,11 @@ import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
 import Title from '../TitleComponent';
+import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
 
@@ -72,12 +72,7 @@ class WhoIAmComponent extends React.Component {
         );
 
         return (
-            <VisibilitySensor
-                minTopValue={200}
-                onChange={this.handleVisibilityChange}
-                partialVisibility
-                resizeCheck
-            >
+            <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={displayName}>
                     <Grid className={`${displayName}__content-block`}>
                         <GridItem
@@ -96,6 +91,7 @@ class WhoIAmComponent extends React.Component {
                                 className={'mb--2'}
                                 heading={aboutMeSectionTitle}
                                 headingSize={3}
+                                isAccented
                                 isAnimated
                             />
                             <ReactMarkdown
@@ -117,7 +113,7 @@ class WhoIAmComponent extends React.Component {
                         />
                     </div>
                 </div>
-            </VisibilitySensor>
+            </VisibilityChecker>
         );
     }
 }
