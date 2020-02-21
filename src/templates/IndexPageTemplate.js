@@ -22,7 +22,7 @@ const IndexPageTemplate = (props) => {
         content,
         content: {
             aboutMeSectionBody,
-            aboutMeSectionImage,
+            aboutMeSectionImageBlock,
             aboutMeSectionTitle,
             heroImageBlockHomePage: {
                 imageAlt = '',
@@ -32,7 +32,7 @@ const IndexPageTemplate = (props) => {
                         fluid = {}
                     } = {}
                 } = {}
-            },
+            } = {},
             heroSubtitle,
             heroTitle
         }
@@ -109,7 +109,7 @@ const IndexPageTemplate = (props) => {
             <Section isFullBleed>
                 <WhoIAm
                     aboutMeSectionBody={aboutMeSectionBody}
-                    aboutMeSectionImage={aboutMeSectionImage}
+                    aboutMeSectionImage={aboutMeSectionImageBlock}
                     aboutMeSectionTitle={aboutMeSectionTitle}
                 />
             </Section>
@@ -138,9 +138,13 @@ const IndexPageTemplate = (props) => {
 IndexPageTemplate.propTypes = {
     content: PropTypes.shape({
         aboutMeSectionBody: PropTypes.string,
-        aboutMeSectionImage: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fluid: PropTypes.shape({})
+        aboutMeSectionImageBlock: PropTypes.shape({
+            imageAlt: PropTypes.string,
+            imageOpacity: PropTypes.number,
+            imageSource: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                    fluid: PropTypes.shape({})
+                })
             })
         }),
         aboutMeSectionTitle: PropTypes.string,

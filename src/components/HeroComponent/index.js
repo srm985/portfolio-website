@@ -30,6 +30,10 @@ const HeroComponent = (props) => {
 
     const hasImage = Object.keys(defaultSource).length > 0;
 
+    console.log({
+        hasImage
+    });
+
     const componentClassNames = classNames(
         className,
         displayName,

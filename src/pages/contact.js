@@ -37,7 +37,13 @@ export const query = graphql`
                         frontmatter {
                             heroImageBlockContactPage {
                                 imageAlt
-                                imageSource
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
                             }
                             heroTitle
                             pageTitle

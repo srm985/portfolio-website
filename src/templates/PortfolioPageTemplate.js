@@ -18,7 +18,7 @@ const PortfolioPageTemplate = (props) => {
                         fluid = {}
                     } = {}
                 } = {}
-            },
+            } = {},
             projectList = [],
             viewProjectCTA = ''
         }

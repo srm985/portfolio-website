@@ -30,13 +30,16 @@ class ProjectSectionComponent extends React.Component {
 
         return projectSectionList.map((projectSection) => {
             const {
-                projectSectionBody,
-                projectSectionImage: {
-                    childImageSharp: {
-                        fluid
+                projectSectionBody = '',
+                projectSectionImageBlock: {
+                    imageAlt = '',
+                    imageSource: {
+                        childImageSharp: {
+                            fluid = {}
+                        } = {}
                     } = {}
-                },
-                projectSectionTitle
+                } = {},
+                projectSectionTitle = ''
             } = projectSection;
 
             const {
@@ -58,7 +61,7 @@ class ProjectSectionComponent extends React.Component {
                         }}
                     >
                         <Image
-                            alt={'alt'}
+                            alt={imageAlt}
                             className={`${displayName}__section-image`}
                             fluid={fluid}
                         />
@@ -126,9 +129,13 @@ ProjectSectionComponent.displayName = 'ProjectSectionComponent';
 ProjectSectionComponent.propTypes = {
     projectSectionList: PropTypes.arrayOf(PropTypes.shape({
         projectSectionBody: PropTypes.string,
-        projectSectionImage: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fluid: PropTypes.shape({})
+        projectSectionImageBlock: PropTypes.shape({
+            imageAlt: PropTypes.string,
+            imageOpacity: PropTypes.number,
+            imageSource: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                    fluid: PropTypes.shape({})
+                })
             })
         }),
         projectSectionTitle: PropTypes.string

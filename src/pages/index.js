@@ -38,13 +38,25 @@ export const query = graphql`
                             aboutMeSectionBody
                             aboutMeSectionImageBlock {
                                 imageAlt
-                                imageSource
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
                             }
                             aboutMeSectionTitle
                             heroImageBlockHomePage {
                                 imageAlt
                                 imageOpacity
-                                imageSource
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
                             }
                             heroSubtitle
                             heroTitle

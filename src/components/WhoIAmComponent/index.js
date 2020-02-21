@@ -41,11 +41,14 @@ class WhoIAmComponent extends React.Component {
         const {
             props: {
                 aboutMeSectionBody,
-                aboutMeSectionImage: {
-                    childImageSharp: {
-                        fluid = {}
+                aboutMeSectionImageBlock: {
+                    imageAlt = '',
+                    imageSource: {
+                        childImageSharp: {
+                            fluid = {}
+                        } = {}
                     } = {}
-                } = {},
+                },
                 aboutMeSectionTitle
             },
             state: {
@@ -108,6 +111,7 @@ class WhoIAmComponent extends React.Component {
                             <div className={decoratorSlashClassNames} />
                         </div>
                         <Image
+                            alt={imageAlt}
                             className={imageClassNames}
                             fluid={fluid}
                         />
@@ -122,9 +126,13 @@ WhoIAmComponent.displayName = 'WhoIAmComponent';
 
 WhoIAmComponent.propTypes = {
     aboutMeSectionBody: PropTypes.string,
-    aboutMeSectionImage: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({})
+    aboutMeSectionImageBlock: PropTypes.shape({
+        imageAlt: PropTypes.string,
+        imageOpacity: PropTypes.number,
+        imageSource: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
         })
     }),
     aboutMeSectionTitle: PropTypes.string
@@ -132,7 +140,7 @@ WhoIAmComponent.propTypes = {
 
 WhoIAmComponent.defaultProps = {
     aboutMeSectionBody: '',
-    aboutMeSectionImage: {},
+    aboutMeSectionImageBlock: {},
     aboutMeSectionTitle: ''
 };
 

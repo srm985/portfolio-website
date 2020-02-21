@@ -46,11 +46,14 @@ class PortfolioItemComponent extends React.Component {
         const {
             props: {
                 projectExcerpt,
-                projectThumbnailImage: {
-                    childImageSharp: {
-                        fluid
+                projectThumbnailImageBlock: {
+                    imageAlt = '',
+                    imageSource: {
+                        childImageSharp: {
+                            fluid = {}
+                        } = {}
                     } = {}
-                },
+                } = {},
                 projectTitle,
                 role,
                 slug,
@@ -93,7 +96,7 @@ class PortfolioItemComponent extends React.Component {
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
                     <Image
-                        alt={'alt'}
+                        alt={imageAlt}
                         className={imageClassNames}
                         fluid={fluid}
                     />
@@ -124,9 +127,13 @@ PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
     projectExcerpt: PropTypes.string,
-    projectThumbnailImage: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({})
+    projectThumbnailImageBlock: PropTypes.shape({
+        imageAlt: PropTypes.string,
+        imageOpacity: PropTypes.number,
+        imageSource: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
         })
     }),
     projectTitle: PropTypes.string,
@@ -137,7 +144,7 @@ PortfolioItemComponent.propTypes = {
 
 PortfolioItemComponent.defaultProps = {
     projectExcerpt: '',
-    projectThumbnailImage: {},
+    projectThumbnailImageBlock: {},
     projectTitle: '',
     role: '',
     slug: '',

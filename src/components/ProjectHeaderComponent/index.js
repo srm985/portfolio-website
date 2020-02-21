@@ -57,9 +57,12 @@ class ProjectHeaderComponent extends React.Component {
             props: {
                 projectDate,
                 projectDescription,
-                projectHeroImage: {
-                    childImageSharp: {
-                        fluid = {}
+                projectHeroImageBlock: {
+                    imageAlt = '',
+                    imageSource: {
+                        childImageSharp: {
+                            fluid = {}
+                        } = {}
                     } = {}
                 } = {},
                 projectTitle,
@@ -86,7 +89,7 @@ class ProjectHeaderComponent extends React.Component {
                 <div className={`${displayName}__background`}>
                     <div className={`${displayName}__section-half`} />
                     <Image
-                        alt={'alt'}
+                        alt={imageAlt}
                         className={`${displayName}__section-half`}
                         fluid={fluid}
                     />
@@ -132,9 +135,13 @@ ProjectHeaderComponent.displayName = 'ProjectHeaderComponent';
 ProjectHeaderComponent.propTypes = {
     projectDate: PropTypes.string,
     projectDescription: PropTypes.string,
-    projectHeroImage: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({})
+    projectHeroImageBlock: PropTypes.shape({
+        imageAlt: PropTypes.string,
+        imageOpacity: PropTypes.number,
+        imageSource: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
         })
     }),
     projectTitle: PropTypes.string,
@@ -144,7 +151,7 @@ ProjectHeaderComponent.propTypes = {
 ProjectHeaderComponent.defaultProps = {
     projectDate: '',
     projectDescription: '',
-    projectHeroImage: {},
+    projectHeroImageBlock: {},
     projectTitle: '',
     role: ''
 };
