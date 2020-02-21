@@ -1,6 +1,7 @@
 ---
 pageTitle: Sean McQuay | Contact
-heroImageContactPage: /assets/chicago.png
-heroImageOpacityContactPage: 10
+heroImageBlockContactPage:
+  imageAlt: a map of Chicago with street names
+  imageSource: /assets/chicago.png
 ---
 
