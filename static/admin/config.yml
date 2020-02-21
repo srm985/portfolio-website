@@ -16,14 +16,13 @@ default_image: &default_image
     - label: 'Title'
       name: 'imageTitle'
       default: ''
-      required: false
       widget: 'string'
     - label: 'Alt'
       name: 'imageAlt'
       widget: 'string'
     - label: 'Image Opacity'
       name: 'imageOpacity'
-      defaultValue: 100
+      default: 100
       max: 100
       min: 0
       step: 5
