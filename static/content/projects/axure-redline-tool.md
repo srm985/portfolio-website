@@ -9,7 +9,7 @@ projectExcerpt: >-
   and development - ensuring developers have all the specifications they need to
   confidently and accurately materialize your designs.
 projectThumbnailImageBlock:
-  imageAlt: a placeholder image thumbnail
+  imageAlt: a placeholder image thumbnail...
   imageSource: /assets/gatsby-astronaut.png
 projectHeroImageBlock:
   imageAlt: the main hero image
