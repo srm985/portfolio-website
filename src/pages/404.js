@@ -39,14 +39,6 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImage {
-                                childImageSharp {
-                                    fluid(maxWidth: 1600) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
-                            }
-                            heroTitle
                             pageTitle
                         }
                     }

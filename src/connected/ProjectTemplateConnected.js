@@ -43,46 +43,20 @@ export const query = graphql`
                 projectDate
                 projectDescription
                 projectExcerpt
-                projectHeroImage {
-                    childImageSharp {
-                        fluid(maxWidth: 1200) {
-                            ...GatsbyImageSharpFluid_noBase64
-                        }
-                    }
+                projectHeroImageBlock {
+                    imageAlt
+                    imageSource
                 }
                 projectSectionList {
                     projectSectionTitle
                     projectSectionBody
-                    projectSectionImage {
-                        childImageSharp {
-                            fluid(maxWidth: 1200) {
-                                ...GatsbyImageSharpFluid_noBase64
-                            }
-                        }
-                    }
-                }
-                projectThumbnailImage {
-                    childImageSharp {
-                        fluid(maxWidth: 600) {
-                            ...GatsbyImageSharpFluid_noBase64
-                        }
+                    projectSectionImageBlock {
+                        imageAlt
+                        imageSource
                     }
                 }
                 projectTitle
                 role
-            }
-        }
-        templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "project"}}) {
-            edges {
-                node {
-                    childMarkdownRemark {
-                        frontmatter {
-                            returnButtonImage {
-                                publicURL
-                            }
-                        }
-                    }
-                }
             }
         }
     }

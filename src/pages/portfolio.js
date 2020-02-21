@@ -58,29 +58,13 @@ export const query = graphql`
                             pageTitle
                             projectDescription
                             projectExcerpt
-                            projectHeroImage {
-                                childImageSharp {
-                                    fluid(maxWidth: 1200) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
+                            projectHeroImageBlock {
+                                imageAlt
+                                imageSource
                             }
-                            projectSectionList {
-                                projectSectionBody
-                                projectSectionImage {
-                                    childImageSharp {
-                                        fluid(maxWidth: 1200) {
-                                            ...GatsbyImageSharpFluid_noBase64
-                                        }
-                                    }
-                                }
-                            }
-                            projectThumbnailImage {
-                                childImageSharp {
-                                    fluid(maxWidth: 600) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
+                            projectThumbnailImageBlock {
+                                imageAlt
+                                imageSource
                             }
                             projectTitle
                             role

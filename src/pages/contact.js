@@ -35,14 +35,10 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImageContactPage {
-                                childImageSharp {
-                                    fluid(maxWidth: 1600) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
+                            heroImageBlockContactPage {
+                                imageAlt
+                                imageSource
                             }
-                            heroImageOpacityContactPage
                             heroTitle
                             pageTitle
                         }

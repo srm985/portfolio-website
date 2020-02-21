@@ -136,9 +136,9 @@ collections:
         file: 'static/content/project.md'
         fields:
           - {
-              label: 'Return Button Image',
-              name: 'returnButtonImageBlock',
-              << : *default_image
+              label: 'Return Button Icon',
+              name: 'returnButtonIcon',
+              widget: 'image'
             }
       - label: 'Contact Page'
         name: 'contact'

@@ -36,22 +36,16 @@ export const query = graphql`
                     childMarkdownRemark {
                         frontmatter {
                             aboutMeSectionBody
-                            aboutMeSectionImage {
-                                childImageSharp {
-                                    fluid(maxWidth: 800) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
+                            aboutMeSectionImageBlock {
+                                imageAlt
+                                imageSource
                             }
                             aboutMeSectionTitle
-                            heroImage {
-                                childImageSharp {
-                                    fluid(maxWidth: 1600) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
-                                }
+                            heroImageBlockHomePage {
+                                imageAlt
+                                imageOpacity
+                                imageSource
                             }
-                            heroImageOpacityHomePage
                             heroSubtitle
                             heroTitle
                             pageTitle

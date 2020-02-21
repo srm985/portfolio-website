@@ -9,7 +9,7 @@ const ProjectTemplate = (props) => {
     const {
         content,
         content: {
-            returnButtonImage: {
+            returnButtonIcon: {
                 publicURL = ''
             } = {}
         }
@@ -36,7 +36,7 @@ ProjectTemplate.displayName = 'ProjectTemplate';
 
 ProjectTemplate.propTypes = {
     content: PropTypes.shape({
-        returnButtonImage: PropTypes.shape({
+        returnButtonIcon: PropTypes.shape({
             publicURL: PropTypes.string
         })
     })

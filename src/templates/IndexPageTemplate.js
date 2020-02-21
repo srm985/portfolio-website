@@ -24,12 +24,15 @@ const IndexPageTemplate = (props) => {
             aboutMeSectionBody,
             aboutMeSectionImage,
             aboutMeSectionTitle,
-            heroImage: {
-                childImageSharp: {
-                    fluid = {}
+            heroImageBlockHomePage: {
+                imageAlt = '',
+                imageOpacity = 100,
+                imageSource: {
+                    childImageSharp: {
+                        fluid = {}
+                    } = {}
                 } = {}
-            } = {},
-            heroImageOpacityHomePage,
+            },
             heroSubtitle,
             heroTitle
         }
@@ -38,9 +41,9 @@ const IndexPageTemplate = (props) => {
     return (
         <>
             <Hero
-                alt={'placeholder image'}
+                alt={imageAlt}
                 defaultSource={fluid}
-                imageOpacity={heroImageOpacityHomePage}
+                imageOpacity={imageOpacity}
                 overlayColor={OVERLAY_BLACK}
             >
                 <Grid>
@@ -141,12 +144,15 @@ IndexPageTemplate.propTypes = {
             })
         }),
         aboutMeSectionTitle: PropTypes.string,
-        heroImage: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fluid: PropTypes.shape({})
+        heroImageBlockHomePage: PropTypes.shape({
+            imageAlt: PropTypes.string,
+            imageOpacity: PropTypes.number,
+            imageSource: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                    fluid: PropTypes.shape({})
+                })
             })
         }),
-        heroImageOpacityHomePage: PropTypes.number,
         heroSubtitle: PropTypes.string,
         heroTitle: PropTypes.string
     })
