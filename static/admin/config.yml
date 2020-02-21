@@ -66,18 +66,18 @@ collections:
               widget: 'markdown',
             }
           - label: 'About Me Image'
-            name: 'aboutMeSectionImageBlock'
+            name: 'somethingRandom'
             widget: 'object'
             fields:
               - label: 'Title'
-                name: 'imageTitle'
+                name: 'nowayNew'
                 required: false
                 widget: 'string'
               - label: 'Alt'
-                name: 'imageAlt'
+                name: 'randomOtherAlt'
                 widget: 'string'
               - label: 'Image'
-                name: 'image'
+                name: 'completelydifferent'
                 widget: 'imageSource'
           - {
               label: 'About Me Image Alt',
