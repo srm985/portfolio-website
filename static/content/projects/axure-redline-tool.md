@@ -8,8 +8,12 @@ projectExcerpt: >-
   An interactive reline plugin which simplifies the transition between design
   and development - ensuring developers have all the specifications they need to
   confidently and accurately materialize your designs.
-projectThumbnailImage: /assets/measure.jpg
-projectHeroImage: /assets/gatsby-astronaut.png
+projectThumbnailImageBlock:
+  imageAlt: a placeholder image thumbnail
+  imageSource: /assets/gatsby-astronaut.png
+projectHeroImageBlock:
+  imageAlt: the main hero image
+  imageSource: /assets/gatsby-astronaut.png
 projectDescription: >-
   This plugin intends to mimic some of the functionality of the plugin Measure
   for Sketch or InVision Inspect. This application is meant for those who rely
@@ -37,7 +41,9 @@ projectSectionList:
       exercitation. Minim incididunt ullamco veniam exercitation nisi nisi
       proident. Amet elit nisi velit do et anim qui id eu qui ut aliqua deserunt
       duis.
-    projectSectionImage: /assets/gatsby-astronaut.png
+    projectSectionImageBlock:
+      imageAlt: a section image
+      imageSource: /assets/gatsby-astronaut.png
     projectSectionTitle: Project Start
 ---
 
