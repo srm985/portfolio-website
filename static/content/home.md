@@ -4,7 +4,7 @@ heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroImageBlockHomePage:
   imageAlt: a hero image
-  imageOpacity: 50
+  imageOpacity: 20
   imageSource: /assets/gatsby-astronaut.png
 heroButtonsHomePage:
   contactButton:
