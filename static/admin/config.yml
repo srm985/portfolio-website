@@ -10,6 +10,9 @@ site_url: https://mystifying-bartik-329370.netlify.com
 default_image: &default_image
   widget: 'object'
   fields:
+    - label: 'Image'
+      name: 'imageSource'
+      widget: 'image'
     - label: 'Title'
       name: 'imageTitle'
       required: false
@@ -17,9 +20,15 @@ default_image: &default_image
     - label: 'Alt'
       name: 'imageAlt'
       widget: 'string'
-    - label: 'Image'
-      name: 'imageSource'
-      widget: 'image'
+    - label: 'Image Opacity'
+      name: 'imageOpacity'
+      defaultValue: 100
+      max: 100
+      min: 0
+      required: false
+      step: 5
+      valueType: 'int'
+      widget: 'number'
 
 collections:
   - label: 'Pages'
@@ -32,18 +41,10 @@ collections:
           - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
-          - { label: 'Hero Image', name: 'heroImage', required: false, widget: 'image' }
-          - { label: 'Hero Image Alt', name: 'heroImageAlt', required: false, widget: 'string' }
           - {
-              defaultValue: 100,
-              label: 'Hero Image Opacity',
-              max: 100,
-              min: 0,
-              name: 'heroImageOpacityHomePage',
-              required: false,
-              step: 5,
-              valueType: 'int',
-              widget: 'number',
+              label: "Hero Image",
+              name: "heroImageBlockHomePage",
+              << : *default_image
             }
           - label: 'Herobuttons'
             name: 'heroButtonsHomePage'
@@ -85,11 +86,6 @@ collections:
               << : *default_image
             }
           - {
-              label: 'About Me Image Alt',
-              name: 'aboutMeSectionImageAlt',
-              widget: 'string',
-            }
-          - {
               label: 'Skills Section Title',
               name: 'skillsSectionTitle',
               widget: 'string',
@@ -109,48 +105,31 @@ collections:
               name: 'skillsSearchPlaceholder',
               widget: 'string',
             }
-          - { label: 'Skill Not Found', name: skillNotFound, widget: string }
-          - label: Skills Sections List
-            label_singular: Skills List
+          - { label: 'Skill Not Found', name: 'skillNotFound', widget: 'string' }
+          - label: 'Skills Sections List'
+            label_singular: 'Skills List'
             name: 'skillsSectionList'
-            name_singular: skillsList
+            name_singular: 'skillsList'
             widget: 'list'
             fields:
-              - { label: 'Section Label', name: sectionLabel, widget: string }
-              - label: Skills List
+              - { label: 'Section Label', name: 'sectionLabel', widget: 'string' }
+              - label: 'Skills List'
                 name: 'skillsList'
                 widget: 'list'
                 fields:
-                  - { label: 'Icon', name: icon, widget: string }
-                  - { label: 'Label', name: label, widget: string }
+                  - { label: 'Icon', name: 'icon', widget: 'string' }
+                  - { label: 'Label', name: 'label', widget: 'string' }
       - label: 'Portfolio Page'
         name: 'portfolio'
         file: 'static/content/portfolio.md'
         fields:
-          - { label: 'Page Title', name: pageTitle, widget: string }
-          - { label: 'View Project CTA', name: viewProjectCTA, widget: string }
+          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - { label: 'View Project CTA', name: 'viewProjectCTA', widget: 'string' }
           - {
               label: 'Hero Image',
-              name: 'heroImagePortfolioPage',
+              name: 'heroImageBlockPortfolioPage',
               required: false,
-              widget: 'image',
-            }
-          - {
-              label: 'Hero Image Alt',
-              name: 'heroImageAltPortfolioPage',
-              required: false,
-              widget: 'string',
-            }
-          - {
-              defaultValue: 100,
-              label: 'Hero Image Opacity',
-              max: 100,
-              min: 0,
-              name: 'heroImageOpacityPortfolioPage',
-              required: false,
-              step: 5,
-              valueType: 'int',
-              widget: 'number',
+              << : *default_image
             }
       - label: 'Project Page'
         name: 'project'
@@ -158,42 +137,25 @@ collections:
         fields:
           - {
               label: 'Return Button Image',
-              name: 'returnButtonImage',
-              widget: 'image',
+              name: 'returnButtonImageBlock',
+              << : *default_image
             }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
-          - { label: 'Page Title', name: pageTitle, widget: string }
+          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
           - {
               label: 'Hero Image',
-              name: 'heroImageContactPage',
+              name: 'heroImageBlockContactPage',
               required: false,
-              widget: 'image',
-            }
-          - {
-              label: 'Hero Image Alt',
-              name: 'heroImageAltContactPage',
-              required: false,
-              widget: 'string',
-            }
-          - {
-              defaultValue: 100,
-              label: 'Hero Image Opacity',
-              max: 100,
-              min: 0,
-              name: 'heroImageOpacityContactPage',
-              required: false,
-              step: 5,
-              valueType: 'int',
-              widget: 'number',
+              << : *default_image
             }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'
         fields:
-          - { label: 'Page Title', name: pageTitle, widget: string }
+          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
   - label: 'Globals'
     name: 'globals'
     files:
@@ -202,21 +164,21 @@ collections:
         name: 'navigation'
         file: 'static/content/navigation.md'
         fields:
-          - { label: 'Logo Copy', name: headerLogoCopy, widget: string }
-          - { label: 'Logo Icon', name: headerLogoIcon, widget: image }
+          - { label: 'Logo Copy', name: 'headerLogoCopy', widget: 'string' }
+          - { label: 'Logo Icon', name: 'headerLogoIcon', widget: 'image' }
           - label: 'Navigation Links'
             label_singular: 'Navigation Link'
             name: 'navigationLinks'
             widget: 'list'
             fields:
-              - { label: 'Page Name', name: pageName, widget: string }
-              - { label: 'Page URL', name: pageURL, widget: string }
+              - { label: 'Page Name', name: 'pageName', widget: 'string' }
+              - { label: 'Page URL', name: 'pageURL', widget: 'string' }
       - allow_add: true
         label: 'Footer'
         name: 'footer'
         file: 'static/content/footer.md'
         fields:
-          - { label: 'Footer Copy', name: 'footerCopy', widget: string }
+          - { label: 'Footer Copy', name: 'footerCopy', widget: 'string' }
           - label: 'Social Media Links'
             label_singular: 'Social Media Link'
             name: 'socialMediaLinks'
@@ -238,10 +200,10 @@ collections:
                   widget: 'image',
                 }
   - create: true
-    folder: static/content/projects
-    identifier_field: path
+    folder: 'static/content/projects'
+    identifier_field: 'path'
     label: 'Projects'
-    label_singular: Project
+    label_singular: 'Project'
     name: 'projects'
     fields:
       - { name: 'path', label: 'Path', widget: 'string' }
@@ -251,17 +213,15 @@ collections:
       - { name: 'projectDate', label: 'Project Date', widget: 'date' }
       - { name: 'projectExcerpt', label: 'Project Excerpt', widget: 'text' }
       - {
-          name: 'projectThumbnailImage',
+          name: 'projectThumbnailImageBlock',
           label: 'Project Thumbnail Image',
-          widget: 'image',
+          << : *default_image
         }
       - {
-          name: 'projectThumbnailImageAlt',
-          label: 'Project Thumbnail Image Alt',
-          widget: 'string',
+          name: 'projectHeroImageBlock',
+          label: 'Project Hero Image',
+          << : *default_image
         }
-      - { name: projectHeroImage, label: 'Project Hero Image', widget: 'image' }
-      - { name: projectHeroImageAlt, label: 'Project Hero Image Alt', widget: 'string' }
       - {
           name: 'projectDescription',
           label: 'Project Description',
@@ -280,14 +240,9 @@ collections:
         widget: 'list'
         fields:
           - {
-              name: 'projectSectionImage',
+              name: 'projectSectionImageBlock',
               label: 'Project Section Image',
-              widget: 'image',
-            }
-          - {
-              name: 'projectSectionImageAlt',
-              label: 'Project Section Image Alt',
-              widget: 'string',
+              << : *default_image
             }
           - {
               name: 'projectSectionTitle',
