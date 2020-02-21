@@ -15,6 +15,7 @@ default_image: &default_image
       widget: 'image'
     - label: 'Title'
       name: 'imageTitle'
+      default: ''
       required: false
       widget: 'string'
     - label: 'Alt'
@@ -25,7 +26,6 @@ default_image: &default_image
       defaultValue: 100
       max: 100
       min: 0
-      required: false
       step: 5
       valueType: 'int'
       widget: 'number'
