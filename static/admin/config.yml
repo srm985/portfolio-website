@@ -81,7 +81,7 @@ collections:
             }
           - {
               label: 'About Me Image',
-              name: 'aboutMeSectionImage_temp',
+              name: 'aboutMeSectionImageBlock',
               << : *default_image
             }
           - {
