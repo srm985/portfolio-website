@@ -8,18 +8,18 @@ public_folder: '/assets'
 site_url: https://mystifying-bartik-329370.netlify.com
 
 default_image: &default_image
-    widget: 'object'
-    fields:
-      - label: 'Title'
-        name: 'imageTitle'
-        required: false
-        widget: 'string'
-      - label: 'Alt'
-        name: 'imageAlt'
-        widget: 'string'
-      - label: 'Image'
-        name: 'image'
-        widget: 'imageSource'
+  widget: 'object',
+  fields:
+    - label: 'Title'
+      name: 'imageTitle'
+      required: false
+      widget: 'string'
+    - label: 'Alt'
+      name: 'imageAlt'
+      widget: 'string'
+    - label: 'Image'
+      name: 'image'
+      widget: 'imageSource'
 
 collections:
   - label: 'Pages'
