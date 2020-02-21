@@ -11,15 +11,15 @@ default_image: &default_image
     widget: 'object'
     fields:
       - label: 'Title'
-        name: 'title'
+        name: 'imageTitle'
         required: false
         widget: 'string'
       - label: 'Alt'
-        name: 'alt'
+        name: 'imageAlt'
         widget: 'string'
       - label: 'Image'
         name: 'image'
-        widget: 'image'
+        widget: 'imageSource'
 
 collections:
   - label: 'Pages'
