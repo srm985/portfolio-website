@@ -65,22 +65,20 @@ collections:
               name: 'aboutMeSectionBody',
               widget: 'markdown',
             }
-          - {
-              label: 'About Me Image',
-              name: 'aboutMeSectionImageBlock',
-              widget: 'object',
-              fields:
-                - label: 'Title'
-                  name: 'imageTitle'
-                  required: false
-                  widget: 'string'
-                - label: 'Alt'
-                  name: 'imageAlt'
-                  widget: 'string'
-                - label: 'Image'
-                  name: 'image'
-                  widget: 'imageSource'
-            }
+          - label: 'About Me Image'
+            name: 'aboutMeSectionImageBlock'
+            widget: 'object'
+            fields:
+              - label: 'Title'
+                name: 'imageTitle'
+                required: false
+                widget: 'string'
+              - label: 'Alt'
+                name: 'imageAlt'
+                widget: 'string'
+              - label: 'Image'
+                name: 'image'
+                widget: 'imageSource'
           - {
               label: 'About Me Image Alt',
               name: 'aboutMeSectionImageAlt',
