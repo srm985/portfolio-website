@@ -71,6 +71,19 @@ export const query = graphql`
                 role
             }
         }
+        templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "project"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            returnButtonIcon {
+                                publicURL
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
