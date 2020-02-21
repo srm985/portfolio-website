@@ -80,11 +80,6 @@ collections:
               widget: 'markdown',
             }
           - {
-              label: 'About Me Image',
-              name: 'aboutMeSectionImageBlock',
-              << : *default_image
-            }
-          - {
               label: 'About Me Image Alt',
               name: 'aboutMeSectionImageAlt',
               widget: 'string',
