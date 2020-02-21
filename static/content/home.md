@@ -2,8 +2,10 @@
 pageTitle: Sean McQuay | Home
 heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
-heroImage: /assets/gatsby-astronaut.png
-heroImageOpacityHomePage: 50
+heroImageBlockHomePage:
+  imageAlt: a hero image
+  imageOpacity: 50
+  imageSource: /assets/gatsby-astronaut.png
 heroButtonsHomePage:
   contactButton:
     label: Contact Me
@@ -25,7 +27,9 @@ aboutMeSectionBody: >-
   aliquip cillum ullamco cupidatat ipsum anim nisi ullamco qui dolore consequat.
   Minim qui fugiat exercitation amet. Ullamco in consectetur id sunt eu et amet
   aliqua aliqua aliquip. Lorem nulla laboris aute culpa qui irure.
-aboutMeSectionImage: /assets/portrait-transparent.png
+aboutMeSectionImageBlock:
+  imageAlt: a picture of the author in a suit
+  imageSource: /assets/portrait-transparent.png
 skillsSectionTitle: Do I have the skills you need?
 skillsSearchLabel: Find a skill!
 skillsSearchName: skillSearchbar
