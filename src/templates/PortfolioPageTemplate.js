@@ -20,6 +20,8 @@ const PortfolioPageTemplate = (props) => {
                 } = {}
             } = {},
             projectList = [],
+            projectDescriptionTitle = '',
+            projectRoleTitle = '',
             viewProjectCTA = ''
         }
     } = props;
@@ -47,6 +49,8 @@ const PortfolioPageTemplate = (props) => {
             >
                 <PortfolioItem
                     {...projectData}
+                    projectDescriptionTitle={projectDescriptionTitle}
+                    projectRoleTitle={projectRoleTitle}
                     viewProjectCTA={viewProjectCTA}
                 />
             </GridItem>
@@ -81,7 +85,9 @@ PortfolioPageTemplate.propTypes = {
                 })
             })
         }),
+        projectDescriptionTitle: PropTypes.string,
         projectList: PropTypes.arrayOf(PropTypes.shape({})),
+        projectRoleTitle: PropTypes.string,
         viewProjectCTA: PropTypes.string
     })
 };

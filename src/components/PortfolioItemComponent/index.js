@@ -47,7 +47,9 @@ class PortfolioItemComponent extends React.Component {
     render() {
         const {
             props: {
+                projectDescriptionTitle,
                 projectExcerpt,
+                projectRoleTitle,
                 projectThumbnailImageBlock: {
                     imageAlt = '',
                     imageSource: {
@@ -108,12 +110,12 @@ class PortfolioItemComponent extends React.Component {
                     >
                         <h2 className={titleClassNames}>{projectTitle}</h2>
                         <Title
-                            heading={'My Role'}
+                            heading={projectRoleTitle}
                             headingSize={3}
                         />
                         <p className={`${displayName}__role`}>{role}</p>
                         <Title
-                            heading={'What We Did'}
+                            heading={projectDescriptionTitle}
                             headingSize={3}
                         />
                         <TextBlock
@@ -137,7 +139,9 @@ class PortfolioItemComponent extends React.Component {
 PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
+    projectDescriptionTitle: PropTypes.string,
     projectExcerpt: PropTypes.string,
+    projectRoleTitle: PropTypes.string,
     projectThumbnailImageBlock: PropTypes.shape({
         imageAlt: PropTypes.string,
         imageOpacity: PropTypes.number,
@@ -154,7 +158,9 @@ PortfolioItemComponent.propTypes = {
 };
 
 PortfolioItemComponent.defaultProps = {
+    projectDescriptionTitle: '',
     projectExcerpt: '',
+    projectRoleTitle: '',
     projectThumbnailImageBlock: {},
     projectTitle: '',
     role: '',

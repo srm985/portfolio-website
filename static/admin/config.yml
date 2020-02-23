@@ -158,8 +158,12 @@ collections:
         name: 'project'
         file: 'static/content/project.md'
         fields:
-          - { label: 'Source Code CTA', name: 'sourceCodeCTA', widget: 'image' }
-          - { label: 'Demo CTA', name: 'demoCTA', widget: 'image' }
+          - {
+              label: 'Source Code CTA',
+              name: 'sourceCodeCTA',
+              widget: 'string',
+            }
+          - { label: 'Demo CTA', name: 'demoCTA', widget: 'string' }
           - {
               label: 'Return Button Icon',
               name: 'returnButtonIcon',

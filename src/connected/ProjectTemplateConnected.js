@@ -41,6 +41,7 @@ export const query = graphql`
             frontmatter {
                 pageTitle
                 projectDate
+                projectDemoURL
                 projectDescription
                 projectExcerpt
                 projectHeroImageBlock {
@@ -67,6 +68,7 @@ export const query = graphql`
                         }
                     }
                 }
+                projectSourceCodeURL
                 projectTitle
                 role
             }
