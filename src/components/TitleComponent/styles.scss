@@ -19,7 +19,7 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
         &::before {
             position: absolute;
             top: 0;
-            bottom: 0;
+            bottom: -#{$planck-length / 2};
             left: 0;
 
             content: '';

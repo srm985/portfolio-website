@@ -1,10 +1,10 @@
 import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
+import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
@@ -56,6 +56,9 @@ class WhoIAmComponent extends React.Component {
             }
         } = this;
 
+        console.log(this.props);
+        console.log(fluid);
+
         const {
             displayName
         } = WhoIAmComponent;
@@ -97,9 +100,10 @@ class WhoIAmComponent extends React.Component {
                                 isAccented
                                 isAnimated
                             />
-                            <ReactMarkdown
+                            <TextBlock
                                 className={`${displayName}__body`}
-                                source={aboutMeSectionBody}
+                                isAnimated
+                                text={aboutMeSectionBody}
                             />
                         </GridItem>
                     </Grid>

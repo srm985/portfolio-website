@@ -109,7 +109,7 @@ const IndexPageTemplate = (props) => {
             <Section isFullBleed>
                 <WhoIAm
                     aboutMeSectionBody={aboutMeSectionBody}
-                    aboutMeSectionImage={aboutMeSectionImageBlock}
+                    aboutMeSectionImageBlock={aboutMeSectionImageBlock}
                     aboutMeSectionTitle={aboutMeSectionTitle}
                 />
             </Section>

@@ -4,6 +4,8 @@ import React from 'react';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
+import TextBlock from '../TextBlockComponent';
+import Title from '../TitleComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import {
@@ -105,10 +107,19 @@ class PortfolioItemComponent extends React.Component {
                         className={`${displayName}__card`}
                     >
                         <h2 className={titleClassNames}>{projectTitle}</h2>
-                        <h3>{'My Role'}</h3>
+                        <Title
+                            heading={'My Role'}
+                            headingSize={3}
+                        />
                         <p className={`${displayName}__role`}>{role}</p>
-                        <h3>{'What We Did'}</h3>
-                        <p className={`${displayName}__excerpt`}>{projectExcerpt}</p>
+                        <Title
+                            heading={'What We Did'}
+                            headingSize={3}
+                        />
+                        <TextBlock
+                            className={`${displayName}__excerpt`}
+                            text={projectExcerpt}
+                        />
                         <Button
                             className={`${displayName}__button`}
                             href={formattedLink}

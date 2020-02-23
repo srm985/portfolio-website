@@ -16,6 +16,7 @@
 
         background-color: $color-blue;
         transform: scaleX(0);
+        transform-origin: left;
 
         animation-name: animation-image;
         animation-duration: 0.2s;

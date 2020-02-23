@@ -117,7 +117,7 @@ VisibilityCheckerComponent.defaultProps = {
     handleChange: () => {},
     isDisabled: false,
     margins: {},
-    threshold: 0.5
+    threshold: 0.6
 };
 
 export default VisibilityCheckerComponent;

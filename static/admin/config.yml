@@ -43,9 +43,9 @@ collections:
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
           - {
-              label: "Hero Image",
-              name: "heroImageBlockHomePage",
-              << : *default_image
+              label: 'Hero Image',
+              name: 'heroImageBlockHomePage',
+              <<: *default_image,
             }
           - label: 'Herobuttons'
             name: 'heroButtonsHomePage'
@@ -84,7 +84,7 @@ collections:
           - {
               label: 'About Me Image',
               name: 'aboutMeSectionImageBlock',
-              << : *default_image
+              <<: *default_image,
             }
           - {
               label: 'Skills Section Title',
@@ -106,14 +106,22 @@ collections:
               name: 'skillsSearchPlaceholder',
               widget: 'string',
             }
-          - { label: 'Skill Not Found', name: 'skillNotFound', widget: 'string' }
+          - {
+              label: 'Skill Not Found',
+              name: 'skillNotFound',
+              widget: 'string',
+            }
           - label: 'Skills Sections List'
             label_singular: 'Skills List'
             name: 'skillsSectionList'
             name_singular: 'skillsList'
             widget: 'list'
             fields:
-              - { label: 'Section Label', name: 'sectionLabel', widget: 'string' }
+              - {
+                  label: 'Section Label',
+                  name: 'sectionLabel',
+                  widget: 'string',
+                }
               - label: 'Skills List'
                 name: 'skillsList'
                 widget: 'list'
@@ -125,21 +133,37 @@ collections:
         file: 'static/content/portfolio.md'
         fields:
           - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
-          - { label: 'View Project CTA', name: 'viewProjectCTA', widget: 'string' }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockPortfolioPage',
               required: false,
-              << : *default_image
+              <<: *default_image,
+            }
+          - {
+              label: 'Project Role Title',
+              name: 'projectRoleTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Project Description Title',
+              name: 'projectDescriptionTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'View Project CTA',
+              name: 'viewProjectCTA',
+              widget: 'string',
             }
       - label: 'Project Page'
         name: 'project'
         file: 'static/content/project.md'
         fields:
+          - { label: 'Source Code CTA', name: 'sourceCodeCTA', widget: 'image' }
+          - { label: 'Demo CTA', name: 'demoCTA', widget: 'image' }
           - {
               label: 'Return Button Icon',
               name: 'returnButtonIcon',
-              widget: 'image'
+              widget: 'image',
             }
       - label: 'Contact Page'
         name: 'contact'
@@ -150,7 +174,7 @@ collections:
               label: 'Hero Image',
               name: 'heroImageBlockContactPage',
               required: false,
-              << : *default_image
+              <<: *default_image,
             }
       - label: '404 Page'
         name: '404'
@@ -216,12 +240,12 @@ collections:
       - {
           name: 'projectThumbnailImageBlock',
           label: 'Project Thumbnail Image',
-          << : *default_image
+          <<: *default_image,
         }
       - {
           name: 'projectHeroImageBlock',
           label: 'Project Hero Image',
-          << : *default_image
+          <<: *default_image,
         }
       - {
           name: 'projectDescription',
@@ -243,7 +267,7 @@ collections:
           - {
               name: 'projectSectionImageBlock',
               label: 'Project Section Image',
-              << : *default_image
+              <<: *default_image,
             }
           - {
               name: 'projectSectionTitle',
