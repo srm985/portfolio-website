@@ -2,6 +2,8 @@
 path: axure-redline-tool
 pageTitle: Sean McQuay | Axure Redline Tool
 projectTitle: Axure Redline Tool
+projectSourceCodeURL: 'https://github.com/srm985/portfolio-website'
+projectDemoURL: 'https://www.seanmcquay.com/'
 role: Owner
 projectDate: 2016-08-14T01:07:44.048Z
 projectExcerpt: >-
