@@ -234,6 +234,12 @@ collections:
       - { name: 'path', label: 'Path', widget: 'string' }
       - { name: 'pageTitle', label: 'Page Title', widget: 'string' }
       - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
+      - {
+          name: 'projectSourceCodeURL',
+          label: 'Project Source Code URL',
+          widget: 'string',
+        }
+      - { name: 'projectDemoURL', label: 'Project Demo URL', widget: 'string' }
       - { name: 'role', label: 'Role', widget: 'string' }
       - { name: 'projectDate', label: 'Project Date', widget: 'date' }
       - { name: 'projectExcerpt', label: 'Project Excerpt', widget: 'text' }
