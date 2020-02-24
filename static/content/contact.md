@@ -1,9 +1,8 @@
 ---
-pageSEOContactPage:
-  pageAuthor: Sean McQuay
-  pageDescription: Send me a message and let's chat.
-  pageKeywords: 'contact,developer'
-  pageTitle: Let's do something great!
+pageSEO:
+  pageDescription: Let's do something great together.
+  pageKeywords: 'contact form, developer'
+  pageTitle: Let's Chat!
   pageType: article
 heroImageBlockContactPage:
   imageAlt: a map of Chicago with street names
