@@ -62,15 +62,27 @@ class VisibilityCheckerComponent extends React.Component {
             isDisabled: wasDisabled
         } = previousProps;
 
+        const {
+            wrapperReference: {
+                current: currentWrapperReference
+            }
+        } = this;
+
         if (isDisabled !== wasDisabled && isDisabled) {
-            this.intersectionObserver.unobserve();
+            this.intersectionObserver.unobserve(currentWrapperReference);
         }
     }
 
     componentWillUnmount() {
+        const {
+            wrapperReference: {
+                current: currentWrapperReference
+            }
+        } = this;
+
         try {
-            this.intersectionObserver.unobserve();
-        } catch (error) {}
+            this.intersectionObserver.unobserve(currentWrapperReference);
+        } catch (error) { }
     }
 
     render() {

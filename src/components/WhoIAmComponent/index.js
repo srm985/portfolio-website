@@ -56,9 +56,6 @@ class WhoIAmComponent extends React.Component {
             }
         } = this;
 
-        console.log(this.props);
-        console.log(fluid);
-
         const {
             displayName
         } = WhoIAmComponent;

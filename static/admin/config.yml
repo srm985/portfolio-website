@@ -165,6 +165,11 @@ collections:
             }
           - { label: 'Demo CTA', name: 'demoCTA', widget: 'string' }
           - {
+              label: 'Download Content CTA',
+              name: 'downloadContentCTA',
+              widget: 'string',
+            }
+          - {
               label: 'Return Button Icon',
               name: 'returnButtonIcon',
               widget: 'image',
@@ -241,9 +246,21 @@ collections:
       - {
           name: 'projectSourceCodeURL',
           label: 'Project Source Code URL',
+          required: false,
           widget: 'string',
         }
-      - { name: 'projectDemoURL', label: 'Project Demo URL', widget: 'string' }
+      - {
+          name: 'projectDemoURL',
+          label: 'Project Demo URL',
+          required: false,
+          widget: 'string',
+        }
+      - {
+          name: 'downloadContentURL',
+          label: 'Download Content URL',
+          required: false,
+          widget: 'string',
+        }
       - { name: 'role', label: 'Role', widget: 'string' }
       - { name: 'projectDate', label: 'Project Date', widget: 'date' }
       - { name: 'projectExcerpt', label: 'Project Excerpt', widget: 'text' }

@@ -78,9 +78,11 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
+                            demoCTA
                             returnButtonIcon {
                                 publicURL
                             }
+                            sourceCodeCTA
                         }
                     }
                 }

@@ -108,18 +108,26 @@ class PortfolioItemComponent extends React.Component {
                         backgroundColor={BACKGROUND_COLOR_BLUE}
                         className={`${displayName}__card`}
                     >
-                        <h2 className={titleClassNames}>{projectTitle}</h2>
+                        <Title
+                            className={titleClassNames}
+                            heading={projectTitle}
+                            headingSize={2}
+                        />
                         <Title
                             heading={projectRoleTitle}
                             headingSize={3}
                         />
-                        <p className={`${displayName}__role`}>{role}</p>
+                        <TextBlock
+                            className={`${displayName}__role`}
+                            text={role}
+                        />
                         <Title
                             heading={projectDescriptionTitle}
                             headingSize={3}
                         />
                         <TextBlock
                             className={`${displayName}__excerpt`}
+                            isAnimated
                             text={projectExcerpt}
                         />
                         <Button

@@ -55,7 +55,9 @@ class ProjectHeaderComponent extends React.Component {
     render() {
         const {
             props: {
+                demoCTA,
                 projectDate,
+                projectDemoURL,
                 projectDescription,
                 projectHeroImageBlock: {
                     imageAlt = '',
@@ -65,8 +67,10 @@ class ProjectHeaderComponent extends React.Component {
                         } = {}
                     } = {}
                 } = {},
+                projectSourceCodeURL,
                 projectTitle,
-                role
+                role,
+                sourceCodeCTA
             },
             state: {
                 isVisible
@@ -114,14 +118,26 @@ class ProjectHeaderComponent extends React.Component {
                                 {this.renderDate(projectDate)}
                             </div>
                             <p className={'mb--4'}>{projectDescription}</p>
-                            <Button
-                                label={'Demo'}
-                                styleType={BUTTON_STYLE_TYPE_SECONDARY}
-                            />
-                            <Button
-                                label={'Source Code'}
-                                styleType={BUTTON_STYLE_TYPE_SECONDARY}
-                            />
+                            {
+                                projectDemoURL && (
+                                    <Button
+                                        href={projectDemoURL}
+                                        isInternalURL={false}
+                                        label={demoCTA}
+                                        styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                                    />
+                                )
+                            }
+                            {
+                                projectSourceCodeURL && (
+                                    <Button
+                                        href={projectSourceCodeURL}
+                                        isInternalURL={false}
+                                        label={sourceCodeCTA}
+                                        styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                                    />
+                                )
+                            }
                         </Card>
                     </GridItem>
                 </Grid>
@@ -133,7 +149,9 @@ class ProjectHeaderComponent extends React.Component {
 ProjectHeaderComponent.displayName = 'ProjectHeaderComponent';
 
 ProjectHeaderComponent.propTypes = {
+    demoCTA: PropTypes.string,
     projectDate: PropTypes.string,
+    projectDemoURL: PropTypes.string,
     projectDescription: PropTypes.string,
     projectHeroImageBlock: PropTypes.shape({
         imageAlt: PropTypes.string,
@@ -144,16 +162,22 @@ ProjectHeaderComponent.propTypes = {
             })
         })
     }),
+    projectSourceCodeURL: PropTypes.string,
     projectTitle: PropTypes.string,
-    role: PropTypes.string
+    role: PropTypes.string,
+    sourceCodeCTA: PropTypes.string
 };
 
 ProjectHeaderComponent.defaultProps = {
+    demoCTA: '',
     projectDate: '',
+    projectDemoURL: '',
     projectDescription: '',
     projectHeroImageBlock: {},
+    projectSourceCodeURL: '',
     projectTitle: '',
-    role: ''
+    role: '',
+    sourceCodeCTA: ''
 };
 
 export default ProjectHeaderComponent;

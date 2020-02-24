@@ -40,7 +40,7 @@
         position: relative;
         z-index: 2;
 
-        margin-bottom: #{$planck-length * 2};
+        margin-bottom: #{$planck-length * 3};
 
         font-size: 40px;
         text-shadow: 1px 1px 2px $color-black;
@@ -51,10 +51,11 @@
             bottom: -$planck-length;
             z-index: -1;
 
-            width: calc(100% + #{$planck-length * 6});
+            width: calc(100% + #{$planck-length * 8});
             height: #{$planck-length * 3};
 
             background-color: $color-blue;
+            box-shadow: 0 3px 5px $color-black;
             transform: scaleX(0);
             transform-origin: right;
 
@@ -75,7 +76,7 @@
     }
 
     &__role {
-        margin-bottom: $planck-length;
+        margin-bottom: #{$planck-length * 2};
     }
 
     &__excerpt {
