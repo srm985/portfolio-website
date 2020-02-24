@@ -107,9 +107,9 @@ exports.createSchemaCustomization = ({
             frontmatter: Frontmatter
         }
         type Frontmatter {
-            pageSEOContactPage: PageSEOContactPage!
+            pageSEO: PageSEO!
         }
-        type PageSEOContactPage {
+        type PageSEO {
             pageAuthor: String
             pageDescription: String
             pageImage: String

@@ -47,7 +47,7 @@ export const query = graphql`
                                 }
                             }
                             heroTitle
-                            pageSEOContactPage {
+                            pageSEO {
                                 pageAuthor
                                 pageDescription
                                 pageImage

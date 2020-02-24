@@ -9,7 +9,20 @@ import {
 
 const SEOComponent = (props) => {
     const {
-        content: {
+        data: {
+            defaultSiteMetadataQuery: {
+                siteMetadata: {
+                    author: defaultAuthor,
+                    description: defaultDescription,
+                    image: defaultImage,
+                    keywords: defaultKeywords,
+                    siteURL: defaultSiteURL,
+                    title: defaultTitle,
+                    type: defaultType
+                } = {}
+            } = {}
+        },
+        pageSEO: {
             pageAuthor,
             pageDescription,
             pageImage,
@@ -17,19 +30,10 @@ const SEOComponent = (props) => {
             pageSiteURL,
             pageTitle,
             pageType
-        },
-        defaultSiteMetadataQuery: {
-            siteMetadata: {
-                author: defaultAuthor,
-                description: defaultDescription,
-                image: defaultImage,
-                keywords: defaultKeywords,
-                siteURL: defaultSiteURL,
-                title: defaultTitle,
-                type: defaultType
-            } = {}
         }
     } = props;
+
+    console.log(props);
 
     const author = pageAuthor || defaultAuthor;
     const description = pageDescription || defaultDescription;
@@ -84,7 +88,20 @@ export const query = graphql`
 `;
 
 SEOComponent.propTypes = {
-    content: PropTypes.shape({
+    data: PropTypes.shape({
+        defaultSiteMetadataQuery: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                author: PropTypes.string,
+                description: PropTypes.string,
+                image: PropTypes.string,
+                keywords: PropTypes.string,
+                siteURL: PropTypes.string,
+                title: PropTypes.string,
+                type: PropTypes.string
+            })
+        })
+    }),
+    pageSEO: PropTypes.shape({
         pageAuthor: PropTypes.string,
         pageDescription: PropTypes.string,
         pageImage: PropTypes.string,
@@ -92,23 +109,12 @@ SEOComponent.propTypes = {
         pageSiteURL: PropTypes.string,
         pageTitle: PropTypes.string,
         pageType: PropTypes.string
-    }),
-    defaultSiteMetadataQuery: PropTypes.shape({
-        siteMetadata: PropTypes.shape({
-            author: PropTypes.string,
-            description: PropTypes.string,
-            image: PropTypes.string,
-            keywords: PropTypes.string,
-            siteURL: PropTypes.string,
-            title: PropTypes.string,
-            type: PropTypes.string
-        })
     })
 };
 
 SEOComponent.defaultProps = {
-    content: {},
-    defaultSiteMetadataQuery: {}
+    data: {},
+    pageSEO: {}
 };
 
 export default SEOComponent;

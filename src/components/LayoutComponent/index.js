@@ -24,6 +24,9 @@ const LayoutComponent = (props) => {
             } = {}
         },
         content,
+        content: {
+            pageSEO = {}
+        },
         footerQuery,
         hasFooter,
         hasNavigation,
@@ -42,6 +45,10 @@ const LayoutComponent = (props) => {
         }
     );
 
+    console.log({
+        content
+    });
+
     const [
         navigationContent
     ] = destructureNetlifyCMS(navigationQuery);
@@ -51,7 +58,7 @@ const LayoutComponent = (props) => {
 
     return (
         <div className={displayName}>
-            <SEO content={content} />
+            <SEO pageSEO={pageSEO} />
             {
                 hasNavigation && <Navigation content={navigationContent} />
             }
@@ -76,7 +83,9 @@ LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
-    content: PropTypes.shape({}),
+    content: PropTypes.shape({
+        pageSEO: PropTypes.shape({})
+    }),
     footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
     hasNavigation: PropTypes.bool,
