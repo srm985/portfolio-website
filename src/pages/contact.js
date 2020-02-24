@@ -47,7 +47,15 @@ export const query = graphql`
                                 }
                             }
                             heroTitle
-                            pageTitle
+                            pageSEOContactPage {
+                                pageAuthor
+                                pageDescription
+                                pageImage
+                                pageKeywords
+                                pageSiteURL
+                                pageTitle
+                                pageType
+                            }
                         }
                     }
                 }

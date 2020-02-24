@@ -32,6 +32,8 @@ default_image: &default_image
       widget: 'number'
 
 default_seo: &default_seo
+  label: 'Page SEO'
+  name: 'pageSEO'
   widget: 'object'
   fields:
     - label: 'Page Author'
@@ -71,11 +73,7 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - {
-              label: 'Page SEO',
-              name: 'pageSEOHomePage',
-              << : *default_seo
-            }
+          - { << : *default_seo }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
           - {
@@ -168,11 +166,7 @@ collections:
         name: 'portfolio'
         file: 'static/content/portfolio.md'
         fields:
-          - {
-              label: 'Page SEO',
-              name: 'pageSEOPortfolioPage',
-              << : *default_seo
-            }
+          - { << : *default_seo }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockPortfolioPage',
@@ -218,11 +212,7 @@ collections:
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
-          - {
-              label: 'Page SEO',
-              name: 'pageSEOContactPage',
-              << : *default_seo
-            }
+          - { << : *default_seo }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockContactPage',
@@ -285,11 +275,7 @@ collections:
     name: 'projects'
     fields:
       - { name: 'path', label: 'Path', widget: 'string' }
-      - {
-              label: 'Page SEO',
-              name: 'pageSEOProject',
-              << : *default_seo
-            }
+      - { << : *default_seo }
       - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
       - {
           name: 'projectSourceCodeURL',

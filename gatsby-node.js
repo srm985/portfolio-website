@@ -95,3 +95,29 @@ exports.createPages = async (props) => {
         }
     });
 };
+
+exports.createSchemaCustomization = ({
+    actions
+}) => {
+    const {
+        createTypes
+    } = actions;
+    const typeDefs = `
+        type MarkdownRemark implements Node {
+            frontmatter: Frontmatter
+        }
+        type Frontmatter {
+            pageSEOContactPage: PageSEOContactPage!
+        }
+        type PageSEOContactPage {
+            pageAuthor: String
+            pageDescription: String
+            pageImage: String
+            pageKeywords: String
+            pageSiteURL: String
+            pageTitle: String
+            pageType: String
+        }
+    `;
+    createTypes(typeDefs);
+};
