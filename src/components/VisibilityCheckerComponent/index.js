@@ -58,6 +58,8 @@ class VisibilityCheckerComponent extends React.Component {
             }
         } = this;
 
+        console.log('visibility update...');
+
         const {
             isDisabled: wasDisabled
         } = previousProps;
@@ -125,11 +127,11 @@ VisibilityCheckerComponent.propTypes = {
 
 VisibilityCheckerComponent.defaultProps = {
     children: '',
-    delay: 750,
+    delay: 500,
     handleChange: () => {},
     isDisabled: false,
     margins: {},
-    threshold: 0.6
+    threshold: 0.5
 };
 
 export default VisibilityCheckerComponent;

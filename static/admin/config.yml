@@ -31,6 +31,38 @@ default_image: &default_image
       valueType: 'int'
       widget: 'number'
 
+default_seo: &default_seo
+  widget: 'object'
+  fields:
+    - label: 'Page Author'
+      name: 'pageAuthor'
+      required: false
+      widget: 'string'
+    - label: 'Page Description'
+      name: 'pageDescription'
+      required: false
+      widget: 'string'
+    - label: 'Page Image'
+      name: 'pageImage'
+      required: false
+      widget: 'string'
+    - label: 'Page Keywords (Comma-Separated)'
+      name: 'pageKeywords'
+      required: false
+      widget: 'string'
+    - label: 'Page URL'
+      name: 'pageSiteURL'
+      required: false
+      widget: 'string'
+    - label: 'Page Title'
+      name: 'pageTitle'
+      required: false
+      widget: 'string'
+    - label: 'Page Type'
+      name: 'pageType'
+      required: false
+      widget: 'string'
+
 collections:
   - label: 'Pages'
     name: 'pages'
@@ -39,13 +71,17 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - {
+              label: 'Page SEO',
+              name: 'pageSEOHomePage',
+              << : *default_seo
+            }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockHomePage',
-              <<: *default_image,
+              << : *default_image
             }
           - label: 'Herobuttons'
             name: 'heroButtonsHomePage'
@@ -84,7 +120,7 @@ collections:
           - {
               label: 'About Me Image',
               name: 'aboutMeSectionImageBlock',
-              <<: *default_image,
+              << : *default_image
             }
           - {
               label: 'Skills Section Title',
@@ -132,12 +168,16 @@ collections:
         name: 'portfolio'
         file: 'static/content/portfolio.md'
         fields:
-          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - {
+              label: 'Page SEO',
+              name: 'pageSEOPortfolioPage',
+              << : *default_seo
+            }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockPortfolioPage',
               required: false,
-              <<: *default_image,
+              << : *default_image
             }
           - {
               label: 'Project Role Title',
@@ -178,12 +218,16 @@ collections:
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
-          - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - {
+              label: 'Page SEO',
+              name: 'pageSEOContactPage',
+              << : *default_seo
+            }
           - {
               label: 'Hero Image',
               name: 'heroImageBlockContactPage',
               required: false,
-              <<: *default_image,
+              << : *default_image
             }
       - label: '404 Page'
         name: '404'
@@ -241,7 +285,11 @@ collections:
     name: 'projects'
     fields:
       - { name: 'path', label: 'Path', widget: 'string' }
-      - { name: 'pageTitle', label: 'Page Title', widget: 'string' }
+      - {
+              label: 'Page SEO',
+              name: 'pageSEOProject',
+              << : *default_seo
+            }
       - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
       - {
           name: 'projectSourceCodeURL',
@@ -267,12 +315,12 @@ collections:
       - {
           name: 'projectThumbnailImageBlock',
           label: 'Project Thumbnail Image',
-          <<: *default_image,
+          << : *default_image
         }
       - {
           name: 'projectHeroImageBlock',
           label: 'Project Hero Image',
-          <<: *default_image,
+          << : *default_image
         }
       - {
           name: 'projectDescription',
@@ -294,7 +342,7 @@ collections:
           - {
               name: 'projectSectionImageBlock',
               label: 'Project Section Image',
-              <<: *default_image,
+              << : *default_image
             }
           - {
               name: 'projectSectionTitle',

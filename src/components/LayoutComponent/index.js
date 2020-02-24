@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-    Helmet
-} from 'react-helmet';
 
 import Footer from '../FooterComponent';
 import Navigation from '../NavigationComponent';
+import SEO from '../SEOComponent';
 
 import classNames from '../../utils/classNames';
 import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
@@ -26,9 +24,6 @@ const LayoutComponent = (props) => {
             } = {}
         },
         content,
-        content: {
-            pageTitle
-        },
         footerQuery,
         hasFooter,
         hasNavigation,
@@ -56,10 +51,7 @@ const LayoutComponent = (props) => {
 
     return (
         <div className={displayName}>
-            <Helmet
-                defer={false}
-                title={pageTitle}
-            />
+            <SEO content={content} />
             {
                 hasNavigation && <Navigation content={navigationContent} />
             }
@@ -84,9 +76,7 @@ LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
     children: PropTypes.node.isRequired,
-    content: PropTypes.shape({
-        pageTitle: PropTypes.string
-    }),
+    content: PropTypes.shape({}),
     footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
     hasNavigation: PropTypes.bool,
