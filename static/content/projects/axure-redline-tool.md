@@ -12,7 +12,7 @@ projectExcerpt: >-
   confidently and accurately materialize your designs.
 projectThumbnailImageBlock:
   imageAlt: a placeholder image thumbnail...
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/isometric-mockups.png
 projectHeroImageBlock:
   imageAlt: the main hero image
   imageSource: /assets/gatsby-astronaut.png
