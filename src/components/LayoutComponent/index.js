@@ -45,10 +45,6 @@ const LayoutComponent = (props) => {
         }
     );
 
-    console.log({
-        content
-    });
-
     const [
         navigationContent
     ] = destructureNetlifyCMS(navigationQuery);

@@ -15,20 +15,26 @@ const DEFAULT_OPACITY = 100;
 
 const HeroComponent = (props) => {
     const {
-        alt,
         children,
         className,
-        defaultSource,
-        imageOpacity,
+        heroImageBlock,
         isHalfHeight,
         overlayColor
     } = props;
 
     const {
+        imageAlt = '',
+        imageOpacity = DEFAULT_OPACITY,
+        imageSource: {
+            fluid = {}
+        } = {}
+    } = heroImageBlock || {};
+
+    const {
         displayName
     } = HeroComponent;
 
-    const hasImage = Object.keys(defaultSource).length > 0;
+    const hasImage = Object.keys(fluid).length > 0;
 
     const componentClassNames = classNames(
         className,
@@ -57,9 +63,9 @@ const HeroComponent = (props) => {
             {hasImage && (
                 <>
                     <Image
-                        alt={alt}
+                        alt={imageAlt}
                         className={`${displayName}__hero-image`}
-                        fluid={defaultSource}
+                        fluid={fluid}
                         style={{
                             opacity
                         }}
@@ -79,21 +85,26 @@ const HeroComponent = (props) => {
 };
 
 HeroComponent.propTypes = {
-    alt: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
-    defaultSource: PropTypes.shape({}),
-    imageOpacity: PropTypes.number,
+    heroImageBlock: PropTypes.shape({
+        imageAlt: PropTypes.string,
+        imageOpacity: PropTypes.number,
+        imageSource: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+                fluid: PropTypes.shape({})
+            })
+        }),
+        imageTitle: PropTypes.string
+    }),
     isHalfHeight: PropTypes.bool,
     overlayColor: PropTypes.oneOf(OVERLAY_OPTIONS)
 };
 
 HeroComponent.defaultProps = {
-    alt: '',
     children: '',
     className: '',
-    defaultSource: {},
-    imageOpacity: DEFAULT_OPACITY,
+    heroImageBlock: {},
     isHalfHeight: false,
     overlayColor: OVERLAY_BLACK
 };

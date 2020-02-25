@@ -58,8 +58,6 @@ class VisibilityCheckerComponent extends React.Component {
             }
         } = this;
 
-        console.log('visibility update...');
-
         const {
             isDisabled: wasDisabled
         } = previousProps;

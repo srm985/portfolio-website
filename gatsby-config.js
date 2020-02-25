@@ -58,11 +58,12 @@ module.exports = {
     ],
     siteMetadata: {
         author: 'Sean McQuay',
+        defaultTitle: 'Portfolio Website',
         description: 'A website dedicated to some of the projects I have completed over the years.',
         image: '',
         keywords: 'web development, front-end development',
         siteURL: 'https://www.seanmcquay.com',
-        title: 'Sean McQuay | Portfolio Website',
+        titleTemplate: 'Sean McQuay | {pageTitle}',
         type: ''
     }
 };

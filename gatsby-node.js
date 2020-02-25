@@ -120,7 +120,7 @@ exports.createSchemaCustomization = ({
             childImageSharp: ChildImageSharp
         }
         type ChildImageSharp {
-            fluid: String
+            fluid(maxWidth: Int): ImageSharpFluid
         }
         type PageSEO {
             pageAuthor: String

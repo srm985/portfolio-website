@@ -22,7 +22,6 @@ const Query = (props) => {
                                 image
                                 keywords
                                 siteURL
-                                title
                                 type
                             }
                         }

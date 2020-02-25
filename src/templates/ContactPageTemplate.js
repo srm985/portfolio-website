@@ -19,17 +19,10 @@ import {
 } from '../components/InputComponent/config';
 
 const ContactPageTemplate = (props) => {
+    console.log('prop:', props);
     const {
         content: {
-            heroImageBlockContactPage: {
-                imageAlt = '',
-                imageOpacity = 100,
-                imageSource: {
-                    childImageSharp: {
-                        fluid = {}
-                    } = {}
-                } = {}
-            }
+            heroImageBlock
         }
     } = props;
 
@@ -39,10 +32,8 @@ const ContactPageTemplate = (props) => {
 
     return (
         <Hero
-            alt={imageAlt}
             className={displayName}
-            defaultSource={fluid}
-            imageOpacity={imageOpacity}
+            heroImageBlock={heroImageBlock}
         >
             <Grid>
                 <GridItem
@@ -116,15 +107,7 @@ ContactPageTemplate.displayName = 'ContactPageTemplate';
 
 ContactPageTemplate.propTypes = {
     content: PropTypes.shape({
-        heroImageBlockContactPage: PropTypes.shape({
-            imageAlt: PropTypes.string,
-            imageOpacity: PropTypes.number,
-            imageSource: PropTypes.shape({
-                childImageSharp: PropTypes.shape({
-                    fluid: PropTypes.shape({})
-                })
-            })
-        })
+        heroImageBlock: PropTypes.shape({})
     })
 };
 
