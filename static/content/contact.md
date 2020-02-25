@@ -4,9 +4,9 @@ pageSEO:
   pageKeywords: 'contact form, developer'
   pageTitle: Let's Chat!
   pageType: article
-heroImageBlockContactPage:
-  imageAlt: a map of Chicago with street names
-  imageOpacity: 20
+heroImageBlock:
+  imageAlt: a map of Chicago streets
   imageSource: /assets/chicago.png
+  imageTitle: ''
 ---
 
