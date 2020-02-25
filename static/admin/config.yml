@@ -8,6 +8,8 @@ public_folder: '/assets'
 site_url: https://mystifying-bartik-329370.netlify.com
 
 default_image: &default_image
+  label: 'Hero Image Block'
+  name: 'heroImageBlock'
   widget: 'object'
   fields:
     - label: 'Image'
@@ -73,14 +75,10 @@ collections:
         name: 'home'
         file: 'static/content/home.md'
         fields:
-          - { << : *default_seo }
+          - { <<: *default_seo }
+          - { <<: *default_image }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Hero Subtitle', name: 'heroSubtitle', widget: 'string' }
-          - {
-              label: 'Hero Image',
-              name: 'heroImageBlockHomePage',
-              << : *default_image
-            }
           - label: 'Herobuttons'
             name: 'heroButtonsHomePage'
             widget: 'object'
@@ -118,7 +116,7 @@ collections:
           - {
               label: 'About Me Image',
               name: 'aboutMeSectionImageBlock',
-              << : *default_image
+              <<: *default_image,
             }
           - {
               label: 'Skills Section Title',
@@ -166,13 +164,8 @@ collections:
         name: 'portfolio'
         file: 'static/content/portfolio.md'
         fields:
-          - { << : *default_seo }
-          - {
-              label: 'Hero Image',
-              name: 'heroImageBlockPortfolioPage',
-              required: false,
-              << : *default_image
-            }
+          - { <<: *default_seo }
+          - { <<: *default_image }
           - {
               label: 'Project Role Title',
               name: 'projectRoleTitle',
@@ -212,13 +205,8 @@ collections:
         name: 'contact'
         file: 'static/content/contact.md'
         fields:
-          - { << : *default_seo }
-          - {
-              label: 'Hero Image',
-              name: 'heroImageBlockContactPage',
-              required: false,
-              << : *default_image
-            }
+          - { <<: *default_seo }
+          - { <<: *default_image }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'
@@ -275,7 +263,7 @@ collections:
     name: 'projects'
     fields:
       - { name: 'path', label: 'Path', widget: 'string' }
-      - { << : *default_seo }
+      - { <<: *default_seo }
       - { name: 'projectTitle', label: 'Project Title', widget: 'string' }
       - {
           name: 'projectSourceCodeURL',
@@ -301,13 +289,9 @@ collections:
       - {
           name: 'projectThumbnailImageBlock',
           label: 'Project Thumbnail Image',
-          << : *default_image
+          <<: *default_image,
         }
-      - {
-          name: 'projectHeroImageBlock',
-          label: 'Project Hero Image',
-          << : *default_image
-        }
+      - { <<: *default_image }
       - {
           name: 'projectDescription',
           label: 'Project Description',
@@ -328,7 +312,7 @@ collections:
           - {
               name: 'projectSectionImageBlock',
               label: 'Project Section Image',
-              << : *default_image
+              <<: *default_image,
             }
           - {
               name: 'projectSectionTitle',

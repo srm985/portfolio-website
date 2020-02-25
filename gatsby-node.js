@@ -107,7 +107,20 @@ exports.createSchemaCustomization = ({
             frontmatter: Frontmatter
         }
         type Frontmatter {
-            pageSEO: PageSEO!
+            heroImageBlock: HeroImageBlock
+            pageSEO: PageSEO
+        }
+        type HeroImageBlock {
+            imageAlt: String
+            imageOpacity: Int
+            imageSource: ImageSource
+            imageTitle: String
+        }
+        type ImageSource {
+            childImageSharp: ChildImageSharp
+        }
+        type ChildImageSharp {
+            fluid: String
         }
         type PageSEO {
             pageAuthor: String

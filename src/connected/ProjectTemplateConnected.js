@@ -39,13 +39,18 @@ export const query = graphql`
     query($slug: String!) {
         pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
-                pageTitle
-                projectDate
-                projectDemoURL
-                projectDescription
-                projectExcerpt
-                projectHeroImageBlock {
+                pageSEO {
+                    pageAuthor
+                    pageDescription
+                    pageImage
+                    pageKeywords
+                    pageSiteURL
+                    pageTitle
+                    pageType
+                }
+                heroImageBlock {
                     imageAlt
+                    imageOpacity
                     imageSource {
                         childImageSharp {
                             fluid(maxWidth: 1600) {
@@ -53,7 +58,12 @@ export const query = graphql`
                             }
                         }
                     }
+                    imageTitle
                 }
+                projectDate
+                projectDemoURL
+                projectDescription
+                projectExcerpt
                 projectSectionList {
                     projectSectionTitle
                     projectSectionBody

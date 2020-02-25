@@ -35,18 +35,6 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImageBlockContactPage {
-                                imageAlt
-                                imageOpacity
-                                imageSource {
-                                    childImageSharp {
-                                        fluid(maxWidth: 1600) {
-                                            ...GatsbyImageSharpFluid_noBase64
-                                        }
-                                    }
-                                }
-                            }
-                            heroTitle
                             pageSEO {
                                 pageAuthor
                                 pageDescription
@@ -56,6 +44,19 @@ export const query = graphql`
                                 pageTitle
                                 pageType
                             }
+                            heroImageBlock {
+                                imageAlt
+                                imageOpacity
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
+                                imageTitle
+                            }
+                            heroTitle
                         }
                     }
                 }

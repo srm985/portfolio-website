@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-    graphql
-} from 'gatsby';
-import {
     Helmet
 } from 'react-helmet';
+
+import Query from './queries';
 
 const SEOComponent = (props) => {
     const {
@@ -71,22 +70,6 @@ const SEOComponent = (props) => {
     );
 };
 
-export const query = graphql`
-    query {
-        defaultSiteMetadataQuery: site {
-            siteMetadata {
-                author
-                description
-                image
-                keywords
-                siteURL
-                title
-                type
-            }
-        }
-    }
-`;
-
 SEOComponent.propTypes = {
     data: PropTypes.shape({
         defaultSiteMetadataQuery: PropTypes.shape({
@@ -117,4 +100,10 @@ SEOComponent.defaultProps = {
     pageSEO: {}
 };
 
-export default SEOComponent;
+const SEOComponentConnected = (props) => (
+    <Query>
+        <SEOComponent {...props} />
+    </Query>
+);
+
+export default SEOComponentConnected;

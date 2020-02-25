@@ -38,8 +38,18 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            heroImageBlockPortfolioPage {
+                            pageSEO {
+                                pageAuthor
+                                pageDescription
+                                pageImage
+                                pageKeywords
+                                pageSiteURL
+                                pageTitle
+                                pageType
+                            }
+                            heroImageBlock {
                                 imageAlt
+                                imageOpacity
                                 imageSource {
                                     childImageSharp {
                                         fluid(maxWidth: 1600) {
@@ -47,8 +57,8 @@ export const query = graphql`
                                         }
                                     }
                                 }
+                                imageTitle
                             }
-                            pageTitle
                             projectDescriptionTitle
                             projectRoleTitle
                             viewProjectCTA
@@ -66,18 +76,7 @@ export const query = graphql`
                         }
                         frontmatter {
                             pageTitle
-                            projectDescription
                             projectExcerpt
-                            projectHeroImageBlock {
-                                imageAlt
-                                imageSource {
-                                    childImageSharp {
-                                        fluid(maxWidth: 1600) {
-                                            ...GatsbyImageSharpFluid_noBase64
-                                        }
-                                    }
-                                }
-                            }
                             projectThumbnailImageBlock {
                                 imageAlt
                                 imageSource {

@@ -35,6 +35,27 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
+                            pageSEO {
+                                pageAuthor
+                                pageDescription
+                                pageImage
+                                pageKeywords
+                                pageSiteURL
+                                pageTitle
+                                pageType
+                            }
+                            heroImageBlock {
+                                imageAlt
+                                imageOpacity
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
+                                imageTitle
+                            }
                             aboutMeSectionBody
                             aboutMeSectionImageBlock {
                                 imageAlt
@@ -47,20 +68,8 @@ export const query = graphql`
                                 }
                             }
                             aboutMeSectionTitle
-                            heroImageBlockHomePage {
-                                imageAlt
-                                imageOpacity
-                                imageSource {
-                                    childImageSharp {
-                                        fluid(maxWidth: 1600) {
-                                            ...GatsbyImageSharpFluid_noBase64
-                                        }
-                                    }
-                                }
-                            }
                             heroSubtitle
                             heroTitle
-                            pageTitle
                             skillsSectionTitle
                             skillsSearchLabel
                             skillsSearchName
