@@ -54,6 +54,10 @@ default_seo: &default_seo
       name: 'pageKeywords'
       required: false
       widget: 'string'
+    - label: 'Page Posting Title'
+      name: 'pagePostingTitle'
+      required: false
+      widget: 'string'
     - label: 'Page URL'
       name: 'pageSiteURL'
       required: false
@@ -64,10 +68,6 @@ default_seo: &default_seo
       widget: 'string'
     - label: 'Page Type'
       name: 'pageType'
-      required: false
-      widget: 'string'
-    - label: 'Posting Title'
-      name: 'postingTitle'
       required: false
       widget: 'string'
 
