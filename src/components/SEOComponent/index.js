@@ -21,6 +21,7 @@ const SEOComponent = (props) => {
             description: defaultDescription,
             image: defaultImage,
             keywords: defaultKeywords,
+            postingTitle: defaultPostingTitle,
             siteURL: defaultSiteURL,
             titleTemplate,
             type: defaultType
@@ -32,6 +33,7 @@ const SEOComponent = (props) => {
         pageDescription,
         pageImage,
         pageKeywords,
+        pagePostingTitle,
         pageSiteURL,
         pageTitle,
         pageType
@@ -41,6 +43,7 @@ const SEOComponent = (props) => {
     const description = pageDescription || defaultDescription;
     const image = pageImage || defaultImage;
     const keywords = pageKeywords || defaultKeywords;
+    const postingTitle = pagePostingTitle || defaultPostingTitle;
     const siteURL = pageSiteURL || defaultSiteURL;
     const title = pageTitle ? injector(titleTemplate, {
         pageTitle
@@ -48,16 +51,6 @@ const SEOComponent = (props) => {
         pageTitle: defaultTitle
     });
     const type = pageType || defaultType;
-
-    console.log({
-        author,
-        description,
-        image,
-        keywords,
-        siteURL,
-        title,
-        type
-    });
 
     return (
         <Helmet>
@@ -70,7 +63,7 @@ const SEOComponent = (props) => {
             <meta name={'keywords'} content={keywords} />
             <meta property={'og:description'} content={description} />
             <meta property={'og:image'} content={image} />
-            <meta property={'og:title'} content={title} />
+            <meta property={'og:title'} content={postingTitle} />
             <meta property={'og:type'} content={type} />
             <meta property={'og:url'} content={siteURL} />
         </Helmet>
@@ -85,6 +78,7 @@ SEOComponent.propTypes = {
             description: PropTypes.string,
             image: PropTypes.string,
             keywords: PropTypes.string,
+            postingTitle: PropTypes.string,
             siteURL: PropTypes.string,
             titleTemplate: PropTypes.string,
             type: PropTypes.string
@@ -95,6 +89,7 @@ SEOComponent.propTypes = {
         pageDescription: PropTypes.string,
         pageImage: PropTypes.string,
         pageKeywords: PropTypes.string,
+        pagePostingTitle: PropTypes.string,
         pageSiteURL: PropTypes.string,
         pageTitle: PropTypes.string,
         pageType: PropTypes.string

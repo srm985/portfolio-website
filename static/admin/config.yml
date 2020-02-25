@@ -38,32 +38,32 @@ default_seo: &default_seo
   name: 'pageSEO'
   widget: 'object'
   fields:
-    - label: 'Page Author'
-      name: 'pageAuthor'
-      required: false
-      widget: 'string'
-    - label: 'Page Description'
-      name: 'pageDescription'
-      required: false
-      widget: 'string'
-    - label: 'Page Image'
-      name: 'pageImage'
-      required: false
-      widget: 'string'
-    - label: 'Page Keywords (Comma-Separated)'
-      name: 'pageKeywords'
+    - label: 'Page Title'
+      name: 'pageTitle'
       required: false
       widget: 'string'
     - label: 'Page Posting Title'
       name: 'pagePostingTitle'
       required: false
       widget: 'string'
-    - label: 'Page URL'
-      name: 'pageSiteURL'
+    - label: 'Page Description'
+      name: 'pageDescription'
       required: false
       widget: 'string'
-    - label: 'Page Title'
-      name: 'pageTitle'
+    - label: 'Page Author'
+      name: 'pageAuthor'
+      required: false
+      widget: 'string'
+    - label: 'Page Keywords (Comma-Separated)'
+      name: 'pageKeywords'
+      required: false
+      widget: 'string'
+    - label: 'Page Image'
+      name: 'pageImage'
+      required: false
+      widget: 'string'
+    - label: 'Page URL'
+      name: 'pageSiteURL'
       required: false
       widget: 'string'
     - label: 'Page Type'

@@ -19,7 +19,6 @@ import {
 } from '../components/InputComponent/config';
 
 const ContactPageTemplate = (props) => {
-    console.log('prop:', props);
     const {
         content: {
             heroImageBlock
