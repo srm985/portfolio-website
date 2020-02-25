@@ -1,11 +1,12 @@
 ---
-pageTitle: Sean McQuay | Home
-heroTitle: HELLO! MY NAME IS SEAN MCQUAY
-heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
-heroImageBlockHomePage:
-  imageAlt: a hero image
+pageSEO:
+  pageDescription: I'm passionate about helping teams develop and sustain large-scale projects.
+heroImageBlock:
+  imageAlt: a placeholder hero image
   imageOpacity: 20
   imageSource: /assets/gatsby-astronaut.png
+heroTitle: HELLO! MY NAME IS SEAN MCQUAY
+heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroButtonsHomePage:
   contactButton:
     label: Contact Me
