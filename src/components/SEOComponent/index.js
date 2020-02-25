@@ -6,6 +6,8 @@ import {
 
 import Query from './queries';
 
+import injector from '../../utils/injector';
+
 const SEOComponent = (props) => {
     const {
         defaultSEOQuery,
@@ -15,11 +17,12 @@ const SEOComponent = (props) => {
     const {
         siteMetadata: {
             author: defaultAuthor,
+            defaultTitle,
             description: defaultDescription,
             image: defaultImage,
             keywords: defaultKeywords,
             siteURL: defaultSiteURL,
-            title: defaultTitle,
+            titleTemplate,
             type: defaultType
         } = {}
     } = defaultSEOQuery || {};
@@ -34,17 +37,16 @@ const SEOComponent = (props) => {
         pageType
     } = pageSEO || {};
 
-    console.log(props);
-    console.log({
-        defaultAuthor
-    });
-
     const author = pageAuthor || defaultAuthor;
     const description = pageDescription || defaultDescription;
     const image = pageImage || defaultImage;
     const keywords = pageKeywords || defaultKeywords;
     const siteURL = pageSiteURL || defaultSiteURL;
-    const title = pageTitle || defaultTitle;
+    const title = pageTitle ? injector(titleTemplate, {
+        pageTitle
+    }) : injector(titleTemplate, {
+        pageTitle: defaultTitle
+    });
     const type = pageType || defaultType;
 
     console.log({
@@ -79,11 +81,12 @@ SEOComponent.propTypes = {
     defaultSEOQuery: PropTypes.shape({
         siteMetadata: PropTypes.shape({
             author: PropTypes.string,
+            defaultTitle: PropTypes.string,
             description: PropTypes.string,
             image: PropTypes.string,
             keywords: PropTypes.string,
             siteURL: PropTypes.string,
-            title: PropTypes.string,
+            titleTemplate: PropTypes.string,
             type: PropTypes.string
         })
     }),

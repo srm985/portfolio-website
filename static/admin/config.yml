@@ -66,6 +66,10 @@ default_seo: &default_seo
       name: 'pageType'
       required: false
       widget: 'string'
+    - label: 'Posting Title'
+      name: 'postingTitle'
+      required: false
+      widget: 'string'
 
 collections:
   - label: 'Pages'

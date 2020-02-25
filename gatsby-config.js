@@ -62,6 +62,7 @@ module.exports = {
         description: 'A website dedicated to some of the projects I have completed over the years.',
         image: '',
         keywords: 'web development, front-end development',
+        postingTitle: 'Sean McQuay - Front-End Developer',
         siteURL: 'https://www.seanmcquay.com',
         titleTemplate: 'Sean McQuay | {pageTitle}',
         type: ''

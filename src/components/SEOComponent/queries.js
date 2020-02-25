@@ -18,10 +18,12 @@ const Query = (props) => {
                         defaultSEOQuery: site {
                             siteMetadata {
                                 author
+                                defaultTitle
                                 description
                                 image
                                 keywords
                                 siteURL
+                                titleTemplate
                                 type
                             }
                         }
