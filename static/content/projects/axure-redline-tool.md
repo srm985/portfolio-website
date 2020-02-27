@@ -1,6 +1,15 @@
 ---
 path: axure-redline-tool
-pageTitle: Sean McQuay | Axure Redline Tool
+pageSEO:
+  pageDescription: >-
+    An interactive redline plugin which simplifies the transition between design
+    and development - ensuring developers have all the specifications they need
+    to confidently and accurately materialize your designs.
+  pageKeywords: >-
+    axure,javascript,jquery,css,wireframe,mockup,protoype,prototyping,plugin,spec,design-specs,redline
+  pagePostingTitle: Axure Redline Tool
+  pageTitle: Axure Redline Tool
+  pageType: article
 projectTitle: Axure Redline Tool
 projectSourceCodeURL: 'https://github.com/srm985/portfolio-website'
 projectDemoURL: 'https://www.seanmcquay.com/'
@@ -11,11 +20,11 @@ projectExcerpt: >-
   and development - ensuring developers have all the specifications they need to
   confidently and accurately materialize your designs.
 projectThumbnailImageBlock:
-  imageAlt: a placeholder image thumbnail...
+  imageAlt: a picture of many screenshots of the user interface
   imageSource: /assets/isometric-mockups.png
-projectHeroImageBlock:
-  imageAlt: the main hero image
-  imageSource: /assets/gatsby-astronaut.png
+heroImageBlock:
+  imageAlt: a picture of many screenshots of the user interface
+  imageSource: /assets/isometric-mockups.png
 projectDescription: >-
   This plugin intends to mimic some of the functionality of the plugin Measure
   for Sketch or InVision Inspect. This application is meant for those who rely
