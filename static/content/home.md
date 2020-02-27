@@ -1,6 +1,9 @@
 ---
 pageSEO:
   pageDescription: I'm passionate about helping teams develop and sustain large-scale projects.
+  pagePostingTitle: Hello! My name is Sean McQuay.
+  pageTitle: Home
+  pageType: article
 heroImageBlock:
   imageAlt: a placeholder hero image
   imageOpacity: 20
