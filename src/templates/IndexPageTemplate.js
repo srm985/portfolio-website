@@ -109,7 +109,7 @@ const IndexPageTemplate = (props) => {
                         breakpoints={{
                             large: {
                                 start: 1,
-                                stop: 9
+                                stop: 10
                             },
                             medium: {
                                 start: 1,
@@ -117,7 +117,7 @@ const IndexPageTemplate = (props) => {
                             }
                         }}
                     >
-                        <SkillsBlock content={content} />
+                        <SkillsBlock content={JSON.parse(JSON.stringify(content))} />
                     </GridItem>
                 </Grid>
             </Section>

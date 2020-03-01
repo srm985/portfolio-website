@@ -1,8 +1,8 @@
 @import '../../styles/global';
 
-$icon-container-width: #{$planck-length * 3};
+$icon-container-width: #{$planck-length * 4};
 $pill-padding: #{$planck-length};
-$pill-height: #{$planck-length * 3};
+$pill-height: #{$planck-length * 4};
 $border: solid $border-thickness-default $color-gray-very-dark;
 $border-radius: calc(#{$pill-height} / 2);
 
@@ -47,7 +47,7 @@ $border-radius: calc(#{$pill-height} / 2);
     }
 
     &__icon {
-        width: 14px;
+        width: 18px;
         margin-left: 2px;
     }
 }

@@ -45,7 +45,7 @@ class SkillsBlockComponent extends React.Component {
         } = skillDetails || {};
 
         const {
-            absolutePath
+            relativePath
         } = icon || {};
 
         const doesSkillFilterMatch = label.toLowerCase().includes(skillSearchKeyword.toLowerCase());
@@ -53,7 +53,7 @@ class SkillsBlockComponent extends React.Component {
         return (
             doesSkillFilterMatch && (
                 <SkillPill
-                    icon={absolutePath}
+                    icon={relativePath}
                     key={label}
                     label={label}
                 />
@@ -101,7 +101,6 @@ class SkillsBlockComponent extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         const {
             props: {
                 content: {
@@ -155,7 +154,7 @@ SkillsBlockComponent.propTypes = {
             sectionLabel: PropTypes.string,
             skillsList: PropTypes.arrayOf(PropTypes.shape({
                 icon: PropTypes.shape({
-                    absolutePath: PropTypes.string
+                    relativePath: PropTypes.string
                 }),
                 label: PropTypes.string
             }))

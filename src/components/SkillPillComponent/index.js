@@ -9,10 +9,6 @@ const SkillPillComponent = (props) => {
         label
     } = props;
 
-    console.log({
-        icon
-    });
-
     const {
         displayName
     } = SkillPillComponent;
@@ -23,7 +19,7 @@ const SkillPillComponent = (props) => {
                 <img
                     alt={`${label} icon`}
                     className={`${displayName}__icon`}
-                    src={icon}
+                    src={`/assets/${icon}`}
                 />
             </div>
             <p>

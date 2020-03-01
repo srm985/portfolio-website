@@ -6,7 +6,7 @@
     }
 
     &__skills-section-block {
-        margin-bottom: #{$planck-length * 4};
+        margin-bottom: #{$planck-length * 6};
 
         &:last-of-type {
             margin-bottom: 0;
@@ -14,16 +14,17 @@
     }
 
     &__skills-section-label {
-        margin-bottom: $planck-length;
+        margin-bottom: -$planck-length;
     }
 
     &__skills-section {
         display: flex;
-        margin-left: -#{$planck-length * 2};
+        flex-wrap: wrap;
+        margin-left: -#{$planck-length * 3};
 
         & > * {
-            margin-top: #{$planck-length * 1};
-            margin-left: #{$planck-length * 2};
+            margin-top: #{$planck-length * 3};
+            margin-left: #{$planck-length * 3};
 
             &:last-of-type {
                 margin-right: 0;
