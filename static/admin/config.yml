@@ -162,7 +162,7 @@ collections:
                 name: 'skillsList'
                 widget: 'list'
                 fields:
-                  - { label: 'Icon', name: 'icon', widget: 'string' }
+                  - { label: 'Icon', name: 'icon', widget: 'image' }
                   - { label: 'Label', name: 'label', widget: 'string' }
       - label: 'Portfolio Page'
         name: 'portfolio'
