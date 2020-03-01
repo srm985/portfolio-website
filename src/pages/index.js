@@ -78,7 +78,9 @@ export const query = graphql`
                             skillsSectionList {
                                 sectionLabel
                                 skillsList {
-                                    icon
+                                    icon {
+                                        relativePath
+                                    }
                                     label
                                 }
                             }

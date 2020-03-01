@@ -9,6 +9,10 @@ const SkillPillComponent = (props) => {
         label
     } = props;
 
+    console.log({
+        icon
+    });
+
     const {
         displayName
     } = SkillPillComponent;

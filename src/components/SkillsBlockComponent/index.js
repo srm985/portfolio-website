@@ -32,7 +32,7 @@ class SkillsBlockComponent extends React.Component {
         });
     }
 
-    renderSkillPill = (skillDetails = {}) => {
+    renderSkillPill = (skillDetails) => {
         const {
             state: {
                 skillSearchKeyword
@@ -40,16 +40,20 @@ class SkillsBlockComponent extends React.Component {
         } = this;
 
         const {
-            icon = '',
+            icon,
             label = ''
-        } = skillDetails;
+        } = skillDetails || {};
+
+        const {
+            absolutePath
+        } = icon || {};
 
         const doesSkillFilterMatch = label.toLowerCase().includes(skillSearchKeyword.toLowerCase());
 
         return (
             doesSkillFilterMatch && (
                 <SkillPill
-                    icon={icon}
+                    icon={absolutePath}
                     key={label}
                     label={label}
                 />
@@ -57,7 +61,7 @@ class SkillsBlockComponent extends React.Component {
         );
     }
 
-    renderSkillsBlock = (skillsBlockDetails = {}) => {
+    renderSkillsBlock = (skillsBlockDetails) => {
         const {
             props: {
                 content: {
@@ -69,7 +73,7 @@ class SkillsBlockComponent extends React.Component {
         const {
             sectionLabel = '',
             skillsList = []
-        } = skillsBlockDetails;
+        } = skillsBlockDetails || {};
 
         const {
             displayName
@@ -97,6 +101,7 @@ class SkillsBlockComponent extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         const {
             props: {
                 content: {
@@ -149,7 +154,9 @@ SkillsBlockComponent.propTypes = {
         skillsSectionList: PropTypes.arrayOf(PropTypes.shape({
             sectionLabel: PropTypes.string,
             skillsList: PropTypes.arrayOf(PropTypes.shape({
-                icon: PropTypes.string,
+                icon: PropTypes.shape({
+                    absolutePath: PropTypes.string
+                }),
                 label: PropTypes.string
             }))
         })),
