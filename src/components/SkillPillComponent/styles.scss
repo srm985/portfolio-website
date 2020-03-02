@@ -24,7 +24,7 @@ $border-radius: calc(#{$pill-height} / 2);
     background-color: $color-gray-very-dark;
     border: $border;
     border-radius: $border-radius;
-    box-shadow: 1px 3px 3px $color-gray-dark;
+    box-shadow: $box-shadow-default;
     cursor: default;
 
     user-select: none;

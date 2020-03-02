@@ -62,7 +62,7 @@
             height: #{$planck-length * 3};
 
             background-color: $color-blue;
-            box-shadow: 0 3px 5px $color-black;
+            box-shadow: $box-shadow-default;
             transform: scaleX(0);
             transform-origin: right;
 

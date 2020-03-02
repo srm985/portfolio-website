@@ -34,6 +34,9 @@ $font-size-large: 22px;
 $font-size-regular: 16px;
 $font-size-small: 12px;
 
+// Box Shadows
+$box-shadow-default: 3px 3px 5px $color-black;
+
 // Borders
 $border-thickness-default: 1px;
 $border-thickness-thick: #{$planck-length / 2};

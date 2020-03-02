@@ -20,7 +20,7 @@
         transition: box-shadow $transition-fast $transition-timing-function-default;
 
         &--open {
-            box-shadow: 0 3px 5px $color-gray-dark;
+            box-shadow: $box-shadow-default;
         }
     }
 
