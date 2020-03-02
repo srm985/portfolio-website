@@ -40,14 +40,92 @@ skillsSearchName: skillSearchbar
 skillsSearchPlaceholder: Search
 skillNotFound: 'Sorry, no relevant skills found...'
 skillsSectionList:
-  - sectionLabel: Test
+  - sectionLabel: 'Content Management Systems'
     skillsList:
-      - icon: >-
-          data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K
-        label: Testing
-  - sectionLabel: Science
+      - icon: /assets/icon-aem.svg
+        label: 'AEM'
+      - icon: /assets/icon-liferay.svg
+        label: 'Liferay'
+      - icon: /assets/icon-netlifycms.svg
+        label: 'NetlifyCMS'
+      - icon: /assets/icon-sitefinity.svg
+        label: 'SiteFinity'
+  - sectionLabel: Design
     skillsList:
-      - icon: 'https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png'
-        label: Foo
+      - icon: /assets/icon-axure.svg
+        label: 'Axure'
+      - icon: /assets/icon-illustrator.svg
+        label: 'Illustrator'
+      - icon: /assets/icon-invision.svg
+        label: 'InVision'
+      - icon: /assets/icon-photoshop.svg
+        label: 'Photoshop'
+      - icon: /assets/icon-sketch.svg
+        label: 'Sketch'
+      - icon: /assets/icon-storybook.svg
+        label: 'Storybook'
+      - icon: /assets/icon-styleguidist.svg
+        label: 'Styleguidist'
+  - sectionLabel: Development
+    skillsList:
+      - icon: /assets/icon-angular.svg
+        label: 'Angular'
+      - icon: /assets/icon-apollo.svg
+        label: 'Apollo'
+      - icon: /assets/icon-babel.svg
+        label: 'Babel'
+      - icon: /assets/icon-css.svg
+        label: 'CSS'
+      - icon: /assets/icon-eslint.svg
+        label: 'eslint'
+      - icon: /assets/icon-expressjs.svg
+        label: 'ExpressJS'
+      - icon: /assets/icon-gatsby.svg
+        label: 'Gatsby'
+      - icon: /assets/icon-gigya.svg
+        label: 'Gigya'
+      - icon: /assets/icon-git.svg
+        label: 'Git'
+      - icon: /assets/icon-graphql.svg
+        label: 'GraphQL'
+      - icon: /assets/icon-html.svg
+        label: 'HTML'
+      - icon: /assets/icon-ionic.svg
+        label: 'Ionic'
+      - icon: /assets/icon-javascript.svg
+        label: 'JavaScript'
+      - icon: /assets/icon-jquery.svg
+        label: 'jQuery'
+      - icon: /assets/icon-nodejs.svg
+        label: 'NodeJS'
+      - icon: /assets/icon-react.svg
+        label: 'React'
+      - icon: /assets/icon-redux.svg
+        label: 'Redux'
+      - icon: /assets/icon-restful.svg
+        label: 'RESTful'
+      - icon: /assets/icon-scss.svg
+        label: 'SCSS'
+      - icon: /assets/icon-stylelint.svg
+        label: 'stylelint'
+      - icon: /assets/icon-svn.svg
+        label: 'SVN'
+  - sectionLabel: Automation
+    skillsList:
+      - icon: /assets/icon-grunt.svg
+        label: 'Grunt'
+      - icon: /assets/icon-gulp.svg
+        label: 'Gulp'
+      - icon: /assets/icon-webpack.svg
+        label: 'webpack'
+  - sectionLabel: Testing
+    skillsList:
+      - icon: /assets/icon-browserstack.svg
+        label: 'BrowserStack'
+      - icon: /assets/icon-browsersync.svg
+        label: 'Browsersync'
+      - icon: /assets/icon-jest.svg
+        label: 'Jest'
+      - icon: /assets/icon-sauce-labs.svg
+        label: 'Sauce Labs'
 ---
-

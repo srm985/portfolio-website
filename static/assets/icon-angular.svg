@@ -1,0 +1,24 @@
+<svg height="50" 
+	width="50" 
+	viewBox="0 0 50 50" 
+	xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+	.st0{fill:#B3B3B3;}
+	.st1{fill:#A6120D;}
+	.st2{fill:#DD1B16;}
+	.st3{fill:#F2F2F2;}
+	</style>
+	<g>
+		<path class="st0" 
+			d="M24.9,0L0,8.3l3.9,30.8l21,10.9l21.1-11L50,8.1L24.9,0z" />
+		<path class="st1" 
+			d="M47.5,9.9L24.9,2.6v44.8l19-9.9L47.5,9.9L47.5,9.9z" />
+		<path class="st2" 
+			d="M2.8,10l3.4,27.6l18.7,9.8V2.6L2.8,10L2.8,10z" />
+		<path class="st3" 
+			d="M31.1,26.5l-6.2,2.8h-6.6l-3.1,7.3l-5.7,0.1L24.9,4.2L31.1,26.5L31.1,26.5z M30.5,25.1l-5.6-10.4l-4.6,10.3
+		h4.5L30.5,25.1L30.5,25.1z" />
+		<path class="st0" 
+			d="M24.9,4.2v10.4l5.2,10.3h-5.2v4.3h7.2l3.4,7.4l5.5,0.1L24.9,4.2L24.9,4.2z" />
+	</g>
+</svg>
