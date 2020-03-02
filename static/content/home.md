@@ -40,92 +40,93 @@ skillsSearchName: skillSearchbar
 skillsSearchPlaceholder: Search
 skillNotFound: 'Sorry, no relevant skills found...'
 skillsSectionList:
-  - sectionLabel: 'Content Management Systems'
-    skillsList:
-      - icon: /assets/icon-aem.svg
-        label: 'AEM'
-      - icon: /assets/icon-liferay.svg
-        label: 'Liferay'
-      - icon: /assets/icon-netlifycms.svg
-        label: 'NetlifyCMS'
-      - icon: /assets/icon-sitefinity.svg
-        label: 'SiteFinity'
   - sectionLabel: Design
     skillsList:
       - icon: /assets/icon-axure.svg
-        label: 'Axure'
+        label: Axure
       - icon: /assets/icon-illustrator.svg
-        label: 'Illustrator'
+        label: Illustrator
       - icon: /assets/icon-invision.svg
-        label: 'InVision'
+        label: InVision
       - icon: /assets/icon-photoshop.svg
-        label: 'Photoshop'
+        label: Photoshop
       - icon: /assets/icon-sketch.svg
-        label: 'Sketch'
+        label: Sketch
       - icon: /assets/icon-storybook.svg
-        label: 'Storybook'
+        label: Storybook
       - icon: /assets/icon-styleguidist.svg
-        label: 'Styleguidist'
+        label: Styleguidist
   - sectionLabel: Development
     skillsList:
       - icon: /assets/icon-angular.svg
-        label: 'Angular'
+        label: Angular
       - icon: /assets/icon-apollo.svg
-        label: 'Apollo'
+        label: Apollo
       - icon: /assets/icon-babel.svg
-        label: 'Babel'
+        label: Babel
       - icon: /assets/icon-css.svg
-        label: 'CSS'
+        label: CSS
       - icon: /assets/icon-eslint.svg
-        label: 'eslint'
+        label: eslint
       - icon: /assets/icon-expressjs.svg
-        label: 'ExpressJS'
+        label: ExpressJS
       - icon: /assets/icon-gatsby.svg
-        label: 'Gatsby'
+        label: Gatsby
       - icon: /assets/icon-gigya.svg
-        label: 'Gigya'
+        label: Gigya
       - icon: /assets/icon-git.svg
-        label: 'Git'
+        label: Git
       - icon: /assets/icon-graphql.svg
-        label: 'GraphQL'
+        label: GraphQL
       - icon: /assets/icon-html.svg
-        label: 'HTML'
+        label: HTML
       - icon: /assets/icon-ionic.svg
-        label: 'Ionic'
+        label: Ionic
       - icon: /assets/icon-javascript.svg
-        label: 'JavaScript'
+        label: JavaScript
       - icon: /assets/icon-jquery.svg
-        label: 'jQuery'
+        label: jQuery
       - icon: /assets/icon-nodejs.svg
-        label: 'NodeJS'
+        label: NodeJS
       - icon: /assets/icon-react.svg
-        label: 'React'
+        label: React
       - icon: /assets/icon-redux.svg
-        label: 'Redux'
+        label: Redux
       - icon: /assets/icon-restful.svg
-        label: 'RESTful'
+        label: RESTful
       - icon: /assets/icon-scss.svg
-        label: 'SCSS'
+        label: SCSS
       - icon: /assets/icon-stylelint.svg
-        label: 'stylelint'
+        label: stylelint
       - icon: /assets/icon-svn.svg
-        label: 'SVN'
+        label: SVN
+  - sectionLabel: Content Management Systems
+    skillsList:
+      - icon: /assets/icon-aem.svg
+        label: AEM
+      - icon: /assets/icon-liferay.svg
+        label: Liferay
+      - icon: /assets/icon-netlifycms.svg
+        label: NetlifyCMS
+      - icon: /assets/icon-sitefinity.svg
+        label: SiteFinity
   - sectionLabel: Automation
     skillsList:
       - icon: /assets/icon-grunt.svg
-        label: 'Grunt'
+        label: Grunt
       - icon: /assets/icon-gulp.svg
-        label: 'Gulp'
+        label: Gulp
       - icon: /assets/icon-webpack.svg
-        label: 'webpack'
+        label: webpack
   - sectionLabel: Testing
     skillsList:
       - icon: /assets/icon-browserstack.svg
-        label: 'BrowserStack'
+        label: BrowserStack
       - icon: /assets/icon-browsersync.svg
-        label: 'Browsersync'
+        label: Browsersync
       - icon: /assets/icon-jest.svg
-        label: 'Jest'
+        label: Jest
       - icon: /assets/icon-sauce-labs.svg
-        label: 'Sauce Labs'
+        label: Sauce Labs
 ---
+
