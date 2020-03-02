@@ -113,14 +113,7 @@ exports.createSchemaCustomization = ({
         type HeroImageBlock {
             imageAlt: String
             imageOpacity: Int
-            imageSource: ImageSource
             imageTitle: String
-        }
-        type ImageSource {
-            childImageSharp: ChildImageSharp
-        }
-        type ChildImageSharp {
-            fluid(maxWidth: Int): ImageSharpFluid
         }
         type PageSEO {
             pageAuthor: String

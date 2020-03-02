@@ -26,7 +26,9 @@ const HeroComponent = (props) => {
         imageAlt = '',
         imageOpacity = DEFAULT_OPACITY,
         imageSource: {
-            fluid = {}
+            childImageSharp: {
+                fluid = {}
+            } = {}
         } = {}
     } = heroImageBlock || {};
 
