@@ -16,7 +16,7 @@ projectDemoURL: 'https://www.seanmcquay.com/'
 role: Owner
 projectDate: 2016-08-14T01:07:44.048Z
 projectExcerpt: >-
-  An interactive reline plugin which simplifies the transition between design
+  An interactive redline plugin which simplifies the transition between design
   and development - ensuring developers have all the specifications they need to
   confidently and accurately materialize your designs.
 projectThumbnailImageBlock:
