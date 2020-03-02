@@ -56,10 +56,7 @@ class ProjectHeaderComponent extends React.Component {
         const {
             props: {
                 demoCTA,
-                projectDate,
-                projectDemoURL,
-                projectDescription,
-                projectHeroImageBlock: {
+                heroImageBlock: {
                     imageAlt = '',
                     imageSource: {
                         childImageSharp: {
@@ -67,6 +64,9 @@ class ProjectHeaderComponent extends React.Component {
                         } = {}
                     } = {}
                 } = {},
+                projectDate,
+                projectDemoURL,
+                projectDescription,
                 projectSourceCodeURL,
                 projectTitle,
                 role,
@@ -150,10 +150,7 @@ ProjectHeaderComponent.displayName = 'ProjectHeaderComponent';
 
 ProjectHeaderComponent.propTypes = {
     demoCTA: PropTypes.string,
-    projectDate: PropTypes.string,
-    projectDemoURL: PropTypes.string,
-    projectDescription: PropTypes.string,
-    projectHeroImageBlock: PropTypes.shape({
+    heroImageBlock: PropTypes.shape({
         imageAlt: PropTypes.string,
         imageOpacity: PropTypes.number,
         imageSource: PropTypes.shape({
@@ -162,6 +159,9 @@ ProjectHeaderComponent.propTypes = {
             })
         })
     }),
+    projectDate: PropTypes.string,
+    projectDemoURL: PropTypes.string,
+    projectDescription: PropTypes.string,
     projectSourceCodeURL: PropTypes.string,
     projectTitle: PropTypes.string,
     role: PropTypes.string,
@@ -170,10 +170,10 @@ ProjectHeaderComponent.propTypes = {
 
 ProjectHeaderComponent.defaultProps = {
     demoCTA: '',
+    heroImageBlock: {},
     projectDate: '',
     projectDemoURL: '',
     projectDescription: '',
-    projectHeroImageBlock: {},
     projectSourceCodeURL: '',
     projectTitle: '',
     role: '',

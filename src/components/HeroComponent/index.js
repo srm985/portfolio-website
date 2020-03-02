@@ -57,8 +57,15 @@ const HeroComponent = (props) => {
     let opacity = DEFAULT_OPACITY / 100;
 
     if (imageOpacity >= 0 && imageOpacity <= 100) {
+        console.log({
+            imageOpacity
+        });
         opacity = imageOpacity / 100;
     }
+
+    console.log({
+        opacity
+    });
 
     return (
         <div className={componentClassNames}>
