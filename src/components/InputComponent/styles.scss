@@ -8,6 +8,9 @@
     font-family: $font-stack;
 
     &__label {
+        position: relative;
+        z-index: 2;
+
         display: inline-block;
         margin-bottom: $planck-length;
     }
@@ -17,20 +20,23 @@
     }
 
     &__input {
+        position: relative;
+        z-index: 1;
+
         box-sizing: border-box;
         width: 100%;
         height: #{$planck-length * 5};
-        padding-right: $planck-length;
-        padding-left: $planck-length;
+        padding-right: #{$planck-length * 2};
+        padding-left: #{$planck-length * 2};
 
         color: inherit;
         font-size: $font-size-regular;
 
-        background-color: rgba($color-white, 0.5);
+        background-color: transparent;
         border: none;
         border-radius: $border-radius-default;
         outline: none;
-        box-shadow: $box-shadow-default-inset;
+        box-shadow: 20px 20px 35px rgba($color-black, 0.6), -20px -20px 35px $color-white, 3px 3px 15px rgba($color-black, 0.4) inset, -3px -3px 15px rgba($color-white, 0.7) inset;
 
         &:focus {
             border: solid 2px $color-blue;

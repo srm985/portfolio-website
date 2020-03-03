@@ -39,15 +39,23 @@
         transition: box-shadow $transition-timing-function-default $transition-fast, transform $transition-timing-function-default $transition-fast, background-image $transition-timing-function-default $transition-fast;
 
         &:hover {
-            background-image: none;
-            box-shadow: none;
+            @include is-desktop() {
+                background-image: none;
+                box-shadow: none;
+
+                svg {
+                    transform: scale(0.95);
+                }
+            }
         }
 
         &:active {
-            box-shadow: 5px 5px 20px $color-black-absolute inset, -5px -5px 20px rgba($color-white, 0.36) inset, -10px -10px 30px rgba($color-black-absolute, 0.7), 10px 10px 30px rgba($color-white, 0.17);
+            @include is-desktop() {
+                box-shadow: 5px 5px 20px $color-black-absolute inset, -5px -5px 20px rgba($color-white, 0.36) inset, -10px -10px 30px rgba($color-black-absolute, 0.7), 10px 10px 30px rgba($color-white, 0.17);
 
-            svg {
-                transform: scale(0.9);
+                svg {
+                    transform: scale(0.9);
+                }
             }
         }
     }

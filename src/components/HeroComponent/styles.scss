@@ -59,7 +59,12 @@
         position: absolute;
 
         width: 100%;
+        padding-top: $navigation-height-mobile;
 
         color: $color-white;
+
+        @media only screen and (min-width: $breakpoint-medium) {
+            padding-top: $navigation-height-desktop;
+        }
     }
 }

@@ -9,6 +9,7 @@
     height: #{$planck-length * 6};
     padding: 0 #{$planck-length};
 
+    font-weight: bold;
     font-size: $font-size-regular;
     line-height: $font-size-regular;
     text-transform: uppercase;
@@ -107,8 +108,6 @@
     &--neumorphic {
         @extend %button;
 
-        color: $color-white;
-
         background-color: transparent;
         border: none;
 
@@ -143,7 +142,7 @@
         }
 
         &-light {
-            color: $color-black;
+            color: $color-blue;
 
             box-shadow: 4px 4px 8px $color-black, -4px -4px 8px $color-white;
 
@@ -159,6 +158,7 @@
         margin: 0;
         padding: 0;
 
+        font-weight: inherit;
         font-size: inherit;
         text-decoration: underline;
 

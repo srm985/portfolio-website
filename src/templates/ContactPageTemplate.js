@@ -11,6 +11,7 @@ import Input from '../components/InputComponent';
 import Title from '../components/TitleComponent';
 
 import {
+    BUTTON_STYLE_TYPE_NEUMORPHIC,
     BUTTON_TYPE_SUBMIT
 } from '../components/ButtonComponent/config';
 import {
@@ -91,7 +92,9 @@ const ContactPageTemplate = (props) => {
                             />
                             <Button
                                 isAlignedRight
+                                isLightBackgroundColorProfile
                                 label={'Submit'}
+                                styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                 type={BUTTON_TYPE_SUBMIT}
                             />
                         </Form>

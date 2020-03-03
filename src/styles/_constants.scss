@@ -22,6 +22,7 @@ $color-blue: #2980b9;
 $color-charcoal: #3b3d40;
 $color-gray-dark: #7f8c8d;
 $color-gray-light: #ecf0f1;
+$color-gray-medium: #ccc;
 $color-gray-very-dark: #555659;
 $color-green: #27ae60;
 $color-orange: #e67e22;
@@ -43,7 +44,7 @@ $box-shadow-default-inset: 3px 3px 5px $color-black inset, -3px -3px 5px rgba($c
 // Borders
 $border-thickness-default: 1px;
 $border-thickness-thick: #{$planck-length / 2};
-$border-radius-default: 5px;
+$border-radius-default: #{$planck-length * 2};
 
 // Padding
 $padding-small: $planck-length;
