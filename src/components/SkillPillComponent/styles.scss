@@ -3,7 +3,6 @@
 $icon-container-width: #{$planck-length * 4};
 $pill-padding: #{$planck-length};
 $pill-height: #{$planck-length * 4};
-$border: solid $border-thickness-default $color-gray-very-dark;
 $border-radius: calc(#{$pill-height} / 2);
 
 .SkillPillComponent {
@@ -17,12 +16,10 @@ $border-radius: calc(#{$pill-height} / 2);
     padding: 0 #{$planck-length * 2} 0 calc(#{$icon-container-width} + #{$planck-length});
 
     color: $color-white;
-    font-weight: bold;
     font-size: 14px;
     line-height: 14px;
 
-    background-color: $color-gray-very-dark;
-    border: $border;
+    background-color: transparent;
     border-radius: $border-radius;
     box-shadow: $box-shadow-default;
     cursor: default;
@@ -31,18 +28,17 @@ $border-radius: calc(#{$pill-height} / 2);
 
     &__icon-container {
         position: absolute;
-        top: -1px;
-        left: -1px;
+        top: 0;
+        left: 0;
 
         display: flex;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
         width: $icon-container-width;
-        height: calc(100% + 2px);
+        height: 100%;
 
-        background-color: $color-white;
-        border: $border;
+        background-color: $color-gray-light;
         border-radius: $border-radius 0 0 $border-radius;
     }
 

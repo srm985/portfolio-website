@@ -19,15 +19,18 @@
     &__input {
         box-sizing: border-box;
         width: 100%;
-        height: #{$planck-length * 4};
+        height: #{$planck-length * 5};
         padding-right: $planck-length;
         padding-left: $planck-length;
 
+        color: inherit;
         font-size: $font-size-regular;
 
-        border: solid 1px $color-gray-dark;
+        background-color: rgba($color-white, 0.5);
+        border: none;
         border-radius: $border-radius-default;
         outline: none;
+        box-shadow: $box-shadow-default-inset;
 
         &:focus {
             border: solid 2px $color-blue;

@@ -16,8 +16,10 @@ $max-width-large: 960px;
 $max-width-extra-large: 1140px;
 
 // Application Colors
+$color-black-absolute: #000;
 $color-black: #262626;
 $color-blue: #2980b9;
+$color-charcoal: #3b3d40;
 $color-gray-dark: #7f8c8d;
 $color-gray-light: #ecf0f1;
 $color-gray-very-dark: #555659;
@@ -35,7 +37,8 @@ $font-size-regular: 16px;
 $font-size-small: 12px;
 
 // Box Shadows
-$box-shadow-default: 3px 3px 5px $color-black;
+$box-shadow-default: 3px 3px 5px $color-black, -3px -3px 5px rgba($color-white, 0.3);
+$box-shadow-default-inset: 3px 3px 5px $color-black inset, -3px -3px 5px rgba($color-white, 0.3) inset;
 
 // Borders
 $border-thickness-default: 1px;
