@@ -11,7 +11,7 @@ import Title from '../components/TitleComponent';
 import WhoIAm from '../components/WhoIAmComponent';
 
 import {
-    BUTTON_STYLE_TYPE_SECONDARY
+    BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../components/ButtonComponent/config';
 import {
     OVERLAY_BLACK
@@ -71,9 +71,8 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
-                            isColorProfileDark={false}
                             label={'Résumé'}
-                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                            styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
                     </GridItem>
                     <GridItem
@@ -89,9 +88,8 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
-                            isColorProfileDark={false}
                             label={'Contact Me'}
-                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                            styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
                     </GridItem>
                 </Grid>

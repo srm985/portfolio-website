@@ -11,7 +11,7 @@ import Title from '../TitleComponent';
 import classNames from '../../utils/classNames';
 
 import {
-    BUTTON_STYLE_TYPE_SECONDARY
+    BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../ButtonComponent/config';
 
 import './styles.scss';
@@ -122,9 +122,10 @@ class ProjectHeaderComponent extends React.Component {
                                 projectDemoURL && (
                                     <Button
                                         href={projectDemoURL}
+                                        isColorProfileDark={false}
                                         isInternalURL={false}
                                         label={demoCTA}
-                                        styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                                        styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                     />
                                 )
                             }
@@ -132,9 +133,10 @@ class ProjectHeaderComponent extends React.Component {
                                 projectSourceCodeURL && (
                                     <Button
                                         href={projectSourceCodeURL}
+                                        isColorProfileDark={false}
                                         isInternalURL={false}
                                         label={sourceCodeCTA}
-                                        styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                                        styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                     />
                                 )
                             }

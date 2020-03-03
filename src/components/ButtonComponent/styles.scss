@@ -6,7 +6,7 @@
     justify-content: center;
     box-sizing: border-box;
     min-width: #{$planck-length * 18};
-    height: #{$planck-length * 5};
+    height: #{$planck-length * 6};
     padding: 0 #{$planck-length};
 
     font-size: $font-size-regular;
@@ -26,7 +26,7 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow;
+    transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow, box-shadow $transition-timing-function-default $transition-slow;
 
     & + .ButtonComponent {
         margin-left: #{$planck-length * 2};
@@ -99,6 +99,57 @@
                     color: $color-blue;
 
                     background-color: $color-white;
+                }
+            }
+        }
+    }
+
+    &--neumorphic {
+        @extend %button;
+
+        color: $color-white;
+
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+            @include is-desktop() {
+                box-shadow: none;
+
+                span {
+                    transform: scale(0.95);
+                }
+            }
+        }
+
+        &:active {
+            @include is-desktop() {
+                span {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        &-dark {
+            color: $color-white;
+
+            box-shadow: 5px 5px 15px $color-black, -5px -5px 15px rgba($color-white, 0.5);
+
+            &:active {
+                @include is-desktop() {
+                    box-shadow: 5px 5px 15px $color-black inset, -5px -5px 15px rgba($color-white, 0.5) inset;
+                }
+            }
+        }
+
+        &-light {
+            color: $color-black;
+
+            box-shadow: 4px 4px 8px $color-black, -4px -4px 8px $color-white;
+
+            &:active {
+                @include is-desktop() {
+                    box-shadow: 5px 5px 15px $color-black inset, -5px -5px 15px $color-white inset;
                 }
             }
         }

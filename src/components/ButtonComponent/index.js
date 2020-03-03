@@ -9,6 +9,7 @@ import classNames from '../../utils/classNames';
 
 import {
     BUTTON_STYLE_TYPE_INLINE,
+    BUTTON_STYLE_TYPE_NEUMORPHIC,
     BUTTON_STYLE_TYPE_PRIMARY,
     BUTTON_STYLE_TYPE_SECONDARY,
     BUTTON_STYLE_TYPES,
@@ -47,7 +48,7 @@ const ButtonComponent = (props) => {
                 <>{children}</>
             )
             : (
-                <span>{label}</span>
+                <span className={`${displayName}__label`}>{label}</span>
             )
     );
 
@@ -61,6 +62,9 @@ const ButtonComponent = (props) => {
             [`${ButtonComponent.displayName}--inline-inherit-styling`]: styleType === BUTTON_STYLE_TYPE_INLINE && inheritStyling,
             [`${ButtonComponent.displayName}--inline-light`]: styleType === BUTTON_STYLE_TYPE_INLINE && !isColorProfileDark,
             [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
+            [`${ButtonComponent.displayName}--neumorphic-dark`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && isColorProfileDark,
+            [`${ButtonComponent.displayName}--neumorphic-light`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && !isColorProfileDark,
+            [`${ButtonComponent.displayName}--neumorphic`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC,
             [`${ButtonComponent.displayName}--primary-dark`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && isColorProfileDark,
             [`${ButtonComponent.displayName}--primary-light`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && !isColorProfileDark,
             [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,

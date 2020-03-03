@@ -9,11 +9,13 @@ export const BUTTON_TYPES = [
 ];
 
 export const BUTTON_STYLE_TYPE_INLINE = 'inline';
+export const BUTTON_STYLE_TYPE_NEUMORPHIC = 'neumorphic';
 export const BUTTON_STYLE_TYPE_PRIMARY = 'primary';
 export const BUTTON_STYLE_TYPE_SECONDARY = 'secondary';
 
 export const BUTTON_STYLE_TYPES = [
     BUTTON_STYLE_TYPE_INLINE,
+    BUTTON_STYLE_TYPE_NEUMORPHIC,
     BUTTON_STYLE_TYPE_PRIMARY,
     BUTTON_STYLE_TYPE_SECONDARY
 ];

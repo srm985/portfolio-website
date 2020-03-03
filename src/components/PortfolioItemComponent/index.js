@@ -9,7 +9,7 @@ import Title from '../TitleComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import {
-    BUTTON_STYLE_TYPE_SECONDARY
+    BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../ButtonComponent/config';
 import {
     BACKGROUND_COLOR_BLUE
@@ -133,9 +133,8 @@ class PortfolioItemComponent extends React.Component {
                         <Button
                             className={`${displayName}__button`}
                             href={formattedLink}
-                            isColorProfileDark={false}
                             label={viewProjectCTA}
-                            styleType={BUTTON_STYLE_TYPE_SECONDARY}
+                            styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
                     </Card>
                 </div>
