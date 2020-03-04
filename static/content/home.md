@@ -112,6 +112,12 @@ skillsSectionList:
         label: NetlifyCMS
       - icon: /assets/icon-sitefinity.svg
         label: SiteFinity
+  - sectionLabel: Databases
+    skillsList:
+      - icon: /assets/icon-mysql.svg
+        label: MySQL
+      - icon: /assets/icon-postgresql.svg
+        label: PostgreSQL
   - sectionLabel: Automation
     skillsList:
       - icon: /assets/icon-grunt.svg
@@ -132,11 +138,5 @@ skillsSectionList:
         label: Postman
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
-  - sectionLabel: Databases
-    skillsList:
-      - icon: /assets/icon-mysql.svg
-        label: MySQL
-      - icon: /assets/icon-postgresql.svg
-        label: PostgreSQL
 ---
 
