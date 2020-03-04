@@ -132,6 +132,8 @@ skillsSectionList:
         label: BrowserStack
       - icon: /assets/icon-browsersync.svg
         label: Browsersync
+      - icon: /assets/icon-jasmine.svg
+        label: Jasmine
       - icon: /assets/icon-jest.svg
         label: Jest
       - icon: /assets/icon-postman.svg
