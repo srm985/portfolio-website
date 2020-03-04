@@ -84,7 +84,7 @@ const ContactPageTemplate = (props) => {
                                 name={'company'}
                             />
                             <Input
-                                className={'mb--4'}
+                                className={'mb--6'}
                                 isRequired
                                 label={'Message'}
                                 name={'message'}

@@ -56,7 +56,7 @@ const ButtonComponent = (props) => {
         displayName,
         className,
         {
-            [`${ButtonComponent.displayName}--aligned-right`]: isAlignedRight && (styleType === BUTTON_STYLE_TYPE_PRIMARY || styleType === BUTTON_STYLE_TYPE_SECONDARY),
+            [`${ButtonComponent.displayName}--aligned-right`]: isAlignedRight && (styleType === BUTTON_STYLE_TYPE_PRIMARY || styleType === BUTTON_STYLE_TYPE_SECONDARY || styleType === BUTTON_STYLE_TYPE_NEUMORPHIC),
             [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
             [`${ButtonComponent.displayName}--inline-dark`]: styleType === BUTTON_STYLE_TYPE_INLINE && !isLightBackgroundColorProfile,
             [`${ButtonComponent.displayName}--inline-inherit-styling`]: styleType === BUTTON_STYLE_TYPE_INLINE && inheritStyling,
