@@ -100,6 +100,8 @@ skillsSectionList:
         label: stylelint
       - icon: /assets/icon-svn.svg
         label: SVN
+      - icon: /assets/icon-typescript.svg
+        label: TypeScript
   - sectionLabel: Content Management Systems
     skillsList:
       - icon: /assets/icon-aem.svg
@@ -126,7 +128,15 @@ skillsSectionList:
         label: Browsersync
       - icon: /assets/icon-jest.svg
         label: Jest
+      - icon: /assets/icon-postman.svg
+        label: Postman
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
+  - sectionLabel: Databases
+    skillsList:
+      - icon: /assets/icon-mysql.svg
+        label: MySQL
+      - icon: /assets/icon-postgresql.svg
+        label: PostgreSQL
 ---
 
