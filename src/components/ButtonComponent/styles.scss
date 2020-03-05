@@ -130,9 +130,15 @@
         }
 
         &-dark {
-            color: $color-white;
-
             box-shadow: 5px 5px 15px $color-black, -5px -5px 15px rgba($color-white, 0.5);
+
+            span {
+                color: transparent;
+                text-shadow: 1px 1px 1px rgba($color-white, 0.9);
+
+                background: $color-black;
+                background-clip: text;
+            }
 
             &:active {
                 @include is-desktop() {
@@ -142,8 +148,6 @@
         }
 
         &-light {
-            color: $color-blue;
-
             box-shadow: 4px 4px 8px $color-black, -4px -4px 8px $color-white;
 
             span {
