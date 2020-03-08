@@ -22,7 +22,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        max-width: 300px;
+        max-width: #{$planck-length * 50};
     }
 
     &__link-icon {

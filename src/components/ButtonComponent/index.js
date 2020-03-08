@@ -65,6 +65,7 @@ class ButtonComponent extends React.Component {
                         activeClassName={activeLinkClassName}
                         aria-label={screenReaderLabel}
                         className={buttonClassNames}
+                        title={screenReaderLabel}
                         to={href}
                     >
                         {buttonLabel}
@@ -77,6 +78,7 @@ class ButtonComponent extends React.Component {
                         href={href}
                         rel={'noopener noreferrer'}
                         target={targetType}
+                        title={screenReaderLabel}
                     >
                         {buttonLabel}
                     </a>
@@ -158,6 +160,7 @@ class ButtonComponent extends React.Component {
                                 aria-label={screenReaderLabel}
                                 className={buttonClassNames}
                                 onClick={handleClick}
+                                title={screenReaderLabel}
                                 type={type}
                             >
                                 {buttonLabel}
