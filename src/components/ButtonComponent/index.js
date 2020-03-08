@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-
 import {
     Link
 } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
 
@@ -19,110 +20,154 @@ import {
 
 import './styles.scss';
 
-const ButtonComponent = (props) => {
-    const {
-        activeLinkClassName,
-        children,
-        className,
-        handleClick,
-        href,
-        inheritStyling,
-        isAlignedRight,
-        isInternalURL,
-        isLightBackgroundColorProfile,
-        label,
-        screenReaderLabel,
-        shouldOpenInNewTab,
-        styleType,
-        type
-    } = props;
+class ButtonComponent extends React.Component {
+    constructor(props) {
+        super(props);
 
-    const {
-        displayName
-    } = ButtonComponent;
+        this.state = {
+            isVisible: false
+        };
+    }
 
-    const buttonLabel = (
-        children
-            ? (
+    handleVisibilityChange = (isVisible) => {
+        this.setState((previousState) => {
+            const {
+                isVisible: wasVisible
+            } = previousState;
 
-                <>{children}</>
-            )
-            : (
-                <span className={`${displayName}__label`}>{label}</span>
-            )
-    );
-
-    const buttonClassNames = classNames(
-        displayName,
-        className,
-        {
-            [`${ButtonComponent.displayName}--aligned-right`]: isAlignedRight && (styleType === BUTTON_STYLE_TYPE_PRIMARY || styleType === BUTTON_STYLE_TYPE_SECONDARY || styleType === BUTTON_STYLE_TYPE_NEUMORPHIC),
-            [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
-            [`${ButtonComponent.displayName}--inline-dark`]: styleType === BUTTON_STYLE_TYPE_INLINE && !isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--inline-inherit-styling`]: styleType === BUTTON_STYLE_TYPE_INLINE && inheritStyling,
-            [`${ButtonComponent.displayName}--inline-light`]: styleType === BUTTON_STYLE_TYPE_INLINE && isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
-            [`${ButtonComponent.displayName}--neumorphic-dark`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && !isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--neumorphic-light`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--neumorphic`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC,
-            [`${ButtonComponent.displayName}--primary-dark`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && !isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--primary-light`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
-            [`${ButtonComponent.displayName}--secondary-dark`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && !isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--secondary-light`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && isLightBackgroundColorProfile,
-            [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
-        }
-    );
-
-    const targetType = !isInternalURL && shouldOpenInNewTab ? '_blank' : '';
-
-    const renderLinkType = () => (
-        isInternalURL
-            ? (
-                <Link
-                    activeClassName={activeLinkClassName}
-                    aria-label={screenReaderLabel}
-                    className={buttonClassNames}
-                    to={href}
-                >
-                    {buttonLabel}
-                </Link>
-            )
-            : (
-                <a
-                    aria-label={screenReaderLabel}
-                    className={buttonClassNames}
-                    href={href}
-                    rel={'noopener noreferrer'}
-                    target={targetType}
-                >
-                    {buttonLabel}
-                </a>
-            )
-    );
-
-    return (
-        <>
-            {
-                href
-                    ? (
-                        renderLinkType()
-                    )
-                    : (
-                        // eslint-disable-next-line react/button-has-type
-                        <button
-                            aria-label={screenReaderLabel}
-                            className={buttonClassNames}
-                            onClick={handleClick}
-                            type={type}
-                        >
-                            {buttonLabel}
-                        </button>
-                    )
+            if (isVisible === wasVisible) {
+                return null;
             }
-        </>
-    );
-};
+
+            return ({
+                isVisible
+            });
+        });
+    }
+
+    renderLinkType = (buttonClassNames, buttonLabel) => {
+        const {
+            props: {
+                activeLinkClassName,
+                href,
+                isInternalURL,
+                screenReaderLabel,
+                shouldOpenInNewTab
+            }
+        } = this;
+
+        const targetType = !isInternalURL && shouldOpenInNewTab ? '_blank' : '';
+
+        return (
+            isInternalURL
+                ? (
+                    <Link
+                        activeClassName={activeLinkClassName}
+                        aria-label={screenReaderLabel}
+                        className={buttonClassNames}
+                        to={href}
+                    >
+                        {buttonLabel}
+                    </Link>
+                )
+                : (
+                    <a
+                        aria-label={screenReaderLabel}
+                        className={buttonClassNames}
+                        href={href}
+                        rel={'noopener noreferrer'}
+                        target={targetType}
+                    >
+                        {buttonLabel}
+                    </a>
+                )
+        );
+    }
+
+    render() {
+        const {
+            props: {
+                children,
+                className,
+                handleClick,
+                href,
+                inheritStyling,
+                isAlignedRight,
+                isAnimated,
+                isInternalURL,
+                isLightBackgroundColorProfile,
+                label,
+                screenReaderLabel,
+                styleType,
+                type
+            },
+            state: {
+                isVisible
+            }
+        } = this;
+
+        const {
+            displayName
+        } = ButtonComponent;
+
+        const buttonLabel = (
+            children
+                ? (
+
+                    <>{children}</>
+                )
+                : (
+                    <span className={`${displayName}__label`}>{label}</span>
+                )
+        );
+
+        const buttonClassNames = classNames(
+            displayName,
+            className,
+            {
+                [`${ButtonComponent.displayName}--aligned-right`]: isAlignedRight && (styleType === BUTTON_STYLE_TYPE_PRIMARY || styleType === BUTTON_STYLE_TYPE_SECONDARY || styleType === BUTTON_STYLE_TYPE_NEUMORPHIC),
+                [`${ButtonComponent.displayName}--anchor`]: href && !isInternalURL,
+                [`${ButtonComponent.displayName}--inline-dark`]: styleType === BUTTON_STYLE_TYPE_INLINE && !isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--inline-inherit-styling`]: styleType === BUTTON_STYLE_TYPE_INLINE && inheritStyling,
+                [`${ButtonComponent.displayName}--inline-light`]: styleType === BUTTON_STYLE_TYPE_INLINE && isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--inline`]: styleType === BUTTON_STYLE_TYPE_INLINE,
+                [`${ButtonComponent.displayName}--neumorphic-animated`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && isAnimated,
+                [`${ButtonComponent.displayName}--neumorphic-dark`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && !isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--neumorphic-light`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--neumorphic-visible`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC && isVisible,
+                [`${ButtonComponent.displayName}--neumorphic`]: styleType === BUTTON_STYLE_TYPE_NEUMORPHIC,
+                [`${ButtonComponent.displayName}--primary-dark`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && !isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--primary-light`]: styleType === BUTTON_STYLE_TYPE_PRIMARY && isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--primary`]: styleType === BUTTON_STYLE_TYPE_PRIMARY,
+                [`${ButtonComponent.displayName}--secondary-dark`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && !isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--secondary-light`]: styleType === BUTTON_STYLE_TYPE_SECONDARY && isLightBackgroundColorProfile,
+                [`${ButtonComponent.displayName}--secondary`]: styleType === BUTTON_STYLE_TYPE_SECONDARY
+            }
+        );
+
+        return (
+            <VisibilityChecker handleChange={this.handleVisibilityChange}>
+                {
+                    href
+                        ? (
+                            this.renderLinkType(buttonClassNames, buttonLabel)
+                        )
+                        : (
+                            // eslint-disable-next-line react/button-has-type
+                            <button
+                                aria-label={screenReaderLabel}
+                                className={buttonClassNames}
+                                onClick={handleClick}
+                                type={type}
+                            >
+                                {buttonLabel}
+                            </button>
+                        )
+                }
+            </VisibilityChecker>
+        );
+    }
+}
 
 ButtonComponent.propTypes = {
     activeLinkClassName: PropTypes.string,
@@ -132,6 +177,7 @@ ButtonComponent.propTypes = {
     href: PropTypes.string,
     inheritStyling: PropTypes.bool,
     isAlignedRight: PropTypes.bool,
+    isAnimated: PropTypes.bool,
     isInternalURL: PropTypes.bool,
     isLightBackgroundColorProfile: PropTypes.bool,
     label: PropTypes.string,
@@ -149,6 +195,7 @@ ButtonComponent.defaultProps = {
     href: '',
     inheritStyling: false,
     isAlignedRight: false,
+    isAnimated: false,
     isInternalURL: true,
     isLightBackgroundColorProfile: false,
     label: '',

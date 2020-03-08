@@ -120,14 +120,14 @@ class SkillsBlockComponent extends React.Component {
         return (
             <div className={displayName}>
                 <Title
-                    className={'mb--3'}
+                    className={'mb--6'}
                     heading={skillsSectionTitle}
                     headingSize={3}
                     isAccented
                     isAnimated
                 />
                 <Input
-                    className={'mb--3'}
+                    className={'mb--7'}
                     handleChange={this.handleSkillSearchKeywordChange}
                     label={skillsSearchLabel}
                     name={skillsSearchName}

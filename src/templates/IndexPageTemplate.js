@@ -71,6 +71,7 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            isAnimated
                             label={'Résumé'}
                             styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
@@ -88,6 +89,7 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            isAnimated
                             label={'Contact Me'}
                             styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />

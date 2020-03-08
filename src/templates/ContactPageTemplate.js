@@ -92,6 +92,7 @@ const ContactPageTemplate = (props) => {
                             />
                             <Button
                                 isAlignedRight
+                                isAnimated
                                 isLightBackgroundColorProfile
                                 label={'Submit'}
                                 styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}

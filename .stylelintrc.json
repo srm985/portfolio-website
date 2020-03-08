@@ -107,7 +107,7 @@
         "no-missing-end-of-source-newline": true,
         "no-unknown-animations": true,
         "number-leading-zero": "always",
-        "number-max-precision": 2,
+        "number-max-precision": 4,
         "number-no-trailing-zeros": true,
         "plugin/declaration-block-no-ignored-properties": true,
         "plugin/rational-order": [
@@ -136,7 +136,6 @@
         "scss/at-else-empty-line-before": "never",
         "scss/at-else-if-parentheses-space-before": "always",
         "scss/at-extend-no-missing-placeholder": true,
-        "scss/at-function-named-arguments": "always",
         "scss/at-function-parentheses-space-before": "always",
         "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
         "scss/at-if-closing-brace-space-after": "always-intermediate",

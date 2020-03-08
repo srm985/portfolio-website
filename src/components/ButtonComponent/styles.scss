@@ -1,9 +1,21 @@
 @import '../../styles/global';
 
+$button-height: 5px;
+$scale-hover: 0.95;
+$scale-active: 0.9;
+
+@mixin box-shadow($scale: 1, $inset: false) {
+    $box-shadow-size: if($inset, 0, #{$button-height * $scale});
+    $box-shadow-size-inset: if($inset, #{$button-height * $scale}, 0);
+
+    box-shadow: $box-shadow-size $box-shadow-size $box-shadow-size rgba($color-black, 0.9), -#{$box-shadow-size} -#{$box-shadow-size} $box-shadow-size rgba($color-white, 0.9), $box-shadow-size-inset $box-shadow-size-inset $box-shadow-size-inset rgba($color-black, 0.9) inset, -#{$box-shadow-size-inset} -#{$box-shadow-size-inset} $box-shadow-size-inset rgba($color-white, 0.9) inset;
+}
+
 %button {
     display: flex;
     align-items: center;
     justify-content: center;
+    float: left;
     box-sizing: border-box;
     min-width: #{$planck-length * 18};
     height: #{$planck-length * 6};
@@ -19,8 +31,6 @@
 }
 
 .ButtonComponent {
-    float: left;
-
     font-family: $font-stack;
 
     border: none;
@@ -28,6 +38,10 @@
     cursor: pointer;
 
     transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow, box-shadow $transition-timing-function-default $transition-slow;
+
+    &__label {
+        transition: transform $transition-timing-function-default $transition-slow;
+    }
 
     & + .ButtonComponent {
         margin-left: #{$planck-length * 2};
@@ -111,58 +125,66 @@
         background-color: transparent;
         border: none;
 
+        span {
+            color: transparent;
+
+            background-clip: text;
+        }
+
         &:hover {
             @include is-desktop() {
-                box-shadow: none;
+                @include box-shadow(0);
+
+                animation: none;
 
                 span {
-                    transform: scale(0.95);
+                    transform: scale($scale-hover);
                 }
             }
         }
 
         &:active {
             @include is-desktop() {
+                @include box-shadow(1, true);
+
+                animation: none;
+
                 span {
-                    transform: scale(0.9);
+                    transform: scale($scale-active);
                 }
             }
         }
 
         &-dark {
-            box-shadow: 5px 5px 15px $color-black, -5px -5px 15px rgba($color-white, 0.5);
+            @include box-shadow();
 
             span {
-                color: transparent;
                 text-shadow: 1px 1px 1px rgba($color-white, 0.9);
 
-                background: $color-black;
-                background-clip: text;
-            }
-
-            &:active {
-                @include is-desktop() {
-                    box-shadow: 5px 5px 15px $color-black inset, -5px -5px 15px rgba($color-white, 0.5) inset;
-                }
+                background-color: $color-black;
             }
         }
 
         &-light {
-            box-shadow: 4px 4px 8px $color-black, -4px -4px 8px $color-white;
+            @include box-shadow();
 
             span {
-                color: transparent;
                 text-shadow: 1px 1px 1px rgba($color-white, 0.3);
 
-                background: $color-blue;
-                background-clip: text;
+                background-color: $color-blue;
             }
+        }
 
-            &:active {
-                @include is-desktop() {
-                    box-shadow: 5px 5px 15px $color-black inset, -5px -5px 15px $color-white inset;
-                }
-            }
+        &-animated {
+            animation-name: bounce;
+            animation-duration: 1s;
+            animation-play-state: paused;
+            animation-timing-function: cubic-bezier(0.38, 0.2, 0.36, 0.95);
+            animation-fill-mode: initial;
+        }
+
+        &-visible {
+            animation-play-state: running;
         }
     }
 
@@ -196,5 +218,80 @@
 
     &--full-width {
         width: 100%;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        @include box-shadow(0);
+    }
+
+    30% {
+        @include box-shadow(2);
+    }
+
+    40% {
+        @include box-shadow(0.5);
+    }
+
+    50% {
+        @include box-shadow(1.25);
+    }
+
+    60% {
+        @include box-shadow(0.75);
+    }
+
+    70% {
+        @include box-shadow(1.125);
+    }
+
+    80% {
+        @include box-shadow(0.875);
+    }
+
+    90% {
+        @include box-shadow(1.0625);
+    }
+
+    100% {
+        @include box-shadow();
+    }
+}
+@keyframes bounce-label {
+    0% {
+        transform: scale($scale-hover);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(0.9);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    80% {
+        transform: scale(0.95);
+    }
+
+    90% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
