@@ -10,5 +10,8 @@ socialMediaLinks:
   - socialMediumIcon: /assets/gitHub.svg
     socialMediumName: GitHub
     socialMediumURL: 'https://github.com/srm985'
+  - socialMediumIcon: /assets/codepen.svg
+    socialMediumName: CodePen
+    socialMediumURL: 'https://codepen.io/srm985/pens/public'
 ---
 
