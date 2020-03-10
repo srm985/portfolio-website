@@ -148,7 +148,10 @@ class ButtonComponent extends React.Component {
         );
 
         return (
-            <VisibilityChecker handleChange={this.handleVisibilityChange}>
+            <VisibilityChecker
+                handleChange={this.handleVisibilityChange}
+                instanceName={displayName}
+            >
                 {
                     href
                         ? (

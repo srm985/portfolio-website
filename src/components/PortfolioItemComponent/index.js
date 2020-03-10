@@ -133,6 +133,7 @@ class PortfolioItemComponent extends React.Component {
                         <Button
                             className={`${displayName}__button`}
                             href={formattedLink}
+                            isAnimated
                             label={viewProjectCTA}
                             styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />

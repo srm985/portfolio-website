@@ -122,6 +122,7 @@ class ProjectHeaderComponent extends React.Component {
                                 projectDemoURL && (
                                     <Button
                                         href={projectDemoURL}
+                                        isAnimated
                                         isLightBackgroundColorProfile
                                         isInternalURL={false}
                                         label={demoCTA}
@@ -133,6 +134,7 @@ class ProjectHeaderComponent extends React.Component {
                                 projectSourceCodeURL && (
                                     <Button
                                         href={projectSourceCodeURL}
+                                        isAnimated
                                         isLightBackgroundColorProfile
                                         isInternalURL={false}
                                         label={sourceCodeCTA}

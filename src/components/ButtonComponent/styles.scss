@@ -30,6 +30,13 @@ $scale-active: 0.9;
     border-radius: $border-radius-default;
 }
 
+.VisibilityCheckerComponent__instance-ButtonComponent {
+    & + .VisibilityCheckerComponent__instance-ButtonComponent {
+        display: inline-block;
+        margin-left: #{$planck-length * 4};
+    }
+}
+
 .ButtonComponent {
     font-family: $font-stack;
 
@@ -41,10 +48,6 @@ $scale-active: 0.9;
 
     &__label {
         transition: transform $transition-timing-function-default $transition-slow;
-    }
-
-    & + .ButtonComponent {
-        margin-left: #{$planck-length * 2};
     }
 
     &--aligned-right {

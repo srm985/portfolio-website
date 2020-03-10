@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
 class VisibilityCheckerComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -88,7 +90,9 @@ class VisibilityCheckerComponent extends React.Component {
     render() {
         const {
             props: {
-                children
+                children,
+                className,
+                instanceName
             }
         } = this;
 
@@ -96,9 +100,18 @@ class VisibilityCheckerComponent extends React.Component {
             displayName
         } = VisibilityCheckerComponent;
 
+        const componentClassNames = classNames(
+            ...className,
+            displayName,
+            {
+                [`${displayName}__instance-${instanceName}`]: instanceName
+            }
+        );
+
         return (
             <div
-                className={displayName}
+                className={componentClassNames}
+                data-instance={instanceName}
                 ref={this.wrapperReference}
             >
                 {children}
@@ -111,8 +124,10 @@ VisibilityCheckerComponent.displayName = 'VisibilityCheckerComponent';
 
 VisibilityCheckerComponent.propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
     delay: PropTypes.number,
     handleChange: PropTypes.func,
+    instanceName: PropTypes.string,
     isDisabled: PropTypes.bool,
     margins: PropTypes.shape({
         bottom: PropTypes.string,
@@ -125,8 +140,10 @@ VisibilityCheckerComponent.propTypes = {
 
 VisibilityCheckerComponent.defaultProps = {
     children: '',
+    className: '',
     delay: 500,
     handleChange: () => {},
+    instanceName: '',
     isDisabled: false,
     margins: {},
     threshold: 0.5
