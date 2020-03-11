@@ -12,6 +12,7 @@ heroImageBlock:
   imageTitle: ''
 heroTitle: Want to do something great together?
 contactCardTitle: Send me a message!
+formName: contact-form
 contactFormFields:
   - fieldLabel: Name
     fieldName: name
@@ -29,4 +30,5 @@ contactFormFields:
     fieldName: message
     fieldRequired: true
     fieldType: textarea
+formButtonLabel: Submit
 ---
