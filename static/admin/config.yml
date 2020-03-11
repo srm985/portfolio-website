@@ -220,6 +220,7 @@ collections:
             fields:
               - { label: 'Field Label', name: 'fieldLabel', widget: 'string' }
               - { label: 'Field Name', name: 'fieldName', widget: 'string' }
+              - { label: 'Field Required', name: 'fieldRequired', widget: 'boolean' }
               - label: 'Field Type'
                 name: 'fieldType'
                 widget: 'list'
