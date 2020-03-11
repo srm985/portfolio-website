@@ -54,6 +54,11 @@ const HeroComponent = (props) => {
         }
     );
 
+    const contentClassNames = classNames(
+        `${displayName}__content`,
+        'padding-wrapper'
+    );
+
     let opacity = DEFAULT_OPACITY / 100;
 
     if (imageOpacity >= 0 && imageOpacity <= 100) {
@@ -77,7 +82,7 @@ const HeroComponent = (props) => {
             )}
             {
                 children && (
-                    <div className={`${displayName}__content`}>
+                    <div className={contentClassNames}>
                         {children}
                     </div>
                 )

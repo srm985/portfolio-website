@@ -1,10 +1,8 @@
-@import '../../styles/global';
+@import '../../styles/constants';
 
 $decorator-slash-height: #{$planck-length * 4};
 
 .WhoIAmComponent {
-    @extend %padding-wrapper;
-
     position: relative;
 
     min-height: #{$planck-length * 50};

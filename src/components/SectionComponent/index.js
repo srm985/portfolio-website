@@ -21,6 +21,7 @@ const SectionComponent = (props) => {
     const componentClassNames = classNames(
         className,
         displayName,
+        'padding-wrapper',
         {
             [`${displayName}--dark`]: isDark,
             [`${displayName}--full-bleed`]: isFullBleed,

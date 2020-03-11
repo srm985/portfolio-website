@@ -1,4 +1,5 @@
-@import '../../styles/global';
+@import '../../styles/constants';
+@import '../../styles/mixins';
 
 .FooterComponent {
     z-index: $z-index-footer;

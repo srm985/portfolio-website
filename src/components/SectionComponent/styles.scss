@@ -1,8 +1,6 @@
-@import '../../styles/global';
+@import '../../styles/constants';
 
 .SectionComponent {
-    @extend %padding-wrapper;
-
     width: 100%;
     overflow: hidden;
 

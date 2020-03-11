@@ -60,6 +60,11 @@ class WhoIAmComponent extends React.Component {
             displayName
         } = WhoIAmComponent;
 
+        const componentClassNames = classNames(
+            displayName,
+            'padding-wrapper'
+        );
+
         const decoratorSlashClassNames = classNames(
             `${displayName}__decorator-slash`,
             {
@@ -76,7 +81,7 @@ class WhoIAmComponent extends React.Component {
 
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
-                <div className={displayName}>
+                <div className={componentClassNames}>
                     <Grid className={`${displayName}__content-block`}>
                         <GridItem
                             breakpoints={{

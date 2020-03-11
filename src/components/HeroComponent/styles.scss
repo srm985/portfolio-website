@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '../../styles/constants';
 
 .HeroComponent {
     position: relative;
@@ -55,8 +55,6 @@
     }
 
     &__content {
-        @extend %padding-wrapper;
-
         z-index: 2;
 
         width: 100%;

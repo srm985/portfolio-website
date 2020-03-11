@@ -211,6 +211,35 @@ collections:
         fields:
           - { <<: *default_seo }
           - { <<: *default_image }
+          - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
+          - { label: 'Contact Card Title', name: 'contactCardTitle', widget: 'string' }
+          - label: 'Contact Form Fields'
+            label_singular: 'Contact Form Field'
+            name: 'contactFormFields'
+            widget: 'list'
+            fields:
+              - { label: 'Field Label', name: 'fieldLabel', widget: 'string' }
+              - { label: 'Field Name', name: 'fieldName', widget: 'string' }
+              - label: 'Field Type'
+                name: 'fieldType'
+                widget: 'list'
+                options: [
+                  'date'
+                  'datetime-local'
+                  'email'
+                  'hidden'
+                  'month'
+                  'number'
+                  'password'
+                  'range'
+                  'search'
+                  'tel'
+                  'text'
+                  'textarea'
+                  'time'
+                  'url'
+                  'week'
+                ]
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'

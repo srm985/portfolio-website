@@ -81,6 +81,11 @@ class ProjectHeaderComponent extends React.Component {
             displayName
         } = ProjectHeaderComponent;
 
+        const componentClassNames = classNames(
+            displayName,
+            'padding-wrapper'
+        );
+
         const contentClassNames = classNames(
             `${displayName}__content`,
             {
@@ -89,7 +94,7 @@ class ProjectHeaderComponent extends React.Component {
         );
 
         return (
-            <header className={displayName}>
+            <header className={componentClassNames}>
                 <div className={`${displayName}__background`}>
                     <div className={`${displayName}__section-half`} />
                     <Image

@@ -22,7 +22,9 @@ import {
 const ContactPageTemplate = (props) => {
     const {
         content: {
-            heroImageBlock
+            contactCardTitle = '',
+            heroImageBlock,
+            heroTitle = ''
         }
     } = props;
 
@@ -46,7 +48,7 @@ const ContactPageTemplate = (props) => {
                 >
                     <Title
                         className={'mb--4'}
-                        heading={'Want to do something great together?'}
+                        heading={heroTitle}
                         headingSize={1}
                     />
                 </GridItem>
@@ -63,7 +65,11 @@ const ContactPageTemplate = (props) => {
                     }}
                 >
                     <Card>
-                        <h2>{'Send me a message!'}</h2>
+                        <Title
+                            className={'color-blue'}
+                            heading={contactCardTitle}
+                            headingSize={2}
+                        />
                         <Form name={'contact-form'}>
                             <Input
                                 className={'mb--2'}
@@ -110,7 +116,9 @@ ContactPageTemplate.displayName = 'ContactPageTemplate';
 
 ContactPageTemplate.propTypes = {
     content: PropTypes.shape({
-        heroImageBlock: PropTypes.shape({})
+        contactCardTitle: PropTypes.string,
+        heroImageBlock: PropTypes.shape({}),
+        heroTitle: PropTypes.string
     })
 };
 
