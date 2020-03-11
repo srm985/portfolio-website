@@ -19,6 +19,8 @@ const ContactPageTemplate = (props) => {
     const {
         content: {
             contactCardTitle = '',
+            formButtonLabel = '',
+            formName = '',
             heroImageBlock,
             heroTitle = ''
         }
@@ -94,7 +96,7 @@ const ContactPageTemplate = (props) => {
                             heading={contactCardTitle}
                             headingSize={2}
                         />
-                        <Form name={'contact-form'}>
+                        <Form name={formName}>
                             {
                                 renderFormFields()
                             }
@@ -103,7 +105,7 @@ const ContactPageTemplate = (props) => {
                                 isAlignedRight
                                 isAnimated
                                 isLightBackgroundColorProfile
-                                label={'Submit'}
+                                label={formButtonLabel}
                                 styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                 type={BUTTON_TYPE_SUBMIT}
                             />
@@ -126,6 +128,8 @@ ContactPageTemplate.propTypes = {
             fieldRequired: PropTypes.bool,
             fieldType: PropTypes.string
         })),
+        formButtonLabel: PropTypes.string,
+        formName: PropTypes.string,
         heroImageBlock: PropTypes.shape({}),
         heroTitle: PropTypes.string
     })
