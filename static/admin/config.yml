@@ -213,6 +213,7 @@ collections:
           - { <<: *default_image }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
           - { label: 'Contact Card Title', name: 'contactCardTitle', widget: 'string' }
+          - { label: 'Form Name', name: 'formName', widget: 'string' }
           - label: 'Contact Form Fields'
             label_singular: 'Contact Form Field'
             name: 'contactFormFields'
@@ -241,6 +242,7 @@ collections:
                   'url',
                   'week'
                 ]
+          - { label: 'Form Button Label', name: 'formButtonLabel', widget: 'string' }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'

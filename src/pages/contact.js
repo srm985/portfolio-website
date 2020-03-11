@@ -35,6 +35,13 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
+                            contactCardTitle
+                            contactFormFields {
+                                fieldLabel
+                                fieldName
+                                fieldRequired
+                                fieldType
+                            }
                             pageSEO {
                                 pageAuthor
                                 pageDescription

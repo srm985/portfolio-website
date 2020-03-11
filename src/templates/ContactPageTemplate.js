@@ -14,10 +14,6 @@ import {
     BUTTON_STYLE_TYPE_NEUMORPHIC,
     BUTTON_TYPE_SUBMIT
 } from '../components/ButtonComponent/config';
-import {
-    INPUT_TYPE_EMAIL,
-    INPUT_TYPE_TEXTAREA
-} from '../components/InputComponent/config';
 
 const ContactPageTemplate = (props) => {
     const {
@@ -31,6 +27,34 @@ const ContactPageTemplate = (props) => {
     const {
         displayName
     } = ContactPageTemplate;
+
+    const renderFormFields = () => {
+        const {
+            content: {
+                contactFormFields = []
+            }
+        } = props;
+
+        return contactFormFields.map((formField) => {
+            const {
+                fieldLabel,
+                fieldName,
+                fieldRequired,
+                fieldType
+            } = formField;
+
+            return (
+                <Input
+                    className={'mb--2'}
+                    isRequired={fieldRequired}
+                    key={fieldName}
+                    label={fieldLabel}
+                    name={fieldName}
+                    type={fieldType}
+                />
+            );
+        });
+    };
 
     return (
         <Hero
@@ -71,32 +95,11 @@ const ContactPageTemplate = (props) => {
                             headingSize={2}
                         />
                         <Form name={'contact-form'}>
-                            <Input
-                                className={'mb--2'}
-                                isRequired
-                                label={'Name'}
-                                name={'name'}
-                            />
-                            <Input
-                                className={'mb--2'}
-                                isRequired
-                                label={'Email'}
-                                name={'email'}
-                                type={INPUT_TYPE_EMAIL}
-                            />
-                            <Input
-                                className={'mb--2'}
-                                label={'Company'}
-                                name={'company'}
-                            />
-                            <Input
-                                className={'mb--6'}
-                                isRequired
-                                label={'Message'}
-                                name={'message'}
-                                type={INPUT_TYPE_TEXTAREA}
-                            />
+                            {
+                                renderFormFields()
+                            }
                             <Button
+                                className={'mt--4'}
                                 isAlignedRight
                                 isAnimated
                                 isLightBackgroundColorProfile
@@ -117,6 +120,12 @@ ContactPageTemplate.displayName = 'ContactPageTemplate';
 ContactPageTemplate.propTypes = {
     content: PropTypes.shape({
         contactCardTitle: PropTypes.string,
+        contactFormFields: PropTypes.arrayOf(PropTypes.shape({
+            fieldLabel: PropTypes.string,
+            fieldName: PropTypes.string,
+            fieldRequired: PropTypes.bool,
+            fieldType: PropTypes.string
+        })),
         heroImageBlock: PropTypes.shape({}),
         heroTitle: PropTypes.string
     })
