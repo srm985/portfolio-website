@@ -10,5 +10,23 @@ heroImageBlock:
   imageOpacity: 20
   imageSource: /assets/chicago.png
   imageTitle: ''
+heroTitle: Want to do something great together?
+contactCardTitle: Send me a message!
+contactFormFields:
+  - fieldLabel: Name
+    fieldName: name
+    fieldRequired: true
+    fieldType: text
+  - fieldLabel: Email
+    fieldName: email
+    fieldRequired: true
+    fieldType: email
+  - fieldLabel: Company
+    fieldName: company
+    fieldType: text
+    fieldRequired: false
+  - fieldLabel: Message
+    fieldName: message
+    fieldRequired: true
+    fieldType: textarea
 ---
-
