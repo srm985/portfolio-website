@@ -223,7 +223,7 @@ collections:
               - { label: 'Field Required', name: 'fieldRequired', widget: 'boolean' }
               - label: 'Field Type'
                 name: 'fieldType'
-                widget: 'list'
+                widget: 'select'
                 options: [
                   'date',
                   'datetime-local',
