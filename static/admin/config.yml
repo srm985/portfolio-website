@@ -224,20 +224,20 @@ collections:
                 name: 'fieldType'
                 widget: 'list'
                 options: [
-                  'date'
-                  'datetime-local'
-                  'email'
-                  'hidden'
-                  'month'
-                  'number'
-                  'password'
-                  'range'
-                  'search'
-                  'tel'
-                  'text'
-                  'textarea'
-                  'time'
-                  'url'
+                  'date',
+                  'datetime-local',
+                  'email',
+                  'hidden',
+                  'month',
+                  'number',
+                  'password',
+                  'range',
+                  'search',
+                  'tel',
+                  'text',
+                  'textarea',
+                  'time',
+                  'url',
                   'week'
                 ]
       - label: '404 Page'
