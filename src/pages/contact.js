@@ -42,6 +42,8 @@ export const query = graphql`
                                 fieldRequired
                                 fieldType
                             }
+                            formButtonLabel
+                            formName
                             pageSEO {
                                 pageAuthor
                                 pageDescription
