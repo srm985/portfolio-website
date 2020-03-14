@@ -33,7 +33,7 @@ aboutMeSectionBody: >-
   aliqua aliqua aliquip. Lorem nulla laboris aute culpa qui irure.
 aboutMeSectionImageBlock:
   imageAlt: a picture of the author in a suit
-  imageSource: /assets/portrait-transparent.png
+  imageSource: /assets/portrait-gradient.png
 skillsSectionTitle: Do I have the skills you need?
 skillsSearchLabel: Find a skill!
 skillsSearchName: skillSearchbar
@@ -141,4 +141,3 @@ skillsSectionList:
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
 ---
-
