@@ -1,6 +1,10 @@
 @import '../../styles/constants';
 
 $decorator-slash-height: #{$planck-length * 4};
+$graphic-height: $planck-length * 40;
+$line-thickness: $planck-length * 3;
+$offset: $planck-length * 3;
+$shadow-width: #{$planck-length / 2};
 
 .WhoIAmComponent {
     position: relative;
@@ -12,101 +16,87 @@ $decorator-slash-height: #{$planck-length * 4};
         z-index: 1;
     }
 
-    &__body {
-        margin-bottom: #{$planck-length * 25};
-
-        @media only screen and (min-width: $breakpoint-medium) {
-            margin-bottom: 0;
-        }
-    }
-
     &__graphic-block {
-        position: absolute;
-        right: 0;
+        right: 100px;
         bottom: 0;
 
-        width: 60%;
-        height: #{$planck-length * 50};
+        height: $graphic-height;
+
+        transform: translateY(#{$planck-length * 7});
     }
 
-    &__decorator-slash-block {
+    &__bounding-line {
         position: absolute;
-        top: #{$planck-length * 15};
-        left: -#{$planck-length * 27};
 
-        width: 1000px;
+        height: $line-thickness;
 
-        transform: rotate(-35deg);
+        background-color: $color-white-arctic;
+        transform-origin: left;
 
-        @media only screen and (min-width: $breakpoint-medium) {
-            top: #{$planck-length * 18};
-            left: -#{$planck-length * 15};
+        animation-duration: $transition-very-slow;
+        animation-play-state: paused;
+        animation-fill-mode: forwards;
+
+        @for $i from 0 through 3 {
+            &:nth-of-type(#{$i + 1}) {
+                animation-delay: #{$transition-very-slow * $i};
+            }
         }
-    }
-
-    &__decorator-slash {
-        width: 100%;
-        height: $decorator-slash-height;
-
-        transition: transform $transition-timing-function-default 0.3s;
 
         &:nth-of-type(1) {
-            background-color: $color-blue;
-            transform: translateX(1000px);
+            right: 0;
+            bottom: $offset;
+            z-index: 5;
+
+            box-shadow: 0 $shadow-width $shadow-width rgba($color-black, 0.8), 0 -#{$shadow-width} $shadow-width $color-white;
+
+            animation-name: grow-line-long;
         }
 
         &:nth-of-type(2) {
-            background-color: $color-green;
-            transform: translateX(-1000px);
+            bottom: -($line-thickness / 2) + $offset;
+            left: $line-thickness / 2;
+            z-index: 3;
 
-            transition-delay: 0.05s;
+            box-shadow: 0 $shadow-width $shadow-width rgba($color-black, 0.8), 0 -#{$shadow-width} $shadow-width $color-white;
+            transform: rotate(-90deg);
+
+            animation-name: grow-line-short;
         }
 
         &:nth-of-type(3) {
-            background-color: $color-orange;
-            transform: translateX(1000px);
+            top: -$offset;
+            left: 0;
+            z-index: 2;
 
-            transition-delay: 0.1s;
+            box-shadow: 0 $shadow-width $shadow-width rgba($color-black, 0.8), 0 -#{$shadow-width} $shadow-width $color-white;
+
+            animation-name: grow-line-long;
         }
 
         &:nth-of-type(4) {
-            background-color: $color-red;
-            transform: translateX(-1000px);
+            bottom: calc(100% - #{($line-thickness / 2) - $offset});
+            left: calc(100% - #{$line-thickness / 2});
+            z-index: 1;
 
-            transition-delay: 0.15s;
+            box-shadow: 0 $shadow-width $shadow-width $color-white, 0 -#{$shadow-width} $shadow-width rgba($color-black, 0.8);
+            transform: rotate(90deg);
+
+            animation-name: grow-line-short;
         }
 
         &--visible {
-            &:nth-of-type(1) {
-                background-color: $color-blue;
-                transform: translateX(0);
-            }
-
-            &:nth-of-type(2) {
-                background-color: $color-green;
-                transform: translateX(0);
-            }
-
-            &:nth-of-type(3) {
-                background-color: $color-orange;
-                transform: translateX(0);
-            }
-
-            &:nth-of-type(4) {
-                background-color: $color-red;
-                transform: translateX(0);
-            }
+            animation-play-state: running;
         }
     }
 
     &__image {
         position: absolute !important;
-        right: 0;
+        right: -#{$planck-length * 12};
         bottom: 0;
+        z-index: 4;
 
-        width: 50%;
-        min-width: #{$planck-length * 30};
-        max-width: #{$planck-length * 50};
+        width: 425px;
 
         transform: translateY(500px);
         opacity: 0;
@@ -117,5 +107,24 @@ $decorator-slash-height: #{$planck-length * 4};
             transform: translateY(0);
             opacity: 1;
         }
+    }
+}
+
+@keyframes grow-line-long {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+@keyframes grow-line-short {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: $graphic-height;
     }
 }

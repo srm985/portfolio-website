@@ -65,10 +65,10 @@ class WhoIAmComponent extends React.Component {
             'padding-wrapper'
         );
 
-        const decoratorSlashClassNames = classNames(
-            `${displayName}__decorator-slash`,
+        const boundingLineClassNames = classNames(
+            `${displayName}__bounding-line`,
             {
-                [`${displayName}__decorator-slash--visible`]: isVisible
+                [`${displayName}__bounding-line--visible`]: isVisible
             }
         );
 
@@ -91,7 +91,7 @@ class WhoIAmComponent extends React.Component {
                                 },
                                 medium: {
                                     start: 1,
-                                    stop: 8
+                                    stop: 13
                                 }
                             }}
                         >
@@ -108,20 +108,31 @@ class WhoIAmComponent extends React.Component {
                                 text={aboutMeSectionBody}
                             />
                         </GridItem>
+                        <GridItem
+                            breakpoints={{
+                                large: {
+                                    start: 7,
+                                    stop: 13
+                                },
+                                medium: {
+                                    start: 5,
+                                    stop: 13
+                                }
+                            }}
+                        >
+                            <div className={`${displayName}__graphic-block`}>
+                                <div className={boundingLineClassNames} />
+                                <div className={boundingLineClassNames} />
+                                <div className={boundingLineClassNames} />
+                                <div className={boundingLineClassNames} />
+                                <Image
+                                    alt={imageAlt}
+                                    className={imageClassNames}
+                                    fluid={fluid}
+                                />
+                            </div>
+                        </GridItem>
                     </Grid>
-                    <div className={`${displayName}__graphic-block`}>
-                        <div className={`${displayName}__decorator-slash-block`}>
-                            <div className={decoratorSlashClassNames} />
-                            <div className={decoratorSlashClassNames} />
-                            <div className={decoratorSlashClassNames} />
-                            <div className={decoratorSlashClassNames} />
-                        </div>
-                        <Image
-                            alt={imageAlt}
-                            className={imageClassNames}
-                            fluid={fluid}
-                        />
-                    </div>
                 </div>
             </VisibilityChecker>
         );

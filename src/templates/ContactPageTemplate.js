@@ -82,11 +82,11 @@ const ContactPageTemplate = (props) => {
                     breakpoints={{
                         large: {
                             start: 7,
-                            stop: 12
+                            stop: 13
                         },
                         medium: {
                             start: 5,
-                            stop: 12
+                            stop: 13
                         }
                     }}
                 >
