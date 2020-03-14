@@ -95,18 +95,28 @@ $shadow-width: #{$planck-length / 2};
 
         width: #{$planck-length * 40};
 
-        transform: translateY(#{$planck-length * 60});
-        opacity: 0;
-
-        transition: all $transition-timing-function-default 0.5s;
+        animation-name: slide-in;
+        animation-duration: $transition-very-slow;
+        animation-play-state: paused;
+        animation-timing-function: $transition-timing-function-default;
 
         &--visible {
-            transform: translateY(0);
-            opacity: 1;
+            animation-play-state: running;
         }
     }
 }
 
+@keyframes slide-in {
+    from {
+        transform: translateY(#{$planck-length * 60});
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @keyframes grow-line-long {
     from {
         width: 0;

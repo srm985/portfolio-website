@@ -129,6 +129,7 @@ class SkillsBlockComponent extends React.Component {
                 <Input
                     className={'mb--7'}
                     handleChange={this.handleSkillSearchKeywordChange}
+                    isDarkTheme
                     label={skillsSearchLabel}
                     name={skillsSearchName}
                     placeholder={skillsSearchPlaceholder}

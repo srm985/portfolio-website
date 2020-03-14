@@ -16,6 +16,7 @@ const InputComponent = (props) => {
         className,
         defaultValue,
         handleChange,
+        isDarkTheme,
         isRequired,
         label,
         name,
@@ -42,9 +43,21 @@ const InputComponent = (props) => {
         required: isRequired
     };
 
+    const inputClassNames = classNames(
+        `${displayName}__input`,
+        {
+            [`${displayName}__input--dark`]: isDarkTheme,
+            [`${displayName}__input--light`]: !isDarkTheme
+        }
+    );
+
     const textareaClassNames = classNames(
         `${displayName}__input`,
-        `${displayName}__input--textarea`
+        `${displayName}__input--textarea`,
+        {
+            [`${displayName}__input--dark`]: isDarkTheme,
+            [`${displayName}__input--light`]: !isDarkTheme
+        }
     );
 
     return (
@@ -77,7 +90,7 @@ const InputComponent = (props) => {
                 ) : (
                     <input
                         {...defaultFieldAttributes}
-                        className={`${displayName}__input`}
+                        className={inputClassNames}
                         type={type}
                     />
                 )
@@ -95,6 +108,7 @@ InputComponent.propTypes = {
         PropTypes.string
     ]),
     handleChange: PropTypes.func,
+    isDarkTheme: PropTypes.bool,
     isRequired: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string.isRequired,
@@ -106,6 +120,7 @@ InputComponent.defaultProps = {
     className: '',
     defaultValue: '',
     handleChange: () => { },
+    isDarkTheme: false,
     isRequired: false,
     label: '',
     placeholder: '',
