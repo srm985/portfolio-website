@@ -82,7 +82,7 @@ class WhoIAmComponent extends React.Component {
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
-                    <Grid className={`${displayName}__content-block`}>
+                    <Grid>
                         <GridItem
                             breakpoints={{
                                 large: {
@@ -94,6 +94,7 @@ class WhoIAmComponent extends React.Component {
                                     stop: 13
                                 }
                             }}
+                            className={`${displayName}__content-block`}
                         >
                             <Title
                                 className={'mb--2'}
@@ -103,7 +104,7 @@ class WhoIAmComponent extends React.Component {
                                 isAnimated
                             />
                             <TextBlock
-                                className={`${displayName}__body`}
+                                className={'mb--4'}
                                 isAnimated
                                 text={aboutMeSectionBody}
                             />

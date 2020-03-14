@@ -17,9 +17,6 @@ $shadow-width: #{$planck-length / 2};
     }
 
     &__graphic-block {
-        right: 100px;
-        bottom: 0;
-
         height: $graphic-height;
 
         transform: translateY(#{$planck-length * 7});
@@ -92,13 +89,13 @@ $shadow-width: #{$planck-length / 2};
 
     &__image {
         position: absolute !important;
-        right: -#{$planck-length * 12};
+        right: -#{$planck-length * 5};
         bottom: 0;
         z-index: 4;
 
-        width: 425px;
+        width: #{$planck-length * 40};
 
-        transform: translateY(500px);
+        transform: translateY(#{$planck-length * 60});
         opacity: 0;
 
         transition: all $transition-timing-function-default 0.5s;
