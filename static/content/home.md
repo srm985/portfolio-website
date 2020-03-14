@@ -7,7 +7,7 @@ pageSEO:
 heroImageBlock:
   imageAlt: a placeholder hero image
   imageOpacity: 20
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/roadway.svg
 heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroButtonsHomePage:
@@ -141,3 +141,4 @@ skillsSectionList:
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
 ---
+
