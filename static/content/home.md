@@ -7,7 +7,7 @@ pageSEO:
 heroImageBlock:
   imageAlt: a placeholder hero image
   imageOpacity: 20
-  imageSource: /assets/roadway.svg
+  imageSource: /assets/roadway.png
 heroTitle: HELLO! MY NAME IS SEAN MCQUAY
 heroSubtitle: I'm passionate about helping teams develop and sustain large-scale projects.
 heroButtonsHomePage:
