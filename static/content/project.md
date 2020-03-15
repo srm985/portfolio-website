@@ -1,6 +1,6 @@
 ---
-sourceCodeCTA: SOURCE CODE
+sourceCodeCTA: CODE
 demoCTA: DEMO
+downloadContentCTA: CONTENT
 returnButtonIcon: /assets/return-icon.svg
 ---
-
