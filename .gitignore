@@ -1,4 +1,5 @@
 /.cache/
+/.netlify/
 /node_modules/
 /public/
 /storybook-dist/
