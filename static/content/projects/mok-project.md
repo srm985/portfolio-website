@@ -58,5 +58,60 @@ projectSectionList:
       imageSource: /assets/keyboard.jpg
       imageTitle: ''
     projectSectionTitle: Why Build It?
+  - projectSectionBody: >-
+      Usage is quite straightforward. This project exposes a simple jQuery
+      plugin which can either be directly imported into the project or served
+      from a script tag pointed at the CDN,
+      [jsDelivr](https://www.jsdelivr.com/package/npm/mok-project). When
+      initializing the project, users specify their desired languages. If
+      they’re not found locally, the plugin simply fetches the appropriate
+      version-controlled language from the CDN.
+
+
+      ```html
+
+      <script
+      src="https://cdn.jsdelivr.net/npm/mok-project@latest/dist/main.js"></script>
+
+      <link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/mok-project@latest/dist/styles.css">
+
+
+      <script type="text/javascript">
+          $(document).ready(function() {
+              $(document).keyboard({
+                  language: 'us',
+                  keyboardPosition: 'bottom'
+              });
+          });
+      </script>
+
+      ```
+    projectSectionImageBlock:
+      imageAlt: a picture of a keyboard on a wooden table
+      imageOpacity: 100
+      imageSource: /assets/keyboard.jpg
+      imageTitle: ''
+    projectSectionTitle: How's It Work?
+  - projectSectionBody: >-
+      How do you generate 99 keyboard layouts? Fortunately, I was lucky. I
+      discovered I had the ability to export language flat files from a utility
+      called Microsoft Keyboard Layout Creator. From there, I started the
+      arduous process of coding the “processing engine”. This engine consisted
+      of a complex regular expression along with all rules required in written
+      languages. 
+
+
+      At first, the concept seems simple – or at least it did to me as an
+      English speaker. The user touches a key and we write that to the focused
+      field. Simple enough… I quickly discovered previously-unknown words such
+      as *ligature* and *deadkeys*. These required the plugin to watch for, and
+      interpret, combinations of keys such as ``a + ` = à`` or `a + e = æ`.
+    projectSectionImageBlock:
+      imageAlt: a picture of a keyboard on a wooden table
+      imageOpacity: 100
+      imageSource: /assets/keyboard.jpg
+      imageTitle: ''
+    projectSectionTitle: How's It Built?
 ---
 
