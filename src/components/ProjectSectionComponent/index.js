@@ -46,26 +46,18 @@ class ProjectSectionComponent extends React.Component {
                 displayName
             } = ProjectSectionComponent;
 
+            const sectionImageClassNames = classNames(
+                `${displayName}__section-image`,
+                'mb--6'
+            );
+
+            const sectionBodyClassNames = classNames(
+                `${displayName}__section-body`,
+                'mb--8'
+            );
+
             return (
                 <React.Fragment key={projectSectionTitle}>
-                    <GridItem
-                        breakpoints={{
-                            large: {
-                                start: 2,
-                                stop: 12
-                            },
-                            medium: {
-                                start: 2,
-                                stop: 12
-                            }
-                        }}
-                    >
-                        <Image
-                            alt={imageAlt}
-                            className={`${displayName}__section-image`}
-                            fluid={fluid}
-                        />
-                    </GridItem>
                     <GridItem
                         breakpoints={{
                             large: {
@@ -85,8 +77,13 @@ class ProjectSectionComponent extends React.Component {
                             isAccented
                             isAnimated
                         />
+                        <Image
+                            alt={imageAlt}
+                            className={sectionImageClassNames}
+                            fluid={fluid}
+                        />
                         <TextBlock
-                            className={`${displayName}__section-body`}
+                            className={sectionBodyClassNames}
                             isAnimated
                             text={projectSectionBody}
                         />
