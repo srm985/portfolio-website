@@ -53,9 +53,9 @@ projectSectionList:
       The concept was simple – somehow generate a list of every keyboard layout
       and write some logic to parse and display it.
     projectSectionImageBlock:
-      imageAlt: a picture of a keyboard on a wooden table
+      imageAlt: a screenshot of the rendered keyboard
       imageOpacity: 100
-      imageSource: /assets/keyboard.jpg
+      imageSource: /assets/keyboard-screenshot.png
       imageTitle: ''
     projectSectionTitle: Why Build It?
   - projectSectionBody: >-
@@ -234,4 +234,3 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: Is It Used?
 ---
-
