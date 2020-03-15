@@ -113,5 +113,125 @@ projectSectionList:
       imageSource: /assets/keyboard.jpg
       imageTitle: ''
     projectSectionTitle: How's It Built?
+  - projectSectionBody: |-
+
+
+      * Albanian
+      * Arabic
+      * Azeri-Cyrillic
+      * Azeri-Latin
+      * Bashkir
+      * Belarusian
+      * Belgian
+      * Bengali
+      * Bosnian
+      * Bulgarian
+      * Croatian
+      * Czech-Programmer
+      * Czech
+      * Danish
+      * Dutch
+      * Estonian
+      * Faeroese
+      * Finnish-Sami
+      * Finnish
+      * French
+      * Gaelic
+      * Georgian
+      * German
+      * Greek
+      * Greenlandic
+      * Gujarati
+      * Hausa
+      * Hebrew
+      * Hindi
+      * Hungarian
+      * Icelandic
+      * Igbo
+      * Irish
+      * Italian
+      * Japanese-Latin
+      * Kannada
+      * Kazakh
+      * Khmer
+      * Korean-Latin
+      * Kyrgyz
+      * Languages
+      * Lao
+      * Latvian
+      * Lithuanian
+      * Macedonian
+      * Malayalam
+      * Maltese
+      * Maori
+      * Marathi
+      * Mongolian
+      * Nepali
+      * Norwegian
+      * Oriya
+      * Pashto
+      * Persian
+      * Polish
+      * Portguese-Brazil
+      * Portguese
+      * Punjabi
+      * Romanian
+      * Russian
+      * Serbian
+      * Sesotho-Sa-Leboa
+      * Setswana
+      * Sinhala
+      * Slovak
+      * Slovenian
+      * Sorbian
+      * Spanish
+      * Swedish
+      * Swiss-French
+      * Swiss-German
+      * Syriac
+      * Tajik
+      * Tamil
+      * Tatar
+      * Telugu
+      * Thai-Kedmanee
+      * Thai-Pattachote
+      * Tibetan
+      * Turkish-F
+      * Turkish-Q
+      * Turkmen
+      * Uk
+      * Ukranian
+      * Urdu
+      * US-Dvorak
+      * US
+      * Uyghur
+      * Uzbek
+      * Vietnamese
+      * Wolof
+      * Yakut
+      * Yoruba
+    projectSectionImageBlock:
+      imageAlt: a picture of a keyboard on a wooden table
+      imageOpacity: 100
+      imageSource: /assets/keyboard.jpg
+      imageTitle: ''
+    projectSectionTitle: Language Support
+  - projectSectionBody: >-
+      [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
+
+
+      Despite jQuery losing popularity over the years, this keyboard has seen
+      incredible growth! This keyboard has presented me with the fantastic
+      opportunity of connecting with developers around the world. I’ve since
+      coordinated with developers on every inhabited continent. I’ve fielded
+      numerous enhancement requests and bugs. As I view the usage statistics,
+      I’ve been so thrilled to see its usage with languages and layouts I never
+      even knew existed!
+    projectSectionImageBlock:
+      imageAlt: a picture of a keyboard on a wooden table
+      imageOpacity: 100
+      imageSource: /assets/keyboard.jpg
+      imageTitle: ''
+    projectSectionTitle: Is It Used?
 ---
 
