@@ -1,7 +1,7 @@
 @import './constants';
 
 // Generate margin and padding classes.
-@for $i from 1 through 8 {
+@for $i from 1 through 10 {
     .mt--#{$i} {
         margin-top: #{$planck-length * $i};
     }

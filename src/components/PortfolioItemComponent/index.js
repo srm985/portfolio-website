@@ -77,6 +77,7 @@ class PortfolioItemComponent extends React.Component {
 
         const componentClassNames = classNames(
             displayName,
+            'mb--10',
             {
                 [`${displayName}--visible`]: isVisible
             }
