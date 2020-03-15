@@ -50,7 +50,7 @@ projectSectionList:
   - projectSectionImageBlock:
       imageTitle: ''
       imageOpacity: 100
-      imageSource: /assets/axure-redline-tool.gif
+      imageSource: /assets/gatsby-astronaut.png
       imageAlt: a demo of the user implementing the plugin
     projectSectionTitle: How's It Work?
     projectSectionBody: >-
