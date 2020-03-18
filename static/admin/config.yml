@@ -212,7 +212,11 @@ collections:
           - { <<: *default_seo }
           - { <<: *default_image }
           - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
-          - { label: 'Contact Card Title', name: 'contactCardTitle', widget: 'string' }
+          - {
+              label: 'Contact Card Title',
+              name: 'contactCardTitle',
+              widget: 'string',
+            }
           - { label: 'Form Name', name: 'formName', widget: 'string' }
           - label: 'Contact Form Fields'
             label_singular: 'Contact Form Field'
@@ -221,28 +225,37 @@ collections:
             fields:
               - { label: 'Field Label', name: 'fieldLabel', widget: 'string' }
               - { label: 'Field Name', name: 'fieldName', widget: 'string' }
-              - { label: 'Field Required', name: 'fieldRequired', widget: 'boolean' }
+              - {
+                  label: 'Field Required',
+                  name: 'fieldRequired',
+                  widget: 'boolean',
+                }
               - label: 'Field Type'
                 name: 'fieldType'
                 widget: 'select'
-                options: [
-                  'date',
-                  'datetime-local',
-                  'email',
-                  'hidden',
-                  'month',
-                  'number',
-                  'password',
-                  'range',
-                  'search',
-                  'tel',
-                  'text',
-                  'textarea',
-                  'time',
-                  'url',
-                  'week'
-                ]
-          - { label: 'Form Button Label', name: 'formButtonLabel', widget: 'string' }
+                options:
+                  [
+                    'date',
+                    'datetime-local',
+                    'email',
+                    'hidden',
+                    'month',
+                    'number',
+                    'password',
+                    'range',
+                    'search',
+                    'tel',
+                    'text',
+                    'textarea',
+                    'time',
+                    'url',
+                    'week',
+                  ]
+          - {
+              label: 'Form Button Label',
+              name: 'formButtonLabel',
+              widget: 'string',
+            }
       - label: '404 Page'
         name: '404'
         file: 'static/content/404.md'
@@ -331,7 +344,7 @@ collections:
       - {
           name: 'projectDescription',
           label: 'Project Description',
-          widget: 'text',
+          widget: 'markdown',
         }
       - label: 'Project Skills'
         label_singular: 'Project Skill'
