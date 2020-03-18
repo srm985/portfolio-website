@@ -44,6 +44,8 @@ skillsSectionList:
     skillsList:
       - icon: /assets/icon-axure.svg
         label: Axure
+      - icon: /assets/icon-codepen.svg
+        label: CodePen
       - icon: /assets/icon-illustrator.svg
         label: Illustrator
       - icon: /assets/icon-invision.svg
@@ -62,8 +64,12 @@ skillsSectionList:
         label: Angular
       - icon: /assets/icon-apollo.svg
         label: Apollo
+      - icon: /assets/icon-azure.svg
+        label: Azure DevOps
       - icon: /assets/icon-babel.svg
         label: Babel
+      - icon: /assets/icon-bitbucket.svg
+        label: BitBucket
       - icon: /assets/icon-css.svg
         label: CSS
       - icon: /assets/icon-eslint.svg
@@ -76,8 +82,14 @@ skillsSectionList:
         label: Gigya
       - icon: /assets/icon-git.svg
         label: Git
+      - icon: /assets/icon-github.svg
+        label: GitHub
+      - icon: /assets/icon-gitlab.svg
+        label: GitLab
       - icon: /assets/icon-graphql.svg
         label: GraphQL
+      - icon: /assets/icon-heroku.svg
+        label: Heroku
       - icon: /assets/icon-html.svg
         label: HTML
       - icon: /assets/icon-ionic.svg
@@ -88,6 +100,8 @@ skillsSectionList:
         label: jQuery
       - icon: /assets/icon-nodejs.svg
         label: NodeJS
+      - icon: /assets/icon-npm.svg
+        label: npm
       - icon: /assets/icon-react.svg
         label: React
       - icon: /assets/icon-redux.svg
@@ -141,4 +155,3 @@ skillsSectionList:
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
 ---
-

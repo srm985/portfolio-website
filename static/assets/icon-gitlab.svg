@@ -1,0 +1,26 @@
+<svg height="50" 
+	width="50" 
+	viewBox="0 0 50 50" 
+	xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+	.st0{fill:#E24329;}
+	.st1{fill:#FC6D26;}
+	.st2{fill:#FCA326;}
+	</style>
+	<g>
+		<path class="st0" 
+			d="M25,48l9.2-28.3H15.8L25,48L25,48z" />
+		<path class="st1" 
+			d="M25,48l-9.2-28.3H2.9L25,48z" />
+		<path class="st2" 
+			d="M2.9,19.7l-2.8,8.6c-0.3,0.8,0,1.6,0.7,2.1L25,48L2.9,19.7L2.9,19.7z" />
+		<path class="st0" 
+			d="M2.9,19.7h12.9L10.2,2.6c-0.3-0.9-1.5-0.9-1.8,0L2.9,19.7L2.9,19.7z" />
+		<path class="st1" 
+			d="M25,48l9.2-28.3h12.9L25,48L25,48z" />
+		<path class="st2" 
+			d="M47.1,19.7l2.8,8.6c0.3,0.8,0,1.6-0.7,2.1L25,48L47.1,19.7L47.1,19.7z" />
+		<path class="st0" 
+			d="M47.1,19.7H34.2l5.5-17.1c0.3-0.9,1.5-0.9,1.8,0L47.1,19.7L47.1,19.7z" />
+	</g>
+</svg>
