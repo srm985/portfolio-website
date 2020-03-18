@@ -100,8 +100,6 @@ skillsSectionList:
         label: jQuery
       - icon: /assets/icon-nodejs.svg
         label: NodeJS
-      - icon: /assets/icon-npm.svg
-        label: npm
       - icon: /assets/icon-react.svg
         label: React
       - icon: /assets/icon-redux.svg
@@ -138,6 +136,8 @@ skillsSectionList:
         label: Grunt
       - icon: /assets/icon-gulp.svg
         label: Gulp
+      - icon: /assets/icon-npm.svg
+        label: npm
       - icon: /assets/icon-webpack.svg
         label: webpack
   - sectionLabel: Testing
@@ -155,3 +155,4 @@ skillsSectionList:
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
 ---
+
