@@ -34,6 +34,10 @@ projectDescription: >-
   this application include terminals, kiosks, and other touch-point devices. I
   hope to provide the community with a valuable resource that only grows better
   with time and your support!
+
+  <br><br>
+
+  [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
 projectSectionList:
   - projectSectionBody: >-
       At one point in my career, I found myself creating multilingual kiosk
@@ -211,9 +215,6 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: Language Support
   - projectSectionBody: >-
-      [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
-
-
       Despite jQuery losing popularity over the years, this keyboard has seen
       incredible growth! This keyboard has presented me with the fantastic
       opportunity of connecting with developers around the world. I’ve since
@@ -228,3 +229,4 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: Is It Used?
 ---
+
