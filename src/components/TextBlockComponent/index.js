@@ -67,6 +67,7 @@ class TextBlockComponent extends React.Component {
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
                     <ReactMarkdown
+                        escapeHtml={false}
                         renderers={renderers}
                         source={text}
                     />
