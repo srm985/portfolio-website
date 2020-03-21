@@ -33,7 +33,6 @@ projectDescription: >-
   within the application itself, this code resides within and is applied to your
   AxShare projects.
 
-  <br/>  <br/>  
 
   [![](https://data.jsdelivr.com/v1/package/npm/axure-redline-tool/badge)](https://www.jsdelivr.com/package/npm/axure-redline-tool)
 projectSkillsList: []
