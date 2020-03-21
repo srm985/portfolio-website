@@ -101,11 +101,25 @@ h6 {
 
 body,
 p {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+%article {
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0;
 
     @media only screen and (min-width: $breakpoint-medium) {
         font-size: 20px;
+    }
+}
+
+.article {
+    @extend %article;
+
+    * {
+        @extend %article;
     }
 }

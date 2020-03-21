@@ -53,6 +53,7 @@ class ProjectSectionComponent extends React.Component {
 
             const sectionBodyClassNames = classNames(
                 `${displayName}__section-body`,
+                'article',
                 'mb--8'
             );
 
