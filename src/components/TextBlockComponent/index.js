@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import CodeBlock from '../CodeBlockComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
@@ -49,6 +50,10 @@ class TextBlockComponent extends React.Component {
             displayName
         } = TextBlockComponent;
 
+        const renderers = {
+            code: CodeBlock
+        };
+
         const componentClassNames = classNames(
             className,
             displayName,
@@ -61,7 +66,10 @@ class TextBlockComponent extends React.Component {
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
-                    <ReactMarkdown source={text} />
+                    <ReactMarkdown
+                        renderers={renderers}
+                        source={text}
+                    />
                 </div>
             </VisibilityChecker>
         );

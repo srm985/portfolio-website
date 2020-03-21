@@ -2,20 +2,42 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from '../../utils/classNames';
+
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+
 import '../../vendor/prismTheme.scss';
 import './styles.scss';
 
 const CodeBlockComponent = (props) => {
     const {
-        children
+        language,
+        value
     } = props;
 
-    const styledCode = Prism.highlight(children, Prism.languages.javascript, 'jsx');
+    const {
+        displayName
+    } = CodeBlockComponent;
+
+    const {
+        languages: {
+            [language]: prismLanguage
+        }
+    } = Prism;
+
+    const styledCode = Prism.highlight(value, prismLanguage, language);
+
+    const componentClassNames = classNames(
+        displayName,
+        'line-numbers'
+    );
+
+    setTimeout(Prism.highlightAll);
 
     return (
-        <pre className={CodeBlockComponent.displayName}>
+        <pre className={componentClassNames}>
             <code
-                className={'language-jsx'}
+                className={`language-${language}`}
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: styledCode
@@ -28,11 +50,13 @@ const CodeBlockComponent = (props) => {
 CodeBlockComponent.displayName = 'CodeBlockComponent';
 
 CodeBlockComponent.propTypes = {
-    children: PropTypes.node
+    language: PropTypes.string,
+    value: PropTypes.string
 };
 
 CodeBlockComponent.defaultProps = {
-    children: ''
+    language: '',
+    value: ''
 };
 
 export default CodeBlockComponent;

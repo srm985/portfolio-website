@@ -4,6 +4,7 @@ import React from 'react';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
+import TextBlock from '../TextBlockComponent';
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
 import Title from '../TitleComponent';
@@ -122,7 +123,10 @@ class ProjectHeaderComponent extends React.Component {
                                 <span>{role}</span>
                                 {this.renderDate(projectDate)}
                             </div>
-                            <p className={'mb--4'}>{projectDescription}</p>
+                            <TextBlock
+                                className={'mb--4'}
+                                text={projectDescription}
+                            />
                             {
                                 projectDemoURL && (
                                     <Button
