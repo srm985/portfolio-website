@@ -32,6 +32,10 @@ projectDescription: >-
   always-up-to-date design specifications. As Axure does not support plugins
   within the application itself, this code resides within and is applied to your
   AxShare projects.
+
+  <br/><br/>
+
+  [![](https://data.jsdelivr.com/v1/package/npm/axure-redline-tool/badge)](https://www.jsdelivr.com/package/npm/axure-redline-tool)
 projectSkillsList: []
 projectSectionList:
   - projectSectionBody: >-
@@ -47,13 +51,7 @@ projectSectionList:
       imageAlt: a section image
       imageSource: /assets/tool-screenshot.jpg
     projectSectionTitle: What's The Need?
-  - projectSectionImageBlock:
-      imageTitle: ''
-      imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: a demo of the user implementing the plugin
-    projectSectionTitle: How's It Work?
-    projectSectionBody: >-
+  - projectSectionBody: >-
       Plugins aren’t something officially supported in Axure, but I found an
       interesting loophole. When using AxShare – Axure’s remote hosting service,
       you are provided the ability to add simple scripts into the document. This
@@ -63,13 +61,13 @@ projectSectionList:
       prototypes, while tweaking the existing UI. This initially was
       accomplished by pasting the entire script into the page, but I migrated to
       the jsDelivr CDN for better availability and tracking.
-  - projectSectionImageBlock:
-      imageTitle: ''
+    projectSectionImageBlock:
+      imageAlt: a demo of the user implementing the plugin
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
-      imageAlt: placeholder
-    projectSectionTitle: How's It Built?
-    projectSectionBody: >-
+      imageTitle: ''
+    projectSectionTitle: How's It Work?
+  - projectSectionBody: >-
       Version 1 was simple. I had no idea if anybody besides me had the desire
       for such a tool. I thought, “If it were needed, it would have been built
       already.” Things are complicated in Axure prototypes. You’ve the ability
@@ -89,19 +87,23 @@ projectSectionList:
       and built new components. This build took many months, and I finally
       released, just one day before Axure formally announced their built-in
       inspection tool.
-  - projectSectionImageBlock:
-      imageTitle: ''
+    projectSectionImageBlock:
+      imageAlt: placeholder
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
-      imageAlt: placeholder
-    projectSectionTitle: Is It Used?
-    projectSectionBody: >-
-      [![](https://data.jsdelivr.com/v1/package/npm/axure-redline-tool/badge)](https://www.jsdelivr.com/package/npm/axure-redline-tool)
-
-
+      imageTitle: ''
+    projectSectionTitle: How's It Built?
+  - projectSectionBody: >-
       My analytics are limited, but the short answer is, yes. I’ve never
       actively promoted the tool, other than posting on forums, but usage has
       grown organically. I received writeups around the world and have chatted
       directly with Axure about the tool. Users provide enhancement requests and
       identify bugs within the tool’s active community.
+    projectSectionImageBlock:
+      imageAlt: placeholder
+      imageOpacity: 100
+      imageSource: /assets/gatsby-astronaut.png
+      imageTitle: ''
+    projectSectionTitle: Is It Used?
 ---
+
