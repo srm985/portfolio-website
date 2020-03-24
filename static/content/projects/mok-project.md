@@ -33,7 +33,7 @@ projectDescription: >-
   willing to make revisions if a better source is found. Typical use cases for
   this application include terminals, kiosks, and other touch-point devices. I
   hope to provide the community with a valuable resource that only grows better
-  with time and your support!  \r
+  with time and your support!  \
 
   [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
 projectSectionList:
