@@ -35,7 +35,7 @@ projectDescription: >-
   hope to provide the community with a valuable resource that only grows better
   with time and your support!
 
-  <br/><br/>
+  <br><br>
 
   [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
 projectSectionList:
