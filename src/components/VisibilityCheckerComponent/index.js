@@ -18,7 +18,7 @@ class VisibilityCheckerComponent extends React.Component {
                     bottom = '0px',
                     left = '0px',
                     right = '0px',
-                    top = '0px'
+                    top = '24px'
                 },
                 threshold
             }
@@ -122,7 +122,7 @@ VisibilityCheckerComponent.defaultProps = {
     handleChange: () => {},
     isDisabled: false,
     margins: {},
-    threshold: 0.5
+    threshold: 0
 };
 
 export default VisibilityCheckerComponent;

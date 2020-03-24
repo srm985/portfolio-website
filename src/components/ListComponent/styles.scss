@@ -1,0 +1,9 @@
+@import '../../styles/constants';
+
+.ListComponent {
+    columns: 2;
+
+    @media only screen and (min-width: $breakpoint-large) {
+        columns: 3;
+    }
+}

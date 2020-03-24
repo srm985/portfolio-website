@@ -3,6 +3,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import CodeBlock from '../CodeBlockComponent';
+import List from '../ListComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
 import classNames from '../../utils/classNames';
@@ -50,10 +51,18 @@ class TextBlockComponent extends React.Component {
             displayName
         } = TextBlockComponent;
 
+        const renderHardBreak = () => (
+            <>
+                <br />
+                <br />
+            </>
+        );
+
         // Hooking markdown components into React components.
         const renderers = {
-            break: () => { console.log('**********************'); },
-            code: CodeBlock
+            break: renderHardBreak,
+            code: CodeBlock,
+            list: List
         };
 
         const componentClassNames = classNames(
