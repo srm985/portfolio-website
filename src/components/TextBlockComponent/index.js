@@ -52,7 +52,7 @@ class TextBlockComponent extends React.Component {
 
         // Hooking markdown components into React components.
         const renderers = {
-            br: () => { console.log('**********************'); },
+            break: () => { console.log('**********************'); },
             code: CodeBlock
         };
 
