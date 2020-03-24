@@ -50,7 +50,9 @@ class TextBlockComponent extends React.Component {
             displayName
         } = TextBlockComponent;
 
+        // Hooking markdown components into React components.
         const renderers = {
+            br: () => { console.log('**********************'); },
             code: CodeBlock
         };
 
@@ -67,7 +69,6 @@ class TextBlockComponent extends React.Component {
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
                     <ReactMarkdown
-                        escapeHtml={false}
                         renderers={renderers}
                         source={text}
                     />
