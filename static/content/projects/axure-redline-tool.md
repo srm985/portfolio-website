@@ -31,9 +31,7 @@ projectDescription: >-
   on Axure in their organizations and would like to provide developers with
   always-up-to-date design specifications. As Axure does not support plugins
   within the application itself, this code resides within and is applied to your
-  AxShare projects.
-
-  <br><br>
+  AxShare projects.  
 
   [![](https://data.jsdelivr.com/v1/package/npm/axure-redline-tool/badge)](https://www.jsdelivr.com/package/npm/axure-redline-tool)
 projectSkillsList: []
