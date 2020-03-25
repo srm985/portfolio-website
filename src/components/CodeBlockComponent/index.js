@@ -1,6 +1,8 @@
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {
+    useEffect
+} from 'react';
 
 import classNames from '../../utils/classNames';
 
@@ -32,7 +34,10 @@ const CodeBlockComponent = (props) => {
         'line-numbers'
     );
 
-    setTimeout(Prism.highlightAll);
+    // During Gatsby builds, the document object isn't available.
+    useEffect(() => {
+        setTimeout(Prism.highlightAll);
+    });
 
     return (
         <pre className={componentClassNames}>
