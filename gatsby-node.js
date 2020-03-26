@@ -114,6 +114,7 @@ exports.createSchemaCustomization = ({
             imageAlt: String
             imageOpacity: Int
             imageTitle: String
+            imageAlignment: String
         }
         type PageSEO {
             pageAuthor: String
