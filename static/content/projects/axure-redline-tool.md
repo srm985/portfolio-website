@@ -46,6 +46,7 @@ projectSectionList:
       important details such as spacing, sizing, and CSS attributes. When I
       created this tool, Axure had not joined the list of tools offering this.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a section image
       imageSource: /assets/tool-screenshot.jpg
     projectSectionTitle: What's The Need?
@@ -60,6 +61,7 @@ projectSectionList:
       accomplished by pasting the entire script into the page, but I migrated to
       the jsDelivr CDN for better availability and tracking.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a demo of the user implementing the plugin
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
@@ -86,6 +88,7 @@ projectSectionList:
       released, just one day before Axure formally announced their built-in
       inspection tool.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: placeholder
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
@@ -98,6 +101,7 @@ projectSectionList:
       directly with Axure about the tool. Users provide enhancement requests and
       identify bugs within the tool’s active community.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: placeholder
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
