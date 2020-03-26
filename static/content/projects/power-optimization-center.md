@@ -46,6 +46,7 @@ projectSectionList:
 
       ![test](/assets/poc-landing-page-comparisson.png#align-right "testing")
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: two computer screens showing the website before and after coding changes
       imageOpacity: 100
       imageSource: /assets/poc-landing-page-comparisson.png
