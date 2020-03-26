@@ -156,6 +156,19 @@ projectSectionList:
       imageOpacity: 100
       imageSource: /assets/responsive-mobile-inbox.png
       imageTitle: ''
-    projectSectionTitle: Responsive Web Application
+    projectSectionTitle: Responsive Web Application (Mobile)
+  - projectSectionBody: >-
+      Careful planning needs to be considered for any responsive application,
+      ensuring controls and content are skillfully located within the reach of
+      users. Having the ability to own the project from concept to development
+      permitted me to ensure that all subtleties were accurately accounted for
+      and implemented.
+    projectSectionImageBlock:
+      imageAlignment: left
+      imageAlt: a screenshot of a desktop email client
+      imageOpacity: 100
+      imageSource: /assets/inbox-responsive-desktop.png
+      imageTitle: ''
+    projectSectionTitle: Responsive Web Application (Desktop)
 ---
 
