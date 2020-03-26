@@ -42,9 +42,6 @@ projectSectionList:
       consider information architecture and UX/UI design patterns. Consequently,
       the website only served to provide basic, unstructured information along
       with a way to contact the POC.
-
-
-      ![test](/assets/poc-landing-page-comparisson.png#align-right "testing")
     projectSectionImageBlock:
       imageAlignment: full
       imageAlt: two computer screens showing the website before and after coding changes
