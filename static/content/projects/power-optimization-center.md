@@ -43,7 +43,7 @@ projectSectionList:
       the website only served to provide basic, unstructured information along
       with a way to contact the POC.
 
-      <image-align-right/>
+      <image-align-right><image-align-right/>
     projectSectionImageBlock:
       imageAlt: two computer screens showing the website before and after coding changes
       imageOpacity: 100
