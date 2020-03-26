@@ -41,9 +41,13 @@ projectSectionList:
       stood up and populated with basic information. No time was available
       consider information architecture and UX/UI design patterns. Consequently,
       the website only served to provide basic, unstructured information along
-      with a way to contact the POC.
+      with a way to contact the POC. <image-align-right>
 
-      <image-align-right><image-align-right/>
+
+      ![test](/assets/poc-landing-page-comparisson.png "testing")
+
+
+      <image-align-right/>
     projectSectionImageBlock:
       imageAlt: two computer screens showing the website before and after coding changes
       imageOpacity: 100
