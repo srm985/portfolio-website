@@ -53,6 +53,7 @@ projectSectionList:
       related to the security measures required to ensure no illegal
       communications occur.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: >-
         an image of the application displayed on mobile phone, desktop, and
         kiosk
