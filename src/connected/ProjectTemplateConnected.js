@@ -68,6 +68,7 @@ export const query = graphql`
                     projectSectionTitle
                     projectSectionBody
                     projectSectionImageBlock {
+                        imageAlignment
                         imageAlt
                         imageSource {
                             childImageSharp {

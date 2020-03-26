@@ -10,17 +10,17 @@ import Title from '../TitleComponent';
 
 import classNames from '../../utils/classNames';
 
+import {
+    BREAKPOINTS_DEFAULT,
+    BREAKPOINTS_IMAGE,
+    BREAKPOINTS_TEXT,
+    IMAGE_ALIGNMENT_FULL,
+    IMAGE_ALIGNMENT_OPTIONS
+} from './config';
+
 import './styles.scss';
 
 class ProjectSectionComponent extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isVisible: false
-        };
-    }
-
     renderProjectSection = () => {
         const {
             props: {
@@ -32,6 +32,7 @@ class ProjectSectionComponent extends React.Component {
             const {
                 projectSectionBody = '',
                 projectSectionImageBlock: {
+                    imageAlignment = IMAGE_ALIGNMENT_FULL,
                     imageAlt = '',
                     imageSource: {
                         childImageSharp: {
@@ -48,6 +49,7 @@ class ProjectSectionComponent extends React.Component {
 
             const sectionImageClassNames = classNames(
                 `${displayName}__section-image`,
+                `${displayName}__section-image--align-${imageAlignment}`,
                 'mb--6'
             );
 
@@ -57,67 +59,68 @@ class ProjectSectionComponent extends React.Component {
                 'mb--8'
             );
 
+            const {
+                [imageAlignment]: breakpointsText
+            } = BREAKPOINTS_TEXT;
+
+            const {
+                [imageAlignment]: breakpointsImage
+            } = BREAKPOINTS_IMAGE;
+
+            const textGridItemClassNames = classNames(
+                `${displayName}__text-grid-item`,
+                `${displayName}__text-grid-item--align-${imageAlignment}`
+            );
+
+            const imageGridItemClassNames = classNames(
+                `${displayName}__image-grid-item`,
+                `${displayName}__image-grid-item--align-${imageAlignment}`
+            );
+
             return (
-                <React.Fragment key={projectSectionTitle}>
-                    <GridItem
-                        breakpoints={{
-                            extraLarge: {
-                                start: 3,
-                                stop: 11
-                            },
-                            medium: {
-                                start: 2,
-                                stop: 12
-                            }
-                        }}
-                    >
-                        <Title
-                            className={'mb--3'}
-                            heading={projectSectionTitle}
-                            headingSize={2}
-                            isAccented
-                            isAnimated
-                        />
-                        <Image
-                            alt={imageAlt}
-                            className={sectionImageClassNames}
-                            fluid={fluid}
-                        />
-                        <TextBlock
-                            className={sectionBodyClassNames}
-                            isAnimated
-                            text={projectSectionBody}
-                        />
-                    </GridItem>
-                </React.Fragment>
+                <Section key={projectSectionTitle}>
+                    <Grid>
+                        <GridItem breakpoints={BREAKPOINTS_DEFAULT}>
+                            <Title
+                                className={'mb--3'}
+                                heading={projectSectionTitle}
+                                headingSize={2}
+                                isAccented
+                                isAnimated
+                            />
+
+                        </GridItem>
+                        <GridItem
+                            breakpoints={breakpointsImage}
+                            className={imageGridItemClassNames}
+                        >
+                            <Image
+                                alt={imageAlt}
+                                className={sectionImageClassNames}
+                                fluid={fluid}
+                            />
+                        </GridItem>
+                        <GridItem
+                            breakpoints={breakpointsText}
+                            className={textGridItemClassNames}
+                        >
+                            <TextBlock
+                                className={sectionBodyClassNames}
+                                isAnimated
+                                text={projectSectionBody}
+                            />
+                        </GridItem>
+                    </Grid>
+                </Section>
             );
         });
     }
 
     render() {
-        const {
-            state: {
-                isVisible
-            }
-        } = this;
-
-        const {
-            displayName
-        } = ProjectSectionComponent;
-
-        const componentClassNames = classNames(
-            displayName,
-            {
-                [`${displayName}--visible`]: isVisible
-            }
-        );
-
         return (
-            <Section className={componentClassNames}>
-                <Grid>
-                    {this.renderProjectSection()}
-                </Grid>
-            </Section>
+            <>
+                {this.renderProjectSection()}
+            </>
         );
     }
 }
@@ -128,6 +131,7 @@ ProjectSectionComponent.propTypes = {
     projectSectionList: PropTypes.arrayOf(PropTypes.shape({
         projectSectionBody: PropTypes.string,
         projectSectionImageBlock: PropTypes.shape({
+            imageAlignment: PropTypes.oneOf(IMAGE_ALIGNMENT_OPTIONS),
             imageAlt: PropTypes.string,
             imageOpacity: PropTypes.number,
             imageSource: PropTypes.shape({

@@ -16,7 +16,8 @@ const COLUMN_PROP_TYPES = PropTypes.shape({
 const GridItemComponent = (props) => {
     const {
         breakpoints,
-        children
+        children,
+        className
     } = props;
 
     const {
@@ -55,6 +56,7 @@ const GridItemComponent = (props) => {
     });
 
     const componentClassNames = classNames(
+        className,
         displayName,
         ...gridClassNames
     );
@@ -90,11 +92,13 @@ GridItemComponent.propTypes = {
         medium: COLUMN_PROP_TYPES,
         small: COLUMN_PROP_TYPES
     }),
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
 };
 
 GridItemComponent.defaultProps = {
-    breakpoints: { }
+    breakpoints: { },
+    className: ''
 };
 
 export default GridItemComponent;
