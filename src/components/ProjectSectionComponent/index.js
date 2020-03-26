@@ -61,7 +61,7 @@ class ProjectSectionComponent extends React.Component {
                 <React.Fragment key={projectSectionTitle}>
                     <GridItem
                         breakpoints={{
-                            large: {
+                            extraLarge: {
                                 start: 3,
                                 stop: 11
                             },

@@ -32,6 +32,11 @@ default_image: &default_image
       step: 5
       valueType: 'int'
       widget: 'number'
+    - label: 'Alignment'
+      name: 'imageAlignment'
+      widget: 'select'
+      options: ['full', 'left', 'right', 'middle']
+      default: 'full'
 
 default_seo: &default_seo
   label: 'Page SEO'
