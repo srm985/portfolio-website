@@ -49,6 +49,7 @@ projectSectionList:
       The concept was simple – somehow generate a list of every keyboard layout
       and write some logic to parse and display it.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a screenshot of the rendered keyboard
       imageOpacity: 100
       imageSource: /assets/keyboard-screenshot.png
@@ -84,6 +85,7 @@ projectSectionList:
 
       ```
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a picture of a keyboard on a wooden table
       imageOpacity: 100
       imageSource: /assets/keyboard.jpg
@@ -104,6 +106,7 @@ projectSectionList:
       as *ligature* and *deadkeys*. These required the plugin to watch for, and
       interpret, combinations of keys such as ``a + ` = à`` or `a + e = æ`.
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a picture of a keyboard on a wooden table
       imageOpacity: 100
       imageSource: /assets/keyboard.jpg
@@ -207,6 +210,7 @@ projectSectionList:
       * Yakut
       * Yoruba
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a picture of a keyboard on a wooden table
       imageOpacity: 100
       imageSource: /assets/keyboard.jpg
@@ -221,6 +225,7 @@ projectSectionList:
       I’ve been so thrilled to see its usage with languages and layouts I never
       even knew existed!
     projectSectionImageBlock:
+      imageAlignment: full
       imageAlt: a picture of a keyboard on a wooden table
       imageOpacity: 100
       imageSource: /assets/keyboard.jpg
