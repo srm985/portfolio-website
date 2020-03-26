@@ -37,6 +37,7 @@ default_image: &default_image
       widget: 'select'
       options: ['full', 'left', 'right', 'middle']
       default: 'full'
+      required: false
 
 default_seo: &default_seo
   label: 'Page SEO'
