@@ -21,14 +21,14 @@ projectThumbnailImageBlock:
     an image of people working in front of many computer screens displaying
     charts and graphs
   imageOpacity: 100
-  imageSource: /assets/poc_new.jpg
+  imageSource: /assets/photo_dark_3.jpg
   imageTitle: ''
 heroImageBlock:
   imageAlt: >-
     an image of people working in front of many computer screens displaying
     charts and graphs
   imageOpacity: 100
-  imageSource: /assets/poc_new.jpg
+  imageSource: /assets/photo_dark_3.jpg
   imageTitle: ''
 projectDescription: >-
   A fully responsive, fresh take on Luminant's Power Optimization Center website
