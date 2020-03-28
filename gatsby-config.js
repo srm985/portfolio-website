@@ -18,7 +18,19 @@ module.exports = {
             resolve: 'gatsby-source-filesystem'
         },
         'gatsby-transformer-remark',
-        'gatsby-transformer-sharp',
+        {
+            options: {
+                plugins: [
+                    {
+                        options: {
+                            maxWidth: 800
+                        },
+                        resolve: 'gatsby-remark-images'
+                    }
+                ]
+            },
+            resolve: 'gatsby-transformer-sharp'
+        },
         'gatsby-plugin-sharp',
         'gatsby-plugin-react-svg',
         {
