@@ -2,21 +2,37 @@
     width: 100%;
 
     &__text-grid-item {
-        &--align-right {
+        &--align-right-narrow {
             order: 2;
         }
 
-        &--align-left {
+        &--align-right-wide {
+            order: 2;
+        }
+
+        &--align-left-narrow {
+            order: 3;
+        }
+
+        &--align-left-wide {
             order: 3;
         }
     }
 
     &__image-grid-item {
-        &--align-right {
+        &--align-right-narrow {
             order: 3;
         }
 
-        &--align-left {
+        &--align-right-wide {
+            order: 3;
+        }
+
+        &--align-left-narrow {
+            order: 2;
+        }
+
+        &--align-left-wide {
             order: 2;
         }
     }

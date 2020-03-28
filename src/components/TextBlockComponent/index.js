@@ -2,9 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import Button from '../ButtonComponent';
 import CodeBlock from '../CodeBlockComponent';
 import List from '../ListComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
+
+import {
+    BUTTON_STYLE_TYPE_INLINE
+} from '../ButtonComponent/config';
 
 import classNames from '../../utils/classNames';
 
@@ -58,10 +63,19 @@ class TextBlockComponent extends React.Component {
             </>
         );
 
+        const renderLink = (props) => (
+            <Button
+                {...props}
+                isInternalURL={false}
+                styleType={BUTTON_STYLE_TYPE_INLINE}
+            />
+        );
+
         // Hooking markdown components into React components.
         const renderers = {
             break: renderHardBreak,
             code: CodeBlock,
+            link: renderLink,
             list: List
         };
 
