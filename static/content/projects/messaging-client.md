@@ -145,7 +145,7 @@ projectSectionList:
 
 
       [Axure
-      Wireframes](https://www.messaging-client-seanmcquay.com/axure/wireframes/start.html#g=1&p=inbox)
+      Wireframes](https://www.messaging-client.seanmcquay.com/axure/wireframes/start.html#g=1&p=inbox)
 
 
       [Axure
