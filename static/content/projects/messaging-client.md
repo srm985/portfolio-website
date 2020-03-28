@@ -151,7 +151,7 @@ projectSectionList:
       [Axure
       Mockups](https://www.messaging-client.seanmcquay.com/axure/mockups/start.html#g=1&p=inbox)
     projectSectionImageBlock:
-      imageAlignment: right
+      imageAlignment: right-narrow
       imageAlt: a screenshot of an email inbox of the application
       imageOpacity: 100
       imageSource: /assets/responsive-mobile-inbox.png
@@ -164,7 +164,7 @@ projectSectionList:
       permitted me to ensure that all subtleties were accurately accounted for
       and implemented.
     projectSectionImageBlock:
-      imageAlignment: left
+      imageAlignment: left-wide
       imageAlt: a screenshot of a desktop email client
       imageOpacity: 100
       imageSource: /assets/inbox-responsive-desktop.png
