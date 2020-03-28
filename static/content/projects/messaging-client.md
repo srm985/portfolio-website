@@ -163,6 +163,9 @@ projectSectionList:
       users. Having the ability to own the project from concept to development
       permitted me to ensure that all subtleties were accurately accounted for
       and implemented.
+
+
+      ![rtyu](/assets/gatsby-astronaut.png "yhbj")
     projectSectionImageBlock:
       imageAlignment: left-wide
       imageAlt: a screenshot of a desktop email client
