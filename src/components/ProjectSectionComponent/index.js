@@ -1,9 +1,9 @@
-import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
+import Image from '../ImageComponent';
 import Section from '../SectionComponent';
 import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';

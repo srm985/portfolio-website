@@ -1,9 +1,9 @@
-import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
+import Image from '../ImageComponent';
 import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';

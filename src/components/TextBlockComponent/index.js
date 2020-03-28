@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 import Button from '../ButtonComponent';
 import CodeBlock from '../CodeBlockComponent';
+import Image from '../ImageComponent';
 import List from '../ListComponent';
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
@@ -75,6 +76,7 @@ class TextBlockComponent extends React.Component {
         const renderers = {
             break: renderHardBreak,
             code: CodeBlock,
+            image: Image,
             link: renderLink,
             list: List
         };

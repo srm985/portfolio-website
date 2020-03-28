@@ -1,12 +1,12 @@
-import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
 import Card from '../CardComponent';
-import TextBlock from '../TextBlockComponent';
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';
+import Image from '../ImageComponent';
+import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 
 import classNames from '../../utils/classNames';

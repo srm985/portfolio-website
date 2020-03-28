@@ -1,6 +1,7 @@
-import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+import Image from '../ImageComponent';
 
 import classNames from '../../utils/classNames';
 
