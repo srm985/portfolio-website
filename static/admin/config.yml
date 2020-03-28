@@ -35,7 +35,8 @@ default_image: &default_image
     - label: 'Alignment'
       name: 'imageAlignment'
       widget: 'select'
-      options: ['full', 'left', 'right', 'middle']
+      options:
+        ['full', 'left-narrow', 'left-wide', 'right-narrow', 'right-wide']
       default: 'full'
       required: false
 
