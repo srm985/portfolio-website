@@ -2,25 +2,11 @@
 # suphp_configpath /home/yourusername/path/to/php.ini
 # php_value mbstring.func_overload 4 # Required for PWSB support. Please do not uncomment this line.
 
-#RewriteEngine on
-#RewriteCond %{HTTP_HOST} ^seanmcquay\.com [NC]
-#RewriteRule ^(.*)$ https://www.seanmcquay.com/$1 [L,R=301,NC]
-
-# RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-# RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteEngine On
-RewriteCond %{SERVER_PORT} 80
-RewriteCond %{HTTP_HOST} (^https://www\.([\w-]+\.)?|^https://([\w-]+\.)?|http://www\.([\w-]+\.)?|^http://([\w-]+\.)?|^www.([\w-]+\.)?|^([\w-]+\.)?)seanmcquay\.com$
-RewriteRule ^(.*)$ https://www.%2seanmcquay.com/$1 [R=301,L]
-
-# http://www.seanmcquay.com
-# http://www.poc.seanmcquay.com
-# http://poc.seanmcquay.com
-# http://seanmcquay.com
-# www.poc.seanmcquay.com
-# www.seanmcquay.com
-# poc.seanmcquay.com
-# seanmcquay.com
+RewriteCond %{HTTPS} !on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 <ifModule mod_gzip.c>
 mod_gzip_on Yes
