@@ -4,50 +4,135 @@ import React from 'react';
 
 import classNames from '../../utils/classNames';
 
-const ImageComponent = (props) => {
-    const {
-        alt,
-        className,
-        fluid,
-        src,
-        style,
-        title
-    } = props;
+import './styles.scss';
 
-    const {
-        displayName
-    } = ImageComponent;
+class ImageComponent extends React.Component {
+    constructor(props) {
+        super(props);
 
-    const componentClassNames = classNames(
-        className,
-        displayName
-    );
+        this.state = {
+            isFullScreen: false
+        };
+    }
 
-    return (
-        src ? (
-            <img
-                alt={alt}
+    handleKeyPress = (event) => {
+        const {
+            state: {
+                isFullScreen
+            }
+        } = this;
+
+        const {
+            keyCode
+        } = event;
+
+        const KEY_CODE_ESCAPE = 27;
+        const KEY_CODE_SPACE = 32;
+
+        if ((isFullScreen && keyCode === KEY_CODE_ESCAPE) || keyCode === KEY_CODE_SPACE) {
+            event.preventDefault();
+
+            this.toggleFullScreen();
+        }
+    }
+
+    toggleFullScreen = () => {
+        const {
+            props: {
+                canViewEnlarged
+            }
+        } = this;
+
+        if (canViewEnlarged) {
+            this.setState((previousState) => {
+                const {
+                    isFullScreen: wasFullScreen
+                } = previousState;
+
+                return ({
+                    isFullScreen: !wasFullScreen
+                });
+            });
+        }
+    }
+
+    render() {
+        const {
+            props: {
+                alt,
+                canViewEnlarged,
+                className,
+                fluid,
+                src,
+                style,
+                title
+            },
+            state: {
+                isFullScreen
+            }
+        } = this;
+
+        const {
+            displayName
+        } = ImageComponent;
+
+        const componentClassNames = classNames(
+            displayName,
+            {
+                [`${displayName}--can-view-enlarged`]: canViewEnlarged,
+                [`${displayName}--full-screen`]: isFullScreen
+            }
+        );
+
+        const imageClassNames = classNames(
+            className,
+            `${displayName}__image`,
+            {
+                [`${displayName}__image--full-screen`]: isFullScreen
+            }
+        );
+
+        const enlargeImageAttributes = !canViewEnlarged ? {} : {
+            onClick: this.toggleFullScreen,
+            onKeyDown: this.handleKeyPress,
+            role: 'button',
+            tabIndex: 0
+        };
+
+        return (
+            <div
+                {...enlargeImageAttributes}
                 className={componentClassNames}
-                src={src}
-                style={style}
-                title={title}
-            />
-        ) : (
-            <Image
-                alt={alt}
-                className={componentClassNames}
-                fluid={fluid}
-                style={style}
-                title={title}
-            />
-        )
-    );
-};
+            >
+                {
+                    src ? (
+                        <img
+                            alt={alt}
+                            className={imageClassNames}
+                            src={src}
+                            style={style}
+                            title={title}
+                        />
+                    ) : (
+                        <Image
+                            alt={alt}
+                            className={imageClassNames}
+                            fluid={fluid}
+                            style={style}
+                            title={title}
+                        />
+                    )
+                }
+            </div>
+        );
+    }
+}
 
 ImageComponent.displayName = 'ImageComponent';
 
 ImageComponent.propTypes = {
     alt: PropTypes.string.isRequired,
+    canViewEnlarged: PropTypes.bool,
     className: PropTypes.string,
     fluid: PropTypes.shape({}),
     src: PropTypes.string,
@@ -56,6 +141,7 @@ ImageComponent.propTypes = {
 };
 
 ImageComponent.defaultProps = {
+    canViewEnlarged: false,
     className: '',
     fluid: {},
     src: '',

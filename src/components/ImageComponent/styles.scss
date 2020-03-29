@@ -1,0 +1,52 @@
+@import '../../styles/constants';
+
+.ImageComponent {
+    display: inline;
+
+    &--can-view-enlarged {
+        outline-color: $color-blue;
+        cursor: pointer;
+    }
+
+    &--full-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: $z-index-modal;
+
+        display: inline-block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba($color-black, 0.9);
+    }
+
+    &__image {
+        &--full-screen {
+            picture {
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                padding: #{$planck-length * 2};
+            }
+
+            img {
+                position: relative !important;
+
+                display: inline-block;
+                width: auto !important;
+                max-width: 100%;
+                height: auto !important;
+                max-height: 100%;
+            }
+        }
+    }
+}
