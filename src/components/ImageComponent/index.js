@@ -77,6 +77,7 @@ class ImageComponent extends React.Component {
         } = ImageComponent;
 
         const componentClassNames = classNames(
+            className,
             displayName,
             {
                 [`${displayName}--can-view-enlarged`]: canViewEnlarged,
@@ -85,7 +86,6 @@ class ImageComponent extends React.Component {
         );
 
         const imageClassNames = classNames(
-            className,
             `${displayName}__image`,
             {
                 [`${displayName}__image--full-screen`]: isFullScreen

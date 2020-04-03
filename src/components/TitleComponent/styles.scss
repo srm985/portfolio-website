@@ -16,6 +16,9 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
     }
 
     &__heading {
+        word-break: break-word;
+        hyphens: auto;
+
         &::before {
             position: absolute;
             top: 0;

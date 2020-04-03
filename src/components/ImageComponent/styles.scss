@@ -23,6 +23,8 @@
     }
 
     &__image {
+        height: 100%;
+
         &--full-screen {
             picture {
                 position: fixed;

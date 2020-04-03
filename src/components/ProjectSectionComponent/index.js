@@ -96,6 +96,7 @@ class ProjectSectionComponent extends React.Component {
                         >
                             <Image
                                 alt={imageAlt}
+                                canViewEnlarged
                                 className={sectionImageClassNames}
                                 fluid={fluid}
                             />
