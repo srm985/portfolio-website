@@ -1,5 +1,7 @@
 @import '../../styles/constants';
 
+$line-thickness: 4px;
+
 .NavigationMobileComponent {
     &__navigation {
         position: fixed;
@@ -25,11 +27,13 @@
     }
 
     &__navigation-menu {
-        position: absolute;
+        position: fixed;
         top: $navigation-height-mobile;
         left: 0;
         z-index: $z-index-navigation-menu;
 
+        display: flex;
+        align-items: center;
         box-sizing: border-box;
         width: 100%;
         height: 100%;
@@ -38,7 +42,6 @@
         padding: 0 #{$planck-length * 2};
         overflow: hidden;
 
-        list-style: none;
         background-color: $color-black;
         opacity: 0;
 
@@ -56,67 +59,345 @@
         }
     }
 
+    &__navigation-link-set {
+        width: 100%;
+        margin: 0;
+        padding: $planck-length 0;
+
+        list-style: none;
+    }
+
+    &__navigation-link {
+        margin-bottom: #{$planck-length * 3};
+        padding-bottom: #{$planck-length * 3};
+
+        font-size: $font-size-large;
+        text-align: center;
+
+        border-bottom: solid 1px rgba($color-white, 0.5);
+
+        &:last-of-type {
+            margin: 0;
+            padding: 0;
+
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
     &__control-button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+
         box-sizing: border-box;
         width: #{$planck-length * 4};
         height: #{$planck-length * 4};
-        padding: #{$planck-length * 1.25} $planck-length;
 
         background-color: $color-white;
         border: none;
         outline: none;
         cursor: pointer;
 
-        div {
-            position: relative;
+        & > span {
+            position: absolute;
 
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-        }
-
-        span {
+            align-items: center;
+            justify-content: center;
             box-sizing: border-box;
             width: 100%;
-            height: 2px;
+            height: $line-thickness + 2px;
 
-            background-color: $color-black;
+            border: solid 2px $color-black;
+            border-radius: #{$line-thickness};
 
-            transition: transform $transition-fast $transition-timing-function-default;
+            animation-duration: 0.6s;
+            animation-timing-function: $transition-timing-function-default;
+            animation-fill-mode: forwards;
+
+            &:nth-of-type(1) {
+                top: 0;
+                left: 0;
+            }
+
+            &:nth-of-type(2) {
+                top: calc(50% - 3px);
+                left: 0;
+            }
 
             &:nth-of-type(3) {
-                width: 75%;
+                right: 0;
+                bottom: 0;
+            }
+
+            & > span {
+                position: absolute;
+
+                padding: 0 2px;
+
+                font-size: 6px;
+                line-height: 6px;
+
+                background-color: $color-white;
+                transform-origin: center;
+
+                animation-duration: 0.6s;
+                animation-timing-function: $transition-timing-function-default;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        &--closed {
+            & > span {
+                &:nth-of-type(1) {
+                    animation-name: animation-reversed-left;
+
+                    & > span {
+                        animation-name: animation-reversed-menu-text;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    animation-name: animation-reversed-center;
+                }
+
+                &:nth-of-type(3) {
+                    animation-name: animation-reversed-right;
+                }
             }
         }
 
         &--open {
-            div {
-                align-items: center;
-                justify-content: center;
-            }
-
-            span {
-                position: absolute;
-
+            & > span {
                 &:nth-of-type(1) {
-                    transform: rotate(45deg);
+                    animation-name: animation-left;
+
+                    & > span {
+                        animation-name: animation-menu-text;
+                    }
                 }
 
                 &:nth-of-type(2) {
-                    transform: rotate(-45deg);
+                    animation-name: animation-center;
                 }
 
                 &:nth-of-type(3) {
-                    display: none;
+                    animation-name: animation-right;
                 }
             }
         }
+    }
+}
+
+@keyframes animation-left {
+    0% {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+    }
+
+    50% {
+        top: 0;
+        left: 0;
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    51% {
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        top: calc(50% - 3px);
+        left: -5px;
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+}
+@keyframes animation-right {
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        right: 0;
+        bottom: 0;
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    51% {
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        right: -5px;
+        bottom: calc(50% - 3px);
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+}
+@keyframes animation-center {
+    0% {
+        left: 0;
+
+        width: 100%;
+    }
+
+    50% {
+        left: calc(50% - #{$line-thickness / 2});
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    51% {
+        background-color: $color-black;
+        transform: rotate(-45deg);
+    }
+
+    75%,
+    100% {
+        top: calc(50% - 3px);
+        left: -5px;
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(-45deg);
+    }
+}
+@keyframes animation-reversed-left {
+    0% {
+        top: calc(50% - 3px);
+        left: -5px;
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    49% {
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    50% {
+        top: 0;
+        left: 0;
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+    }
+}
+@keyframes animation-reversed-right {
+    0% {
+        right: -5px;
+        bottom: calc(50% - 3px);
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    49% {
+        background-color: $color-black;
+        transform: rotate(45deg);
+    }
+
+    50% {
+        right: 0;
+        bottom: 0;
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+@keyframes animation-reversed-center {
+    0%,
+    25% {
+        top: calc(50% - 3px);
+        left: -5px;
+
+        width: calc(100% + 10px);
+
+        background-color: $color-black;
+        transform: rotate(-45deg);
+    }
+
+    49% {
+        background-color: $color-black;
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        left: calc(50% - #{$line-thickness / 2});
+
+        width: $line-thickness + 2px;
+
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: 0;
+
+        width: 100%;
+    }
+}
+@keyframes animation-menu-text {
+    0% {
+        transform: scaleX(1);
+    }
+
+    25%,
+    100% {
+        transform: scaleX(0);
+    }
+}
+@keyframes animation-reversed-menu-text {
+    0%,
+    75% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
     }
 }

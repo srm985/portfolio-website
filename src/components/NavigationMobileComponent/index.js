@@ -16,6 +16,7 @@ class NavigationMobileComponent extends React.Component {
         super(props);
 
         this.state = {
+            hasClickedMenu: false,
             isMenuOpen: false
         };
     }
@@ -27,6 +28,7 @@ class NavigationMobileComponent extends React.Component {
             } = previousState;
 
             return {
+                hasClickedMenu: true,
                 isMenuOpen: !wasMenuOpen
             };
         });
@@ -34,13 +36,61 @@ class NavigationMobileComponent extends React.Component {
 
     handleKeyPress = () => {}
 
+    renderMenuButton = () => {
+        const {
+            state: {
+                hasClickedMenu,
+                isMenuOpen
+            }
+        } = this;
+
+        const {
+            displayName
+        } = NavigationMobileComponent;
+
+        const lines = [];
+
+        const controlButtonClassNames = classNames(
+            `${displayName}__control-button`,
+            {
+                [`${displayName}__control-button--closed`]: !isMenuOpen,
+                [`${displayName}__control-button--open`]: isMenuOpen
+            }
+        );
+
+        const menuStyle = {
+            animationDuration: hasClickedMenu ? undefined : '0s'
+        };
+
+        for (let i = 0; i < 3; i++) {
+            lines.push(
+                <span style={menuStyle}>
+                    {
+                        i === 0 && (
+                            <span style={menuStyle}>{'MENU'}</span>
+                        )
+                    }
+                </span>
+            );
+        }
+
+        return (
+            <div
+                className={controlButtonClassNames}
+                onClick={this.handleMenuToggle}
+                onKeyPress={this.handleKeyPress}
+                role={'button'}
+                tabIndex={0}
+            >
+                { lines }
+            </div>
+        );
+    }
+
     renderLinks = () => {
         const {
             props: {
                 navigationLinks
-            },
-            state: {
-                hasScrolled
             }
         } = this;
 
@@ -49,10 +99,7 @@ class NavigationMobileComponent extends React.Component {
         } = NavigationMobileComponent;
 
         const linkClassNames = classNames(
-            `${displayName}__navigation-link`,
-            {
-                [`${displayName}__navigation-link--scrolled`]: hasScrolled
-            }
+            `${displayName}__navigation-link`
         );
 
         return navigationLinks.map((navigationLink) => {
@@ -62,10 +109,11 @@ class NavigationMobileComponent extends React.Component {
             } = navigationLink;
 
             return (
-                <li key={pageURL}>
+                <li
+                    className={linkClassNames}
+                    key={pageURL}
+                >
                     <Button
-                        activeLinkClassName={`${displayName}__navigation-link--active`}
-                        className={linkClassNames}
                         href={pageURL}
                         label={pageName}
                         styleType={BUTTON_STYLE_TYPE_INLINE}
@@ -102,34 +150,16 @@ class NavigationMobileComponent extends React.Component {
             }
         );
 
-        const controlButtonClassNames = classNames(
-            `${displayName}__control-button`,
-            {
-                [`${displayName}__control-button--closed`]: !isMenuOpen,
-                [`${displayName}__control-button--open`]: isMenuOpen
-            }
-        );
-
         return (
             <nav className={displayName}>
                 <div className={navigationClassNames}>
-                    <div
-                        className={controlButtonClassNames}
-                        onClick={this.handleMenuToggle}
-                        onKeyPress={this.handleKeyPress}
-                        role={'button'}
-                        tabIndex={0}
-                    >
-                        <div>
-                            <span />
-                            <span />
-                            <span />
-                        </div>
-                    </div>
+                    {this.renderMenuButton()}
                 </div>
-                <ul className={navigationMenuClassNames}>
-                    {this.renderLinks()}
-                </ul>
+                <div className={navigationMenuClassNames}>
+                    <ul className={`${displayName}__navigation-link-set`}>
+                        {this.renderLinks()}
+                    </ul>
+                </div>
             </nav>
         );
     }
