@@ -138,12 +138,12 @@ $line-thickness: 4px;
                 padding: 0 2px;
 
                 font-size: 6px;
-                line-height: 6px;
+                line-height: 8px;
 
                 background-color: $color-white;
                 transform-origin: center;
 
-                animation-duration: 0.6s;
+                animation-duration: 0.8s;
                 animation-timing-function: $transition-timing-function-default;
                 animation-fill-mode: forwards;
             }
