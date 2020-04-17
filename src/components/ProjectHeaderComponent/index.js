@@ -132,8 +132,8 @@ class ProjectHeaderComponent extends React.Component {
                                     <Button
                                         href={projectDemoURL}
                                         isAnimated
-                                        isLightBackgroundColorProfile
                                         isInternalURL={false}
+                                        isLightBackgroundColorProfile
                                         label={demoCTA}
                                         styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                     />
@@ -144,8 +144,8 @@ class ProjectHeaderComponent extends React.Component {
                                     <Button
                                         href={projectSourceCodeURL}
                                         isAnimated
-                                        isLightBackgroundColorProfile
                                         isInternalURL={false}
+                                        isLightBackgroundColorProfile
                                         label={sourceCodeCTA}
                                         styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                     />

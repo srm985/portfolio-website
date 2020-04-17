@@ -124,11 +124,23 @@
             "error",
             4
         ],
+        "react/jsx-max-props-per-line": [
+            "error",
+            {
+                "maximum": 1
+            }
+        ],
         "react/jsx-one-expression-per-line": [
             0
         ],
         "react/jsx-props-no-spreading": [
             0
+        ],
+        "react/jsx-sort-props": [
+            "error",
+            {
+                "ignoreCase": true
+            }
         ],
         "react/no-did-update-set-state": [
             0

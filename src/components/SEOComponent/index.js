@@ -55,17 +55,50 @@ const SEOComponent = (props) => {
     return (
         <Helmet>
             <title>{title}</title>
-            <link rel={'canonical'} href={siteURL} />
-            <meta name={'author'} content={author} />
-            <meta name={'description'} content={description} />
-            <meta name={'description'} content={description} />
-            <meta name={'image'} content={image} />
-            <meta name={'keywords'} content={keywords} />
-            <meta property={'og:description'} content={description} />
-            <meta property={'og:image'} content={image} />
-            <meta property={'og:title'} content={postingTitle} />
-            <meta property={'og:type'} content={type} />
-            <meta property={'og:url'} content={siteURL} />
+            <link
+                href={siteURL}
+                rel={'canonical'}
+            />
+            <meta
+                content={author}
+                name={'author'}
+            />
+            <meta
+                content={description}
+                name={'description'}
+            />
+            <meta
+                content={description}
+                name={'description'}
+            />
+            <meta
+                content={image}
+                name={'image'}
+            />
+            <meta
+                content={keywords}
+                name={'keywords'}
+            />
+            <meta
+                content={description}
+                property={'og:description'}
+            />
+            <meta
+                content={image}
+                property={'og:image'}
+            />
+            <meta
+                content={postingTitle}
+                property={'og:title'}
+            />
+            <meta
+                content={type}
+                property={'og:type'}
+            />
+            <meta
+                content={siteURL}
+                property={'og:url'}
+            />
         </Helmet>
     );
 };
