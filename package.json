@@ -76,12 +76,10 @@
   "license": "MIT",
   "lint-staged": {
     "*.js": [
-      "eslint --fix --ignore-pattern /src/vendor/*",
-      "git add"
+      "eslint --fix --ignore-pattern /src/vendor/*"
     ],
     "*.scss": [
-      "stylelint --syntax scss --color --allow-empty-input --fix",
-      "git add"
+      "stylelint --syntax scss --color --allow-empty-input --fix"
     ]
   },
   "name": "portfolio-website",
