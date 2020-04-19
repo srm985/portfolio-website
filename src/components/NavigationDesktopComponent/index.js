@@ -111,7 +111,7 @@ class NavigationDesktopComponent extends React.Component {
             <nav className={componentClassNames}>
                 <Button
                     href={'/'}
-                    inheritStyling
+                    shouldInheritStyling
                     styleType={BUTTON_STYLE_TYPE_INLINE}
                 >
                     <div className={`${displayName}__logo`}>

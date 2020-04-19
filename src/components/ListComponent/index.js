@@ -8,7 +8,7 @@ import './styles.scss';
 const ListComponent = (props) => {
     const {
         children,
-        ordered: isOrderedList
+        isOrderedList
     } = props;
 
     const {
@@ -73,12 +73,12 @@ ListComponent.propTypes = {
             }))
         })
     })),
-    ordered: PropTypes.bool
+    isOrderedList: PropTypes.bool
 };
 
 ListComponent.defaultProps = {
     children: [],
-    ordered: false
+    isOrderedList: false
 };
 
 export default ListComponent;

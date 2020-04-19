@@ -72,6 +72,7 @@ class IconComponent extends React.Component {
         return (
             <span
                 className={componentClassNames}
+                // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: svgImage
                 }}
