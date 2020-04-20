@@ -4,14 +4,16 @@
     width: 100%;
     overflow: hidden;
 
+    background-color: $color-white-arctic;
+
     &--dark {
         color: $color-white;
 
         background-color: $color-charcoal;
     }
 
-    &--light {
-        background-color: $color-white-arctic;
+    &--medium {
+        background-color: $color-gray-medium;
     }
 
     &--full-bleed {

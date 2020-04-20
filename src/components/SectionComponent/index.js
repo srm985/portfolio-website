@@ -11,7 +11,7 @@ const SectionComponent = (props) => {
         className,
         isDark,
         isFullBleed,
-        isLight
+        isMedium
     } = props;
 
     const {
@@ -25,7 +25,7 @@ const SectionComponent = (props) => {
         {
             [`${displayName}--dark`]: isDark,
             [`${displayName}--full-bleed`]: isFullBleed,
-            [`${displayName}--light`]: isLight && !isDark
+            [`${displayName}--medium`]: isMedium
         }
     );
 
@@ -45,7 +45,7 @@ SectionComponent.propTypes = {
     className: PropTypes.string,
     isDark: PropTypes.bool,
     isFullBleed: PropTypes.bool,
-    isLight: PropTypes.bool
+    isMedium: PropTypes.bool
 };
 
 SectionComponent.defaultProps = {
@@ -53,7 +53,7 @@ SectionComponent.defaultProps = {
     className: '',
     isDark: false,
     isFullBleed: false,
-    isLight: true
+    isMedium: false
 };
 
 export default SectionComponent;

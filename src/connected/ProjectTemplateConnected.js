@@ -25,10 +25,12 @@ const ProjectTemplateConnected = (props) => {
     ] = destructureNetlifyCMS(templateGlobalsQuery);
 
     return (
-        <Layout content={{
-            ...templateGlobalData,
-            ...pageData
-        }}
+        <Layout
+            content={{
+                ...templateGlobalData,
+                ...pageData
+            }}
+            hasNavigationDark
         >
             <ProjectTemplate />
         </Layout>

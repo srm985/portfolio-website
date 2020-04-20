@@ -89,7 +89,8 @@ class NavigationDesktopComponent extends React.Component {
                 headerLogoCopy,
                 headerLogoIcon: {
                     publicURL: iconURL = ''
-                }
+                },
+                isDark
             },
             state: {
                 hasScrolled
@@ -103,6 +104,8 @@ class NavigationDesktopComponent extends React.Component {
         const componentClassNames = classNames(
             displayName,
             {
+                [`${displayName}--dark-scrolled`]: isDark && hasScrolled,
+                [`${displayName}--dark`]: isDark,
                 [`${displayName}--scrolled`]: hasScrolled
             }
         );
@@ -137,6 +140,7 @@ NavigationDesktopComponent.propTypes = {
     headerLogoIcon: PropTypes.shape({
         publicURL: PropTypes.string
     }),
+    isDark: PropTypes.bool,
     navigationLinks: PropTypes.arrayOf(PropTypes.shape({
         pageName: PropTypes.string,
         pageURL: PropTypes.string
@@ -146,6 +150,7 @@ NavigationDesktopComponent.propTypes = {
 NavigationDesktopComponent.defaultProps = {
     headerLogoCopy: '',
     headerLogoIcon: {},
+    isDark: false,
     navigationLinks: []
 };
 

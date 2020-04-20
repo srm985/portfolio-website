@@ -12,7 +12,7 @@ import {
     BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../ButtonComponent/config';
 import {
-    BACKGROUND_COLOR_BLUE
+    BACKGROUND_COLOR_NEUMORPHIC
 } from '../CardComponent/config';
 
 import classNames from '../../utils/classNames';
@@ -77,7 +77,7 @@ class PortfolioItemComponent extends React.Component {
 
         const componentClassNames = classNames(
             displayName,
-            'mb--10',
+            'mb--15',
             {
                 [`${displayName}--visible`]: isVisible
             }
@@ -99,47 +99,52 @@ class PortfolioItemComponent extends React.Component {
 
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
-                <div className={componentClassNames}>
-                    <Image
-                        alt={imageAlt}
-                        className={imageClassNames}
-                        fluid={fluid}
-                    />
-                    <Card
-                        backgroundColor={BACKGROUND_COLOR_BLUE}
-                        className={`${displayName}__card`}
-                    >
-                        <Title
-                            className={titleClassNames}
-                            heading={projectTitle}
-                            headingSize={2}
+                <Card
+                    backgroundColor={BACKGROUND_COLOR_NEUMORPHIC}
+                    className={componentClassNames}
+                >
+                    <div className={`${displayName}__inner`}>
+                        <Image
+                            alt={imageAlt}
+                            className={imageClassNames}
+                            fluid={fluid}
                         />
-                        <Title
-                            heading={projectRoleTitle}
-                            headingSize={3}
-                        />
-                        <TextBlock
-                            className={`${displayName}__role mb--3`}
-                            text={role}
-                        />
-                        <Title
-                            heading={projectDescriptionTitle}
-                            headingSize={3}
-                        />
-                        <TextBlock
-                            className={`${displayName}__excerpt mb--4`}
-                            isAnimated
-                            text={projectExcerpt}
-                        />
-                        <Button
-                            className={`${displayName}__button`}
-                            href={formattedLink}
-                            isAnimated
-                            label={viewProjectCTA}
-                            styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
-                        />
-                    </Card>
-                </div>
+                        <div className={`${displayName}__placard`}>
+                            <div>
+                                <Title
+                                    className={titleClassNames}
+                                    heading={projectTitle}
+                                    headingSize={2}
+                                />
+                                <Title
+                                    heading={projectRoleTitle}
+                                    headingSize={3}
+                                />
+                                <TextBlock
+                                    className={`${displayName}__role mb--3`}
+                                    text={role}
+                                />
+                                <Title
+                                    heading={projectDescriptionTitle}
+                                    headingSize={3}
+                                />
+                                <TextBlock
+                                    className={`${displayName}__excerpt mb--4`}
+                                    isAnimated
+                                    text={projectExcerpt}
+                                />
+                            </div>
+                            <Button
+                                className={`${displayName}__button`}
+                                href={formattedLink}
+                                isAlignedRight
+                                isAnimated
+                                label={viewProjectCTA}
+                                styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
+                            />
+                        </div>
+                    </div>
+                </Card>
             </VisibilityChecker>
         );
     }

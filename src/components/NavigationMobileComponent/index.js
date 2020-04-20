@@ -65,7 +65,10 @@ class NavigationMobileComponent extends React.Component {
 
         for (let i = 0; i < 3; i++) {
             lines.push(
-                <span style={menuStyle}>
+                <span
+                    key={i}
+                    style={menuStyle}
+                >
                     {
                         i === 0 && (
                             <span style={menuStyle}>{'MENU'}</span>

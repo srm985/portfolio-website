@@ -49,7 +49,8 @@ class NavigationComponent extends React.Component {
     render() {
         const {
             props: {
-                content = {}
+                content = {},
+                isDark
             },
             state: {
                 isMobile
@@ -58,20 +59,28 @@ class NavigationComponent extends React.Component {
 
         return (
             isMobile ? (
-                <NavigationMobile {...content} />
+                <NavigationMobile
+                    {...content}
+                    isDark={isDark}
+                />
             ) : (
-                <NavigationDesktop {...content} />
+                <NavigationDesktop
+                    {...content}
+                    isDark={isDark}
+                />
             )
         );
     }
 }
 
 NavigationComponent.propTypes = {
-    content: PropTypes.shape({})
+    content: PropTypes.shape({}),
+    isDark: PropTypes.bool
 };
 
 NavigationComponent.defaultProps = {
-    content: {}
+    content: {},
+    isDark: false
 };
 
 export default NavigationComponent;

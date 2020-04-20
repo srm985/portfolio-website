@@ -1,7 +1,7 @@
 @import './constants';
 
 // Generate margin and padding classes.
-@for $i from 1 through 10 {
+@for $i from 1 through 15 {
     .mt--#{$i} {
         margin-top: #{$planck-length * $i};
     }
@@ -114,10 +114,10 @@
 
 .padding-wrapper {
     box-sizing: border-box;
-    padding: #{$planck-length * 5} #{$planck-length * 2} #{$planck-length * 7};
+    padding: #{$planck-length * 7} #{$planck-length * 2} #{$planck-length * 9};
 
     @media only screen and (min-width: $breakpoint-medium) {
-        padding: #{$planck-length * 5} #{$planck-length * 3} #{$planck-length * 7};
+        padding: #{$planck-length * 7} #{$planck-length * 3} #{$planck-length * 9};
     }
 }
 

@@ -53,7 +53,7 @@ const PortfolioPageTemplate = (props) => {
                 heroImageBlock={heroImageBlock}
                 isHalfHeight
             />
-            <Section>
+            <Section isMedium>
                 <Grid>
                     {renderProjectTiles()}
                 </Grid>

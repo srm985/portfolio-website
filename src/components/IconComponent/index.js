@@ -6,6 +6,8 @@ import classNames from '../../utils/classNames';
 import './styles.scss';
 
 class IconComponent extends React.Component {
+    _isMounted=false;
+
     constructor(props) {
         super(props);
 
@@ -20,6 +22,8 @@ class IconComponent extends React.Component {
                 iconURL
             }
         } = this;
+
+        this._isMounted = true;
 
         if (iconURL) {
             this.fetchIcon(iconURL);
@@ -42,11 +46,17 @@ class IconComponent extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     fetchIcon = (iconURL) => {
         fetch(iconURL).then((response) => response.text()).then((svgImage) => {
-            this.setState({
-                svgImage
-            });
+            if (this._isMounted) {
+                this.setState({
+                    svgImage
+                });
+            }
         });
     }
 

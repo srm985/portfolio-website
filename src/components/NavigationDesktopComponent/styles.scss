@@ -22,9 +22,11 @@
     transition: all 0.75s ease-in-out, color 0.75s ease-in-out;
 
     &--scrolled {
-        color: $color-black;
+        @extend %overlay;
+    }
 
-        background-color: rgba($color-white, 0.8);
+    &--dark {
+        @extend %overlay;
     }
 
     &__logo {
@@ -90,4 +92,10 @@
             }
         }
     }
+}
+
+%overlay {
+    color: $color-black;
+
+    background-color: rgba($color-white, 0.8);
 }

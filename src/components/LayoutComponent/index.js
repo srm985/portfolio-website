@@ -30,6 +30,7 @@ const LayoutComponent = (props) => {
         footerQuery,
         hasFooter,
         hasNavigation,
+        hasNavigationDark,
         navigationQuery
     } = props;
 
@@ -41,7 +42,8 @@ const LayoutComponent = (props) => {
         `${displayName}__main`,
         {
             [`${displayName}__main--has-footer`]: hasFooter,
-            [`${displayName}__main--has-navigation`]: hasNavigation
+            [`${displayName}__main--has-navigation-dark`]: hasNavigationDark,
+            [`${displayName}__main--has-navigation`]: hasNavigation && !hasNavigationDark
         }
     );
 
@@ -56,7 +58,12 @@ const LayoutComponent = (props) => {
         <div className={displayName}>
             <SEO pageSEO={pageSEO} />
             {
-                hasNavigation && <Navigation content={navigationContent} />
+                hasNavigation && (
+                    <Navigation
+                        content={navigationContent}
+                        isDark={hasNavigationDark}
+                    />
+                )
             }
             <main className={mainContentClassNames}>
                 {
@@ -85,6 +92,7 @@ LayoutComponent.propTypes = {
     footerQuery: PropTypes.shape({}),
     hasFooter: PropTypes.bool,
     hasNavigation: PropTypes.bool,
+    hasNavigationDark: PropTypes.bool,
     navigationQuery: PropTypes.shape({})
 };
 
@@ -93,6 +101,7 @@ LayoutComponent.defaultProps = {
     footerQuery: {},
     hasFooter: true,
     hasNavigation: true,
+    hasNavigationDark: false,
     navigationQuery: {}
 };
 
