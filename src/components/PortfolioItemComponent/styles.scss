@@ -34,7 +34,7 @@
         align-items: flex-end;
         justify-content: space-between;
         box-sizing: border-box;
-        width: 50%;
+        width: 80%;
         min-height: #{$planck-length * 50};
         padding: #{$planck-length * 3};
 
@@ -42,5 +42,9 @@
 
         background-color: rgba($color-black, 0.85);
         border-radius: 0 $border-radius-large $border-radius-large 0;
+
+        @media only screen and (min-width: $breakpoint-medium) {
+            width: 50%;
+        }
     }
 }
