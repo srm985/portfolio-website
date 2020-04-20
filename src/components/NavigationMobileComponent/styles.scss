@@ -1,5 +1,7 @@
 @import '../../styles/constants';
 
+$border-thick: solid 2px $color-black;
+$border-thin: solid 1px transparent;
 $line-thickness: 4px;
 
 .NavigationMobileComponent {
@@ -11,7 +13,7 @@ $line-thickness: 4px;
 
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
         box-sizing: border-box;
         width: 100%;
         height: $navigation-height-mobile;
@@ -22,8 +24,23 @@ $line-thickness: 4px;
         transition: box-shadow $transition-fast $transition-timing-function-default;
 
         &--open {
-            box-shadow: $box-shadow-default;
+            box-shadow: $box-shadow-default-neumorphic;
         }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        color: inherit;
+        font-weight: bold;
+        font-size: $font-size-regular;
+    }
+
+    &__logo-icon {
+        width: #{$planck-length * 3};
+        height: #{$planck-length * 3};
+        margin-right: $planck-length;
     }
 
     &__navigation-menu {
@@ -110,7 +127,8 @@ $line-thickness: 4px;
             width: 100%;
             height: $line-thickness + 2px;
 
-            border: solid 2px $color-black;
+            background-clip: content-box;
+            border: $border-thick;
             border-radius: #{$line-thickness};
 
             animation-duration: 0.6s;
@@ -206,11 +224,13 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
     51% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 
@@ -221,6 +241,7 @@ $line-thickness: 4px;
         width: calc(100% + 10px);
 
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 }
@@ -236,11 +257,13 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
     51% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 
@@ -251,6 +274,7 @@ $line-thickness: 4px;
         width: calc(100% + 10px);
 
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 }
@@ -267,11 +291,13 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
     51% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(-45deg);
     }
 
@@ -283,6 +309,7 @@ $line-thickness: 4px;
         width: calc(100% + 10px);
 
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(-45deg);
     }
 }
@@ -299,6 +326,7 @@ $line-thickness: 4px;
 
     49% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 
@@ -309,6 +337,7 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
@@ -317,6 +346,8 @@ $line-thickness: 4px;
         left: 0;
 
         width: 100%;
+
+        border: $border-thick;
     }
 }
 @keyframes animation-reversed-right {
@@ -332,6 +363,7 @@ $line-thickness: 4px;
 
     49% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(45deg);
     }
 
@@ -342,11 +374,14 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
     100% {
         width: 100%;
+
+        border: $border-thick;
     }
 }
 @keyframes animation-reversed-center {
@@ -363,6 +398,7 @@ $line-thickness: 4px;
 
     49% {
         background-color: $color-black;
+        border: $border-thin;
         transform: rotate(-45deg);
     }
 
@@ -372,6 +408,7 @@ $line-thickness: 4px;
         width: $line-thickness + 2px;
 
         background-color: transparent;
+        border: $border-thick;
         transform: rotate(0deg);
     }
 
@@ -379,6 +416,8 @@ $line-thickness: 4px;
         left: 0;
 
         width: 100%;
+
+        border: $border-thick;
     }
 }
 @keyframes animation-menu-text {

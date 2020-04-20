@@ -119,7 +119,7 @@ class PortfolioItemComponent extends React.Component {
                             headingSize={3}
                         />
                         <TextBlock
-                            className={`${displayName}__role`}
+                            className={`${displayName}__role mb--3`}
                             text={role}
                         />
                         <Title
@@ -127,7 +127,7 @@ class PortfolioItemComponent extends React.Component {
                             headingSize={3}
                         />
                         <TextBlock
-                            className={`${displayName}__excerpt`}
+                            className={`${displayName}__excerpt mb--4`}
                             isAnimated
                             text={projectExcerpt}
                         />

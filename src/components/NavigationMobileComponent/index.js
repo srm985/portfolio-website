@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
+import Icon from '../IconComponent';
 
 import {
     BUTTON_STYLE_TYPE_INLINE
@@ -125,6 +126,12 @@ class NavigationMobileComponent extends React.Component {
 
     render() {
         const {
+            props: {
+                headerLogoCopy,
+                headerLogoIcon: {
+                    publicURL: iconURL = ''
+                }
+            },
             state: {
                 isMenuOpen
             }
@@ -153,6 +160,13 @@ class NavigationMobileComponent extends React.Component {
         return (
             <nav className={displayName}>
                 <div className={navigationClassNames}>
+                    <div className={`${displayName}__logo`}>
+                        <Icon
+                            className={`${displayName}__logo-icon`}
+                            iconURL={iconURL}
+                        />
+                        <p>{headerLogoCopy}</p>
+                    </div>
                     {this.renderMenuButton()}
                 </div>
                 <div className={navigationMenuClassNames}>
@@ -168,16 +182,20 @@ class NavigationMobileComponent extends React.Component {
 NavigationMobileComponent.displayName = 'NavigationMobileComponent';
 
 NavigationMobileComponent.propTypes = {
+    headerLogoCopy: PropTypes.string,
+    headerLogoIcon: PropTypes.shape({
+        publicURL: PropTypes.string
+    }),
     navigationLinks: PropTypes.arrayOf(PropTypes.shape({
         pageName: PropTypes.string,
         pageURL: PropTypes.string
     }))
-    // logoCopy: PropTypes.string
 };
 
 NavigationMobileComponent.defaultProps = {
+    headerLogoCopy: '',
+    headerLogoIcon: {},
     navigationLinks: []
-    // logoCopy: ''
 };
 
 export default NavigationMobileComponent;

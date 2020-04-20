@@ -12,7 +12,7 @@ $darken-constant: 10%;
     color: $color-white;
 
     border-radius: $border-radius-default;
-    box-shadow: $box-shadow-default;
+    box-shadow: $box-shadow-default-neumorphic;
 
     @media only screen and (min-width: $breakpoint-medium) {
         padding: #{$planck-length * 3} #{$planck-length * 4};

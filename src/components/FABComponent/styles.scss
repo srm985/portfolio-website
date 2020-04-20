@@ -20,7 +20,7 @@ $fab-diameter: #{$planck-length * 6};
     border: none;
     border-radius: 50%;
     outline: none;
-    box-shadow: $box-shadow-default;
+    box-shadow: $box-shadow-default-neumorphic;
     cursor: pointer;
 
     &:hover {

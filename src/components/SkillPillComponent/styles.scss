@@ -21,7 +21,7 @@ $border-radius: calc(#{$pill-height} / 2);
 
     background-color: transparent;
     border-radius: $border-radius;
-    box-shadow: $box-shadow-default;
+    box-shadow: $box-shadow-default-neumorphic;
     cursor: default;
 
     user-select: none;
@@ -38,7 +38,7 @@ $border-radius: calc(#{$pill-height} / 2);
         width: $icon-container-width;
         height: 100%;
 
-        background-color: $color-gray-light;
+        background-color: $color-white-arctic;
         border-radius: $border-radius 0 0 $border-radius;
     }
 

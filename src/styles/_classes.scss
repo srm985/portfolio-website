@@ -120,3 +120,21 @@
         padding: #{$planck-length * 5} #{$planck-length * 3} #{$planck-length * 7};
     }
 }
+
+%article {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        font-size: 20px;
+    }
+}
+
+.article {
+    @extend %article;
+
+    * {
+        @extend %article;
+    }
+}

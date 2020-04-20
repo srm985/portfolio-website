@@ -1,5 +1,9 @@
 @import '../../styles/constants';
 
+$dot-size: 1px;
+$dot-color: $color-black;
+$dot-spacing: 7px;
+
 .ProjectHeaderComponent {
     position: relative;
 
@@ -23,10 +27,14 @@
         width: 50%;
         height: 100%;
 
-        background-color: $color-gray-light;
+        background-color: $color-white-arctic;
 
         &:first-of-type {
             display: none;
+
+            background-image: radial-gradient($dot-color $dot-size, transparent $dot-size), radial-gradient($dot-color $dot-size, transparent $dot-size);
+            background-position: 0 0, $dot-spacing $dot-spacing;
+            background-size: #{$dot-spacing * 2} #{$dot-spacing * 2};
 
             @media only screen and (min-width: $breakpoint-medium) {
                 display: inline-block;
