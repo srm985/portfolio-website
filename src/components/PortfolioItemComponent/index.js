@@ -34,6 +34,13 @@ class PortfolioItemComponent extends React.Component {
                 isVisible: wasVisible
             } = previousState;
 
+            console.log({
+                isVisible
+            });
+            console.log({
+                wasVisible
+            });
+
             if (isVisible === wasVisible) {
                 return null;
             }
@@ -47,6 +54,7 @@ class PortfolioItemComponent extends React.Component {
     render() {
         const {
             props: {
+                className,
                 projectDescriptionTitle,
                 projectExcerpt,
                 projectRoleTitle,
@@ -76,8 +84,8 @@ class PortfolioItemComponent extends React.Component {
         const formattedLink = slug.replace(/\/$/, '');
 
         const componentClassNames = classNames(
+            className,
             displayName,
-            'mb--15',
             {
                 [`${displayName}--visible`]: isVisible
             }
@@ -99,52 +107,54 @@ class PortfolioItemComponent extends React.Component {
 
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
-                <Card
-                    backgroundColor={BACKGROUND_COLOR_NEUMORPHIC}
-                    className={componentClassNames}
-                >
-                    <div className={`${displayName}__inner`}>
-                        <Image
-                            alt={imageAlt}
-                            className={imageClassNames}
-                            fluid={fluid}
-                        />
-                        <div className={`${displayName}__placard`}>
-                            <div>
-                                <Title
-                                    className={titleClassNames}
-                                    heading={projectTitle}
-                                    headingSize={2}
-                                />
-                                <Title
-                                    heading={projectRoleTitle}
-                                    headingSize={3}
-                                />
-                                <TextBlock
-                                    className={`${displayName}__role mb--3`}
-                                    text={role}
-                                />
-                                <Title
-                                    heading={projectDescriptionTitle}
-                                    headingSize={3}
-                                />
-                                <TextBlock
-                                    className={`${displayName}__excerpt mb--4`}
+                <div>
+                    <Card
+                        backgroundColor={BACKGROUND_COLOR_NEUMORPHIC}
+                        className={componentClassNames}
+                    >
+                        <div className={`${displayName}__inner`}>
+                            <Image
+                                alt={imageAlt}
+                                className={imageClassNames}
+                                fluid={fluid}
+                            />
+                            <div className={`${displayName}__placard`}>
+                                <div>
+                                    <Title
+                                        className={titleClassNames}
+                                        heading={projectTitle}
+                                        headingSize={2}
+                                    />
+                                    <Title
+                                        heading={projectRoleTitle}
+                                        headingSize={3}
+                                    />
+                                    <TextBlock
+                                        className={`${displayName}__role mb--3`}
+                                        text={role}
+                                    />
+                                    <Title
+                                        heading={projectDescriptionTitle}
+                                        headingSize={3}
+                                    />
+                                    <TextBlock
+                                        className={`${displayName}__excerpt mb--4`}
+                                        isAnimated
+                                        text={projectExcerpt}
+                                    />
+                                </div>
+                                <Button
+                                    className={`${displayName}__button`}
+                                    href={formattedLink}
+                                    isAlignedRight
                                     isAnimated
-                                    text={projectExcerpt}
+                                    label={viewProjectCTA}
+                                    styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                                 />
                             </div>
-                            <Button
-                                className={`${displayName}__button`}
-                                href={formattedLink}
-                                isAlignedRight
-                                isAnimated
-                                label={viewProjectCTA}
-                                styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
-                            />
                         </div>
-                    </div>
-                </Card>
+                    </Card>
+                </div>
             </VisibilityChecker>
         );
     }
@@ -153,6 +163,7 @@ class PortfolioItemComponent extends React.Component {
 PortfolioItemComponent.displayName = 'PortfolioItemComponent';
 
 PortfolioItemComponent.propTypes = {
+    className: PropTypes.string,
     projectDescriptionTitle: PropTypes.string,
     projectExcerpt: PropTypes.string,
     projectRoleTitle: PropTypes.string,
@@ -172,6 +183,7 @@ PortfolioItemComponent.propTypes = {
 };
 
 PortfolioItemComponent.defaultProps = {
+    className: '',
     projectDescriptionTitle: '',
     projectExcerpt: '',
     projectRoleTitle: '',

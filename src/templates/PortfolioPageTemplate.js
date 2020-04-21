@@ -39,6 +39,7 @@ const PortfolioPageTemplate = (props) => {
             >
                 <PortfolioItem
                     {...projectData}
+                    className={'mt--10'}
                     projectDescriptionTitle={projectDescriptionTitle}
                     projectRoleTitle={projectRoleTitle}
                     viewProjectCTA={viewProjectCTA}

@@ -47,4 +47,46 @@
             width: 50%;
         }
     }
+
+    &__card-title {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: -#{$planck-length * 3};
+            z-index: -1;
+
+            width: calc(100% + #{$planck-length * 6});
+            height: #{$planck-length * 3};
+
+            background-color: $color-blue;
+            opacity: 0.6;
+
+            animation-name: animation-title-accent;
+            animation-duration: 0.2s;
+            animation-play-state: paused;
+            animation-timing-function: $transition-timing-function-default;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+
+            content: '';
+        }
+
+        &--visible {
+            &::after {
+                animation-play-state: running;
+            }
+        }
+    }
+}
+
+@keyframes animation-title-accent {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-#{$planck-length * 8});
+    }
 }
