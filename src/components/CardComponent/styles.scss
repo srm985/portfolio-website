@@ -1,7 +1,5 @@
 @import '../../styles/constants';
 
-$card-shadow: $planck-length * 4;
-$card-blur: $card-shadow + ($planck-length * 2);
 $darken-constant: 10%;
 
 .CardComponent {
@@ -40,15 +38,5 @@ $darken-constant: 10%;
         color: $color-black;
 
         background-color: $color-gray-medium;
-    }
-
-    &--background-neumorphic {
-        padding: #{$planck-length * 4};
-
-        background-color: transparent;
-        background-image: linear-gradient(to bottom right, rgba($color-black, 0.2), $color-white);
-        background-clip: padding-box;
-        border: solid 2px $color-gray-medium;
-        box-shadow: $card-shadow $card-shadow $card-blur rgba($color-black, 0.8), -#{$card-shadow} -#{$card-shadow} $card-blur $color-white;
     }
 }

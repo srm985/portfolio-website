@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
-import Card from '../CardComponent';
 import Image from '../ImageComponent';
 import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
@@ -11,9 +10,6 @@ import VisibilityChecker from '../VisibilityCheckerComponent';
 import {
     BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../ButtonComponent/config';
-import {
-    BACKGROUND_COLOR_NEUMORPHIC
-} from '../CardComponent/config';
 
 import classNames from '../../utils/classNames';
 
@@ -33,13 +29,6 @@ class PortfolioItemComponent extends React.Component {
             const {
                 isVisible: wasVisible
             } = previousState;
-
-            console.log({
-                isVisible
-            });
-            console.log({
-                wasVisible
-            });
 
             if (isVisible === wasVisible) {
                 return null;
@@ -93,6 +82,7 @@ class PortfolioItemComponent extends React.Component {
 
         const titleClassNames = classNames(
             `${displayName}__card-title`,
+            'mb--2',
             {
                 [`${displayName}__card-title--visible`]: isVisible
             }
@@ -107,53 +97,48 @@ class PortfolioItemComponent extends React.Component {
 
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
-                <div>
-                    <Card
-                        backgroundColor={BACKGROUND_COLOR_NEUMORPHIC}
-                        className={componentClassNames}
-                    >
-                        <div className={`${displayName}__inner`}>
-                            <Image
-                                alt={imageAlt}
-                                className={imageClassNames}
-                                fluid={fluid}
-                            />
-                            <div className={`${displayName}__placard`}>
-                                <div>
-                                    <Title
-                                        className={titleClassNames}
-                                        heading={projectTitle}
-                                        headingSize={2}
-                                    />
-                                    <Title
-                                        heading={projectRoleTitle}
-                                        headingSize={3}
-                                    />
-                                    <TextBlock
-                                        className={`${displayName}__role mb--3`}
-                                        text={role}
-                                    />
-                                    <Title
-                                        heading={projectDescriptionTitle}
-                                        headingSize={3}
-                                    />
-                                    <TextBlock
-                                        className={`${displayName}__excerpt mb--4`}
-                                        isAnimated
-                                        text={projectExcerpt}
-                                    />
-                                </div>
-                                <Button
-                                    className={`${displayName}__button`}
-                                    href={formattedLink}
-                                    isAlignedRight
+                <div className={componentClassNames}>
+                    <div className={`${displayName}__inner`}>
+                        <Image
+                            alt={imageAlt}
+                            className={imageClassNames}
+                            fluid={fluid}
+                        />
+                        <div className={`${displayName}__placard`}>
+                            <div>
+                                <Title
+                                    className={titleClassNames}
+                                    heading={projectTitle}
+                                    headingSize={2}
+                                />
+                                <Title
+                                    heading={projectRoleTitle}
+                                    headingSize={3}
+                                />
+                                <TextBlock
+                                    className={`${displayName}__role mb--3`}
+                                    text={role}
+                                />
+                                <Title
+                                    heading={projectDescriptionTitle}
+                                    headingSize={3}
+                                />
+                                <TextBlock
+                                    className={`${displayName}__excerpt mb--4`}
                                     isAnimated
-                                    label={viewProjectCTA}
-                                    styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
+                                    text={projectExcerpt}
                                 />
                             </div>
+                            <Button
+                                className={`${displayName}__button`}
+                                href={formattedLink}
+                                isAlignedRight
+                                isAnimated
+                                label={viewProjectCTA}
+                                styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
+                            />
                         </div>
-                    </Card>
+                    </div>
                 </div>
             </VisibilityChecker>
         );

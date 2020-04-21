@@ -6,7 +6,6 @@ import classNames from '../../utils/classNames';
 import {
     BACKGROUND_COLOR_BLUE,
     BACKGROUND_COLOR_GREEN,
-    BACKGROUND_COLOR_NEUMORPHIC,
     BACKGROUND_COLOR_ORANGE,
     BACKGROUND_COLOR_RED,
     BACKGROUND_COLOR_WHITE,
@@ -32,7 +31,6 @@ const CardComponent = (props) => {
         {
             [`${displayName}--background-blue`]: backgroundColor === BACKGROUND_COLOR_BLUE,
             [`${displayName}--background-green`]: backgroundColor === BACKGROUND_COLOR_GREEN,
-            [`${displayName}--background-neumorphic`]: backgroundColor === BACKGROUND_COLOR_NEUMORPHIC,
             [`${displayName}--background-orange`]: backgroundColor === BACKGROUND_COLOR_ORANGE,
             [`${displayName}--background-red`]: backgroundColor === BACKGROUND_COLOR_RED,
             [`${displayName}--background-white`]: backgroundColor === BACKGROUND_COLOR_WHITE

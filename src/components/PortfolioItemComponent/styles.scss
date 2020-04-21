@@ -1,6 +1,45 @@
 @import '../../styles/constants';
 
+$animation-delay: 0.3s;
+$card-shadow: $planck-length * 4;
+
+@mixin box-shadow($scale: 1) {
+    $card-shadow-calculated: #{$planck-length * 5 * $scale};
+
+    box-shadow: $card-shadow-calculated $card-shadow-calculated $card-shadow-calculated rgba($color-black, 0.9), -#{$card-shadow-calculated} -#{$card-shadow-calculated} $card-shadow-calculated rgba($color-white, 0.9);
+}
+
 .PortfolioItemComponent {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: #{$planck-length * 25};
+    padding: #{$planck-length * 4};
+
+    color: $color-white;
+
+    background-color: transparent;
+    background-image: linear-gradient(to bottom right, rgba($color-black, 0.2), $color-white);
+    background-clip: padding-box;
+    border: solid #{$planck-length / 2} $color-gray-medium;
+    border-radius: $border-radius-large;
+    transform: scale(0.9);
+
+    animation-name: animation-card-pop;
+    animation-duration: 1s;
+    animation-play-state: paused;
+    animation-timing-function: $transition-timing-function-default;
+    animation-delay: $animation-delay;
+    animation-fill-mode: forwards;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+        border: solid $planck-length $color-gray-medium;
+    }
+
+    &--visible {
+        animation-play-state: running;
+    }
+
     &__inner {
         position: relative;
 
@@ -53,24 +92,27 @@
 
         &::after {
             position: absolute;
-            bottom: 0;
-            left: -#{$planck-length * 3};
+            right: 0;
+            bottom: -#{$planck-length};
             z-index: -1;
 
-            width: calc(100% + #{$planck-length * 6});
             height: #{$planck-length * 3};
 
-            background-color: $color-blue;
+            background-image: linear-gradient(to right, $color-blue, rgba($color-white, 0.4));
             opacity: 0.6;
 
             animation-name: animation-title-accent;
-            animation-duration: 0.2s;
+            animation-duration: 0.1s;
             animation-play-state: paused;
             animation-timing-function: $transition-timing-function-default;
-            animation-delay: 0.2s;
+            animation-delay: $animation-delay;
             animation-fill-mode: forwards;
 
             content: '';
+
+            @media only screen and (min-width: $breakpoint-medium) {
+                bottom: 0;
+            }
         }
 
         &--visible {
@@ -81,12 +123,61 @@
     }
 }
 
+@keyframes animation-card-pop {
+    0% {
+        @include box-shadow(0);
+    }
+
+    30% {
+        @include box-shadow(2);
+    }
+
+    40% {
+        @include box-shadow(0.5);
+    }
+
+    50% {
+        @include box-shadow(1.25);
+    }
+
+    60% {
+        @include box-shadow(0.75);
+    }
+
+    70% {
+        @include box-shadow(1.125);
+    }
+
+    80% {
+        @include box-shadow(0.875);
+    }
+
+    90% {
+        @include box-shadow(1.0625);
+    }
+
+    100% {
+        @include box-shadow();
+    }
+}
 @keyframes animation-title-accent {
     from {
-        transform: translateX(0);
+        width: 0;
     }
 
     to {
-        transform: translateX(-#{$planck-length * 8});
+        width: calc(100% + #{$planck-length * 7});
+    }
+}
+
+@media only screen and (min-width: $breakpoint-medium) {
+    @keyframes animation-title-accent {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: calc(100% + #{$planck-length * 10});
+        }
     }
 }
