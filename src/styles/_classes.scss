@@ -1,65 +1,82 @@
 @import './constants';
 
-// Generate margin and padding classes.
-@for $i from 1 through 15 {
-    .mt--#{$i} {
+@mixin render-helpers($i, $size: '') {
+    .mt#{$size}--#{$i} {
         margin-top: #{$planck-length * $i};
     }
 
-    .mr--#{$i} {
+    .mr#{$size}--#{$i} {
         margin-right: #{$planck-length * $i};
     }
 
-    .mb--#{$i} {
+    .mb#{$size}--#{$i} {
         margin-bottom: #{$planck-length * $i};
     }
 
-    .ml--#{$i} {
+    .ml#{$size}--#{$i} {
         margin-left: #{$planck-length * $i};
     }
 
-    .mx--#{$i} {
+    .mx#{$size}--#{$i} {
         margin-right: #{$planck-length * $i};
         margin-left: #{$planck-length * $i};
     }
 
-    .my--#{$i} {
+    .my#{$size}--#{$i} {
         margin-top: #{$planck-length * $i};
         margin-bottom: #{$planck-length * $i};
     }
 
-    .m--#{$i} {
+    .m#{$size}--#{$i} {
         margin: #{$planck-length * $i};
     }
 
-    .pt--#{$i} {
+    .pt#{$size}--#{$i} {
         padding-top: #{$planck-length * $i};
     }
 
-    .pr--#{$i} {
+    .pr#{$size}--#{$i} {
         padding-right: #{$planck-length * $i};
     }
 
-    .pb--#{$i} {
+    .pb#{$size}--#{$i} {
         padding-bottom: #{$planck-length * $i};
     }
 
-    .pl--#{$i} {
+    .pl#{$size}--#{$i} {
         padding-left: #{$planck-length * $i};
     }
 
-    .px--#{$i} {
+    .px#{$size}--#{$i} {
         padding-right: #{$planck-length * $i};
         padding-left: #{$planck-length * $i};
     }
 
-    .py--#{$i} {
+    .py#{$size}--#{$i} {
         padding-top: #{$planck-length * $i};
         padding-bottom: #{$planck-length * $i};
     }
 
-    .p--#{$i} {
+    .p#{$size}--#{$i} {
         padding: #{$planck-length * $i};
+    }
+}
+
+// Generate margin and padding classes.
+@for $i from 1 through 15 {
+    @include render-helpers($i);
+
+    @media only screen and (min-width: $breakpoint-small) {
+        @include render-helpers($i, '-small');
+    }
+    @media only screen and (min-width: $breakpoint-medium) {
+        @include render-helpers($i, '-medium');
+    }
+    @media only screen and (min-width: $breakpoint-large) {
+        @include render-helpers($i, '-large');
+    }
+    @media only screen and (min-width: $breakpoint-extra-large) {
+        @include render-helpers($i, '-extra-large');
     }
 }
 
