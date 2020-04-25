@@ -1,6 +1,8 @@
 @import '../../styles/constants';
 
 $animation-delay: 0.3s;
+$duration-card-bounce: 1s;
+$delay-underline: $animation-delay + $duration-card-bounce + 0.1s;
 $card-shadow: $planck-length * 4;
 
 @mixin box-shadow($scale: 1) {
@@ -26,7 +28,7 @@ $card-shadow: $planck-length * 4;
     transform: scale(0.9);
 
     animation-name: animation-card-pop;
-    animation-duration: 1s;
+    animation-duration: $duration-card-bounce;
     animation-play-state: paused;
     animation-timing-function: $transition-timing-function-default;
     animation-delay: $animation-delay;
@@ -102,10 +104,10 @@ $card-shadow: $planck-length * 4;
             opacity: 0.6;
 
             animation-name: animation-title-accent;
-            animation-duration: 0.1s;
+            animation-duration: 0.3s;
             animation-play-state: paused;
             animation-timing-function: $transition-timing-function-default;
-            animation-delay: $animation-delay;
+            animation-delay: $delay-underline;
             animation-fill-mode: forwards;
 
             content: '';

@@ -39,6 +39,7 @@ $font-size-small: 12px;
 
 // Box Shadows
 $box-shadow-default: 5px 5px 5px $color-black;
+$box-shadow-large: 20px 20px 30px $color-black;
 $box-shadow-default-neumorphic: 3px 3px 5px $color-black, -3px -3px 5px rgba($color-white, 0.3);
 $box-shadow-default-neumorphic-inset: 3px 3px 5px $color-black inset, -3px -3px 5px rgba($color-white, 0.3) inset;
 
