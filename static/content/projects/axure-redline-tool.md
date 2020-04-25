@@ -64,7 +64,7 @@ projectSectionList:
       imageAlignment: full
       imageAlt: a demo of the user implementing the plugin
       imageOpacity: 100
-      imageSource: /assets/axure-redline-tool.gif
+      imageSource: /assets/laptop-collaboration.jpg
       imageTitle: ''
     projectSectionTitle: How's It Work?
   - projectSectionBody: >-
