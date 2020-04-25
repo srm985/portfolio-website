@@ -16,15 +16,19 @@ image_citation: &image_citation
     - label: 'Author Name'
       name: 'authorName'
       widget: 'string'
+      required: false
     - label: 'Author Link'
       name: 'authorLink'
       widget: 'string'
+      required: false
     - label: 'Hosting Name'
       name: 'hostingName'
       widget: 'string'
+      required: false
     - label: 'Hosting Link'
       name: 'hostingLink'
       widget: 'string'
+      required: false
 
 default_image: &default_image
   label: 'Hero Image Block'
