@@ -47,7 +47,7 @@ projectSectionList:
       created this tool, Axure had not joined the list of tools offering this.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: a section image
+      imageAlt: a screenshot of the tool showing measurements between various elements
       imageSource: /assets/tool-screenshot.jpg
     projectSectionTitle: What's The Need?
   - projectSectionBody: >-
@@ -64,7 +64,7 @@ projectSectionList:
       imageAlignment: full
       imageAlt: a demo of the user implementing the plugin
       imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
+      imageSource: /assets/axure-redline-tool.gif
       imageTitle: ''
     projectSectionTitle: How's It Work?
   - projectSectionBody: >-
@@ -89,9 +89,9 @@ projectSectionList:
       inspection tool.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: placeholder
+      imageAlt: a macro photo of a circuit board
       imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
+      imageSource: /assets/circuit-board.jpg
       imageTitle: ''
     projectSectionTitle: How's It Built?
   - projectSectionBody: >-
@@ -102,10 +102,11 @@ projectSectionList:
       identify bugs within the tool’s active community.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: placeholder
+      imageAlt: >-
+        a laptop screening displaying various charts and graphs with plant in
+        background
       imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
+      imageSource: /assets/laptop-graphics.jpg
       imageTitle: ''
     projectSectionTitle: Is It Used?
 ---
-
