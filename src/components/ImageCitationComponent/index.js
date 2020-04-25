@@ -25,24 +25,26 @@ const ImageCitationComponent = (props) => {
     return (
         isCited && (
             <p className={displayName}>
-                <span>{'Photo by'}</span>
+                <span>{'Photo by '}</span>
                 {
                     hostingSiteLink ? (
                         <>
                             <Button
                                 href={authorLink}
+                                isInternalURL={false}
                                 label={authorName}
                                 styleType={BUTTON_STYLE_TYPE_INLINE}
                             />
                             <span>{' via '}</span>
                             <Button
                                 href={hostingSiteLink}
+                                isInternalURL={false}
                                 label={hostingSiteName}
                                 styleType={BUTTON_STYLE_TYPE_INLINE}
                             />
                         </>
                     ) : (
-                        <span>{' Author'}</span>
+                        <span>{'Author'}</span>
                     )
                 }
             </p>

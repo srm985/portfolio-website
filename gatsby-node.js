@@ -111,10 +111,18 @@ exports.createSchemaCustomization = ({
             pageSEO: PageSEO
         }
         type HeroImageBlock {
+            citation: Citation
             imageAlt: String
             imageOpacity: Int
             imageTitle: String
             imageAlignment: String
+        }
+        type Citation {
+            authorLink: String
+            authorName: String
+            hostingSiteLink: String
+            hostingSiteName: String
+            isCited: Boolean
         }
         type PageSEO {
             pageAuthor: String

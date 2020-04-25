@@ -20,6 +20,10 @@ const ProjectTemplateConnected = (props) => {
         } = {}
     } = props;
 
+    console.log({
+        pageData
+    });
+
     const [
         templateGlobalData
     ] = destructureNetlifyCMS(templateGlobalsQuery);
@@ -70,6 +74,13 @@ export const query = graphql`
                     projectSectionTitle
                     projectSectionBody
                     projectSectionImageBlock {
+                        citation {
+                            authorLink
+                            authorName
+                            hostingSiteLink
+                            hostingSiteName
+                            isCited
+                        }
                         imageAlignment
                         imageAlt
                         imageSource {

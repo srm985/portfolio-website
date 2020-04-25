@@ -81,10 +81,14 @@ class ImageComponent extends React.Component {
 
         const componentClassNames = classNames(
             className,
-            displayName,
+            displayName
+        );
+
+        const imageWrapperClassNames = classNames(
+            `${displayName}__image-wrapper`,
             {
-                [`${displayName}--can-view-enlarged`]: canViewEnlarged,
-                [`${displayName}--full-screen`]: isFullScreen
+                [`${displayName}__image-wrapper--can-view-enlarged`]: canViewEnlarged,
+                [`${displayName}__image-wrapper--full-screen`]: isFullScreen
             }
         );
 
@@ -103,10 +107,10 @@ class ImageComponent extends React.Component {
         };
 
         return (
-            <>
+            <div className={componentClassNames}>
                 <div
+                    className={imageWrapperClassNames}
                     {...enlargeImageAttributes}
-                    className={componentClassNames}
                 >
                     {
                         src ? (
@@ -129,7 +133,7 @@ class ImageComponent extends React.Component {
                     }
                 </div>
                 <ImageCitation {...citation} />
-            </>
+            </div>
         );
     }
 }

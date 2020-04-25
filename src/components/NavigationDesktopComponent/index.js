@@ -45,6 +45,7 @@ class NavigationDesktopComponent extends React.Component {
     renderLinks = () => {
         const {
             props: {
+                isDark,
                 navigationLinks
             },
             state: {
@@ -59,6 +60,8 @@ class NavigationDesktopComponent extends React.Component {
         const linkClassNames = classNames(
             `${displayName}__navigation-link`,
             {
+                [`${displayName}__navigation-link--dark-scrolled`]: isDark && hasScrolled,
+                [`${displayName}__navigation-link--dark`]: isDark,
                 [`${displayName}__navigation-link--scrolled`]: hasScrolled
             }
         );

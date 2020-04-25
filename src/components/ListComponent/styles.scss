@@ -6,4 +6,8 @@
     @media only screen and (min-width: $breakpoint-large) {
         columns: 3;
     }
+
+    &--short {
+        columns: 1;
+    }
 }

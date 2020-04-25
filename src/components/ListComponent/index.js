@@ -39,10 +39,13 @@ const ListComponent = (props) => {
         );
     });
 
+    const isShortList = children.length <= 10;
+
     const componentClassNames = classNames(
         displayName,
         {
             [`${displayName}--ordered`]: isOrderedList,
+            [`${displayName}--short`]: isShortList,
             [`${displayName}--unordered`]: !isOrderedList
         }
     );

@@ -44,7 +44,7 @@ $scale-active: 0.9;
 
     transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow, box-shadow $transition-timing-function-default $transition-slow;
 
-    & + .ButtonComponent {
+    & ~ .ButtonComponent {
         margin-left: #{$planck-length * 3};
 
         @media only screen and (min-width: $breakpoint-small) {

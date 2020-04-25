@@ -32,6 +32,7 @@ class ProjectSectionComponent extends React.Component {
             const {
                 projectSectionBody = '',
                 projectSectionImageBlock: {
+                    citation,
                     imageAlignment = IMAGE_ALIGNMENT_FULL,
                     imageAlt = '',
                     imageSource: {
@@ -97,6 +98,7 @@ class ProjectSectionComponent extends React.Component {
                             <Image
                                 alt={imageAlt}
                                 canViewEnlarged
+                                citation={citation}
                                 className={sectionImageClassNames}
                                 fluid={fluid}
                             />
@@ -132,6 +134,7 @@ ProjectSectionComponent.propTypes = {
     projectSectionList: PropTypes.arrayOf(PropTypes.shape({
         projectSectionBody: PropTypes.string,
         projectSectionImageBlock: PropTypes.shape({
+            citation: PropTypes.shape({}),
             imageAlignment: PropTypes.oneOf(IMAGE_ALIGNMENT_OPTIONS),
             imageAlt: PropTypes.string,
             imageOpacity: PropTypes.number,
