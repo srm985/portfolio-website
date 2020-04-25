@@ -49,6 +49,8 @@ projectSectionList:
       imageAlignment: full
       imageAlt: a screenshot of the tool showing measurements between various elements
       imageSource: /assets/tool-screenshot.jpg
+      citation:
+        isCited: true
     projectSectionTitle: What's The Need?
   - projectSectionBody: >-
       Plugins aren’t something officially supported in Axure, but I found an
@@ -66,6 +68,12 @@ projectSectionList:
       imageOpacity: 100
       imageSource: /assets/laptop-collaboration.jpg
       imageTitle: ''
+      citation:
+        isCited: true
+        authorName: Helloquence
+        authorLink: 'https://unsplash.com/@helloquence'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: How's It Work?
   - projectSectionBody: >-
       Version 1 was simple. I had no idea if anybody besides me had the desire
@@ -93,6 +101,12 @@ projectSectionList:
       imageOpacity: 100
       imageSource: /assets/circuit-board.jpg
       imageTitle: ''
+      citation:
+        isCited: true
+        authorName: Alexandre Debiève
+        authorLink: 'https://unsplash.com/@alexkixa'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: How's It Built?
   - projectSectionBody: >-
       My analytics are limited, but the short answer is, yes. I’ve never
@@ -108,5 +122,11 @@ projectSectionList:
       imageOpacity: 100
       imageSource: /assets/laptop-graphics.jpg
       imageTitle: ''
+      citation:
+        isCited: true
+        authorName: Luke Chesser
+        authorLink: 'https://unsplash.com/@lukechesser'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: Is It Used?
 ---
