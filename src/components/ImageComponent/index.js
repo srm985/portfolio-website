@@ -2,6 +2,8 @@ import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import ImageCitation from '../ImageCitationComponent';
+
 import classNames from '../../utils/classNames';
 
 import './styles.scss';
@@ -61,6 +63,7 @@ class ImageComponent extends React.Component {
             props: {
                 alt,
                 canViewEnlarged,
+                citation,
                 className,
                 fluid,
                 src,
@@ -100,30 +103,33 @@ class ImageComponent extends React.Component {
         };
 
         return (
-            <div
-                {...enlargeImageAttributes}
-                className={componentClassNames}
-            >
-                {
-                    src ? (
-                        <img
-                            alt={alt}
-                            className={imageClassNames}
-                            src={src}
-                            style={style}
-                            title={title}
-                        />
-                    ) : (
-                        <Image
-                            alt={alt}
-                            className={imageClassNames}
-                            fluid={fluid}
-                            style={style}
-                            title={title}
-                        />
-                    )
-                }
-            </div>
+            <>
+                <div
+                    {...enlargeImageAttributes}
+                    className={componentClassNames}
+                >
+                    {
+                        src ? (
+                            <img
+                                alt={alt}
+                                className={imageClassNames}
+                                src={src}
+                                style={style}
+                                title={title}
+                            />
+                        ) : (
+                            <Image
+                                alt={alt}
+                                className={imageClassNames}
+                                fluid={fluid}
+                                style={style}
+                                title={title}
+                            />
+                        )
+                    }
+                </div>
+                <ImageCitation {...citation} />
+            </>
         );
     }
 }
@@ -133,6 +139,7 @@ ImageComponent.displayName = 'ImageComponent';
 ImageComponent.propTypes = {
     alt: PropTypes.string.isRequired,
     canViewEnlarged: PropTypes.bool,
+    citation: PropTypes.shape({}),
     className: PropTypes.string,
     fluid: PropTypes.shape({}),
     src: PropTypes.string,
@@ -142,6 +149,7 @@ ImageComponent.propTypes = {
 
 ImageComponent.defaultProps = {
     canViewEnlarged: false,
+    citation: {},
     className: '',
     fluid: {},
     src: '',

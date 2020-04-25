@@ -7,6 +7,25 @@ public_folder: '/assets'
 
 site_url: https://mystifying-bartik-329370.netlify.com
 
+image_citation: &image_citation
+  label: 'Citation'
+  name: 'citation'
+  widget: 'object'
+  required: false
+  fields:
+    - label: 'Author Name'
+      name: 'authorName'
+      widget: 'string'
+    - label: 'Author Link'
+      name: 'authorLink'
+      widget: 'string'
+    - label: 'Hosting Name'
+      name: 'hostingName'
+      widget: 'string'
+    - label: 'Hosting Link'
+      name: 'hostingLink'
+      widget: 'string'
+
 default_image: &default_image
   label: 'Hero Image Block'
   name: 'heroImageBlock'
@@ -39,6 +58,7 @@ default_image: &default_image
         ['full', 'left-narrow', 'left-wide', 'right-narrow', 'right-wide']
       default: 'full'
       required: false
+    - { <<: *image_citation }
 
 default_seo: &default_seo
   label: 'Page SEO'
