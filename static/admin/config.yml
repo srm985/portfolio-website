@@ -13,6 +13,10 @@ image_citation: &image_citation
   widget: 'object'
   required: false
   fields:
+    - label: 'Is Cited'
+      name: 'isCited'
+      widget: 'boolean'
+      required: false
     - label: 'Author Name'
       name: 'authorName'
       widget: 'string'
@@ -21,12 +25,12 @@ image_citation: &image_citation
       name: 'authorLink'
       widget: 'string'
       required: false
-    - label: 'Hosting Name'
-      name: 'hostingName'
+    - label: 'Hosting Site Name'
+      name: 'hostingSiteName'
       widget: 'string'
       required: false
-    - label: 'Hosting Link'
-      name: 'hostingLink'
+    - label: 'Hosting Site Link'
+      name: 'hostingSiteLink'
       widget: 'string'
       required: false
 

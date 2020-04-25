@@ -14,7 +14,8 @@ const ImageCitationComponent = (props) => {
         authorLink,
         authorName,
         hostingSiteLink,
-        hostingSiteName
+        hostingSiteName,
+        isCited
     } = props;
 
     const {
@@ -22,28 +23,30 @@ const ImageCitationComponent = (props) => {
     } = ImageCitationComponent;
 
     return (
-        <p className={displayName}>
-            <span>{'Photo by'}</span>
-            {
-                hostingSiteLink ? (
-                    <>
-                        <Button
-                            href={authorLink}
-                            label={authorName}
-                            styleType={BUTTON_STYLE_TYPE_INLINE}
-                        />
-                        <span>{' via '}</span>
-                        <Button
-                            href={hostingSiteLink}
-                            label={hostingSiteName}
-                            styleType={BUTTON_STYLE_TYPE_INLINE}
-                        />
-                    </>
-                ) : (
-                    <span>{' Author'}</span>
-                )
-            }
-        </p>
+        isCited && (
+            <p className={displayName}>
+                <span>{'Photo by'}</span>
+                {
+                    hostingSiteLink ? (
+                        <>
+                            <Button
+                                href={authorLink}
+                                label={authorName}
+                                styleType={BUTTON_STYLE_TYPE_INLINE}
+                            />
+                            <span>{' via '}</span>
+                            <Button
+                                href={hostingSiteLink}
+                                label={hostingSiteName}
+                                styleType={BUTTON_STYLE_TYPE_INLINE}
+                            />
+                        </>
+                    ) : (
+                        <span>{' Author'}</span>
+                    )
+                }
+            </p>
+        )
     );
 };
 
@@ -53,14 +56,16 @@ ImageCitationComponent.propTypes = {
     authorLink: PropTypes.string,
     authorName: PropTypes.string,
     hostingSiteLink: PropTypes.string,
-    hostingSiteName: PropTypes.string
+    hostingSiteName: PropTypes.string,
+    isCited: PropTypes.bool
 };
 
 ImageCitationComponent.defaultProps = {
     authorLink: '',
     authorName: '',
     hostingSiteLink: '',
-    hostingSiteName: ''
+    hostingSiteName: '',
+    isCited: false
 };
 
 export default ImageCitationComponent;
