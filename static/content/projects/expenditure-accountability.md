@@ -39,17 +39,25 @@ projectSectionList:
       along the way.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: default
+      imageAlt: a plant growing from a jar of coins set on a table
       imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
+      imageSource: /assets/plant-growing-from-coins.jpg
       imageTitle: ''
+      citation:
+        isCited: true
+        authorLink: 'https://unsplash.com/@micheile'
+        hostingSiteName: Unsplash
+        authorName: Micheile Henderson
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: What's The Need?
   - projectSectionImageBlock:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: dfgchj
+      imageSource: /assets/expenditure-accountability-screenshot.png
+      imageAlt: two phones side by side showing different views of the application
+      citation:
+        isCited: true
     projectSectionTitle: How's It Work?
     projectSectionBody: >-
       After registering and logging in through a secure portal (more on this
@@ -83,6 +91,12 @@ projectSectionList:
       imageAlignment: full
       imageSource: /assets/gatsby-astronaut.png
       imageAlt: fghbjk
+      citation:
+        isCited: true
+        authorLink: 'https://unsplash.com/@codestorm'
+        authorName: Safar Safarov
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: How's It Built?
     projectSectionBody: >-
       The application build consisted of both front-end and back-end work. The
@@ -95,8 +109,14 @@ projectSectionList:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: fvnb
+      imageSource: /assets/locked-door.jpg
+      imageAlt: a black door locked with an old yellow lock
+      citation:
+        isCited: true
+        hostingSiteName: Unsplash
+        authorLink: 'https://unsplash.com/@chrispanas'
+        authorName: chris panas
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionBody: >-
       As this was one of my first full stack applications which required robust
       authentication, I decided to take the opportunity to roll my own
