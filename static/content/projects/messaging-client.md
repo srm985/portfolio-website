@@ -14,15 +14,25 @@ projectExcerpt: >-
   project is composed of three applications - a kiosk variant, a responsive
   application, and mobile applications.
 projectThumbnailImageBlock:
-  imageAlt: a screenshot of various mockups of the application
+  imageAlt: six different mailboxes in a row with tropical plants surrounding them
   imageOpacity: 100
-  imageSource: /assets/isometric-mockups.png
+  imageSource: /assets/mailboxes.jpg
   imageTitle: ''
+  citation:
+    authorLink: 'https://unsplash.com/@mathyaskurmann'
+    authorName: Mathyas Kurmann
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
-  imageAlt: a screenshot of various mockups of the application
+  imageAlt: six different mailboxes in a row with tropical plants surrounding them
   imageOpacity: 100
-  imageSource: /assets/isometric-mockups.png
+  imageSource: /assets/mailboxes.jpg
   imageTitle: ''
+  citation:
+    authorName: Mathyas Kurmann
+    authorLink: 'https://unsplash.com/@mathyaskurmann'
+    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteName: Unsplash
 projectDescription: >-
   This messaging client provides inmates with the opportunity to communicate in
   near-real time with their loved ones through an email client specifically
@@ -171,4 +181,3 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: Responsive Web Application (Desktop)
 ---
-
