@@ -4,6 +4,8 @@
     display: inline;
 
     &__image-wrapper {
+        height: 100%;
+
         &--can-view-enlarged {
             outline-color: $color-blue;
             cursor: pointer;
