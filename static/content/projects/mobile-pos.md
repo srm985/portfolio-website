@@ -17,16 +17,28 @@ projectExcerpt: >-
   throughout the store.
 projectThumbnailImageBlock:
   imageAlignment: full
-  imageAlt: default
+  imageAlt: a person's hand holding a phone which they are using to pay contactlessly
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/point-of-sale-checkout.jpg
   imageTitle: ''
+  citation:
+    isCited: false
+    authorName: Nathan Dumlao
+    authorLink: 'https://unsplash.com/@nate_dumlao'
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
   imageAlignment: full
-  imageAlt: default
+  imageAlt: a person's hand holding a phone which they are using to pay contactlessly
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/point-of-sale-checkout.jpg
   imageTitle: ''
+  citation:
+    isCited: false
+    authorName: Nathan Dumlao
+    authorLink: 'https://unsplash.com/@nate_dumlao'
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 projectDescription: rcvbhjkml
 projectSectionList:
   - projectSectionBody: 'xrcghjn,km'
@@ -38,4 +50,3 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: Test
 ---
-
