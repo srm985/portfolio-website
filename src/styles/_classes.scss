@@ -63,9 +63,10 @@
 }
 
 // Generate margin and padding classes.
-@for $i from 1 through 15 {
-    @include render-helpers($i);
-
+@for $i from 0 through 15 {
+    @media only screen and (min-width: 0) {
+        @include render-helpers($i);
+    }
     @media only screen and (min-width: $breakpoint-small) {
         @include render-helpers($i, '-small');
     }
@@ -131,7 +132,7 @@
 
 .padding-wrapper {
     box-sizing: border-box;
-    padding: #{$planck-length * 5} #{$planck-length * 2} #{$planck-length * 7};
+    padding: #{$planck-length * 4} #{$planck-length * 2} #{$planck-length * 5};
 
     @media only screen and (min-width: $breakpoint-medium) {
         padding: #{$planck-length * 5} #{$planck-length * 3} #{$planck-length * 7};

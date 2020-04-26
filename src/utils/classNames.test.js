@@ -21,11 +21,11 @@ describe('Util classNames', () => {
             'foo',
             'bar',
             {
-                functionaltrue: () => true,
-                isfalse: false,
+                functionalTrue: () => true,
+                isFalse: false,
                 test: true
             }
-        )).toBe('foo bar functionaltrue test');
+        )).toBe('foo bar functionalTrue test');
     });
 
     it('should ignore truthy and falsy values if passed', () => {

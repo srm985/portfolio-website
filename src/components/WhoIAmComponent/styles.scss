@@ -18,8 +18,13 @@ $shadow-width: #{$planck-length / 2};
 
     &__graphic-block {
         height: $graphic-height;
+        margin-bottom: #{$planck-length * 2};
 
         transform: translateY(#{$planck-length * 7});
+
+        @media only screen and (min-width: $breakpoint-medium) {
+            margin-bottom: 0;
+        }
     }
 
     &__bounding-line {

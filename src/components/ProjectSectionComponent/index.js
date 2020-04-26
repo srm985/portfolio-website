@@ -49,9 +49,10 @@ class ProjectSectionComponent extends React.Component {
             } = ProjectSectionComponent;
 
             const sectionImageClassNames = classNames(
-                `${displayName}__section-image`,
                 `${displayName}__section-image--align-${imageAlignment}`,
-                'mb--6'
+                `${displayName}__section-image`,
+                'mb--1',
+                'mb-medium--3'
             );
 
             const sectionBodyClassNames = classNames(
@@ -83,7 +84,7 @@ class ProjectSectionComponent extends React.Component {
                     <Grid>
                         <GridItem breakpoints={BREAKPOINTS_DEFAULT}>
                             <Title
-                                className={'mb--3'}
+                                className={'mb--1 mb-medium--3'}
                                 heading={projectSectionTitle}
                                 headingSize={2}
                                 isAccented

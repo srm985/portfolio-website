@@ -1,7 +1,7 @@
 @import '../../styles/constants';
 
 .ImageComponent {
-    display: inline;
+    display: inline-block;
 
     &__image-wrapper {
         height: 100%;
