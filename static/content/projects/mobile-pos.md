@@ -10,7 +10,7 @@ pageSEO:
 projectTitle: Mobile POS
 projectSourceCodeURL: 'https://github.com/srm985/artvan-pos'
 projectDemoURL: 'https://www.pos.seanmcquay.com/'
-role: Developer
+role: Lead Developer
 projectDate: 2017-12-01T22:33:17.270Z
 projectExcerpt: >-
   A mobile POS application allowing employees to better engage customers
