@@ -89,8 +89,8 @@ projectSectionList:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: fghbjk
+      imageSource: /assets/laptop-with-plant.jpg
+      imageAlt: a laptop on a marble table next to several small potted plants
       citation:
         isCited: true
         authorLink: 'https://unsplash.com/@codestorm'
