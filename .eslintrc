@@ -17,6 +17,9 @@
         }
     ],
     "parser": "babel-eslint",
+    "plugins": [
+        "sort-destructure-keys"
+    ],
     "rules": {
         "array-bracket-newline": [
             "error",
@@ -177,6 +180,12 @@
             {
                 "ignoreCase": true,
                 "sortShapeProp": true
+            }
+        ],
+        "sort-destructure-keys/sort-destructure-keys": [
+            2,
+            {
+                "caseSensitive": false
             }
         ],
         "sort-keys": [
