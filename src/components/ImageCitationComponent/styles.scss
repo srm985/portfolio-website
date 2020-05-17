@@ -8,8 +8,4 @@
     color: $color-gray-dark;
     font-size: $font-size-small;
     text-align: center;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-        font-size: $font-size-regular;
-    }
 }
