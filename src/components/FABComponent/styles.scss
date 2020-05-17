@@ -16,16 +16,16 @@ $fab-diameter: #{$planck-length * 6};
     width: $fab-diameter;
     height: $fab-diameter;
 
-    background-color: $color-orange;
+    background-image: linear-gradient(to bottom right, $color-orange, $color-red);
     border: none;
     border-radius: 50%;
     outline: none;
-    box-shadow: $box-shadow-default-neumorphic;
+    box-shadow: $box-shadow-default;
     cursor: pointer;
 
     &:hover {
         @include is-desktop() {
-            transform: scale(1.05);
+            transform: scale(1.1, 0.9);
         }
     }
 
