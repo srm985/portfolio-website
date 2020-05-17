@@ -46,6 +46,7 @@ $box-shadow-default-neumorphic-inset: 3px 3px 5px $color-black inset, -3px -3px 
 // Borders
 $border-thickness-default: 1px;
 $border-thickness-thick: #{$planck-length / 2};
+$border-radius-small: #{$planck-length / 2};
 $border-radius-default: #{$planck-length * 2};
 $border-radius-large: #{$planck-length * 5};
 

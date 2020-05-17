@@ -1,10 +1,16 @@
 @import '../../styles/constants';
 
+$code-block-font-size: 14px;
+
 .CodeBlockComponent {
     padding: #{$planck-length * 2};
 
-    font-size: $font-size-regular;
+    font-size: $code-block-font-size;
 
     background-color: $color-black;
-    border-radius: $border-radius-default;
+    border-radius: $border-radius-small;
+
+    * {
+        font-size: $code-block-font-size;
+    }
 }
