@@ -3,25 +3,48 @@ path: expenditure-accountability
 pageSEO:
   pagePostingTitle: Expenditure Accountability
   pageTitle: Expenditure Accountability
+  pageKeywords: >-
+    React,NodeJS,ExpressJS,Firebase,PostgreSQL,PSQL,Heroku,OAUTH,authentication,expenses,expense
+    tracking,budget
 projectTitle: Expenditure Accountability
 projectSourceCodeURL: 'https://github.com/srm985/expenditure-accountability-ui'
 projectDemoURL: 'https://www.expenditureaccountability.com/'
 role: Owner/Developer
 projectDate: 2019-09-02T01:31:12.725Z
-projectExcerpt: sdxfcghbjhgfghbj
+projectExcerpt: >-
+  Helping couples track personal expenses and keep each other on track to
+  financial success, without giving away life’s little secrets like purchases
+  directed towards gifts or other surprises.
 projectThumbnailImageBlock:
   imageAlignment: full
-  imageAlt: default
+  imageAlt: a glass jar knocked over with various coins spilled out of it
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/spilled-coins.jpg
   imageTitle: ''
+  citation:
+    authorName: Josh Appel
+    authorLink: 'https://unsplash.com/@joshappel'
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
   imageAlignment: full
-  imageAlt: default
+  imageAlt: a glass jar knocked over with various coins spilled out of it
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/spilled-coins.jpg
   imageTitle: ''
-projectDescription: fcgvhjb.nkm
+  citation:
+    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteName: Unsplash
+    authorLink: 'https://unsplash.com/@joshappel'
+    authorName: Josh Appel
+projectDescription: >-
+  How do you track expenses as a couple? How do keep each other on track to
+  financial success without shared bank accounts or meticulous spreadsheets? And
+  most importantly, how do you accomplish this without giving away the small
+  details like how much your significant other spent on your Christmas gift?
+  This application aimed to fix this through integration with
+  [Splitwise](https://www.splitwise.com/) and input of additional financial
+  data.
 projectSectionList:
   - projectSectionBody: >-
       The goal of this project was simple – to help my significant other and I
