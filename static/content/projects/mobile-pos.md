@@ -4,7 +4,7 @@ pageSEO:
   pageDescription: >-
     A mobile POS application allowing employees to better engage customers
     throughout the store.
-  pageKeywords: 'Ionic, point of sale, POS, mobile, Angular, TypeScript'
+  pageKeywords: 'Ionic, point of sale, POS, mobile, tablet, Angular, TypeScript'
   pagePostingTitle: Mobile POS
   pageTitle: Mobile POS
 projectTitle: Mobile POS
@@ -39,14 +39,34 @@ heroImageBlock:
     authorLink: 'https://unsplash.com/@nate_dumlao'
     hostingSiteName: Unsplash
     hostingSiteLink: 'https://unsplash.com/'
-projectDescription: rcvbhjkml
+projectDescription: >-
+  How do you make the sales experience more personable? By implementing a mobile
+  point of sale, we gave employees of one furniture chain the ability to sit
+  down with customers and compose their sale on the very couch they were about
+  to sell.
 projectSectionList:
-  - projectSectionBody: 'xrcghjn,km'
+  - projectSectionBody: >-
+      In almost every category, we have all noticed a shift from
+      brick-and-mortar retail to an all-encompassing digital experience. We buy
+      electronics, toys for our pets, and even clothes. Digital solutions still
+      come up short occasionally though. How does that couch feel when you lie
+      down on it? Does that chair feel comfortable when you sit in it? We can
+      read countless reviews, but sometimes we want to see the product in-person
+      prior to purchasing. Coming to a retail store shouldn’t feel like an
+      arduous process.  
+
+      One furniture retailer decided to try and improve upon the traditional
+      brick-and-mortar experience by leveraging technology to deliver a
+      more-pleasant experience to its valued customers. By developing a mobile
+      point of sale solution, I enabled employees and customers to come together
+      anywhere in the store to build their dream room. Instead of stepping away
+      to a terminal to add inventory to an order, employees could keep customers
+      engaged with a target goal streamlining the sales process.
     projectSectionImageBlock:
       imageAlignment: full
       imageAlt: default
       imageOpacity: 100
       imageSource: /assets/gatsby-astronaut.png
       imageTitle: ''
-    projectSectionTitle: Test
+    projectSectionTitle: Buy A Couch...On The Couch...In The Store
 ---
