@@ -2,8 +2,8 @@
 path: mobile-pos
 pageSEO:
   pageDescription: >-
-    A mobile POS application allowing employees to better engage customers
-    throughout the store.
+    A mobile POS application allowing employees to remain better-connected with
+    customers anywhere in the store.
   pageKeywords: 'Ionic, point of sale, POS, mobile, tablet, Angular, TypeScript'
   pagePostingTitle: Mobile POS
   pageTitle: Mobile POS
@@ -64,9 +64,15 @@ projectSectionList:
       engaged with a target goal streamlining the sales process.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: default
+      imageAlt: a green velvet sofa in an empty room with wooden floors
       imageOpacity: 100
-      imageSource: /assets/gatsby-astronaut.png
+      imageSource: /assets/standalone-sofa.jpg
       imageTitle: ''
+      citation:
+        isCited: true
+        authorLink: 'https://unsplash.com/@phillipgold'
+        authorName: Phillip Goldsberry
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: Buy A Couch...On The Couch...In The Store
 ---
