@@ -4,7 +4,9 @@ pageSEO:
   pageDescription: >-
     A mobile POS application allowing employees to remain better-connected with
     customers anywhere in the store.
-  pageKeywords: 'Ionic, point of sale, POS, mobile, tablet, Angular, TypeScript'
+  pageKeywords: >-
+    Ionic, point of sale, POS, mobile, tablet, Angular, TypeScript, furniture,
+    retail
   pagePostingTitle: Mobile POS
   pageTitle: Mobile POS
 projectTitle: Mobile POS
@@ -75,4 +77,50 @@ projectSectionList:
         hostingSiteName: Unsplash
         hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: Buy A Couch...On The Couch...In The Store
+  - projectSectionImageBlock:
+      imageTitle: ''
+      imageOpacity: 100
+      imageAlignment: full
+      imageSource: /assets/gatsby-astronaut.png
+      imageAlt: placeholder
+    projectSectionTitle: Putting The Power In Employees' Hands
+    projectSectionBody: >-
+      Our approach to the project was simple – we wanted to help empower
+      employees to easily engage customers anywhere in the showroom. The
+      solution was to migrate their entire order processing and point of sale to
+      their mobile devices. By serving our mobile point of sale as a progressive
+      web application with the help of device support through Ionic, we gave
+      employees the ability to access their entire inventory and order
+      processing right from their personal devices. In addition, tablets were
+      provided throughout the store for an enhanced experience. Employees simply
+      logged in with their store credentials while connected to an in-store
+      wireless network.
+  - projectSectionImageBlock:
+      imageTitle: ''
+      imageOpacity: 100
+      imageAlignment: full
+      imageSource: /assets/gatsby-astronaut.png
+      imageAlt: placeholder
+    projectSectionBody: >-
+      As previously mentioned, the application was served up in the form of a
+      progressive web application built out with Ionic V3. We selected Ionic due
+      to its baked-in Cordova support. While we found the progressive web
+      application satisfactory, we wanted to ensure we gave ourselves the
+      ability to compile and execute in a WebView instance with hardware access.
+      Application V2 discussions indicated the use of a barcode scanner, so
+      device hardware access was critical. Our front-end team worked to consume
+      RESTful endpoints served up from a PHP middleware coupled to an AS/400
+      back end.
+    projectSectionTitle: The Internals
+  - projectSectionImageBlock:
+      imageTitle: ''
+      imageOpacity: 100
+      imageAlignment: full
+      imageSource: /assets/gatsby-astronaut.png
+      imageAlt: placeholder
+    projectSectionTitle: Improving B2E Experience
+    projectSectionBody: >-
+      Esse eu dolor sint id amet aute eu est adipisicing officia consequat et
+      proident. Cupidatat veniam consectetur aliqua do reprehenderit non
+      consectetur veniam. In dolor do in aliqua deserunt laborum.
 ---
