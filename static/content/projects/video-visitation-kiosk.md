@@ -27,9 +27,11 @@ heroImageBlock:
 projectDescription: >-
   A rewarding project to design and prototype fresh take on an outdated video
   visitation terminal front end helping inmates more easily communicate with
-  their loved ones. A prototype is provided below but as this was intended for a
-  kiosk, the viewport dimensions are fixed at 1024px x 768px and vendor prefixed
-  and tested only in Google Chrome – the desired kiosk browser.
+  their loved ones.  
+
+  *A prototype is provided below, but as this was intended for a kiosk, the
+  viewport dimensions are fixed at 1024px x 768px and vendor prefixed and tested
+  only in Google Chrome – the desired kiosk browser.*
 projectSkillsList:
   - icon: /assets/icon-bitbucket.svg
     label: BitBucket
@@ -48,4 +50,3 @@ projectSectionList:
       imageTitle: ''
     projectSectionTitle: What It Was about
 ---
-
