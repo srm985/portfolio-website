@@ -38,6 +38,7 @@ heroImageBlock:
     authorName: Dylan Ferreira
     hostingSiteName: Unsplash
     hostingSiteLink: 'https://unsplash.com/'
+  imageAlignment: full
 projectDescription: >-
   A rewarding project to design and prototype fresh take on an outdated video
   visitation terminal front end helping inmates more easily communicate with
