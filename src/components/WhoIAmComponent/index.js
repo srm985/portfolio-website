@@ -99,12 +99,12 @@ class WhoIAmComponent extends React.Component {
                             <Title
                                 className={'mb--2'}
                                 heading={aboutMeSectionTitle}
-                                headingSize={3}
+                                headingSize={2}
                                 isAccented
                                 isAnimated
                             />
                             <TextBlock
-                                className={'mb--4'}
+                                className={'mb--4 article'}
                                 isAnimated
                                 text={aboutMeSectionBody}
                             />

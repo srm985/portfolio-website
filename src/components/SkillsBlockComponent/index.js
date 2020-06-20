@@ -122,7 +122,7 @@ class SkillsBlockComponent extends React.Component {
                 <Title
                     className={'mb--6'}
                     heading={skillsSectionTitle}
-                    headingSize={3}
+                    headingSize={2}
                     isAccented
                     isAnimated
                 />

@@ -20,7 +20,7 @@ $shadow-width: #{$planck-length / 2};
         height: $graphic-height;
         margin-bottom: #{$planck-length * 2};
 
-        transform: translateY(#{$planck-length * 7});
+        transform: translateY(#{$planck-length * 20});
 
         @media only screen and (min-width: $breakpoint-medium) {
             margin-bottom: 0;
@@ -94,8 +94,8 @@ $shadow-width: #{$planck-length / 2};
 
     &__image {
         position: absolute !important;
-        right: -#{$planck-length * 5};
-        bottom: 0;
+        right: 0;
+        bottom: #{$planck-length * 3};
         z-index: 4;
 
         width: #{$planck-length * 40};
