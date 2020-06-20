@@ -123,14 +123,14 @@ projectSectionList:
       interpret, combinations of keys such as ``a + ` = à`` or `a + e = æ`.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: a picture of various languages on wooden street signs
+      imageAlt: various used tools such as pliers and cutters in a rack
       imageOpacity: 100
-      imageSource: /assets/languages-sign.jpg
+      imageSource: /assets/tools.jpg
       imageTitle: ''
       citation:
         isCited: true
-        authorName: Soner Eker
-        authorLink: 'https://unsplash.com/@sonereker'
+        authorName: NeONBRAND
+        authorLink: 'https://unsplash.com/@neonbrand'
         hostingSiteLink: 'https://unsplash.com/'
         hostingSiteName: Unsplash
     projectSectionTitle: How's It Built?
