@@ -81,8 +81,14 @@ projectSectionList:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: placeholder
+      imageSource: /assets/phone-in-hand.jpg
+      imageAlt: a hand with painted nails holding a phone with obscured screen
+      citation:
+        authorName: Jae Park
+        authorLink: 'https://unsplash.com/@jaehunpark'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
+        isCited: true
     projectSectionTitle: Putting The Power In Employees' Hands
     projectSectionBody: >-
       Our approach to the project was simple – we wanted to help empower
@@ -99,8 +105,16 @@ projectSectionList:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: placeholder
+      imageSource: /assets/phone-internals.jpg
+      imageAlt: >-
+        a phone sitting on a flat black table with the back cover removed
+        exposing internal electronics
+      citation:
+        isCited: true
+        authorName: Tyler Lastovich
+        authorLink: 'https://unsplash.com/@lastly'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionBody: >-
       As previously mentioned, the application was served up in the form of a
       progressive web application built out with Ionic V3. We selected Ionic due
@@ -116,11 +130,27 @@ projectSectionList:
       imageTitle: ''
       imageOpacity: 100
       imageAlignment: full
-      imageSource: /assets/gatsby-astronaut.png
-      imageAlt: placeholder
+      imageSource: /assets/journey-map.jpg
+      imageAlt: >-
+        many printouts of application screens stuck on a wall with string
+        attached to show user flows
+      citation:
+        isCited: true
+        authorName: Alvaro Reyes
+        authorLink: 'https://unsplash.com/@alvarordesign'
+        hostingSiteName: Unsplash
+        hostingSiteLink: 'https://unsplash.com/'
     projectSectionTitle: Improving B2E Experience
     projectSectionBody: >-
-      Esse eu dolor sint id amet aute eu est adipisicing officia consequat et
-      proident. Cupidatat veniam consectetur aliqua do reprehenderit non
-      consectetur veniam. In dolor do in aliqua deserunt laborum.
+      While the primary driving factor for developing this application was to
+      bring customers, a pleasant side effect was improving the user experience
+      of the legacy order processing system. Employees were previously stuck
+      executing orders and searching inventory on AS/400 terminals. Due to rigid
+      AS/400 procedures, the client found it nearly impossible to update and
+      modernize application flows. By implementing a stateful middleware, we
+      enabled the ability of providing an entirely refreshed experience for
+      employees. Deeply nested functionality was now a click away. Employees
+      worked through orders and searched inventory in ways which aligned with
+      their current business goals. User experience should be considered with
+      utmost importance in any user-facing digital experience.
 ---
