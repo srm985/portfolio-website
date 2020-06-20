@@ -62,5 +62,7 @@ projectSectionList:
       imageOpacity: 100
       imageSource: /assets/side-by-side.png
       imageTitle: ''
+      citation:
+        isCited: true
     projectSectionTitle: What It Was about
 ---
