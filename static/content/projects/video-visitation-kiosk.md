@@ -57,7 +57,24 @@ projectSkillsList:
   - icon: /assets/icon-liferay.svg
     label: Liferay
 projectSectionList:
-  - projectSectionBody: "I was fortunate enough to be involved in the challenging project of reskinning a terminal application helping inmates conduct video visitations with their friends and loved ones – providing them a much-needed connection with the outside world. As this project was slated as a strict reskin, the flow could not be changed. It was therefore an interesting challenge to structure page content in a way to provide a coherent user experience. Additionally, as a terminal application, viewport dimensions were constrained to 1024px x 768px, requiring careful page architecture.\r  \nMy initial work began by assessing the current application flow and understanding any concerns voiced by the users. From this data, I carefully considered the user personas interacting with such an application. I then made changes where possible. Those changes that could not be realized during this simple reskin project, yet would bring significant value, were captured in backlog user stories to ensure resources were devoted to their realization at a later point in time."
+  - projectSectionBody: >-
+      I was fortunate enough to be involved in the challenging project of
+      reskinning a terminal application helping inmates conduct video
+      visitations with their friends and loved ones – providing them a
+      much-needed connection with the outside world. As this project was slated
+      as a strict reskin, the flow could not be changed. It was therefore an
+      interesting challenge to structure page content in a way to provide a
+      coherent user experience. Additionally, as a terminal application,
+      viewport dimensions were constrained to 1024px x 768px, requiring careful
+      page architecture.  
+
+      My initial work began by assessing the current application flow and
+      understanding any concerns voiced by the users. From this data, I
+      carefully considered the user personas interacting with such an
+      application. I then made changes where possible. Those changes that could
+      not be realized during this simple reskin project, yet would bring
+      significant value, were captured in backlog user stories to ensure
+      resources were devoted to their realization at a later point in time.
     projectSectionImageBlock:
       imageAlt: screenshot comparison of old kiosk compared to new
       imageOpacity: 100
@@ -66,5 +83,5 @@ projectSectionList:
       citation:
         isCited: true
       imageAlignment: full
-    projectSectionTitle: What It Was about
+    projectSectionTitle: What It Was About
 ---
