@@ -9,21 +9,35 @@ pageSEO:
   pageTitle: Video Visitation Kiosk
 projectTitle: Video Visitation Kiosk
 projectDemoURL: 'http://video-visitation-kiosk.seanmcquay.com/terminal-bezel.htm'
-role: Developer
+role: Front-End Developer
 projectDate: 2016-12-02T00:52:18.605Z
 projectExcerpt: >-
   A fresh take on an outdated video visitation terminal front end helping users
   more easily communicate with their loved ones.
 projectThumbnailImageBlock:
-  imageAlt: placeholder
+  imageAlt: >-
+    a laptop screen open to a video chat of a man smiling with a book open next
+    to the computer
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/video-chat.jpg
   imageTitle: ''
+  citation:
+    authorLink: 'https://unsplash.com/@dylanferreira'
+    hostingSiteName: Unsplash
+    authorName: Dylan Ferreira
+    hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
-  imageAlt: placeholder
+  imageAlt: >-
+    a laptop screen open to a video chat of a man smiling with a book open next
+    to the computer
   imageOpacity: 100
-  imageSource: /assets/gatsby-astronaut.png
+  imageSource: /assets/video-chat.jpg
   imageTitle: ''
+  citation:
+    authorLink: 'https://unsplash.com/@dylanferreira'
+    authorName: Dylan Ferreira
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 projectDescription: >-
   A rewarding project to design and prototype fresh take on an outdated video
   visitation terminal front end helping inmates more easily communicate with
