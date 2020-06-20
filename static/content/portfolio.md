@@ -8,10 +8,8 @@ pageSEO:
   pageTitle: Portfolio
   pageType: article
 heroImageBlock:
-  imageAlt: >-
-    a very clean white desktop with a computer display, tablet, and phone with a
-    green plant to the side
-  imageSource: /assets/desktop.jpg
+  imageAlt: a background with various geometric shapes
+  imageSource: /assets/geometric-background.jpg
   imageOpacity: 20
   citation:
     authorLink: 'https://unsplash.com/@jessysmith'
