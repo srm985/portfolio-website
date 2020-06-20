@@ -8,10 +8,18 @@ pageSEO:
   pageTitle: Portfolio
   pageType: article
 heroImageBlock:
-  imageAlt: a placeholder hero image
-  imageSource: /assets/gatsby-astronaut.png
+  imageAlt: >-
+    a very clean white desktop with a computer display, tablet, and phone with a
+    green plant to the side
+  imageSource: /assets/desktop.jpg
+  imageOpacity: 20
+  citation:
+    authorLink: 'https://unsplash.com/@jessysmith'
+    authorName: Jessy Smith
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
+  imageTitle: ''
 projectRoleTitle: My Role
 projectDescriptionTitle: What We Did
 viewProjectCTA: View
 ---
-
