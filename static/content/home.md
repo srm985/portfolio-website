@@ -5,7 +5,9 @@ pageSEO:
   pageTitle: Home
   pageType: article
 heroImageBlock:
-  imageAlt: a placeholder hero image
+  imageAlt: >-
+    the author standing in the middle of a desolate road with snowbanks to
+    either side
   imageOpacity: 20
   imageSource: /assets/roadway.png
 heroTitle: HELLO! MY NAME IS SEAN MCQUAY
@@ -19,26 +21,34 @@ heroButtonsHomePage:
     link: /
 aboutMeSectionTitle: What I'm About
 aboutMeSectionBody: >-
-  Quis esse nulla excepteur reprehenderit voluptate commodo est exercitation
-  incididunt. Fugiat incididunt aliquip adipisicing anim dolor nisi officia
-  mollit. Ut excepteur laboris consequat exercitation reprehenderit laboris
-  minim officia ullamco duis amet.
+  How do we empower teams to easily craft enterprise-level code which
+  incorporates industry-standard best practices coupled to innovative, yet
+  sustainable technologies? This is my day-to-day focus as the leader of
+  Saggezza’s Digital Experience practice.  
 
+  I’m a front-end developer at heart. I’m passionate about exposing
+  functionality to end users through pleasant and intuitive interfaces, no
+  matter the digital solution or platform. Nowadays though, I focus on
+  empowering teams and organizations to do exactly this. While I still do write
+  code daily, my primary focus is looking to the future. What does a sustainable
+  solution look like and how do we empower developers to create it without
+  additional overhead?  
 
-
-
-  Ut consequat aliqua aliquip consequat magna ea. Tempor nisi deserunt deserunt
-  aliquip cillum ullamco cupidatat ipsum anim nisi ullamco qui dolore consequat.
-  Minim qui fugiat exercitation amet. Ullamco in consectetur id sunt eu et amet
-  aliqua aliqua aliquip. Lorem nulla laboris aute culpa qui irure.
+  Prior to development, I focused on predictive analytics, statistical modeling,
+  and machine learning. Data is critically important in my life. Collecting and
+  acting upon accurate and detailed metrics allows me to bring about change
+  swiftly, and with certainty. I believe a focus on data should be at the heart
+  of any solution!
 aboutMeSectionImageBlock:
   imageAlt: a picture of the author in a suit
   imageSource: /assets/portrait-gradient.png
-skillsSectionTitle: Do I have the skills you need?
-skillsSearchLabel: Find a skill!
+skillsSectionTitle: I have the skills to help you on your next project!
+skillsSearchLabel: 'Find a skill:'
 skillsSearchName: skillSearchbar
 skillsSearchPlaceholder: Search
-skillNotFound: 'Sorry, no relevant skills found...'
+skillNotFound: >-
+  It looks like I don't have that skill... Don't let that deter you from
+  reaching out to me anyways!
 skillsSectionList:
   - sectionLabel: Design
     skillsList:
@@ -155,4 +165,3 @@ skillsSectionList:
       - icon: /assets/icon-sauce-labs.svg
         label: Sauce Labs
 ---
-
