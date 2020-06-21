@@ -8,12 +8,12 @@ pageSEO:
   pageTitle: Portfolio
   pageType: article
 heroImageBlock:
-  imageAlt: a background with various geometric shapes
-  imageSource: /assets/geometric-background.jpg
+  imageAlt: crumpled aluminum foil reflecting a rainbow light
+  imageSource: /assets/crumpled-foil.jpg
   imageOpacity: 20
   citation:
-    authorLink: 'https://unsplash.com/@jessysmith'
-    authorName: Jessy Smith
+    authorLink: 'https://unsplash.com/@viniciusamano'
+    authorName: Vinicius "amnx" Amano
     hostingSiteName: Unsplash
     hostingSiteLink: 'https://unsplash.com/'
   imageTitle: ''
