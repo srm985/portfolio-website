@@ -17,6 +17,8 @@ heroImageBlock:
     hostingSiteName: Unsplash
     hostingSiteLink: 'https://unsplash.com/'
   imageTitle: ''
+portfolioPageHeroTitle: My Work
+portfolioPageHeroSubtitle: Have a look at some of the interesting projects I've been a part of!
 projectRoleTitle: My Role
 projectDescriptionTitle: What We Did
 viewProjectCTA: View
