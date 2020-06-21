@@ -64,6 +64,8 @@ $dot-spacing: 7px;
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin-bottom: #{$planck-length * 2};
+        margin-bottom: #{$planck-length * 3};
+
+        font-weight: bold;
     }
 }
