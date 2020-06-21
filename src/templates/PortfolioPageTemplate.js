@@ -3,16 +3,19 @@ import React from 'react';
 
 import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
+import Hero from '../components/HeroComponent';
 import PortfolioItem from '../components/PortfolioItemComponent';
 import Section from '../components/SectionComponent';
-import Hero from '../components/HeroComponent';
+import Title from '../components/TitleComponent';
 
 const PortfolioPageTemplate = (props) => {
     const {
         content: {
             heroImageBlock,
-            projectList = [],
+            portfolioPageHeroSubtitle = '',
+            portfolioPageHeroTitle = '',
             projectDescriptionTitle = '',
+            projectList = [],
             projectRoleTitle = '',
             viewProjectCTA = ''
         }
@@ -53,7 +56,31 @@ const PortfolioPageTemplate = (props) => {
             <Hero
                 heroImageBlock={heroImageBlock}
                 isHalfHeight
-            />
+
+            >
+                <Grid>
+                    <GridItem
+                        breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 9
+                            },
+                            medium: {
+                                start: 1,
+                                stop: 11
+                            }
+                        }}
+                    >
+                        <Title
+                            heading={portfolioPageHeroTitle}
+                            headingClassName={'mb--2'}
+                            headingSize={1}
+                            isAccented
+                            subheading={portfolioPageHeroSubtitle}
+                        />
+                    </GridItem>
+                </Grid>
+            </Hero>
             <Section isMedium>
                 <Grid>
                     {renderProjectTiles()}
@@ -75,6 +102,8 @@ PortfolioPageTemplate.propTypes = {
             }),
             imageTitle: PropTypes.string
         }),
+        portfolioPageHeroSubtitle: PropTypes.string,
+        portfolioPageHeroTitle: PropTypes.string,
         projectDescriptionTitle: PropTypes.string,
         projectList: PropTypes.arrayOf(PropTypes.shape({})),
         projectRoleTitle: PropTypes.string,

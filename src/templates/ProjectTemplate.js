@@ -11,7 +11,9 @@ const ProjectTemplate = (props) => {
         content: {
             returnButtonIcon: {
                 publicURL = ''
-            } = {}
+            } = {},
+            returnButtonLink = '',
+            returnButtonScreenReaderLabel = ''
         }
     } = props;
 
@@ -27,7 +29,11 @@ const ProjectTemplate = (props) => {
         <div className={displayName}>
             <ProjectHeader {...content} />
             <ProjectSection {...content} />
-            <FAB icon={publicURL} />
+            <FAB
+                href={returnButtonLink}
+                icon={publicURL}
+                screenReaderLabel={returnButtonScreenReaderLabel}
+            />
         </div>
     );
 };
@@ -38,7 +44,9 @@ ProjectTemplate.propTypes = {
     content: PropTypes.shape({
         returnButtonIcon: PropTypes.shape({
             publicURL: PropTypes.string
-        })
+        }),
+        returnButtonLink: PropTypes.string,
+        returnButtonScreenReaderLabel: PropTypes.string
     })
 };
 

@@ -106,6 +106,7 @@ export const query = graphql`
                             returnButtonIcon {
                                 publicURL
                             }
+                            returnButtonLink
                             sourceCodeCTA
                         }
                     }

@@ -255,6 +255,11 @@ collections:
               name: 'returnButtonLink',
               widget: 'string',
             }
+          - {
+              label: 'Return Button Screen Reader Label',
+              name: 'returnButtonScreenReaderLabel',
+              widget: 'string',
+            }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'

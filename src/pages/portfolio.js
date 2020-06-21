@@ -59,6 +59,8 @@ export const query = graphql`
                                 }
                                 imageTitle
                             }
+                            portfolioPageHeroTitle
+                            portfolioPageHeroSubtitle
                             projectDescriptionTitle
                             projectRoleTitle
                             viewProjectCTA
