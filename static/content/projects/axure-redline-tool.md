@@ -30,7 +30,9 @@ projectThumbnailImageBlock:
     hostingSiteName: Unsplash
     hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
-  imageAlt: a picture of many screenshots of the user interface
+  imageAlt: >-
+    zoomed in view of silver analog calipers with a blue circuit board in
+    background
   imageSource: /assets/calipers.jpg
   citation:
     hostingSiteLink: 'https://unsplash.com/'
