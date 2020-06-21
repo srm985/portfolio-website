@@ -20,11 +20,25 @@ projectExcerpt: >-
   and development - ensuring developers have all the specifications they need to
   confidently and accurately materialize your designs.
 projectThumbnailImageBlock:
-  imageAlt: a picture of many screenshots of the user interface
-  imageSource: /assets/isometric-mockups.png
+  imageAlt: >-
+    zoomed in view of silver analog calipers with a blue circuit board in
+    background
+  imageSource: /assets/calipers.jpg
+  citation:
+    authorLink: 'https://unsplash.com/@dansku'
+    authorName: Daniel Andrade
+    hostingSiteName: Unsplash
+    hostingSiteLink: 'https://unsplash.com/'
 heroImageBlock:
-  imageAlt: a picture of many screenshots of the user interface
-  imageSource: /assets/isometric-mockups.png
+  imageAlt: >-
+    zoomed in view of silver analog calipers with a blue circuit board in
+    background
+  imageSource: /assets/calipers.jpg
+  citation:
+    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteName: Unsplash
+    authorName: Daniel Andrade
+    authorLink: 'https://unsplash.com/@dansku'
 projectDescription: >-
   This plugin intends to mimic some of the functionality of the plugin Measure
   for Sketch or InVision Inspect. This application is meant for those who rely
