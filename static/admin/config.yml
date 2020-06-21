@@ -206,6 +206,16 @@ collections:
           - { <<: *default_seo }
           - { <<: *default_image }
           - {
+              label: 'Hero Title',
+              name: 'portfolioPageHeroTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Hero Subtitle',
+              name: 'portfolioPageHeroSubtitle',
+              widget: 'string',
+            }
+          - {
               label: 'Project Role Title',
               name: 'projectRoleTitle',
               widget: 'string',
@@ -239,6 +249,11 @@ collections:
               label: 'Return Button Icon',
               name: 'returnButtonIcon',
               widget: 'image',
+            }
+          - {
+              label: 'Return Button Link',
+              name: 'returnButtonLink',
+              widget: 'string',
             }
       - label: 'Contact Page'
         name: 'contact'

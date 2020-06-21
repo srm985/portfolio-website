@@ -1,3 +1,6 @@
+import {
+    Link
+} from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -8,24 +11,45 @@ import './styles.scss';
 const FABComponent = (props) => {
     const {
         handleClick,
-        icon
+        href,
+        icon,
+        screenReaderLabel
     } = props;
 
     const {
         displayName
     } = FABComponent;
 
+    const defaultAttributes = {
+        'aria-label': screenReaderLabel,
+        className: displayName,
+        onClick: handleClick,
+        title: screenReaderLabel
+    };
+
+    const renderIcon = () => (
+        <Icon
+            className={`${displayName}__icon`}
+            iconURL={icon}
+        />
+    );
+
     return (
-        <button
-            className={displayName}
-            onClick={handleClick}
-            type={'button'}
-        >
-            <Icon
-                className={`${displayName}__icon`}
-                iconURL={icon}
-            />
-        </button>
+        href ? (
+            <Link
+                {...defaultAttributes}
+                to={href}
+            >
+                {renderIcon()}
+            </Link>
+        ) : (
+            <button
+                {...defaultAttributes}
+                type={'button'}
+            >
+                {renderIcon()}
+            </button>
+        )
     );
 };
 
@@ -33,11 +57,14 @@ FABComponent.displayName = 'FABComponent';
 
 FABComponent.propTypes = {
     handleClick: PropTypes.func,
-    icon: PropTypes.string.isRequired
+    href: PropTypes.string,
+    icon: PropTypes.string.isRequired,
+    screenReaderLabel: PropTypes.string.isRequired
 };
 
 FABComponent.defaultProps = {
-    handleClick: () => { }
+    handleClick: () => { },
+    href: ''
 };
 
 export default FABComponent;
