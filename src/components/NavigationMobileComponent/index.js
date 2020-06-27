@@ -126,6 +126,7 @@ class NavigationMobileComponent extends React.Component {
                     key={pageURL}
                 >
                     <Button
+                        handleClick={bodyScrolling.enable}
                         href={pageURL}
                         label={pageName}
                         styleType={BUTTON_STYLE_TYPE_INLINE}

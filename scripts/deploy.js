@@ -60,7 +60,7 @@ const cleanDirectory = async (fileList) => new Promise((resolveAll, rejectAll) =
 });
 
 const deployApplication = async () => new Promise((resolveAll, rejectAll) => {
-    const DEPLOY_DIRECTORY = './dist';
+    const DEPLOY_DIRECTORY = './public';
 
     console.log('Deploying application...');
 
@@ -71,6 +71,9 @@ const deployApplication = async () => new Promise((resolveAll, rejectAll) => {
             const promiseList = files.map((file) => new Promise((resolve, reject) => {
                 fs.readFile(`${DEPLOY_DIRECTORY}/${file}`, (errorFileRead, fileContents) => {
                     if (errorFileRead) {
+                        console.log({
+                            errorFileRead
+                        });
                         reject(errorFileRead);
                     } else {
                         ftp.put(fileContents, file, (errorFilePut) => {
