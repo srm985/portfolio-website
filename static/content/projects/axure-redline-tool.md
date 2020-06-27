@@ -12,8 +12,8 @@ pageSEO:
   pageType: article
 projectTitle: Axure Redline Tool
 projectSourceCodeURL: 'https://github.com/srm985/portfolio-website'
-projectDemoURL: 'https://www.seanmcquay.com/'
-role: Open Source
+projectDemoURL: 'https://4ciu30.axshare.com/#g=1&p=master-test'
+role: Creator (Open Source)
 projectDate: 2016-08-14T01:07:44.048Z
 projectExcerpt: >-
   An interactive redline plugin which simplifies the transition between design
