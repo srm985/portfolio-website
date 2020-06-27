@@ -80,47 +80,47 @@ class WhoIAmComponent extends React.Component {
         );
 
         return (
-            <VisibilityChecker handleChange={this.handleVisibilityChange}>
-                <div className={componentClassNames}>
-                    <Grid>
-                        <GridItem
-                            breakpoints={{
-                                large: {
-                                    start: 1,
-                                    stop: 6
-                                },
-                                medium: {
-                                    start: 1,
-                                    stop: 13
-                                }
-                            }}
-                            className={`${displayName}__content-block`}
-                        >
-                            <Title
-                                className={'mb--2'}
-                                heading={aboutMeSectionTitle}
-                                headingSize={2}
-                                isAccented
-                                isAnimated
-                            />
-                            <TextBlock
-                                className={'mb--4 article'}
-                                isAnimated
-                                text={aboutMeSectionBody}
-                            />
-                        </GridItem>
-                        <GridItem
-                            breakpoints={{
-                                large: {
-                                    start: 7,
-                                    stop: 13
-                                },
-                                medium: {
-                                    start: 5,
-                                    stop: 13
-                                }
-                            }}
-                        >
+            <div className={componentClassNames}>
+                <Grid>
+                    <GridItem
+                        breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 6
+                            },
+                            medium: {
+                                start: 1,
+                                stop: 13
+                            }
+                        }}
+                        className={`${displayName}__content-block`}
+                    >
+                        <Title
+                            className={'mb--2'}
+                            heading={aboutMeSectionTitle}
+                            headingSize={2}
+                            isAccented
+                            isAnimated
+                        />
+                        <TextBlock
+                            className={'mb--4 article'}
+                            isAnimated
+                            text={aboutMeSectionBody}
+                        />
+                    </GridItem>
+                    <GridItem
+                        breakpoints={{
+                            large: {
+                                start: 7,
+                                stop: 13
+                            },
+                            medium: {
+                                start: 5,
+                                stop: 13
+                            }
+                        }}
+                    >
+                        <VisibilityChecker handleChange={this.handleVisibilityChange}>
                             <div className={`${displayName}__graphic-block`}>
                                 <div className={boundingLineClassNames} />
                                 <div className={boundingLineClassNames} />
@@ -132,10 +132,10 @@ class WhoIAmComponent extends React.Component {
                                     fluid={fluid}
                                 />
                             </div>
-                        </GridItem>
-                    </Grid>
-                </div>
-            </VisibilityChecker>
+                        </VisibilityChecker>
+                    </GridItem>
+                </Grid>
+            </div>
         );
     }
 }

@@ -17,14 +17,10 @@ $shadow-width: #{$planck-length / 2};
     }
 
     &__graphic-block {
+        position: relative;
+
         height: $graphic-height;
-        margin-bottom: #{$planck-length * 2};
-
-        transform: translateY(#{$planck-length * 20});
-
-        @media only screen and (min-width: $breakpoint-medium) {
-            margin-bottom: 0;
-        }
+        margin-top: #{$planck-length * 15};
     }
 
     &__bounding-line {
