@@ -24,6 +24,16 @@ const IndexPageTemplate = (props) => {
             aboutMeSectionBody,
             aboutMeSectionImageBlock,
             aboutMeSectionTitle,
+            heroButtonsHomePage: {
+                contactButton: {
+                    label: contactButtonLabel,
+                    link: contactButtonLink
+                },
+                resumeButton: {
+                    label: resumeButtonLabel,
+                    link: resumeButtonLink
+                }
+            },
             heroImageBlock,
             heroSubtitle,
             heroTitle
@@ -71,8 +81,10 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            href={resumeButtonLink}
                             isAnimated
-                            label={'Résumé'}
+                            isInternalURL={false}
+                            label={resumeButtonLabel}
                             styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
                     </GridItem>
@@ -89,8 +101,9 @@ const IndexPageTemplate = (props) => {
                         }}
                     >
                         <Button
+                            href={contactButtonLink}
                             isAnimated
-                            label={'Contact Me'}
+                            label={contactButtonLabel}
                             styleType={BUTTON_STYLE_TYPE_NEUMORPHIC}
                         />
                     </GridItem>
@@ -138,6 +151,16 @@ IndexPageTemplate.propTypes = {
             })
         }),
         aboutMeSectionTitle: PropTypes.string,
+        heroButtonsHomePage: PropTypes.shape({
+            contactButton: PropTypes.shape({
+                label: PropTypes.string,
+                link: PropTypes.string
+            }),
+            resumeButton: PropTypes.shape({
+                label: PropTypes.string,
+                link: PropTypes.string
+            })
+        }),
         heroImageBlock: PropTypes.shape({}),
         heroSubtitle: PropTypes.string,
         heroTitle: PropTypes.string

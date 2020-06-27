@@ -68,6 +68,16 @@ export const query = graphql`
                                 }
                             }
                             aboutMeSectionTitle
+                            heroButtonsHomePage {
+                                contactButton {
+                                    label
+                                    link
+                                }
+                                resumeButton {
+                                    label
+                                    link
+                                }
+                            }
                             heroSubtitle
                             heroTitle
                             skillsSectionTitle
