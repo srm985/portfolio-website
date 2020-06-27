@@ -58,12 +58,12 @@
         z-index: 2;
 
         width: 100%;
-        padding-top: calc(#{$navigation-height-mobile} + #{$planck-length * 2});
+        padding-top: calc(#{$navigation-height-mobile} + #{$planck-length * 2}) !important;
 
         color: $color-white;
 
         @media only screen and (min-width: $breakpoint-medium) {
-            padding-top: $navigation-height-desktop;
+            padding-top: $navigation-height-desktop !important;
         }
     }
 }
