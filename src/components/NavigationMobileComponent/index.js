@@ -8,6 +8,7 @@ import {
     BUTTON_STYLE_TYPE_INLINE
 } from '../ButtonComponent/config';
 
+import bodyScrolling from '../../utils/bodyScrolling';
 import classNames from '../../utils/classNames';
 
 import './styles.scss';
@@ -27,6 +28,12 @@ class NavigationMobileComponent extends React.Component {
             const {
                 isMenuOpen: wasMenuOpen
             } = previousState;
+
+            if (wasMenuOpen) {
+                bodyScrolling.enable();
+            } else {
+                bodyScrolling.disable();
+            }
 
             return {
                 hasClickedMenu: true,

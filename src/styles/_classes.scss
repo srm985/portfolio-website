@@ -156,3 +156,7 @@
         @extend %article;
     }
 }
+
+.scroll-disabled {
+    overflow: hidden;
+}
