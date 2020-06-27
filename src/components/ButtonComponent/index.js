@@ -49,6 +49,7 @@ class ButtonComponent extends React.Component {
         const {
             props: {
                 activeLinkClassName,
+                handleClick,
                 href,
                 isInternalURL,
                 screenReaderLabel,
@@ -65,6 +66,7 @@ class ButtonComponent extends React.Component {
                         activeClassName={activeLinkClassName}
                         aria-label={screenReaderLabel}
                         className={buttonClassNames}
+                        onClick={handleClick}
                         title={screenReaderLabel}
                         to={href}
                     >
@@ -76,6 +78,7 @@ class ButtonComponent extends React.Component {
                         aria-label={screenReaderLabel}
                         className={buttonClassNames}
                         href={href}
+                        onClick={handleClick}
                         rel={'noopener noreferrer'}
                         target={targetType}
                         title={screenReaderLabel}
