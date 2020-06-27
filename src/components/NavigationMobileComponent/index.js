@@ -35,7 +35,9 @@ class NavigationMobileComponent extends React.Component {
         });
     }
 
-    handleKeyPress = () => {}
+    handleKeyPress = () => {
+        // TODO: Implement key filtering.
+    }
 
     renderMenuButton = () => {
         const {
@@ -79,15 +81,14 @@ class NavigationMobileComponent extends React.Component {
         }
 
         return (
-            <div
+            <Button
                 className={controlButtonClassNames}
-                onClick={this.handleMenuToggle}
-                onKeyPress={this.handleKeyPress}
-                role={'button'}
-                tabIndex={0}
+                handleClick={this.handleMenuToggle}
+                shouldInheritStyling
+                styleType={BUTTON_STYLE_TYPE_INLINE}
             >
                 { lines }
-            </div>
+            </Button>
         );
     }
 
@@ -163,13 +164,19 @@ class NavigationMobileComponent extends React.Component {
         return (
             <nav className={displayName}>
                 <div className={navigationClassNames}>
-                    <div className={`${displayName}__logo`}>
-                        <Icon
-                            className={`${displayName}__logo-icon`}
-                            iconURL={iconURL}
-                        />
-                        <p>{headerLogoCopy}</p>
-                    </div>
+                    <Button
+                        href={'/'}
+                        shouldInheritStyling
+                        styleType={BUTTON_STYLE_TYPE_INLINE}
+                    >
+                        <div className={`${displayName}__logo`}>
+                            <Icon
+                                className={`${displayName}__logo-icon`}
+                                iconURL={iconURL}
+                            />
+                            <p>{headerLogoCopy}</p>
+                        </div>
+                    </Button>
                     {this.renderMenuButton()}
                 </div>
                 <div className={navigationMenuClassNames}>
