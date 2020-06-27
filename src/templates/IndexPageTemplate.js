@@ -31,7 +31,9 @@ const IndexPageTemplate = (props) => {
                 },
                 resumeButton: {
                     label: resumeButtonLabel,
-                    link: resumeButtonLink
+                    link: {
+                        publicURL: resumeButtonLink
+                    }
                 }
             },
             heroImageBlock,
@@ -158,7 +160,9 @@ IndexPageTemplate.propTypes = {
             }),
             resumeButton: PropTypes.shape({
                 label: PropTypes.string,
-                link: PropTypes.string
+                link: PropTypes.shape({
+                    publicURL: PropTypes.string
+                })
             })
         }),
         heroImageBlock: PropTypes.shape({}),

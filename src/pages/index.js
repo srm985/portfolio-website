@@ -75,7 +75,9 @@ export const query = graphql`
                                 }
                                 resumeButton {
                                     label
-                                    link
+                                    link {
+                                        publicURL
+                                    }
                                 }
                             }
                             heroSubtitle
