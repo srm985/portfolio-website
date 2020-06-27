@@ -121,6 +121,9 @@
                 "rule": "^(can|is|has|should|was)[A-Z]([A-Za-z0-9]?)+"
             }
         ],
+        "react/button-has-type": [
+            0
+        ],
         "react/display-name": [
             "error"
         ],

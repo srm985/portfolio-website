@@ -155,7 +155,6 @@ class ButtonComponent extends React.Component {
                             this.renderLinkType(buttonClassNames, buttonLabel)
                         )
                         : (
-                            // eslint-disable-next-line react/button-has-type
                             <button
                                 aria-label={screenReaderLabel}
                                 className={buttonClassNames}
