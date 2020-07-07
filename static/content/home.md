@@ -5,8 +5,7 @@ pageSEO:
   pageTitle: Home
   pageType: article
 heroImageBlock:
-  imageAlt: >-
-    the author standing in the middle of a desolate road with snowbanks to
+  imageAlt: the author standing in the middle of a desolate road with snowbanks to
     either side
   imageOpacity: 20
   imageSource: /assets/roadway.png
@@ -18,7 +17,7 @@ heroButtonsHomePage:
     link: /contact/
   resumeButton:
     label: Résumé
-    link: /assets/resume.pdf
+    link: /assets/resume_2020-07_1.pdf
 aboutMeSectionTitle: What I'm About
 aboutMeSectionBody: >-
   How do we empower teams to easily craft enterprise-level code which
@@ -26,29 +25,18 @@ aboutMeSectionBody: >-
   sustainable technologies? This is my day-to-day focus as the leader of
   Saggezza’s Digital Experience practice.  
 
-  I’m a front-end developer at heart. I’m passionate about exposing
-  functionality to end users through pleasant and intuitive interfaces, no
-  matter the digital solution or platform. Nowadays though, I focus on
-  empowering teams and organizations to do exactly this. While I still do write
-  code daily, my primary focus is looking to the future. What does a sustainable
-  solution look like and how do we empower developers to create it without
-  additional overhead?  
+  I’m a front-end developer at heart. I’m passionate about exposing functionality to end users through pleasant and intuitive interfaces, no matter the digital solution or platform. Nowadays though, I focus on empowering teams and organizations to do exactly this. While I still do write code daily, my primary focus is looking to the future. What does a sustainable solution look like and how do we empower developers to create it without additional overhead?  
 
-  Prior to development, I focused on predictive analytics, statistical modeling,
-  and machine learning. Data is critically important in my life. Collecting and
-  acting upon accurate and detailed metrics allows me to bring about change
-  swiftly, and with certainty. I believe a focus on data should be at the heart
-  of any solution!
+  Prior to development, I focused on predictive analytics, statistical modeling, and machine learning. Data is critically important in my life. Collecting and acting upon accurate and detailed metrics allows me to bring about change swiftly, and with certainty. I believe a focus on data should be at the heart of any solution!
 aboutMeSectionImageBlock:
   imageAlt: a picture of the author in a suit
   imageSource: /assets/portrait-gradient.png
 skillsSectionTitle: I have the skills to help you on your next project!
-skillsSearchLabel: 'Find a skill:'
+skillsSearchLabel: "Find a skill:"
 skillsSearchName: skillSearchbar
 skillsSearchPlaceholder: Search
-skillNotFound: >-
-  It looks like I don't have that skill... Don't let that deter you from
-  reaching out to me anyways!
+skillNotFound: It looks like I don't have that skill... Don't let that deter you
+  from reaching out to me anyways!
 skillsSectionList:
   - sectionLabel: Design
     skillsList:
