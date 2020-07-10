@@ -17,7 +17,7 @@ heroButtonsHomePage:
     link: /contact/
   resumeButton:
     label: Résumé
-    link: /assets/resume_2020-07_1.pdf
+    link: /assets/resume_2020-07_2.pdf
 aboutMeSectionTitle: What I'm About
 aboutMeSectionBody: >-
   How do we empower teams to easily craft enterprise-level code which
