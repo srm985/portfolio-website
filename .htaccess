@@ -2,6 +2,23 @@
 # suphp_configpath /home/yourusername/path/to/php.ini
 # php_value mbstring.func_overload 4 # Required for PWSB support. Please do not uncomment this line.
 
+RedirectPermanent /contact.htm https://www.seanmcquay.com/contact
+RedirectPermanent /portfolio.htm https://www.seanmcquay.com/portfolio
+
+# Project Landing Page Redirects
+RedirectPermanent /axure-redline-tool.htm https://www.seanmcquay.com/projects/axure-redline-tool
+RedirectPermanent /messaging-client.htm https://www.seanmcquay.com/projects/messaging-client
+RedirectPermanent /mok-project.htm https://www.seanmcquay.com/projects/mok-project
+RedirectPermanent /poc-website.htm https://www.seanmcquay.com/projects/power-optimization-center
+RedirectPermanent /terminal-project.htm https://www.seanmcquay.com/projects/video-visitation-kiosk
+
+# Project Demo Redirects
+RedirectPermanent /messaging-demo-page.htm https://www.messaging-client.seanmcquay.com
+RedirectPermanent /mok-project/sample-keyboard.htm https://www.mok-project.seanmcquay.com
+RedirectPermanent /poc_website/index.htm https://www.power-optimization-center.seanmcquay.com
+RedirectPermanent /terminal-reskin/terminal-bezel.htm https://www.video-visitation-kiosk.seanmcquay.com/terminal-bezel.htm
+
+
 RewriteEngine On
 RewriteCond %{HTTPS} !on
 RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
