@@ -1,52 +1,46 @@
 ---
 path: video-visitation-kiosk
 pageSEO:
-  pageDescription: >-
-    A fresh take on an outdated video visitation terminal front end helping
-    users more easily communicate with their loved ones.
-  pageKeywords: 'kisok, terminal, reskin, video, visitation'
+  pageDescription: A fresh take on an outdated video visitation terminal front end
+    helping users more easily communicate with their loved ones.
+  pageKeywords: kisok, terminal, reskin, video, visitation
   pagePostingTitle: Video Visitation Kiosk
   pageTitle: Video Visitation Kiosk
 projectTitle: Video Visitation Kiosk
-projectDemoURL: 'http://video-visitation-kiosk.seanmcquay.com/terminal-bezel.htm'
+projectDemoURL: https://www.video-visitation-kiosk.seanmcquay.com/terminal-bezel.htm
 role: Front-End Developer
 projectDate: 2016-12-02T00:52:18.605Z
-projectExcerpt: >-
-  A fresh take on an outdated video visitation terminal front end helping users
-  more easily communicate with their loved ones.
+projectExcerpt: A fresh take on an outdated video visitation terminal front end
+  helping users more easily communicate with their loved ones.
 projectThumbnailImageBlock:
-  imageAlt: >-
-    a laptop screen open to a video chat of a man smiling with a book open next
-    to the computer
+  imageAlt: a laptop screen open to a video chat of a man smiling with a book open
+    next to the computer
   imageOpacity: 100
   imageSource: /assets/video-chat.jpg
-  imageTitle: ''
+  imageTitle: ""
   citation:
-    authorLink: 'https://unsplash.com/@dylanferreira'
+    authorLink: https://unsplash.com/@dylanferreira
     hostingSiteName: Unsplash
     authorName: Dylan Ferreira
-    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteLink: https://unsplash.com/
 heroImageBlock:
-  imageAlt: >-
-    a laptop screen open to a video chat of a man smiling with a book open next
-    to the computer
+  imageAlt: a laptop screen open to a video chat of a man smiling with a book open
+    next to the computer
   imageOpacity: 100
   imageSource: /assets/video-chat.jpg
-  imageTitle: ''
+  imageTitle: ""
   citation:
-    authorLink: 'https://unsplash.com/@dylanferreira'
+    authorLink: https://unsplash.com/@dylanferreira
     authorName: Dylan Ferreira
     hostingSiteName: Unsplash
-    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteLink: https://unsplash.com/
   imageAlignment: null
 projectDescription: >-
   A rewarding project to design and prototype fresh take on an outdated video
   visitation terminal front end helping inmates more easily communicate with
   their loved ones.  
 
-  *A prototype is provided below, but as this was intended for a kiosk, the
-  viewport dimensions are fixed at 1024px x 768px and vendor prefixed and tested
-  only in Google Chrome – the desired kiosk browser.*
+  *A prototype is provided below, but as this was intended for a kiosk, the viewport dimensions are fixed at 1024px x 768px and vendor prefixed and tested only in Google Chrome – the desired kiosk browser.*
 projectSkillsList:
   - icon: /assets/icon-bitbucket.svg
     label: BitBucket
@@ -68,18 +62,12 @@ projectSectionList:
       viewport dimensions were constrained to 1024px x 768px, requiring careful
       page architecture.  
 
-      My initial work began by assessing the current application flow and
-      understanding any concerns voiced by the users. From this data, I
-      carefully considered the user personas interacting with such an
-      application. I then made changes where possible. Those changes that could
-      not be realized during this simple reskin project, yet would bring
-      significant value, were captured in backlog user stories to ensure
-      resources were devoted to their realization at a later point in time.
+      My initial work began by assessing the current application flow and understanding any concerns voiced by the users. From this data, I carefully considered the user personas interacting with such an application. I then made changes where possible. Those changes that could not be realized during this simple reskin project, yet would bring significant value, were captured in backlog user stories to ensure resources were devoted to their realization at a later point in time.
     projectSectionImageBlock:
       imageAlt: screenshot comparison of old kiosk compared to new
       imageOpacity: 100
       imageSource: /assets/side-by-side.png
-      imageTitle: ''
+      imageTitle: ""
       citation:
         isCited: true
       imageAlignment: full
