@@ -4,34 +4,33 @@ pageSEO:
   pageDescription: A messaging client allowing inmates to communicate with their loved ones.
   pagePostingTitle: Messaging Client
 projectTitle: Messaging Client
-projectSourceCodeURL: 'https://github.com/srm985/messaging-client'
-projectDemoURL: 'https://messaging-client.seanmcquay.com/'
+projectSourceCodeURL: https://github.com/srm985/messaging-client
+projectDemoURL: https://www.messaging-client.seanmcquay.com/
 role: UX Developer
 projectDate: 2020-03-25T20:18:03.646Z
-projectExcerpt: >-
-  A cross-platform application providing inmates the ability to communicate with
-  their loved ones in near-real time through a specialized email client. This
-  project is composed of three applications - a kiosk variant, a responsive
-  application, and mobile applications.
+projectExcerpt: A cross-platform application providing inmates the ability to
+  communicate with their loved ones in near-real time through a specialized
+  email client. This project is composed of three applications - a kiosk
+  variant, a responsive application, and mobile applications.
 projectThumbnailImageBlock:
   imageAlt: six different mailboxes in a row with tropical plants surrounding them
   imageOpacity: 100
   imageSource: /assets/mailboxes.jpg
-  imageTitle: ''
+  imageTitle: ""
   citation:
-    authorLink: 'https://unsplash.com/@mathyaskurmann'
+    authorLink: https://unsplash.com/@mathyaskurmann
     authorName: Mathyas Kurmann
     hostingSiteName: Unsplash
-    hostingSiteLink: 'https://unsplash.com/'
+    hostingSiteLink: https://unsplash.com/
 heroImageBlock:
   imageAlt: six different mailboxes in a row with tropical plants surrounding them
   imageOpacity: 100
   imageSource: /assets/mailboxes.jpg
-  imageTitle: ''
+  imageTitle: ""
   citation:
     authorName: Mathyas Kurmann
-    authorLink: 'https://unsplash.com/@mathyaskurmann'
-    hostingSiteLink: 'https://unsplash.com/'
+    authorLink: https://unsplash.com/@mathyaskurmann
+    hostingSiteLink: https://unsplash.com/
     hostingSiteName: Unsplash
 projectDescription: >-
   This messaging client provides inmates with the opportunity to communicate in
@@ -45,31 +44,27 @@ projectDescription: >-
   use by inmates and a responsive version used by those communicating with said
   inmates.  
 
-  *Disclaimer: The demo pages below have been coerced into the device viewports.
-  Your viewing experience may vary from the actual, developed code.*
+  *Disclaimer: The demo pages below have been coerced into the device viewports. Your viewing experience may vary from the actual, developed code.*
 projectSectionList:
-  - projectSectionBody: >-
-      This messaging client consisted of three parts – which required design and
-      development. It consists of a restricted kiosk application for use by
-      inmates, a responsive webpage to support a broad array of devices, and
-      dedicated mobile applications. The intended goal of this client was to
-      provide inmates with the ability to communicate with their loved ones in
-      near-real time. The client borrows many words from the world of postal
-      mail. Stamps indicate available credits. These credits are sold by each
-      facility and purchased by the inmates loved ones. Currently, a message may
-      only be initiated by a loved one. They may send text and images to the
-      inmate. If they so choose, they may provide “return postage” for the
-      inmate to draft a text-only reply. The client’s limited functionality is
-      related to the security measures required to ensure no illegal
-      communications occur.
+  - projectSectionBody: This messaging client consisted of three parts – which
+      required design and development. It consists of a restricted kiosk
+      application for use by inmates, a responsive webpage to support a broad
+      array of devices, and dedicated mobile applications. The intended goal of
+      this client was to provide inmates with the ability to communicate with
+      their loved ones in near-real time. The client borrows many words from the
+      world of postal mail. Stamps indicate available credits. These credits are
+      sold by each facility and purchased by the inmates loved ones. Currently,
+      a message may only be initiated by a loved one. They may send text and
+      images to the inmate. If they so choose, they may provide “return postage”
+      for the inmate to draft a text-only reply. The client’s limited
+      functionality is related to the security measures required to ensure no
+      illegal communications occur.
     projectSectionImageBlock:
       imageAlignment: full
-      imageAlt: >-
-        an image of the application displayed on mobile phone, desktop, and
-        kiosk
+      imageAlt: an image of the application displayed on mobile phone, desktop, and kiosk
       imageOpacity: 100
       imageSource: /assets/phone-desktop-mockup.png
-      imageTitle: ''
+      imageTitle: ""
     projectSectionTitle: Project Overview
   - projectSectionBody: >-
       Prior to the implementation of this messaging application, a variant was
@@ -82,19 +77,13 @@ projectSectionList:
       users flows for both user personas.
 
 
-      From there, I met with our business analysts and product owners to
-      understand their project goals and to discuss how we might go about
-      implementing them. Once I had a strong understanding of our organization’s
-      goals, I set about revising user flow diagrams and initial wireframes,
-      keeping in mind our user personas, the goals identified by the
-      organization, and the improvement opportunities identified by the previous
-      owners.
+      From there, I met with our business analysts and product owners to understand their project goals and to discuss how we might go about implementing them. Once I had a strong understanding of our organization’s goals, I set about revising user flow diagrams and initial wireframes, keeping in mind our user personas, the goals identified by the organization, and the improvement opportunities identified by the previous owners.
     projectSectionImageBlock:
       imageAlignment: full
       imageAlt: a large charge depicting user flow maps
       imageOpacity: 100
       imageSource: /assets/messaging-client-user-flows.png
-      imageTitle: ''
+      imageTitle: ""
     projectSectionTitle: User Flows
   - projectSectionBody: >-
       Once the initial wireframes had been completed, I again met with our
@@ -109,30 +98,13 @@ projectSectionList:
       of all business goals, and the back-end feasibility.
 
 
-      After finalizing the mockups, I progressed to generating front-end code.
-      To begin, I mocked up all back-end services and created simulated API
-      calls so that I could test functionality prior to back-end services being
-      available. I focused first on the kiosk application which inmates use to
-      interact with the product. This application is created as one of many
-      modules which are displayed on a kiosk terminal within the prison
-      facility. Inmates have access to these kiosks at certain hours throughout
-      the day and may use the provided services. Once completed, I moved to
-      development of the responsive web application. This application serves the
-      friends and family members of the incarcerated individuals. This
-      application required much more development time as users have additional
-      functionality including purchasing stamps and their actual composition
-      capabilities. Back-end developers were then left to remove mocked API
-      calls and replace with correct services. Throughout my entire design and
-      development process I not only met with our product owner and business
-      analysts but I also reviewed my progress at a weekly meeting with those
-      individuals within our organization involved in UX and UI. Any feedback
-      was incorporated into the final designs, where applicable.
+      After finalizing the mockups, I progressed to generating front-end code. To begin, I mocked up all back-end services and created simulated API calls so that I could test functionality prior to back-end services being available. I focused first on the kiosk application which inmates use to interact with the product. This application is created as one of many modules which are displayed on a kiosk terminal within the prison facility. Inmates have access to these kiosks at certain hours throughout the day and may use the provided services. Once completed, I moved to development of the responsive web application. This application serves the friends and family members of the incarcerated individuals. This application required much more development time as users have additional functionality including purchasing stamps and their actual composition capabilities. Back-end developers were then left to remove mocked API calls and replace with correct services. Throughout my entire design and development process I not only met with our product owner and business analysts but I also reviewed my progress at a weekly meeting with those individuals within our organization involved in UX and UI. Any feedback was incorporated into the final designs, where applicable.
     projectSectionImageBlock:
       imageAlignment: full
       imageAlt: screenshots of mobile device wireframes
       imageOpacity: 100
       imageSource: /assets/isometric-wireframes.png
-      imageTitle: ''
+      imageTitle: ""
     projectSectionTitle: Wireframes
   - projectSectionBody: >-
       The responsive web application was the centerpiece of this project –
@@ -154,30 +126,27 @@ projectSectionList:
       desktops and mobile devices.
 
 
-      [Axure
-      Wireframes](https://www.messaging-client.seanmcquay.com/axure/wireframes/start.html#g=1&p=inbox)
+      [Axure Wireframes](https://www.messaging-client.seanmcquay.com/axure/wireframes/start.html#g=1&p=inbox)
 
 
-      [Axure
-      Mockups](https://www.messaging-client.seanmcquay.com/axure/mockups/start.html#g=1&p=inbox)
+      [Axure Mockups](https://www.messaging-client.seanmcquay.com/axure/mockups/start.html#g=1&p=inbox)
     projectSectionImageBlock:
       imageAlignment: right-narrow
       imageAlt: a screenshot of an email inbox of the application
       imageOpacity: 100
       imageSource: /assets/responsive-mobile-inbox.png
-      imageTitle: ''
+      imageTitle: ""
     projectSectionTitle: Responsive Web Application (Mobile)
-  - projectSectionBody: >-
-      Careful planning needs to be considered for any responsive application,
-      ensuring controls and content are skillfully located within the reach of
-      users. Having the ability to own the project from concept to development
-      permitted me to ensure that all subtleties were accurately accounted for
-      and implemented.
+  - projectSectionBody: Careful planning needs to be considered for any responsive
+      application, ensuring controls and content are skillfully located within
+      the reach of users. Having the ability to own the project from concept to
+      development permitted me to ensure that all subtleties were accurately
+      accounted for and implemented.
     projectSectionImageBlock:
       imageAlignment: left-wide
       imageAlt: a screenshot of a desktop email client
       imageOpacity: 100
       imageSource: /assets/inbox-responsive-desktop.png
-      imageTitle: ''
+      imageTitle: ""
     projectSectionTitle: Responsive Web Application (Desktop)
 ---
