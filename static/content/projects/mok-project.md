@@ -8,7 +8,7 @@ pageSEO:
   pageTitle: MOK Project
 projectTitle: MOK Project
 projectSourceCodeURL: https://github.com/srm985/mok-project
-projectDemoURL: https://mok-project.seanmcquay.com/
+projectDemoURL: https://www.mok-project.seanmcquay.com/
 role: Creator (Open Source)
 projectDate: 2017-04-02T05:00:00.000Z
 projectExcerpt: A simple jQuery plugin enabling developers to support their
