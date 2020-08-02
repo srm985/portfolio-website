@@ -89,7 +89,7 @@
   "private": false,
   "scripts": {
     "build": "concurrently --raw \"npm:lint --silent\" \"npm:test\" && gatsby build",
-    "build:deploy": "npm run build && npm run copy && npm run deploy",
+    "build:deploy": "npm run build && npm run copy",
     "copy": "copyfiles .htaccess public",
     "deploy": " node -r dotenv/config ./scripts/deploy.js",
     "develop": "cross-env NODE_ENV=development cross-env GATSBY_GRAPHQL_IDE=playground concurrently --raw \"npm:lint --silent\" \"gatsby develop --port 3000\" \"npm:watch --silent\"",
