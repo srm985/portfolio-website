@@ -2,6 +2,8 @@
 # suphp_configpath /home/yourusername/path/to/php.ini
 # php_value mbstring.func_overload 4 # Required for PWSB support. Please do not uncomment this line.
 
+ErrorDocument 404 /404.html
+
 RedirectPermanent /contact.htm https://www.seanmcquay.com/contact
 RedirectPermanent /portfolio.htm https://www.seanmcquay.com/portfolio
 

@@ -39,7 +39,12 @@ export const query = graphql`
                 node {
                     childMarkdownRemark {
                         frontmatter {
-                            pageTitle
+                            pageTitle,
+                            heroImageBlock {
+                                imageSource {
+                                  publicURL
+                                }
+                            }
                         }
                     }
                 }

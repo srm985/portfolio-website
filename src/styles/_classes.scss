@@ -81,6 +81,24 @@
     }
 }
 
+// Box Sizing
+.bs--border {
+    box-sizing: border-box;
+}
+
+// Alignment
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+
+    & > * {
+        flex: 1;
+    }
+}
+
 // Create color helper classes.
 .color-blue {
     color: $color-blue;
