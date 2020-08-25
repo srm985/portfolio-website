@@ -316,6 +316,7 @@ collections:
         file: 'static/content/404.md'
         fields:
           - { label: 'Page Title', name: 'pageTitle', widget: 'string' }
+          - { <<: *default_image }
   - label: 'Globals'
     name: 'globals'
     files:
