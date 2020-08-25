@@ -19,10 +19,6 @@ const NotFoundPageTemplate = (props) => {
         displayName
     } = NotFoundPageTemplate;
 
-    console.log({
-        props
-    });
-
     const componentClassNames = classNames(
         displayName,
         'bs--border',

@@ -41,6 +41,7 @@ export const query = graphql`
                         frontmatter {
                             pageTitle,
                             heroImageBlock {
+                                imageAlt
                                 imageSource {
                                   publicURL
                                 }
