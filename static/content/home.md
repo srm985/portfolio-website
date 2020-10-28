@@ -71,7 +71,7 @@ skillsSectionList:
       - icon: /assets/icon-css.svg
         label: CSS
       - icon: /assets/icon-eslint.svg
-        label: eslint
+        label: ESLint
       - icon: /assets/icon-expressjs.svg
         label: ExpressJS
       - icon: /assets/icon-gatsby.svg
