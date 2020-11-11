@@ -79,7 +79,17 @@ class SkillsBlockComponent extends React.Component {
             displayName
         } = SkillsBlockComponent;
 
-        const generatedSkillPills = skillsList.map(this.renderSkillPill).filter((skill) => !!skill);
+        const generatedSkillPills = skillsList.sort((skill1, skill2) => {
+            const {
+                label: label1
+            } = skill1;
+
+            const {
+                label: label2
+            } = skill2;
+
+            return label1.toLowerCase().localeCompare(label2.toLowerCase());
+        }).map(this.renderSkillPill).filter((skill) => !!skill);
 
         return (
             <div
