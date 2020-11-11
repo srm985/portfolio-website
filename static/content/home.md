@@ -112,6 +112,8 @@ skillsSectionList:
         label: SVN
       - icon: /assets/icon-typescript.svg
         label: TypeScript
+      - icon: /assets/icon-direflow.svg
+        label: Direflow
   - sectionLabel: Content Management Systems
     skillsList:
       - icon: /assets/icon-aem.svg
