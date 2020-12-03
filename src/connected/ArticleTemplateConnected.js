@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import {
-//     graphql
-// } from 'gatsby';
+import {
+    graphql
+} from 'gatsby';
 
 import Layout from '../components/LayoutComponent';
 
@@ -37,57 +37,56 @@ const ArticleTemplateConnected = (props) => {
     );
 };
 
-// export const query = graphql`
-//     query($slug: String!) {
-//         pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
-//             frontmatter {
-//                 pageSEO {
-//                     pageAuthor
-//                     pageDescription
-//                     pageImage
-//                     pageKeywords
-//                     pageSiteURL
-//                     pageTitle
-//                     pageType
-//                 }
-//                 heroImageBlock {
-//                     imageAlt
-//                     imageOpacity
-//                     imageSource {
-//                         childImageSharp {
-//                             fluid(maxWidth: 1600) {
-//                                 ...GatsbyImageSharpFluid_noBase64
-//                             }
-//                         }
-//                     }
-//                     imageTitle
-//                 }
-//                 articleDescription
-//                 articleExcerpt
-//                 articleSectionList {
-//                     articleSectionTitle
-//                     articleSectionBody
-//                 }
-//                 articleTitle
-//             }
-//         }
-//         templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "article-global"}}) {
-//             edges {
-//                 node {
-//                     childMarkdownRemark {
-//                         frontmatter {
-//                             returnButtonIcon {
-//                                 publicURL
-//                             }
-//                             returnButtonLink
-//                             returnButtonScreenReaderLabel
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `;
+export const query = graphql`
+    query($slug: String!) {
+        pageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
+            frontmatter {
+                pageSEO {
+                    pageAuthor
+                    pageDescription
+                    pageImage
+                    pageKeywords
+                    pageSiteURL
+                    pageTitle
+                    pageType
+                }
+                heroImageBlock {
+                    imageAlt
+                    imageOpacity
+                    imageSource {
+                        childImageSharp {
+                            fluid(maxWidth: 1600) {
+                                ...GatsbyImageSharpFluid_noBase64
+                            }
+                        }
+                    }
+                    imageTitle
+                }
+                articleExcerpt
+                articleSectionList {
+                    articleSectionTitle
+                    articleSectionBody
+                }
+                articleTitle
+            }
+        }
+        templateGlobalsQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, name: {eq: "article-global"}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        frontmatter {
+                            returnButtonIcon {
+                                publicURL
+                            }
+                            returnButtonLink
+                            returnButtonScreenReaderLabel
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
 ArticleTemplateConnected.propTypes = {
     data: PropTypes.shape({})

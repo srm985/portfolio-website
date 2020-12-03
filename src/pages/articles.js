@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import {
-//     graphql
-// } from 'gatsby';
+import {
+    graphql
+} from 'gatsby';
 
 import ArticlesPageTemplate from '../templates/ArticlesPageTemplate';
 
@@ -13,91 +13,54 @@ import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 const ArticlesPage = (props) => {
     const {
         data: {
-            pageQuery,
-            projectListQuery
+            articleListQuery,
+            pageQuery
         } = {}
     } = props;
 
     const pageData = destructureNetlifyCMS(pageQuery)[0];
-    const projectList = destructureNetlifyCMS(projectListQuery);
+    const articleList = destructureNetlifyCMS(articleListQuery);
 
     return (
         <Layout content={pageData}>
             <ArticlesPageTemplate content={{
-                projectList
+                articleList
             }}
             />
         </Layout>
     );
 };
 
-// export const query = graphql`
-//     query {
-//         pageQuery: allFile (filter: {sourceInstanceName: {eq: "content"} name: {eq: "portfolio"}}) {
-//             edges {
-//                 node {
-//                     childMarkdownRemark {
-//                         frontmatter {
-//                             pageSEO {
-//                                 pageAuthor
-//                                 pageDescription
-//                                 pageImage
-//                                 pageKeywords
-//                                 pageSiteURL
-//                                 pageTitle
-//                                 pageType
-//                             }
-//                             heroImageBlock {
-//                                 imageAlt
-//                                 imageOpacity
-//                                 imageSource {
-//                                     childImageSharp {
-//                                         fluid(maxWidth: 1600) {
-//                                             ...GatsbyImageSharpFluid_noBase64
-//                                         }
-//                                     }
-//                                 }
-//                                 imageTitle
-//                             }
-//                             portfolioPageHeroTitle
-//                             portfolioPageHeroSubtitle
-//                             projectDescriptionTitle
-//                             projectRoleTitle
-//                             viewProjectCTA
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//         projectListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {frontmatter: {projectExcerpt: {ne: null}}}}) {
-//             edges {
-//                 node {
-//                     childMarkdownRemark {
-//                         fields {
-//                             slug
-//                         }
-//                         frontmatter {
-//                             pageTitle
-//                             projectExcerpt
-//                             projectThumbnailImageBlock {
-//                                 imageAlt
-//                                 imageSource {
-//                                     childImageSharp {
-//                                         fluid(maxWidth: 600) {
-//                                             ...GatsbyImageSharpFluid_noBase64
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                             projectTitle
-//                             role
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `;
+export const query = graphql`
+    query {
+        articleListQuery: allFile(filter: {sourceInstanceName: {eq: "content"}, childMarkdownRemark: {frontmatter: {articleExcerpt: {ne: null}}}}) {
+            edges {
+                node {
+                    childMarkdownRemark {
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            pageTitle
+                            articleExcerpt
+                            articleThumbnailImageBlock {
+                                imageAlt
+                                imageSource {
+                                    childImageSharp {
+                                        fluid(maxWidth: 600) {
+                                            ...GatsbyImageSharpFluid_noBase64
+                                        }
+                                    }
+                                }
+                            }
+                            articleTitle
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
 ArticlesPage.propTypes = {
     data: PropTypes.shape({

@@ -230,6 +230,11 @@ collections:
               name: 'viewProjectCTA',
               widget: 'string',
             }
+      - label: 'Articles Page'
+        name: 'articles'
+        file: 'static/content/articles.md'
+        fields:
+          - { <<: *default_seo }
       - label: 'Project Page'
         name: 'project'
         file: 'static/content/project.md'
@@ -260,8 +265,8 @@ collections:
               name: 'returnButtonScreenReaderLabel',
               widget: 'string',
             }
-      - label: 'Article Page'
-        name: 'article'
+      - label: 'Articles Global Page'
+        name: 'article-global'
         file: 'static/content/article-global.md'
         fields:
           - {
