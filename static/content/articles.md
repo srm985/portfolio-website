@@ -1,0 +1,4 @@
+---
+pageSEO:
+  pageTitle: Articles
+---
