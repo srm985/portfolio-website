@@ -20,10 +20,6 @@ const ProjectTemplateConnected = (props) => {
         } = {}
     } = props;
 
-    console.log({
-        pageData
-    });
-
     const [
         templateGlobalData
     ] = destructureNetlifyCMS(templateGlobalsQuery);

@@ -2,12 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import FAB from '../components/FABComponent';
-import ProjectHeader from '../components/ProjectHeaderComponent';
-import ProjectSection from '../components/ProjectSectionComponent';
 
-const ProjectTemplate = (props) => {
+const ArticleTemplate = (props) => {
     const {
-        content,
         content: {
             returnButtonIcon: {
                 publicURL = ''
@@ -19,12 +16,10 @@ const ProjectTemplate = (props) => {
 
     const {
         displayName
-    } = ProjectTemplate;
+    } = ArticleTemplate;
 
     return (
         <div className={displayName}>
-            <ProjectHeader {...content} />
-            <ProjectSection {...content} />
             <FAB
                 href={returnButtonLink}
                 icon={publicURL}
@@ -34,9 +29,9 @@ const ProjectTemplate = (props) => {
     );
 };
 
-ProjectTemplate.displayName = 'ProjectTemplate';
+ArticleTemplate.displayName = 'ArticleTemplate';
 
-ProjectTemplate.propTypes = {
+ArticleTemplate.propTypes = {
     content: PropTypes.shape({
         returnButtonIcon: PropTypes.shape({
             publicURL: PropTypes.string
@@ -46,8 +41,8 @@ ProjectTemplate.propTypes = {
     })
 };
 
-ProjectTemplate.defaultProps = {
+ArticleTemplate.defaultProps = {
     content: {}
 };
 
-export default ProjectTemplate;
+export default ArticleTemplate;

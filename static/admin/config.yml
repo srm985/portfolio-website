@@ -260,6 +260,25 @@ collections:
               name: 'returnButtonScreenReaderLabel',
               widget: 'string',
             }
+      - label: 'Article Page'
+        name: 'article'
+        file: 'static/content/article.md'
+        fields:
+          - {
+              label: 'Return Button Icon',
+              name: 'returnButtonIcon',
+              widget: 'image',
+            }
+          - {
+              label: 'Return Button Link',
+              name: 'returnButtonLink',
+              widget: 'string',
+            }
+          - {
+              label: 'Return Button Screen Reader Label',
+              name: 'returnButtonScreenReaderLabel',
+              widget: 'string',
+            }
       - label: 'Contact Page'
         name: 'contact'
         file: 'static/content/contact.md'
@@ -439,7 +458,6 @@ collections:
       - { name: 'path', label: 'Path', widget: 'string' }
       - { <<: *default_seo }
       - { name: 'articleTitle', label: 'Article Title', widget: 'string' }
-      - { name: 'projectDate', label: 'Project Date', widget: 'date' }
       - { name: 'articleExcerpt', label: 'Article Excerpt', widget: 'text' }
       - {
           name: 'articleThumbnailImageBlock',
@@ -452,11 +470,6 @@ collections:
         name: 'articleSectionList'
         widget: 'list'
         fields:
-          - {
-              name: 'articleSectionImageBlock',
-              label: 'Article Section Image',
-              <<: *default_image,
-            }
           - {
               name: 'articleSectionTitle',
               label: 'Article Section Title',
