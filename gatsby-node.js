@@ -1,3 +1,4 @@
+const ARTICLE_SLUG = 'articles';
 const PROJECT_SLUG = 'projects';
 const path = require('path');
 
@@ -78,6 +79,7 @@ exports.createPages = async (props) => {
                 slug
             } = nodeFields;
 
+            const isArticleSlug = slug.includes(ARTICLE_SLUG);
             const isProjectSlug = slug.includes(PROJECT_SLUG);
 
             // Create pages for projects.
@@ -90,6 +92,19 @@ exports.createPages = async (props) => {
                         slug
                     },
                     path: `/${PROJECT_SLUG}/${convertSlugToPathName(pageName)}`
+                });
+            }
+
+            // Create pages for articles.
+            if (isArticleSlug) {
+                const pageName = slug.replace(ARTICLE_SLUG, '').replace(/^\//, '');
+
+                createPage({
+                    component: path.resolve('./src/connected/ArticleTemplateConnected.js'),
+                    context: {
+                        slug
+                    },
+                    path: `/${ARTICLE_SLUG}/${convertSlugToPathName(pageName)}`
                 });
             }
         }

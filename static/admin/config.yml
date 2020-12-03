@@ -262,7 +262,7 @@ collections:
             }
       - label: 'Article Page'
         name: 'article'
-        file: 'static/content/article.md'
+        file: 'static/content/article-global.md'
         fields:
           - {
               label: 'Return Button Icon',
