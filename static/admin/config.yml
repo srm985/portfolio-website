@@ -429,3 +429,41 @@ collections:
               label: 'Project Section Body',
               widget: 'markdown',
             }
+  - create: true
+    folder: 'static/content/articles'
+    identifier_field: 'path'
+    label: 'Articles'
+    label_singular: 'Article'
+    name: 'articles'
+    fields:
+      - { name: 'path', label: 'Path', widget: 'string' }
+      - { <<: *default_seo }
+      - { name: 'articleTitle', label: 'Article Title', widget: 'string' }
+      - { name: 'projectDate', label: 'Project Date', widget: 'date' }
+      - { name: 'articleExcerpt', label: 'Article Excerpt', widget: 'text' }
+      - {
+          name: 'articleThumbnailImageBlock',
+          label: 'Article Thumbnail Image',
+          <<: *default_image,
+        }
+      - { <<: *default_image }
+      - label: 'Article Sections'
+        label_singular: 'Article Section'
+        name: 'articleSectionList'
+        widget: 'list'
+        fields:
+          - {
+              name: 'articleSectionImageBlock',
+              label: 'Article Section Image',
+              <<: *default_image,
+            }
+          - {
+              name: 'articleSectionTitle',
+              label: 'Article Section Title',
+              widget: 'string',
+            }
+          - {
+              name: 'articleSectionBody',
+              label: 'Article Section Body',
+              widget: 'markdown',
+            }

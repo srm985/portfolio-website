@@ -35,13 +35,13 @@ module.exports = {
         'gatsby-plugin-react-svg',
         {
             options: {
-                background_color: '#663399',
+                background_color: '#262626',
                 display: 'minimal-ui',
                 icon: 'src/assets/icons/logo.png',
-                name: 'gatsby-starter-default',
-                short_name: 'starter',
+                name: 'Portfolio | Sean McQuay',
+                short_name: 'Portfolio | Sean McQuay',
                 start_url: '/',
-                theme_color: '#663399'
+                theme_color: '#262626'
             },
             resolve: 'gatsby-plugin-manifest'
         },
