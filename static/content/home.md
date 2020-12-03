@@ -25,7 +25,7 @@ aboutMeSectionBody: >-
   sustainable technologies? This is my day-to-day focus as the leader of
   Saggezza’s Digital Experience practice.  
 
-  I’m a front-end developer at heart. I’m passionate about exposing functionality to end users through pleasant and intuitive interfaces, no matter the digital solution or platform. Nowadays though, I focus on empowering teams and organizations to do exactly this. While I still do write code daily, my primary focus is looking to the future. What does a sustainable solution look like and how do we empower developers to create it without additional overhead?  
+  I’m a front-end developer at heart. I’m passionate about exposing functionality to end users through pleasant and intuitive interfaces, no matter the digital solution or platform. Nowadays though, I focus on empowering teams and organizations to do exactly this. While I still do write code occasionally, my primary focus is looking to the future. What does a sustainable solution look like and how do we empower developers to create it without additional overhead? How do we help bridge the gap between UX, design, and development?  
 
   Prior to development, I focused on predictive analytics, statistical modeling, and machine learning. Data is critically important in my life. Collecting and acting upon accurate and detailed metrics allows me to bring about change swiftly, and with certainty. I believe a focus on data should be at the heart of any solution!
 aboutMeSectionImageBlock:
