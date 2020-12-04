@@ -6,6 +6,8 @@ pageSEO:
   pageDescription: Linting is controversial. Linting is the cause of many debates.
     Linting can be one of your most powerful tools, if done right.
 articleTitle: The Case for Strictly Linting…Everything
+articlePublishDate: 2020-11-01T16:03:37.572Z
+articleCategory: Development
 articleExcerpt: Linting is controversial. Linting is the cause of many debates.
   Linting can be one of your most powerful tools, if done right.
 articleThumbnailImageBlock:
