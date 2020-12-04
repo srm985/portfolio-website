@@ -473,7 +473,7 @@ collections:
           label: 'Article Category',
           widget: 'relation',
           collection: 'articleCategoriesCollection',
-          search_fields: 'categoryName',
+          search_fields: ['categoryName'],
           value_field: 'categoryName',
         }
       - { name: 'articleExcerpt', label: 'Article Excerpt', widget: 'text' }
