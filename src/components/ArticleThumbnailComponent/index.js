@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Button from '../ButtonComponent';
 import Image from '../ImageComponent';
 import Title from '../TitleComponent';
 
@@ -21,10 +22,10 @@ const ArticleThumbnailComponent = (props) => {
                 } = {}
             } = {}
         },
-        articleTitle
+        articleTitle,
+        articleURL,
+        className
     } = props;
-
-    console.log(props);
 
     const formatDate = (date) => {
         const articleDate = new Date(date);
@@ -55,30 +56,42 @@ const ArticleThumbnailComponent = (props) => {
         displayName
     } = ArticleThumbnailComponent;
 
+    const componentClassNames = classNames(
+        displayName,
+        className
+    );
+
     const metaClassNames = classNames(
         `${displayName}__meta`,
         'mb--1'
     );
 
     return (
-        <div className={displayName}>
-            <Image
-                alt={imageAlt}
-                className={`${displayName}__thumbnail-image`}
-                fluid={fluid}
-            />
-            <p className={metaClassNames}>
-                <span className={`${displayName}__category`}>{articleCategory}</span>
-                <span className={'mx--1'}>{'•'}</span>
-                <span>{formatDate(articlePublishDate)}</span>
-            </p>
-            <Title
-                className={'mb--1'}
-                heading={articleTitle}
-                headingSize={3}
-            />
-            <p>{articleExcerpt}</p>
-        </div>
+        <Button
+            className={componentClassNames}
+            href={articleURL}
+            isUnstyled
+        >
+            <div className={`${displayName}__overlay`} />
+            <>
+                <Image
+                    alt={imageAlt}
+                    className={`${displayName}__thumbnail-image`}
+                    fluid={fluid}
+                />
+                <p className={metaClassNames}>
+                    <span className={`${displayName}__category`}>{articleCategory}</span>
+                    <span className={'mx--1'}>{'•'}</span>
+                    <span>{formatDate(articlePublishDate)}</span>
+                </p>
+                <Title
+                    className={'mb--1'}
+                    heading={articleTitle}
+                    headingSize={3}
+                />
+                <p>{articleExcerpt}</p>
+            </>
+        </Button>
     );
 };
 
@@ -97,7 +110,9 @@ ArticleThumbnailComponent.propTypes = {
         }),
         imageTitle: PropTypes.string
     }),
-    articleTitle: PropTypes.string
+    articleTitle: PropTypes.string,
+    articleURL: PropTypes.string,
+    className: PropTypes.string
 };
 
 ArticleThumbnailComponent.defaultProps = {
@@ -105,7 +120,9 @@ ArticleThumbnailComponent.defaultProps = {
     articleExcerpt: '',
     articlePublishDate: '',
     articleThumbnailImageBlock: {},
-    articleTitle: ''
+    articleTitle: '',
+    articleURL: '',
+    className: ''
 };
 
 export default ArticleThumbnailComponent;

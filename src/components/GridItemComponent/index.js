@@ -68,7 +68,7 @@ const GridItemComponent = (props) => {
     );
     const rightOffsetClassNames = classNames(
         `${displayName}__offset`,
-        `${displayName}__offset--typeof right`,
+        `${displayName}__offset--right`,
         ...rightOffsetClassList
     );
 

@@ -40,7 +40,10 @@ const ArticlesPageTemplate = (props) => {
                 }}
                 key={slug}
             >
-                <ArticleThumbnail {...articleData} />
+                <ArticleThumbnail
+                    className={'mb--2 mb-medium--3'}
+                    {...articleData}
+                />
             </GridItem>
         );
     });
