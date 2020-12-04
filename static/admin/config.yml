@@ -463,6 +463,19 @@ collections:
       - { name: 'path', label: 'Path', widget: 'string' }
       - { <<: *default_seo }
       - { name: 'articleTitle', label: 'Article Title', widget: 'string' }
+      - {
+          name: 'articlePublishDate',
+          label: 'Article Publish Date',
+          widget: 'datetime',
+        }
+      - {
+          name: 'articleCategory',
+          label: 'Article Category',
+          widget: 'relation',
+          collection: 'articleCategoriesCollection',
+          search_fields: 'categoryName',
+          value_field: 'categoryName',
+        }
       - { name: 'articleExcerpt', label: 'Article Excerpt', widget: 'text' }
       - {
           name: 'articleThumbnailImageBlock',
@@ -485,3 +498,11 @@ collections:
               label: 'Article Section Body',
               widget: 'markdown',
             }
+  - create: true
+    folder: 'static/content/article-categories'
+    identifier_field: 'path'
+    label: 'Article Categories'
+    label_singular: 'Article Category'
+    name: 'articleCategoriesCollection'
+    fields:
+      - { name: 'categoryName', label: 'Category Name', widget: 'string' }
