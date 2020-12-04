@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
 import {
     graphql
 } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import ArticlesPageTemplate from '../templates/ArticlesPageTemplate';
 
@@ -22,7 +22,10 @@ const ArticlesPage = (props) => {
     const articleList = destructureNetlifyCMS(articleListQuery);
 
     return (
-        <Layout content={pageData}>
+        <Layout
+            content={pageData}
+            hasNavigationDark
+        >
             <ArticlesPageTemplate content={{
                 articleList
             }}
@@ -41,8 +44,9 @@ export const query = graphql`
                             slug
                         }
                         frontmatter {
-                            pageTitle
+                            articleCategory
                             articleExcerpt
+                            articlePublishDate
                             articleThumbnailImageBlock {
                                 imageAlt
                                 imageSource {

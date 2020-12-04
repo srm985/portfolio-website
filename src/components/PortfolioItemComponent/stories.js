@@ -1,7 +1,7 @@
-import React from 'react';
 import {
     storiesOf
 } from '@storybook/react';
+import React from 'react';
 
 import Grid from '../GridComponent';
 import GridItem from '../GridItemComponent';

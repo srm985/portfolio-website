@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
 import {
     graphql
 } from 'gatsby';
-
-import Layout from '../components/LayoutComponent';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import ArticleTemplate from '../templates/ArticleTemplate';
+
+import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 

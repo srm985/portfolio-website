@@ -9,6 +9,7 @@ const SectionComponent = (props) => {
     const {
         children,
         className,
+        hasNavigationOffset,
         isDark,
         isFullBleed,
         isMedium
@@ -25,7 +26,8 @@ const SectionComponent = (props) => {
         {
             [`${displayName}--dark`]: isDark,
             [`${displayName}--full-bleed`]: isFullBleed,
-            [`${displayName}--medium`]: isMedium
+            [`${displayName}--medium`]: isMedium,
+            [`${displayName}--navigation-offset`]: hasNavigationOffset
         }
     );
 
@@ -43,6 +45,7 @@ SectionComponent.displayName = 'SectionComponent';
 SectionComponent.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    hasNavigationOffset: PropTypes.bool,
     isDark: PropTypes.bool,
     isFullBleed: PropTypes.bool,
     isMedium: PropTypes.bool
@@ -51,6 +54,7 @@ SectionComponent.propTypes = {
 SectionComponent.defaultProps = {
     children: '',
     className: '',
+    hasNavigationOffset: false,
     isDark: false,
     isFullBleed: false,
     isMedium: false

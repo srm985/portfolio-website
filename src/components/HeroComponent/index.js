@@ -3,12 +3,12 @@ import React from 'react';
 
 import Image from '../ImageComponent';
 
-import classNames from '../../utils/classNames';
-
 import {
     OVERLAY_BLACK,
     OVERLAY_OPTIONS
 } from './config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 

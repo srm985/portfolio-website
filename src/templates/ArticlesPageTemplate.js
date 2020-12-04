@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import ArticleThumbnail from '../components/ArticleThumbnailComponent';
 import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
 import Section from '../components/SectionComponent';
@@ -12,7 +13,20 @@ const ArticlesPageTemplate = (props) => {
         }
     } = props;
 
-    const renderArticleTiles = () => articleList.map((articleData) => {
+    const renderArticleTiles = () => articleList.sort((article1, article2) => {
+        const {
+            articlePublishDate: articlePublishDate1
+        } = article1;
+
+        const {
+            articlePublishDate: articlePublishDate2
+        } = article2;
+
+        const date1 = new Date(articlePublishDate1);
+        const date2 = new Date(articlePublishDate2);
+
+        return date2.date - date1.date;
+    }).map((articleData) => {
         const {
             slug
         } = articleData;
@@ -20,24 +34,19 @@ const ArticlesPageTemplate = (props) => {
         return (
             <GridItem
                 breakpoints={{
-                    extraLarge: {
-                        start: 3,
-                        stop: 11
-                    },
                     large: {
-                        start: 2,
-                        stop: 12
+                        columns: 6
                     }
                 }}
                 key={slug}
             >
-                <p>{'This is a project...'}</p>
+                <ArticleThumbnail {...articleData} />
             </GridItem>
         );
     });
 
     return (
-        <Section isMedium>
+        <Section hasNavigationOffset>
             <Grid>
                 {renderArticleTiles()}
             </Grid>

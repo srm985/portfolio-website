@@ -1,10 +1,10 @@
 const ARTICLE_SLUG = 'articles';
 const PROJECT_SLUG = 'projects';
-const path = require('path');
-
 const {
     createFilePath
 } = require('gatsby-source-filesystem');
+
+const path = require('path');
 
 exports.onCreateNode = (props) => {
     const {

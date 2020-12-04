@@ -1,18 +1,18 @@
 import CMS from 'netlify-cms-app';
 import React from 'react';
 
-import PreviewTemplate from './PreviewTemplate';
-
 // Page Templates
+import NotFoundPageTemplate from '../templates/404PageTemplate';
 import ContactPageTemplate from '../templates/ContactPageTemplate';
 import IndexPageTemplate from '../templates/IndexPageTemplate';
-import NotFoundPageTemplate from '../templates/404PageTemplate';
 import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
 import ProjectTemplate from '../templates/ProjectTemplate';
 
 // Global Components
 import Footer from '../components/FooterComponent';
 import Navigation from '../components/NavigationComponent';
+
+import PreviewTemplate from './PreviewTemplate';
 
 CMS.registerPreviewTemplate('contact', (
     <PreviewTemplate>

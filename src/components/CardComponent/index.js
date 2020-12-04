@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import classNames from '../../utils/classNames';
-
 import {
     BACKGROUND_COLOR_BLUE,
     BACKGROUND_COLOR_GREEN,
@@ -11,6 +9,8 @@ import {
     BACKGROUND_COLOR_WHITE,
     BACKGROUND_COLORS
 } from './config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 

@@ -2,15 +2,15 @@ import {
     withConsole
 } from '@storybook/addon-console';
 import {
-    addDecorator,
-    configure
-} from '@storybook/react';
-import {
     withInfo
 } from '@storybook/addon-info';
 import {
     withKnobs
 } from '@storybook/addon-knobs';
+import {
+    addDecorator,
+    configure
+} from '@storybook/react';
 
 // Style Imports
 import '../src/styles/global.scss';

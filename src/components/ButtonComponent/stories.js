@@ -1,13 +1,11 @@
-import React from 'react';
-import {
-    storiesOf
-} from '@storybook/react';
 import {
     select,
     text
 } from '@storybook/addon-knobs';
-
-import Button from './index';
+import {
+    storiesOf
+} from '@storybook/react';
+import React from 'react';
 
 import {
     BUTTON_STYLE_TYPE_INLINE,
@@ -15,6 +13,8 @@ import {
     BUTTON_STYLE_TYPE_SECONDARY,
     BUTTON_STYLE_TYPES
 } from './config';
+
+import Button from './index';
 
 const stories = storiesOf(Button.displayName, module);
 

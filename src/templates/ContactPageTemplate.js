@@ -3,8 +3,8 @@ import React from 'react';
 
 import Button from '../components/ButtonComponent';
 import Card from '../components/CardComponent';
-import Grid from '../components/GridComponent';
 import Form from '../components/FormComponent';
+import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
 import Hero from '../components/HeroComponent';
 import Input from '../components/InputComponent';

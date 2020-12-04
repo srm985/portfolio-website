@@ -9,11 +9,11 @@ import Image from '../ImageComponent';
 import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 
-import classNames from '../../utils/classNames';
-
 import {
     BUTTON_STYLE_TYPE_NEUMORPHIC
 } from '../ButtonComponent/config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 

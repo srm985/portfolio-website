@@ -4,9 +4,9 @@ import {
     Helmet
 } from 'react-helmet';
 
-import Query from './queries';
-
 import injector from '../../utils/injector';
+
+import Query from './queries';
 
 const SEOComponent = (props) => {
     const {

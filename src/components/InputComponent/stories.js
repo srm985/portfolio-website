@@ -1,18 +1,18 @@
-import React from 'react';
-import {
-    storiesOf
-} from '@storybook/react';
 import {
     select,
     text
 } from '@storybook/addon-knobs';
-
-import InputComponent from './index';
+import {
+    storiesOf
+} from '@storybook/react';
+import React from 'react';
 
 import {
     INPUT_TYPE_TEXT,
     INPUT_TYPES
 } from './config';
+
+import InputComponent from './index';
 
 const stories = storiesOf(InputComponent.displayName, module);
 

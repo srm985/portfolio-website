@@ -62,6 +62,223 @@
                 ]
             }
         ],
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "caseInsensitive": false,
+                    "order": "asc"
+                },
+                "groups": [
+                    "external",
+                    "builtin",
+                    "parent"
+                ],
+                "newlines-between": "always",
+                "pathGroups": [
+                    {
+                        "group": "parent",
+                        "pattern": "./views/*/**",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../views/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../views/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./modules/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../modules/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../modules/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../modules/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./components/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../components/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../components/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../components/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./HOCs/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../HOCs/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../HOCs/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../HOCs/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./config",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../**/config",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../components/**/config",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../components/**/config",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./services",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./utils/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../utils/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../utils/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../utils/*",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./routes",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../routes",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../routes",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../routes",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./constants",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../constants",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../constants",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../constants",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./assets",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../assets",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../assets",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../assets",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "./assets/icons",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../assets/icons",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../assets/icons",
+                        "position": "after"
+                    },
+                    {
+                        "group": "parent",
+                        "pattern": "../../../assets/icons",
+                        "position": "after"
+                    }
+                ]
+            }
+        ],
         "indent": [
             "error",
             4,

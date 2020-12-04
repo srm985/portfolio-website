@@ -1,13 +1,13 @@
-import React from 'react';
 import {
     storiesOf
 } from '@storybook/react';
-
-import IconComponent from './index';
+import React from 'react';
 
 import {
     logoIcon
 } from '../../assets/icons';
+
+import IconComponent from './index';
 
 const stories = storiesOf(IconComponent.displayName, module);
 

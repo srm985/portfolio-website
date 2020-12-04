@@ -6,8 +6,6 @@ import React from 'react';
 
 import VisibilityChecker from '../VisibilityCheckerComponent';
 
-import classNames from '../../utils/classNames';
-
 import {
     BUTTON_STYLE_TYPE_INLINE,
     BUTTON_STYLE_TYPE_NEUMORPHIC,
@@ -17,6 +15,8 @@ import {
     BUTTON_TYPE_BUTTON,
     BUTTON_TYPES
 } from './config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 

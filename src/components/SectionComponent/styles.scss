@@ -19,4 +19,12 @@
     &--full-bleed {
         padding: 0;
     }
+
+    &--navigation-offset {
+        padding-top: calc(#{$navigation-height-mobile} + #{$planck-length * 2});
+
+        @media only screen and (min-width: $breakpoint-medium) {
+            padding-top: calc(#{$navigation-height-desktop} + #{$planck-length * 3});
+        }
+    }
 }

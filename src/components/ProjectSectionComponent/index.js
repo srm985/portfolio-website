@@ -8,8 +8,6 @@ import Section from '../SectionComponent';
 import TextBlock from '../TextBlockComponent';
 import Title from '../TitleComponent';
 
-import classNames from '../../utils/classNames';
-
 import {
     BREAKPOINTS_DEFAULT,
     BREAKPOINTS_IMAGE,
@@ -17,6 +15,8 @@ import {
     IMAGE_ALIGNMENT_FULL,
     IMAGE_ALIGNMENT_OPTIONS
 } from './config';
+
+import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
