@@ -500,7 +500,7 @@ collections:
             }
   - create: true
     folder: 'static/content/article-categories'
-    identifier_field: 'path'
+    identifier_field: 'categoryName'
     label: 'Article Categories'
     label_singular: 'Article Category'
     name: 'articleCategoriesCollection'
