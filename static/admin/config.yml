@@ -386,7 +386,7 @@ collections:
                 }
   - create: true
     folder: 'static/content/projects'
-    identifier_field: 'path'
+    identifier_field: 'projectTitle'
     label: 'Projects'
     label_singular: 'Project'
     name: 'projects'
@@ -455,7 +455,7 @@ collections:
             }
   - create: true
     folder: 'static/content/articles'
-    identifier_field: 'path'
+    identifier_field: 'articleTitle'
     label: 'Articles'
     label_singular: 'Article'
     name: 'articles'
