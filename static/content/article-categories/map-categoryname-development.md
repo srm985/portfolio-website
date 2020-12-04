@@ -1,3 +1,3 @@
 ---
-categoryName: DEVELOPMENT
+categoryName: Development
 ---
