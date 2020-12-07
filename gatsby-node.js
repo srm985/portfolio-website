@@ -79,10 +79,6 @@ exports.createPages = async (props) => {
                 slug
             } = nodeFields;
 
-            console.log({
-                slug
-            });
-
             const isArticleSlug = slug.includes(ARTICLE_SLUG);
             const isProjectSlug = slug.includes(PROJECT_SLUG);
 
