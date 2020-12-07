@@ -18,7 +18,7 @@ articleThumbnailImageBlock:
   imageAlt: a lint roller rolling over lines of code
 heroImageBlock:
   imageTitle: ""
-  imageOpacity: 100
+  imageOpacity: 40
   imageAlignment: full
   imageAlt: a lint roller rolling over lines of code
   imageSource: /assets/linting-hero-2x.png
