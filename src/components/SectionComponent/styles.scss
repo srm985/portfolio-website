@@ -21,10 +21,10 @@
     }
 
     &--navigation-offset {
-        padding-top: calc(#{$navigation-height-mobile} + #{$planck-length * 2});
+        padding-top: calc(#{$navigation-height-mobile} + #{$planck-length * 2}) !important;
 
         @media only screen and (min-width: $breakpoint-medium) {
-            padding-top: calc(#{$navigation-height-desktop} + #{$planck-length * 3});
+            padding-top: calc(#{$navigation-height-desktop} + #{$planck-length * 3}) !important;
         }
     }
 }
