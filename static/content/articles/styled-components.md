@@ -48,9 +48,14 @@ articleSectionList:
 
       ```html
 
-      <!-- Button using styLed-components --> <button class="_7bRF88hdb">Button</button>
+      <!-- Button using styLed-components -->
 
-      <!-- Button using CSS with BEM notation --> <button class="ButtonComponent ButtonComponent--secondary ButtonComponent--disabled">Button</button>
+      <button class="_7bRF88hdb">Button</button>
+
+
+      <!-- Button using CSS with BEM notation -->
+
+      <button class="ButtonComponent ButtonComponent--secondary ButtonComponent--disabled">Button</button>
 
       ```
 
