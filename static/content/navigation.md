@@ -6,7 +6,8 @@ navigationLinks:
     pageURL: /
   - pageName: Work
     pageURL: /portfolio/
+  - pageName: Articles
+    pageURL: /articles/
   - pageName: Contact
     pageURL: /contact/
 ---
-
