@@ -56,7 +56,6 @@ const PortfolioPageTemplate = (props) => {
             <Hero
                 heroImageBlock={heroImageBlock}
                 isHalfHeight
-
             >
                 <Grid>
                     <GridItem

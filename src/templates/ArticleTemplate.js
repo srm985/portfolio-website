@@ -4,6 +4,7 @@ import React from 'react';
 import FAB from '../components/FABComponent';
 import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
+import Hero from '../components/HeroComponent';
 import Section from '../components/SectionComponent';
 import TextBlock from '../components/TextBlockComponent';
 import Title from '../components/TitleComponent';
@@ -12,6 +13,8 @@ const ArticleTemplate = (props) => {
     const {
         content: {
             articleSectionList,
+            articleTitle,
+            heroImageBlock,
             returnButtonIcon: {
                 publicURL = ''
             } = {},
@@ -19,6 +22,8 @@ const ArticleTemplate = (props) => {
             returnButtonScreenReaderLabel = ''
         }
     } = props;
+
+    console.log(props);
 
     const {
         displayName
@@ -32,40 +37,65 @@ const ArticleTemplate = (props) => {
 
         return (
             <Section key={articleSectionTitle}>
-                <Title
-                    className={'mb--1 mb-medium--3'}
-                    heading={articleSectionTitle}
-                    headingSize={2}
-                    isAccented
-                    isAnimated
-                />
-                <TextBlock
-                    className={'article mb--8'}
-                    isAnimated
-                    text={articleSectionBody}
-                />
+                <Grid>
+                    <GridItem
+                        breakpoints={{
+                            extraLarge: {
+                                start: 3,
+                                stop: 11
+                            },
+                            medium: {
+                                start: 2,
+                                stop: 12
+                            }
+                        }}
+                    >
+                        <Title
+                            className={'mb--1 mb-medium--3'}
+                            heading={articleSectionTitle}
+                            headingSize={2}
+                            isAccented
+                            isAnimated
+                        />
+                        <TextBlock
+                            className={'article mb--8'}
+                            isAnimated
+                            text={articleSectionBody}
+                        />
+                    </GridItem>
+                </Grid>
             </Section>
         );
     });
 
     return (
         <div className={displayName}>
-            <Grid>
-                <GridItem
-                    breakpoints={{
-                        extraLarge: {
-                            start: 3,
-                            stop: 11
-                        },
-                        medium: {
-                            start: 2,
-                            stop: 12
-                        }
-                    }}
-                >
-                    {renderedContentBlocks}
-                </GridItem>
-            </Grid>
+            <Hero
+                heroImageBlock={heroImageBlock}
+                isHalfHeight
+            >
+                <Grid>
+                    <GridItem
+                        breakpoints={{
+                            large: {
+                                start: 1,
+                                stop: 9
+                            },
+                            medium: {
+                                start: 1,
+                                stop: 11
+                            }
+                        }}
+                    >
+                        <Title
+                            heading={articleTitle}
+                            headingClassName={'mb--2'}
+                            headingSize={1}
+                        />
+                    </GridItem>
+                </Grid>
+            </Hero>
+            {renderedContentBlocks}
             <FAB
                 href={returnButtonLink}
                 icon={publicURL}
@@ -83,6 +113,17 @@ ArticleTemplate.propTypes = {
             articleSectionBody: PropTypes.string,
             articleSectionTitle: PropTypes.string
         })),
+        articleTitle: PropTypes.string,
+        heroImageBlock: PropTypes.shape({
+            imageAlt: PropTypes.string,
+            imageOpacity: PropTypes.number,
+            imageSource: PropTypes.shape({
+                childImageSharp: PropTypes.shape({
+                    fluid: PropTypes.shape({})
+                })
+            }),
+            imageTitle: PropTypes.string
+        }),
         returnButtonIcon: PropTypes.shape({
             publicURL: PropTypes.string
         }),
