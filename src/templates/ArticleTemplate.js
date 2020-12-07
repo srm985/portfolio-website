@@ -23,8 +23,6 @@ const ArticleTemplate = (props) => {
         }
     } = props;
 
-    console.log(props);
-
     const {
         displayName
     } = ArticleTemplate;

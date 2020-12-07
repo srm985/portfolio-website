@@ -25,7 +25,7 @@ const ArticlesPageTemplate = (props) => {
         const date1 = new Date(articlePublishDate1);
         const date2 = new Date(articlePublishDate2);
 
-        return date2.date - date1.date;
+        return date2 - date1;
     }).map((articleData) => {
         const {
             slug
