@@ -1,7 +1,13 @@
 @import '../../styles/constants';
 
 .ListComponent {
+    margin-bottom: #{$planck-length * 2};
+
     columns: 2;
+
+    & > li {
+        margin-bottom: $planck-length;
+    }
 
     @media only screen and (min-width: $breakpoint-large) {
         columns: 3;

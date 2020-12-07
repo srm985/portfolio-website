@@ -7,60 +7,75 @@ import './styles.scss';
 
 const ListComponent = (props) => {
     const {
-        children,
-        isOrderedList
-    } = props;
-
-    const {
         displayName
     } = ListComponent;
 
-    const renderedListItems = children.map((listItem) => {
+    const renderListItems = (listItemsList) => listItemsList.map((listItemDetails) => {
         const {
             key,
+            props: nestedProps,
             props: {
-                children: [
-                    {
-                        props: {
-                            value = ''
-                        } = {}
-                    } = {}
-                ] = []
-            } = {}
-        } = listItem;
+                children: nestedChildren,
+                node: {
+                    ordered: isOrderedList,
+                    type: nodeType
+                } = {}
+            },
+            type: functionalType
+        } = listItemDetails;
 
-        return (
-            <li
-                className={`${displayName}__list-item`}
-                key={key}
-            >
-                {value}
-            </li>
-        );
+        const isList = nodeType === 'list';
+        const isListItem = nodeType === 'listItem';
+
+        const isTypeFunction = functionalType !== undefined && typeof functionalType === 'function';
+
+        if (isList) {
+            const isShortList = nestedChildren.length <= 10;
+
+            const componentClassNames = classNames(
+                displayName,
+                {
+                    [`${displayName}--ordered`]: isOrderedList,
+                    [`${displayName}--short`]: isShortList,
+                    [`${displayName}--unordered`]: !isOrderedList
+                }
+            );
+
+            return (
+                isOrderedList ? (
+                    <ol
+                        className={componentClassNames}
+                        key={key}
+                    >
+                        {renderListItems(nestedChildren)}
+                    </ol>
+                ) : (
+                    <ul
+                        className={componentClassNames}
+                        key={key}
+                    >
+                        {renderListItems(nestedChildren)}
+                    </ul>
+                )
+            );
+        }
+
+        if (isListItem) {
+            return (
+                <li key={key}>
+                    {renderListItems(nestedChildren)}
+                </li>
+            );
+        }
+
+        return isTypeFunction ? functionalType(nestedProps) : renderListItems(nestedChildren);
     });
 
-    const isShortList = children.length <= 10;
-
-    const componentClassNames = classNames(
-        displayName,
+    return renderListItems([
         {
-            [`${displayName}--ordered`]: isOrderedList,
-            [`${displayName}--short`]: isShortList,
-            [`${displayName}--unordered`]: !isOrderedList
+            props
         }
-    );
-
-    return (
-        isOrderedList ? (
-            <ol className={componentClassNames}>
-                {renderedListItems}
-            </ol>
-        ) : (
-            <ul className={componentClassNames}>
-                {renderedListItems}
-            </ul>
-        )
-    );
+    ]);
 };
 
 ListComponent.displayName = 'ListComponent';
