@@ -23,7 +23,7 @@ articleThumbnailImageBlock:
     online purchase
 heroImageBlock:
   imageTitle: ""
-  imageOpacity: 100
+  imageOpacity: 40
   imageAlignment: full
   imageSource: /assets/ecommerce.jpg
   imageAlt: a closeup of a man's hand holding a credit card, presumably making an
