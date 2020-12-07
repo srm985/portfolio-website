@@ -46,7 +46,7 @@ articleSectionList:
       information. Let’s take a look at a comparison:
 
 
-      ```
+      ```html
 
       <!-- Button using styLed-components --> <button class="_7bRF88hdb">Button</button>
 
@@ -111,7 +111,7 @@ articleSectionList:
       I’d like to compare the readability two approaches:
 
 
-      ```
+      ```jsx
 
       // styled-components
 
@@ -129,9 +129,7 @@ articleSectionList:
       ```
 
 
-
-
-      ```
+      ```jsx
 
       // SCSS + BEM
 
@@ -161,7 +159,7 @@ articleSectionList:
       ```
 
 
-      ```
+      ```scss
 
       .ButtonComponent {
           width: 200px;
@@ -183,8 +181,6 @@ articleSectionList:
       }
 
       ```
-
-
 
 
       While completely opinionated (what things aren’t opinionated in coding?) I’d argue that while the styled-components approach is much smaller, it can become much more difficult to read. Taking a JSX+BEM+SCSS approach groups things into nice little buckets. You’ll find all of the programmatic class names for your component in one easy spot and you can easily review what logic controls a given class name. The same goes for the CSS itself. We’re following BEM-structured SCSS which allows us to see our nice little blocks of attributes for each conditional class. There’s no time spent searching for a given attribute from a long list which may be sorted randomly. 
