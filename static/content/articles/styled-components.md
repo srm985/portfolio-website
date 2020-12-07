@@ -17,7 +17,7 @@ articleThumbnailImageBlock:
   imageAlt: a bunch of large, identical concrete structures lying in a blue sea
 heroImageBlock:
   imageTitle: ""
-  imageOpacity: 20
+  imageOpacity: 40
   imageAlignment: full
   imageSource: /assets/styled-components.jpg
   imageAlt: a bunch of large, identical concrete structures lying in a blue sea
