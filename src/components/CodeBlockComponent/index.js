@@ -1,54 +1,68 @@
-import Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import React, {
-    useEffect
-} from 'react';
+import React from 'react';
+// import Prism from 'prismjs';
+// import React, {
+//     useEffect
+// } from 'react';
+import {
+    Prism as SyntaxHighlighter
+} from 'react-syntax-highlighter';
 
-import classNames from '../../utils/classNames';
+// import classNames from '../../utils/classNames';
 
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
+// import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import '../../vendor/prismTheme.scss';
 import './styles.scss';
 
 const CodeBlockComponent = (props) => {
     const {
-        language,
+        language: interpretedLanguage,
         value
     } = props;
 
-    const {
-        displayName
-    } = CodeBlockComponent;
+    const language = interpretedLanguage || 'jsx';
 
-    const {
-        languages: {
-            [language]: prismLanguage
-        }
-    } = Prism;
+    console.log('code:', props);
 
-    const styledCode = Prism.highlight(value, prismLanguage, language);
+    // const {
+    //     displayName
+    // } = CodeBlockComponent;
 
-    const componentClassNames = classNames(
-        displayName,
-        'line-numbers'
-    );
+    // const {
+    //     languages: {
+    //         [language]: prismLanguage
+    //     }
+    // } = Prism;
+
+    // const styledCode = Prism.highlight(value, prismLanguage, language);
+
+    // const componentClassNames = classNames(
+    //     displayName,
+    //     'line-numbers'
+    // );
 
     // During Gatsby builds, the document object isn't available.
-    useEffect(() => {
-        setTimeout(Prism.highlightAll);
-    });
+    // useEffect(() => {
+    //     setTimeout(Prism.highlightAll);
+    // });
 
     return (
-        <pre className={componentClassNames}>
-            <code
-                className={`language-${language}`}
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                    __html: styledCode
-                }}
-            />
-        </pre>
+        // <pre className={componentClassNames}>
+        //     <code
+        //         className={`language-${language}`}
+        //         // eslint-disable-next-line react/no-danger
+        //         dangerouslySetInnerHTML={{
+        //             __html: styledCode
+        //         }}
+        //     />
+        // </pre>
+        <SyntaxHighlighter
+            language={language}
+            showLineNumbers
+        >
+            {value}
+        </SyntaxHighlighter>
     );
 };
 

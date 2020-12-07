@@ -3,6 +3,7 @@
 .ArticleThumbnailComponent {
     position: relative;
 
+    display: inline-block;
     box-sizing: border-box;
 
     &__overlay {

@@ -23,8 +23,8 @@ const ArticleThumbnailComponent = (props) => {
             } = {}
         },
         articleTitle,
-        articleURL,
-        className
+        className,
+        slug: articleURL
     } = props;
 
     const formatDate = (date) => {
@@ -111,8 +111,8 @@ ArticleThumbnailComponent.propTypes = {
         imageTitle: PropTypes.string
     }),
     articleTitle: PropTypes.string,
-    articleURL: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    slug: PropTypes.string
 };
 
 ArticleThumbnailComponent.defaultProps = {
@@ -121,8 +121,8 @@ ArticleThumbnailComponent.defaultProps = {
     articlePublishDate: '',
     articleThumbnailImageBlock: {},
     articleTitle: '',
-    articleURL: '',
-    className: ''
+    className: '',
+    slug: ''
 };
 
 export default ArticleThumbnailComponent;

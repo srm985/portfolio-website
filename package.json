@@ -23,7 +23,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-markdown": "^5.0.3"
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.3.1"
   },
   "description": "Personal portfolio website V2.",
   "devDependencies": {
@@ -41,6 +42,7 @@
     "@storybook/react": "^6.1.9",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "babel-plugin-prismjs": "^2.0.1",
     "babel-plugin-transform-es2017-object-entries": "0.0.5",
     "babel-preset-gatsby": "^0.8.0",
     "concurrently": "^5.3.0",

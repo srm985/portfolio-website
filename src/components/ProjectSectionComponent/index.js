@@ -90,7 +90,6 @@ class ProjectSectionComponent extends React.Component {
                                 isAccented
                                 isAnimated
                             />
-
                         </GridItem>
                         <GridItem
                             breakpoints={breakpointsImage}

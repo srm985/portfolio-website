@@ -90,6 +90,8 @@ class TextBlockComponent extends React.Component {
             }
         );
 
+        console.log('source:', text);
+
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
