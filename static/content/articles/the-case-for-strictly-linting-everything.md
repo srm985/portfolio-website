@@ -5,6 +5,7 @@ pageSEO:
   pagePostingTitle: The Case for Strictly Linting…Everything
   pageDescription: Linting is controversial. Linting is the cause of many debates.
     Linting can be one of your most powerful tools, if done right.
+  pageKeywords: linting, eslint, stylelint, javascript, css, html, scss, sass, less, prettier
 articleTitle: The Case for Strictly Linting…Everything
 articlePublishDate: 2020-11-01T16:03:37.572Z
 articleCategory: Development
