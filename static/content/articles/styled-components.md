@@ -3,6 +3,8 @@ path: styled-components
 pageSEO:
   pageTitle: Articles
   pagePostingTitle: Is styled-components your answer to everything CSS?
+  pageKeywords: styled-components, styled components, css, scss, sass, less, jsx,
+    react, javascript, css in javascript, css modules
 articleTitle: Is styled-components your answer to everything CSS?
 articlePublishDate: 2020-12-01T22:13:06.246Z
 articleCategory: Development
