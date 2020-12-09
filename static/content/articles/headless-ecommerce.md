@@ -7,6 +7,8 @@ pageSEO:
     provides ample growth. Today though, more and more organizations are turning
     to headless solutions to allow for unlimited creative freedom and
     hyper-granular conversion funnel optimization.
+  pageKeywords: ecommerce, e-commerce, headless, headless e-commerce, salesforce,
+    commerce cloud
 articleTitle: Headless E-Commerce
 articlePublishDate: 2020-10-01T20:59:12.313Z
 articleCategory: Development
