@@ -45,7 +45,7 @@ CMS.registerPreviewTemplate('projects', (
     </PreviewTemplate>
 ));
 
-CMS.registerPreviewTemplate('articles/*', (
+CMS.registerPreviewTemplate('articles', (
     <PreviewTemplate>
         <ArticleTemplate />
     </PreviewTemplate>
