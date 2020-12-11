@@ -3,6 +3,7 @@ import React from 'react';
 
 // Page Templates
 import NotFoundPageTemplate from '../templates/404PageTemplate';
+import ArticleTemplate from '../templates/ArticleTemplate';
 import ContactPageTemplate from '../templates/ContactPageTemplate';
 import IndexPageTemplate from '../templates/IndexPageTemplate';
 import PortfolioPageTemplate from '../templates/PortfolioPageTemplate';
@@ -41,6 +42,12 @@ CMS.registerPreviewTemplate('portfolio', (
 CMS.registerPreviewTemplate('projects', (
     <PreviewTemplate>
         <ProjectTemplate />
+    </PreviewTemplate>
+));
+
+CMS.registerPreviewTemplate('articles/*', (
+    <PreviewTemplate>
+        <ArticleTemplate />
     </PreviewTemplate>
 ));
 
