@@ -59,18 +59,14 @@ projectSectionList:
         hostingSiteName: Unsplash
         hostingSiteLink: https://unsplash.com/
     projectSectionTitle: Going To Market
-    projectSectionBody: >-
-      To bring Luminat’s service into the market, I led design and development
-      efforts for the creation of a new, marketing-focused static website for
-      our business unit. My end deliverable was an ADA-compliant, responsive
-      website leveraging Bootstrap V3, HTML5, and SASS precompiled to CSS.
-      JavaScript handled all interaction aspects and was extended by jQuery.
-      During development, I focused on highly-semantic markup tags and
+    projectSectionBody: To bring Luminat’s service into the market, I led design and
+      development efforts for the creation of a new, marketing-focused static
+      website for our business unit. My end deliverable was an ADA-compliant,
+      responsive website leveraging Bootstrap V3, HTML5, and SASS precompiled to
+      CSS. JavaScript handled all interaction aspects and was extended by
+      jQuery. During development, I focused on highly-semantic markup tags and
       well-structured page layouts to aid in indexing and effective SEO.
       Linting, testing, and build tasks were handled with Grunt. While
       developing, I also provided support and generated content for our legacy
       WordPress website. Version control was handled through Git.
-
-
-      ![foobar](/assets/development.png)
 ---
