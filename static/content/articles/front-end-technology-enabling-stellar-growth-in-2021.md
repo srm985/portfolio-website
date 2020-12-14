@@ -1,7 +1,7 @@
 ---
 path: stellar-front-end-technologies-in-2021
 pageSEO:
-  pageTitle: ""
+  pageTitle: Articles
   pagePostingTitle: Front-end technology enabling stellar growth in 2021
   pageDescription: Let's take a look at some of the technologies I'm excited to
     use to help deliver high-ROI solutions in the coming year.
