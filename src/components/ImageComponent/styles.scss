@@ -6,6 +6,10 @@
     &__image-wrapper {
         height: 100%;
 
+        & > img {
+            max-width: 100%;
+        }
+
         &--can-view-enlarged {
             outline-color: $color-blue;
             cursor: pointer;
