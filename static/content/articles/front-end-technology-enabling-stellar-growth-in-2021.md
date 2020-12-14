@@ -72,19 +72,12 @@ articleSectionList:
   - articleSectionTitle: Progressive Web Applications (PWAs)
     articleSectionBody: >-
       ![six company logos arranged on a black background (medium, uber,
-      starbucks, spotify, weather channel, and forbes)](/assets/pwa-logos.png)
-
+      starbucks, spotify, weather channel, and forbes)](/assets/pwa-logos.png)  
 
       Publishing applications to respective app stores carries a barrier to entry at some level. There are fees associated with licensing and the application review process can be lengthy - especially now during COVID-19 where staffing has been reduced. While most app stores offer a streamlined experience, the simple fact of the matter is that it is hard to rapidly provide updates to an application housed here. Depending on your development strategy, it can also be costly if you’re maintaining several unnecessary code bases to support multiple device types.
 
 
-       
-
-
       For many organizations, they believe that hosting an application in app stores promotes confidence - there’s a vetting process involved with your application and consumers trust this. For other organizations it was a matter of creating a critically-performant application, for which you may have been forced into writing a native application (see Wasm for a prospective alternative) and consequently hosting it in app stores. Regardless of how your application ended up there, it’s there and it’s carrying a barrier of its own - extra steps to getting it into the hands of users. In modern times where UX reigns supreme, we’re looking for ways to make life more pleasant for our users. Forcing them to break from the experience to go and download an application may not seem like much, but it’s jarring to your experience. PWAs afford users the ability to quickly “install” your application without breaking the stride of your experience and it’s something to which more and more organizations are turning as users demand pleasant experiences and become more educated on the use of PWAs.
-
-
-       
 
 
       For those of you just venturing out into the PWA world, a PWA is a JavaScript-based web application with several key differentiators allowing it to deliver a near-native experience without the app store hassle.
@@ -98,8 +91,7 @@ articleSectionList:
   - articleSectionTitle: WebAssembly (Wasm)
     articleSectionBody: >-
       ![a man facing a computer with various programming languages floating
-      around him](/assets/webassembly.png)
-
+      around him](/assets/webassembly.png)  
 
       Rarely do I recommend a native application approach when speaking with clients. With options such as [React Native](https://reactnative.dev/) or [Apache’s Cordova](https://cordova.apache.org/) to name a few, I believe expedited solutions can be delivered with the added bonus of maintaining a single source of truth i.e. a single code base. This benefit alone often easily outweighs the potential performance gained by developing a native application across platforms and can easily provide for device inclusivity, even for less-developed devices such as Windows. For some organizations though, performance is critical - think media editing or playback for example. These performance-critical products most likely turned to a native development approach.
 
@@ -110,8 +102,7 @@ articleSectionList:
       This is becoming less and less of a concern with the rollout and now [unanimous browser support](https://caniuse.com/wasm) for [WebAssembly](https://webassembly.org/). With this new assembly-like language, developers are empowered to leverage JavaScript interspersed with high performance snippets of code written in their favorite low-level language such as C++ or Rust, compiled into WebAssembly. Building in this manner is opening the doors to easy-to-access web applications which would otherwise be relegated to the app store or a native desktop application. WebAssembly is lowering the barrier to entry for those organizations looking to easily deliver high performance applications to their customers.
   - articleSectionTitle: AI Chat
     articleSectionBody: >-
-      ![a robot conducting ai chat](/assets/ai-chat.png)
-
+      ![a robot conducting ai chat](/assets/ai-chat.png)  
 
       Almost every advancement in technology can be attributed to our desire to create more pleasant experiences for end users. AI chat carries along in exactly the same vein. We’ve moved from a simple FAQ page to the ability to conduct advanced searches in hopes of putting information at the fingertips of our users. What we’ve seen instead is that users don’t want to fiddle around with search parameters - they simply want the information they want, and now. AI chat is the enabler. 
 
@@ -123,8 +114,7 @@ articleSectionList:
   - articleSectionTitle: Versioned and Flagged Features (Micro Front Ends)
     articleSectionBody: >-
       ![a team of developers working together to create various
-      features](/assets/feature-development.png)
-
+      features](/assets/feature-development.png)  
 
       The development ecosystem is thankfully making great progress in moving away from huge monolithic applications. With the advent of headless solutions and modern front-end frameworks, it has never been easier. Moving towards these “componentized” approaches enables organizations to abstract reusable styling and components into libraries which are then consumed across their suite of applications, delivering a competitive advantage to their designers and developers while remaining adherent to brand identity. 
 
@@ -154,8 +144,7 @@ articleSectionList:
   - articleSectionTitle: Search Engine Optimization (SEO) Experts
     articleSectionBody: >-
       ![a team of experts analyzing various parts of application for search
-      performance](/assets/seo.png)
-
+      performance](/assets/seo.png)  
 
       Everywhere you look, direct-to-consumer (DTC/D2C) models are popping up driven hard by the strange year we’ve had in 2020. With modern e-commerce platforms and low-code solutions, it has never been easier to go after your very own market share. Many of these products aren’t reinventing the wheel nor are they offering significant price reductions. What we’re left with is a multitude of brands selling nearly-identical products or solutions, all of which are looking to differentiate themselves and build brand recognition. A major factor in this is simply showing up. When I search for a given product, who shows up first and who shows up the most? Consumers are educated and product reviews play a significant role in this process, but if I’m looking to [buy toilet paper](https://www.vox.com/the-goods/2019/7/17/20688093/toilet-paper-no-2-tushy-who-gives-a-crap-charmin) then I’m not planning to spend the day researching brands. This is where your SEO ranking can play an incredible role of driving more potential customers into your conversion funnel.
 
@@ -167,8 +156,7 @@ articleSectionList:
   - articleSectionTitle: Framework Agnostic Development
     articleSectionBody: >-
       ![a developer coding various aspects of an
-      application](/assets/development.png)
-
+      application](/assets/development.png)  
 
       Adhering to a front-end framework provides two major benefits in my experience - neatly packaging and exposing complex or difficult functionality in simple syntax and typically, some sort of guidance for application hierarchy. Due to these benefits, I’m not ready to give up frameworks just yet in 2021, but what I am prepared to do is generate components and features in such a way that they may be consumed, regardless of the consuming framework (or lack of) chosen by the project. If you’ve had your eye on building out that shiny new component library but have projects leveraging different frameworks, a framework-agnostic approach may be your answer. Taking this approach allows teams to elect whatever framework they most enjoy, while maintaining compatibility of components across applications.
 
@@ -186,8 +174,7 @@ articleSectionList:
   - articleSectionTitle: Moments of Delight
     articleSectionBody: >-
       ![metallic gold and silver confetti on a black
-      background](/assets/celebration.png)
-
+      background](/assets/celebration.png)  
 
       Regardless of what you sell or offer to your customers, the goal is the same - to keep users coming back. The majority of this obviously resides in your pricing model and quality of products. That said, an emerging group of surveys indicate that users are willing to pay more for a better experience. The first step in this process is ensuring an intuitive experience through diligent UX research. This alone could easily lead to very dry experiences for users if left unchecked. This is where well-placed moments of delight shine - a pleasant little ripple effect after clicking a button or an exciting congratulatory animation after a successful purchase. These little moments of delight are a great opportunity to express empathy and gratitude for you users.
 ---
