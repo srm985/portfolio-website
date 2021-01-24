@@ -9,7 +9,7 @@ pageSEO:
 heroImageBlock:
   imageAlt: a blue to purple gradient with abstract white shapes
   imageSource: /assets/portfolio-gradient.jpg
-  imageOpacity: 100
+  imageOpacity: 90
   citation:
     authorLink: ""
     authorName: ""
