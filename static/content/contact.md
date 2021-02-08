@@ -1,15 +1,15 @@
 ---
 pageSEO:
-  pageDescription: Want to do something great together?
-  pageKeywords: 'contact form, developer'
-  pagePostingTitle: Let's Chat!
+  pageDescription: Let's build something great together!
+  pageKeywords: contact form, developer
+  pagePostingTitle: Chat with Sean McQuay!
   pageTitle: Contact
   pageType: website
 heroImageBlock:
   imageAlt: a map of Chicago streets
   imageOpacity: 20
   imageSource: /assets/chicago.png
-  imageTitle: ''
+  imageTitle: ""
 heroTitle: Want to do something great together?
 contactCardTitle: Send me a message!
 formName: contact-form
