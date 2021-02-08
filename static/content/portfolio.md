@@ -1,9 +1,10 @@
 ---
 pageSEO:
-  pageDescription: A brief look at some of the broad-ranging challenges I've
-    tackled over the years - from programming to hardware to graphics.
-  pageKeywords: portfolio, development, front-end
-  pagePostingTitle: My Work
+  pageDescription: I've faced challenges across a broad range of industry
+    verticals and have excelled in delivering high-ROI solutions by leveraging
+    technology and techniques which will stand the test of time.
+  pageKeywords: portfolio, development, front-end, coding
+  pagePostingTitle: Sean McQuay's Portfolio
   pageTitle: Portfolio
   pageType: article
 heroImageBlock:
