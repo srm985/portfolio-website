@@ -4,6 +4,9 @@ pageSEO:
   pageDescription: A messaging client allowing inmates to communicate with their loved ones.
   pagePostingTitle: Messaging Client
   pageType: article
+  pageKeywords: HTML, CSS, SCSS, JavaScript, jQuery, kiosk, UX, Axure, responsive,
+    prototyping, journey map
+  pageTitle: Messaging Client
 projectTitle: Messaging Client
 projectSourceCodeURL: https://github.com/srm985/messaging-client
 projectDemoURL: https://www.messaging-client.seanmcquay.com/
