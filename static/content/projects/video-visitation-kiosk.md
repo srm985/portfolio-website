@@ -3,7 +3,8 @@ path: video-visitation-kiosk
 pageSEO:
   pageDescription: A fresh take on an outdated video visitation terminal front end
     helping users more easily communicate with their loved ones.
-  pageKeywords: kisok, terminal, reskin, video, visitation
+  pageKeywords: kisok, terminal, reskin, video, visitation,HTML, CSS, SCSS,
+    JavaScript, jQuery, kiosk, UX, Axure, responsive, prototyping, journey map
   pagePostingTitle: Video Visitation Kiosk
   pageTitle: Video Visitation Kiosk
   pageType: article
