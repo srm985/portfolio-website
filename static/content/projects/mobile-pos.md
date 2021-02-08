@@ -7,6 +7,7 @@ pageSEO:
     furniture, retail, mobile POS, furniture, mobile furniture POS
   pagePostingTitle: Mobile POS
   pageTitle: Mobile POS
+  pageType: article
 projectTitle: Mobile POS
 projectSourceCodeURL: https://github.com/srm985/artvan-pos
 projectDemoURL: https://www.pos.seanmcquay.com/
@@ -51,7 +52,7 @@ projectSectionList:
       down on it? Does that chair feel comfortable when you sit in it? We can
       read countless reviews, but sometimes we want to see the product in-person
       prior to purchasing. Coming to a retail store shouldn’t feel like an
-      arduous process.  
+      arduous process.
 
       One furniture retailer decided to try and improve upon the traditional brick-and-mortar experience by leveraging technology to deliver a more-pleasant experience to its valued customers. By developing a mobile point of sale solution, I enabled employees and customers to come together anywhere in the store to build their dream room. Instead of stepping away to a terminal to add inventory to an order, employees could keep customers engaged with a target goal streamlining the sales process.
     projectSectionImageBlock:

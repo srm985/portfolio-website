@@ -40,6 +40,7 @@ export const query = graphql`
                                 pageDescription
                                 pageImage
                                 pageKeywords
+                                pagePostingTitle
                                 pageSiteURL
                                 pageTitle
                                 pageType

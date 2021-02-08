@@ -2,6 +2,7 @@
 path: styled-components
 pageSEO:
   pageTitle: Articles
+  pageType: article
   pagePostingTitle: Is styled-components your answer to everything CSS?
   pageKeywords: styled-components, styled components, css, scss, sass, less, jsx,
     react, javascript, css in javascript, css modules

@@ -3,7 +3,7 @@ pageSEO:
   pageDescription: I'm passionate about helping teams develop and sustain large-scale projects.
   pagePostingTitle: Hello! My name is Sean McQuay.
   pageTitle: Home
-  pageType: article
+  pageType: website
 heroImageBlock:
   imageAlt: the author standing in the middle of a desolate road with snowbanks to
     either side
@@ -23,9 +23,9 @@ aboutMeSectionBody: >-
   How do we empower teams to easily craft enterprise-level code which
   incorporates industry-standard best practices coupled to innovative, yet
   sustainable technologies? This is my day-to-day focus as the leader of
-  Saggezza’s Digital Experience practice.  
+  Saggezza’s Digital Experience practice.
 
-  I’m a front-end developer at heart. I’m passionate about exposing functionality to end users through pleasant and intuitive interfaces, no matter the digital solution or platform. Nowadays though, I focus on empowering teams and organizations to do exactly this. While I still do write code occasionally, my primary focus is looking to the future. What does a sustainable solution look like and how do we empower developers to create it without additional overhead? How do we help bridge the gap between UX, design, and development?  
+  I’m a front-end developer at heart. I’m passionate about exposing functionality to end users through pleasant and intuitive interfaces, no matter the digital solution or platform. Nowadays though, I focus on empowering teams and organizations to do exactly this. While I still do write code occasionally, my primary focus is looking to the future. What does a sustainable solution look like and how do we empower developers to create it without additional overhead? How do we help bridge the gap between UX, design, and development?
 
   Prior to development, I focused on predictive analytics, statistical modeling, and machine learning. Data is critically important in my life. Collecting and acting upon accurate and detailed metrics allows me to bring about change swiftly, and with certainty. I believe a focus on data should be at the heart of any solution!
 aboutMeSectionImageBlock:

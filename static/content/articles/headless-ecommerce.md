@@ -2,6 +2,7 @@
 path: headless-ecommerce
 pageSEO:
   pageTitle: Articles
+  pageType: article
   pagePostingTitle: Headless E-Commerce
   pageDescription: For many organization, an out-of-the box e-commerce solution
     provides ample growth. Today though, more and more organizations are turning

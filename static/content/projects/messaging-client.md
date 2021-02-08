@@ -3,6 +3,7 @@ path: messaging-client
 pageSEO:
   pageDescription: A messaging client allowing inmates to communicate with their loved ones.
   pagePostingTitle: Messaging Client
+  pageType: article
 projectTitle: Messaging Client
 projectSourceCodeURL: https://github.com/srm985/messaging-client
 projectDemoURL: https://www.messaging-client.seanmcquay.com/
@@ -42,7 +43,7 @@ projectDescription: >-
   client due to security concerns. The repository contains the code for the two
   separate components of this messaging client - a kiosk version intended for
   use by inmates and a responsive version used by those communicating with said
-  inmates.  
+  inmates.
 
   *Disclaimer: The demo pages below have been coerced into the device viewports. Your viewing experience may vary from the actual, developed code.*
 projectSectionList:

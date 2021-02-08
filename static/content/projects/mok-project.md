@@ -6,6 +6,7 @@ pageSEO:
     Touch, Virtual, jQuery
   pagePostingTitle: Multilingual Onscreen Keyboard
   pageTitle: MOK Project
+  pageType: article
 projectTitle: MOK Project
 projectSourceCodeURL: https://github.com/srm985/mok-project
 projectDemoURL: https://www.mok-project.seanmcquay.com/
@@ -41,7 +42,7 @@ projectDescription: >-
   willing to make revisions if a better source is found. Typical use cases for
   this application include terminals, kiosks, and other touch-point devices. I
   hope to provide the community with a valuable resource that only grows better
-  with time and your support!  
+  with time and your support!
 
   [![](https://data.jsdelivr.com/v1/package/npm/mok-project/badge)](https://www.jsdelivr.com/package/npm/mok-project)
 projectSectionList:
@@ -51,7 +52,7 @@ projectSectionList:
       none seemed to be as robust as I’d like. More importantly, why don’t any
       of them support ALL languages? I’m passionate about spoken languages and
       wanted to provide developers a way to allow them to ship their
-      applications with native keyboards. 
+      applications with native keyboards.
 
 
       The concept was simple – somehow generate a list of every keyboard layout and write some logic to parse and display it.
@@ -108,7 +109,7 @@ projectSectionList:
       called Microsoft Keyboard Layout Creator. From there, I started the
       arduous process of coding the “processing engine”. This engine consisted
       of a complex regular expression along with all rules required in written
-      languages. 
+      languages.
 
 
       At first, the concept seems simple – or at least it did to me as an English speaker. The user touches a key and we write that to the focused field. Simple enough… I quickly discovered previously-unknown words such as *ligature* and *deadkeys*. These required the plugin to watch for, and interpret, combinations of keys such as ``a + ` = à`` or `a + e = æ`.
@@ -126,7 +127,7 @@ projectSectionList:
         hostingSiteName: Unsplash
     projectSectionTitle: How's It Built?
   - projectSectionBody: |-
-      
+
 
       * Albanian
       * Arabic

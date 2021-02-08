@@ -3,6 +3,7 @@ path: expenditure-accountability
 pageSEO:
   pagePostingTitle: Expenditure Accountability
   pageTitle: Expenditure Accountability
+  pageType: article
   pageKeywords: >-
     React,NodeJS,ExpressJS,Firebase,PostgreSQL,PSQL,Heroku,OAUTH,authentication,expenses,expense
     tracking,budget
@@ -89,7 +90,7 @@ projectSectionList:
       which are tracked through Splitwise. This simple interchange is handled by
       OAuth 2.0. Once linked, the application imports all shared expenses for a
       given group – in this case my significant other and I. These expenses
-      cannot be edited, but contribute to our three expenditure categories:  
+      cannot be edited, but contribute to our three expenditure categories:
 
 
       * Shared
@@ -102,7 +103,7 @@ projectSectionList:
       Users may add additional expenses through the application. Those expenses
       which contribute to shared monthly expenditures will be divided and
       reflect in each user’s portal. Personal expenses only affect that user’s
-      monthly expenditures.  
+      monthly expenditures.
 
       Users may then flip over to their tracking view. At first glance, this
       view provides a visual indication to users whether they have exceeded

@@ -5,6 +5,7 @@ pageSEO:
     of Luminant's professional monitoring services of power generating stations.
   pagePostingTitle: POC Website Refresh
   pageTitle: POC Website Refresh
+  pageType: article
   pageKeywords: ADA-compliant,responsive,Bootstrap,HTML5,SCSS,JavaScript,jQuery,SEO,Linting,testing,Grunt,WordPress,Git
 projectTitle: POC Website Refresh
 projectSourceCodeURL: https://github.com/srm985/POC-Website

@@ -77,6 +77,6 @@ module.exports = {
         postingTitle: 'Sean McQuay - Front-End Developer',
         siteURL: 'https://www.seanmcquay.com',
         titleTemplate: 'Sean McQuay | {pageTitle}',
-        type: ''
+        type: 'website'
     }
 };

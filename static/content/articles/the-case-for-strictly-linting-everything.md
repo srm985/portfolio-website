@@ -2,6 +2,7 @@
 path: the-case-for-strictly-linting-everything
 pageSEO:
   pageTitle: Articles
+  pageType: article
   pagePostingTitle: The Case for Strictly Linting…Everything
   pageDescription: Linting is controversial. Linting is the cause of many debates.
     Linting can be one of your most powerful tools, if done right.
@@ -105,10 +106,10 @@ articleSectionList:
       which your teams will be working and will see the most value from
       standardization through linting. Yes, you may have the occasional JSON or
       YML configuration file, but they’re most likely one-off instances where
-      consistency is less critical. 
+      consistency is less critical.
 
 
-      Linting CSS (or SCSS/LESS) serves to not only maintain consistency in your code, but in the visual appearance of your application. Defining strict linting rules for CSS allows you to prevent design inconsistencies such as the use of unauthorized colors, measurement units, or even the level of selector nesting seen in precompiled instances such as SCSS. Linting CSS also aims to prevent unexpected bugs by identifying mismatched attributes or those attributes which have no applicability based on element or superseding attributes. 
+      Linting CSS (or SCSS/LESS) serves to not only maintain consistency in your code, but in the visual appearance of your application. Defining strict linting rules for CSS allows you to prevent design inconsistencies such as the use of unauthorized colors, measurement units, or even the level of selector nesting seen in precompiled instances such as SCSS. Linting CSS also aims to prevent unexpected bugs by identifying mismatched attributes or those attributes which have no applicability based on element or superseding attributes.
 
 
       There’s also a strong case for linting HTML nowadays. While less applicable, linting HTML can ensure you’re properly structuring elements in a way which does not violate any permissible nesting rules. We can also configure this to monitor ADA compliance violations. If you’re leveraging JSX, this functionality can even be baked right into ESLint through [a11y support.](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
@@ -125,7 +126,7 @@ articleSectionList:
       just joining your organization. As the Prettier rules are nearly the same
       in any implementation, you might be able to expect incoming developers to
       have already mastered the ruleset. For me though, the lacking granularity
-      of Prettier does not justify the case for consistency. 
+      of Prettier does not justify the case for consistency.
 
 
       Additionally, both ESLint and its CSS equivalent, stylelint, offer better support for automatic fixes. This allows you to programmatically apply these rules with minimal disturbances to developers. We’ll talk a little more about this in the next section. Setting up linters for JavaScript, CSS, and HTML takes effort. Prettier may sound tempting, but for any large-scale code base I don’t not believe Prettier offers the support or granularity needed to adequately express your preferences. Given its broad support though, I do appreciate Prettier for those less-critical file types such as JSON or YML. Prettier offers a quick and simple ROI for these.

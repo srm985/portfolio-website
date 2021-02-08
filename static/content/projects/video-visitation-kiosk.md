@@ -6,6 +6,7 @@ pageSEO:
   pageKeywords: kisok, terminal, reskin, video, visitation
   pagePostingTitle: Video Visitation Kiosk
   pageTitle: Video Visitation Kiosk
+  pageType: article
 projectTitle: Video Visitation Kiosk
 projectDemoURL: https://www.video-visitation-kiosk.seanmcquay.com/terminal-bezel.htm
 role: Front-End Developer
@@ -38,7 +39,7 @@ heroImageBlock:
 projectDescription: >-
   A rewarding project to design and prototype fresh take on an outdated video
   visitation terminal front end helping inmates more easily communicate with
-  their loved ones.  
+  their loved ones.
 
   *A prototype is provided below, but as this was intended for a kiosk, the viewport dimensions are fixed at 1024px x 768px and vendor prefixed and tested only in Google Chrome – the desired kiosk browser.*
 projectSkillsList:
@@ -60,7 +61,7 @@ projectSectionList:
       interesting challenge to structure page content in a way to provide a
       coherent user experience. Additionally, as a terminal application,
       viewport dimensions were constrained to 1024px x 768px, requiring careful
-      page architecture.  
+      page architecture.
 
       My initial work began by assessing the current application flow and understanding any concerns voiced by the users. From this data, I carefully considered the user personas interacting with such an application. I then made changes where possible. Those changes that could not be realized during this simple reskin project, yet would bring significant value, were captured in backlog user stories to ensure resources were devoted to their realization at a later point in time.
     projectSectionImageBlock:

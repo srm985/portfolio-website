@@ -144,6 +144,7 @@ exports.createSchemaCustomization = ({
             pageDescription: String
             pageImage: String
             pageKeywords: String
+            pagePostingTitle: String
             pageSiteURL: String
             pageTitle: String
             pageType: String
