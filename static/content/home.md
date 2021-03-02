@@ -114,6 +114,8 @@ skillsSectionList:
         label: TypeScript
       - icon: /assets/icon-direflow.svg
         label: Direflow
+      - icon: /assets/icon-cordova.svg
+        label: Cordova
   - sectionLabel: Content Management Systems
     skillsList:
       - icon: /assets/icon-aem.svg
