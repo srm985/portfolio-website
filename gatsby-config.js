@@ -56,9 +56,9 @@ module.exports = {
             resolve: 'gatsby-plugin-google-analytics'
         },
         {
-            // options: {
-            //     modulePath: `${__dirname}/src/cms/cms.js`
-            // },
+            options: {
+                modulePath: `${__dirname}/src/cms/cms.js`
+            },
             resolve: 'gatsby-plugin-netlify-cms'
         },
         {
