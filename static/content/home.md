@@ -116,6 +116,8 @@ skillsSectionList:
         label: Direflow
       - icon: /assets/icon-cordova.svg
         label: Cordova
+      - icon: /assets/icon-atlassian.svg
+        label: Atlassian Suite
   - sectionLabel: Content Management Systems
     skillsList:
       - icon: /assets/icon-aem.svg
