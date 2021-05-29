@@ -15,7 +15,7 @@ module.exports = {
     ],
     testURL: 'http://localhost',
     transform: {
-        '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js'
+        '^.+\\.jsx?$': 'babel-jest'
     },
     transformIgnorePatterns: [
         'node_modules/(?!(gatsby)/)'
