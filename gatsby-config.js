@@ -66,6 +66,28 @@ module.exports = {
                 cmsConfig: '/static/admin/config.yml'
             },
             resolve: 'gatsby-plugin-netlify-cms-paths'
+        },
+        {
+            options: {
+                query:
+                `
+                    {
+                      allSitePage {
+                        nodes {
+                          path
+                        }
+                      }
+                    }
+                `,
+                resolveSiteUrl: () => 'https://www.seanmcquay.com',
+                serialize: ({
+                    path
+                }) => ({
+                    changefreq: 'weekly',
+                    url: path
+                })
+            },
+            resolve: 'gatsby-plugin-sitemap'
         }
     ],
     siteMetadata: {
@@ -76,6 +98,7 @@ module.exports = {
         keywords: 'web development, front-end development',
         postingTitle: 'Sean McQuay - Front-End Developer',
         siteURL: 'https://www.seanmcquay.com',
+        siteUrl: 'https://www.seanmcquay.com',
         titleTemplate: 'Sean McQuay | {pageTitle}',
         type: 'website'
     }

@@ -14,6 +14,16 @@
                     0
                 ]
             }
+        },
+        {
+            "files": [
+                "./scripts/*.js"
+            ],
+            "rules": {
+                "no-console": [
+                    0
+                ]
+            }
         }
     ],
     "parser": "babel-eslint",
