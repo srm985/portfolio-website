@@ -1,11 +1,14 @@
 ---
 path: styled-components
 pageSEO:
-  pageTitle: Articles
+  pageTitle: Is styled-components your answer to everything CSS?
   pageType: article
   pagePostingTitle: Is styled-components your answer to everything CSS?
   pageKeywords: styled-components, styled components, css, scss, sass, less, jsx,
     react, javascript, css in javascript, css modules
+  pageDescription: The library styled-components is one of the hottest options for
+    implementing CSS-in-JavaScript solutions. Does it solve more problems than
+    it creates though?
 articleTitle: Is styled-components your answer to everything CSS?
 articlePublishDate: 2020-12-01T22:13:06.246Z
 articleCategory: Development
