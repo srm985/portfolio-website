@@ -1,7 +1,7 @@
 ---
 path: headless-ecommerce
 pageSEO:
-  pageTitle: Articles
+  pageTitle: Headless E-Commerce
   pageType: article
   pagePostingTitle: Headless E-Commerce
   pageDescription: For many organization, an out-of-the box e-commerce solution
