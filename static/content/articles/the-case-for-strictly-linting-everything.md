@@ -1,7 +1,7 @@
 ---
 path: the-case-for-strictly-linting-everything
 pageSEO:
-  pageTitle: Articles
+  pageTitle: The Case for Strictly Linting…Everything
   pageType: article
   pagePostingTitle: The Case for Strictly Linting…Everything
   pageDescription: Linting is controversial. Linting is the cause of many debates.
