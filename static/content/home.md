@@ -118,8 +118,10 @@ skillsSectionList:
         label: Cordova
       - icon: /assets/icon-atlassian.svg
         label: Atlassian Suite
-  - sectionLabel: Content Management Systems
+  - sectionLabel: Cloud Computing / Content Management
     skillsList:
+      - icon: /assets/aws-2.svg
+        label: AWS
       - icon: /assets/icon-aem.svg
         label: AEM
       - icon: /assets/icon-liferay.svg
