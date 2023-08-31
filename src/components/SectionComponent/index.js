@@ -5,7 +5,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const SectionComponent = (props) => {
+function SectionComponent(props) {
     const {
         children,
         className,
@@ -38,7 +38,7 @@ const SectionComponent = (props) => {
             }
         </section>
     );
-};
+}
 
 SectionComponent.displayName = 'SectionComponent';
 

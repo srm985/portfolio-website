@@ -5,7 +5,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const GridComponent = (props) => {
+function GridComponent(props) {
     const {
         children,
         className
@@ -27,7 +27,7 @@ const GridComponent = (props) => {
             </div>
         </div>
     );
-};
+}
 
 GridComponent.displayName = 'GridComponent';
 

@@ -11,7 +11,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const CodeBlockComponent = (props) => {
+function CodeBlockComponent(props) {
     const {
         className,
         language,
@@ -38,7 +38,7 @@ const CodeBlockComponent = (props) => {
             {value}
         </SyntaxHighlighter>
     );
-};
+}
 
 CodeBlockComponent.displayName = 'CodeBlockComponent';
 

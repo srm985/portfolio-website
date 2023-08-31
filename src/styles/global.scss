@@ -1,4 +1,4 @@
-@import './classes';
-@import './constants';
-@import './mixins';
-@import './styles';
+@use './classes' as *;
+@use './constants' as *;
+@use './mixins' as *;
+@use './styles' as *;

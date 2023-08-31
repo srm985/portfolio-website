@@ -1,4 +1,4 @@
-@import './constants';
+@use './constants' as *;
 
 @mixin render-helpers($i, $size: '') {
     .mt#{$size}--#{$i} {
@@ -64,7 +64,7 @@
 
 // Generate margin and padding classes.
 @for $i from 0 through 15 {
-    @media only screen and (min-width: 0) {
+    @media only screen and (width >= 0) {
         @include render-helpers($i);
     }
     @media only screen and (min-width: $breakpoint-small) {

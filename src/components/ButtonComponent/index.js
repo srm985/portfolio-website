@@ -43,7 +43,7 @@ class ButtonComponent extends React.Component {
                 isVisible
             });
         });
-    }
+    };
 
     renderLinkType = (buttonClassNames, buttonLabel) => {
         const {
@@ -87,7 +87,7 @@ class ButtonComponent extends React.Component {
                     </a>
                 )
         );
-    }
+    };
 
     render() {
         const {
@@ -117,14 +117,9 @@ class ButtonComponent extends React.Component {
         } = ButtonComponent;
 
         const buttonLabel = (
-            children
-                ? (
-
-                    <>{children}</>
-                )
-                : (
-                    <span className={`${displayName}__label`}>{label}</span>
-                )
+            children ? ({
+                children
+            }) : (<span className={`${displayName}__label`}>{label}</span>)
         );
 
         const buttonClassNames = classNames(
@@ -198,7 +193,7 @@ ButtonComponent.defaultProps = {
     activeLinkClassName: '',
     children: '',
     className: '',
-    handleClick: () => {},
+    handleClick: () => { },
     href: '',
     isAlignedRight: false,
     isAnimated: false,

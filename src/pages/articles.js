@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const ArticlesPage = (props) => {
+function ArticlesPage(props) {
     const {
         data: {
             articleListQuery,
@@ -32,7 +32,7 @@ const ArticlesPage = (props) => {
             />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query {

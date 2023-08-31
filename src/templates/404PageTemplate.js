@@ -3,7 +3,7 @@ import React from 'react';
 
 import classNames from '../utils/classNames';
 
-const NotFoundPageTemplate = (props) => {
+function NotFoundPageTemplate(props) {
     const {
         content: {
             heroImageBlock: {
@@ -34,7 +34,7 @@ const NotFoundPageTemplate = (props) => {
             />
         </div>
     );
-};
+}
 
 NotFoundPageTemplate.displayName = 'NotFoundPageTemplate';
 

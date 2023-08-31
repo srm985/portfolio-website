@@ -40,7 +40,7 @@ class NavigationDesktopComponent extends React.Component {
         this.setState({
             hasScrolled
         });
-    }
+    };
 
     renderLinks = () => {
         const {
@@ -84,7 +84,7 @@ class NavigationDesktopComponent extends React.Component {
                 </li>
             );
         });
-    }
+    };
 
     render() {
         const {

@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const ContactPage = (props) => {
+function ContactPage(props) {
     const {
         data: {
             pageQuery
@@ -26,7 +26,7 @@ const ContactPage = (props) => {
             <ContactPageTemplate />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query {

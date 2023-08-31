@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const NotFoundPage = (props) => {
+function NotFoundPage(props) {
     const {
         data: {
             pageQuery
@@ -30,7 +30,7 @@ const NotFoundPage = (props) => {
             <NotFoundPageTemplate />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query {

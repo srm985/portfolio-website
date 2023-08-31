@@ -1,4 +1,5 @@
-@import '../../styles/constants';
+@use 'sass:color';
+@use '../../styles/constants' as *;
 
 $darken-constant: 10%;
 
@@ -19,19 +20,19 @@ $darken-constant: 10%;
     }
 
     &--background-blue {
-        background-color: darken($color: $color-blue, $amount: $darken-constant);
+        background-color: color.adjust($color: $color-blue, $lightness: calc($darken-constant * -1));
     }
 
     &--background-green {
-        background-color: darken($color: $color-green, $amount: $darken-constant);
+        background-color: color.adjust($color: $color-green, $lightness: calc($darken-constant * -1));
     }
 
     &--background-orange {
-        background-color: darken($color: $color-orange, $amount: $darken-constant);
+        background-color: color.adjust($color: $color-orange, $lightness: calc($darken-constant * -1));
     }
 
     &--background-red {
-        background-color: darken($color: $color-red, $amount: $darken-constant);
+        background-color: color.adjust($color: $color-red, $lightness: calc($darken-constant * -1));
     }
 
     &--background-white {

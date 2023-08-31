@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 $colors: $color-red, $color-blue, $color-green, $color-orange;
 $dot-quantity: 3;
@@ -83,7 +83,7 @@ $dot-color: $color-gray-dark;
 
             /* stylelint-disable-next-line scss/selector-nest-combinators */
             #{$frame-offset - $current-offset} {
-                background-color: nth($list: $colors, $n: $j);
+                background-color: list.nth($list: $colors, $n: $j);
                 transform: scale(1.4);
             }
 

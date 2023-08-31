@@ -51,7 +51,7 @@ class ProjectHeaderComponent extends React.Component {
         return (
             <span>{`${projectMonth} ${projectDate.getFullYear()}`}</span>
         );
-    }
+    };
 
     render() {
         const {

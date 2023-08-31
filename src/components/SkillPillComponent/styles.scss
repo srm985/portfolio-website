@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 $icon-container-width: #{$planck-length * 4};
 $pill-padding: #{$planck-length};

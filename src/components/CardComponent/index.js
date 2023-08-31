@@ -14,7 +14,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const CardComponent = (props) => {
+function CardComponent(props) {
     const {
         backgroundColor,
         children,
@@ -42,7 +42,7 @@ const CardComponent = (props) => {
             {children}
         </div>
     );
-};
+}
 
 CardComponent.propTypes = {
     backgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),

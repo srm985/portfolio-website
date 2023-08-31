@@ -15,7 +15,7 @@ import {
     BUTTON_TYPE_SUBMIT
 } from '../components/ButtonComponent/config';
 
-const ContactPageTemplate = (props) => {
+function ContactPageTemplate(props) {
     const {
         content: {
             contactCardTitle = '',
@@ -115,7 +115,7 @@ const ContactPageTemplate = (props) => {
             </Grid>
         </Hero>
     );
-};
+}
 
 ContactPageTemplate.displayName = 'ContactPageTemplate';
 

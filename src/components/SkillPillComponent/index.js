@@ -3,7 +3,7 @@ import React from 'react';
 
 import './styles.scss';
 
-const SkillPillComponent = (props) => {
+function SkillPillComponent(props) {
     const {
         icon,
         label
@@ -27,7 +27,7 @@ const SkillPillComponent = (props) => {
             </p>
         </div>
     );
-};
+}
 
 SkillPillComponent.displayName = 'SkillPillComponent';
 

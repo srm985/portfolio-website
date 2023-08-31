@@ -17,7 +17,7 @@ import {
     OVERLAY_BLACK
 } from '../components/HeroComponent/config';
 
-const IndexPageTemplate = (props) => {
+function IndexPageTemplate(props) {
     const {
         content,
         content: {
@@ -138,7 +138,7 @@ const IndexPageTemplate = (props) => {
             </Section>
         </>
     );
-};
+}
 
 IndexPageTemplate.propTypes = {
     content: PropTypes.shape({

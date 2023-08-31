@@ -36,7 +36,7 @@ class ImageComponent extends React.Component {
 
             this.toggleFullScreen();
         }
-    }
+    };
 
     toggleFullScreen = () => {
         const {
@@ -56,7 +56,7 @@ class ImageComponent extends React.Component {
                 });
             });
         }
-    }
+    };
 
     render() {
         const {

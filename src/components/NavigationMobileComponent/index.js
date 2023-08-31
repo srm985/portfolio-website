@@ -40,11 +40,7 @@ class NavigationMobileComponent extends React.Component {
                 isMenuOpen: !wasMenuOpen
             };
         });
-    }
-
-    handleKeyPress = () => {
-        // TODO: Implement key filtering.
-    }
+    };
 
     renderMenuButton = () => {
         const {
@@ -94,10 +90,10 @@ class NavigationMobileComponent extends React.Component {
                 shouldInheritStyling
                 styleType={BUTTON_STYLE_TYPE_INLINE}
             >
-                { lines }
+                {lines}
             </Button>
         );
-    }
+    };
 
     renderLinks = () => {
         const {
@@ -134,7 +130,7 @@ class NavigationMobileComponent extends React.Component {
                 </li>
             );
         });
-    }
+    };
 
     render() {
         const {

@@ -8,7 +8,7 @@ import PortfolioItem from '../components/PortfolioItemComponent';
 import Section from '../components/SectionComponent';
 import Title from '../components/TitleComponent';
 
-const PortfolioPageTemplate = (props) => {
+function PortfolioPageTemplate(props) {
     const {
         content: {
             heroImageBlock,
@@ -87,7 +87,7 @@ const PortfolioPageTemplate = (props) => {
             </Section>
         </>
     );
-};
+}
 
 PortfolioPageTemplate.propTypes = {
     content: PropTypes.shape({

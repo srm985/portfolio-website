@@ -20,7 +20,7 @@ class SkillsBlockComponent extends React.Component {
         };
     }
 
-    handleSkillSearchKeywordChange=(event) => {
+    handleSkillSearchKeywordChange = (event) => {
         const {
             target: {
                 value: skillSearchKeyword
@@ -30,7 +30,7 @@ class SkillsBlockComponent extends React.Component {
         this.setState({
             skillSearchKeyword
         });
-    }
+    };
 
     renderSkillPill = (skillDetails) => {
         const {
@@ -59,7 +59,7 @@ class SkillsBlockComponent extends React.Component {
                 />
             )
         );
-    }
+    };
 
     renderSkillsBlock = (skillsBlockDetails) => {
         const {
@@ -108,7 +108,7 @@ class SkillsBlockComponent extends React.Component {
                 </div>
             </div>
         );
-    }
+    };
 
     render() {
         const {

@@ -14,7 +14,7 @@ import './styles.scss';
 
 const DEFAULT_OPACITY = 100;
 
-const HeroComponent = (props) => {
+function HeroComponent(props) {
     const {
         children,
         className,
@@ -90,7 +90,7 @@ const HeroComponent = (props) => {
             }
         </div>
     );
-};
+}
 
 HeroComponent.propTypes = {
     children: PropTypes.node,

@@ -6,7 +6,7 @@ import classNames from '../../utils/classNames';
 import './styles.scss';
 
 class IconComponent extends React.Component {
-    _isMounted=false;
+    _isMounted = false;
 
     constructor(props) {
         super(props);
@@ -58,7 +58,7 @@ class IconComponent extends React.Component {
                 });
             }
         });
-    }
+    };
 
     render() {
         const {

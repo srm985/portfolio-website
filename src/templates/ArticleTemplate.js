@@ -9,7 +9,7 @@ import Section from '../components/SectionComponent';
 import TextBlock from '../components/TextBlockComponent';
 import Title from '../components/TitleComponent';
 
-const ArticleTemplate = (props) => {
+function ArticleTemplate(props) {
     const {
         content: {
             articleSectionList,
@@ -101,7 +101,7 @@ const ArticleTemplate = (props) => {
             />
         </div>
     );
-};
+}
 
 ArticleTemplate.displayName = 'ArticleTemplate';
 

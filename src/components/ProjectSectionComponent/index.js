@@ -117,7 +117,7 @@ class ProjectSectionComponent extends React.Component {
                 </Section>
             );
         });
-    }
+    };
 
     render() {
         return (

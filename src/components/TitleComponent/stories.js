@@ -45,14 +45,12 @@ stories.add('subheading', () => {
     const subheading = text('subheading', 'Magna anim proident esse cillum adipisicing.');
 
     return (
-        <>
-            <TitleComponent
-                heading={heading}
-                headingSize={headingSize}
-                isAccented
-                subheading={subheading}
-            />
-        </>
+        <TitleComponent
+            heading={heading}
+            headingSize={headingSize}
+            isAccented
+            subheading={subheading}
+        />
     );
 });
 
@@ -61,14 +59,12 @@ stories.add('animated', () => {
     const headingSize = number('headingSize', 1);
 
     return (
-        <>
-            <TitleComponent
-                heading={heading}
-                headingSize={headingSize}
-                isAccented
-                isAnimated
-            />
-        </>
+        <TitleComponent
+            heading={heading}
+            headingSize={headingSize}
+            isAccented
+            isAnimated
+        />
     );
 });
 
@@ -78,14 +74,12 @@ stories.add('animated with subheading', () => {
     const subheading = text('subheading', 'Magna anim proident esse cillum adipisicing.');
 
     return (
-        <>
-            <TitleComponent
-                heading={heading}
-                headingSize={headingSize}
-                isAccented
-                isAnimated
-                subheading={subheading}
-            />
-        </>
+        <TitleComponent
+            heading={heading}
+            headingSize={headingSize}
+            isAccented
+            isAnimated
+            subheading={subheading}
+        />
     );
 });

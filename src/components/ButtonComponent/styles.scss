@@ -1,5 +1,6 @@
-@import '../../styles/constants';
-@import '../../styles/mixins';
+@use 'sass:color';
+@use '../../styles/constants' as *;
+@use '../../styles/mixins' as *;
 
 $button-height: 5px;
 $scale-hover: 0.95;
@@ -9,7 +10,11 @@ $scale-active: 0.9;
     $box-shadow-size: if($inset, 0, #{$button-height * $scale});
     $box-shadow-size-inset: if($inset, #{$button-height * $scale}, 0);
 
-    box-shadow: $box-shadow-size $box-shadow-size $box-shadow-size rgba($color-black, 0.9), -#{$box-shadow-size} -#{$box-shadow-size} $box-shadow-size rgba($color-white, 0.9), $box-shadow-size-inset $box-shadow-size-inset $box-shadow-size-inset rgba($color-black, 0.9) inset, -#{$box-shadow-size-inset} -#{$box-shadow-size-inset} $box-shadow-size-inset rgba($color-white, 0.9) inset;
+    box-shadow:
+        $box-shadow-size $box-shadow-size $box-shadow-size rgba($color-black, 0.9),
+        -#{$box-shadow-size} -#{$box-shadow-size} $box-shadow-size rgba($color-white, 0.9),
+        $box-shadow-size-inset $box-shadow-size-inset $box-shadow-size-inset rgba($color-black, 0.9) inset,
+        -#{$box-shadow-size-inset} -#{$box-shadow-size-inset} $box-shadow-size-inset rgba($color-white, 0.9) inset;
 }
 
 %button {
@@ -45,7 +50,10 @@ $scale-active: 0.9;
     outline: none;
     cursor: pointer;
 
-    transition: background-color $transition-timing-function-default $transition-slow, color $transition-timing-function-default $transition-slow, box-shadow $transition-timing-function-default $transition-slow;
+    transition:
+        background-color $transition-timing-function-default $transition-slow,
+        color $transition-timing-function-default $transition-slow,
+        box-shadow $transition-timing-function-default $transition-slow;
 
     & + .ButtonComponent {
         margin-left: #{$planck-length * 3};
@@ -73,7 +81,7 @@ $scale-active: 0.9;
 
             &:hover {
                 @include is-desktop() {
-                    background-color: darken($color: $color-blue, $amount: 10%);
+                    background-color: color.adjust($color: $color-blue, $lightness: -10%);
                 }
             }
         }

@@ -30,7 +30,7 @@ class TitleComponent extends React.Component {
                 isVisible
             });
         });
-    }
+    };
 
     render() {
         const {

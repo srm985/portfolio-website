@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const IndexPage = (props) => {
+function IndexPage(props) {
     const {
         data: {
             pageQuery
@@ -26,7 +26,7 @@ const IndexPage = (props) => {
             <IndexPageTemplate />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query {

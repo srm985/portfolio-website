@@ -8,7 +8,7 @@ import injector from '../../utils/injector';
 
 import Query from './queries';
 
-const SEOComponent = (props) => {
+function SEOComponent(props) {
     const {
         defaultSEOQuery,
         pageSEO
@@ -101,7 +101,7 @@ const SEOComponent = (props) => {
             />
         </Helmet>
     );
-};
+}
 
 SEOComponent.propTypes = {
     defaultSEOQuery: PropTypes.shape({
@@ -134,10 +134,12 @@ SEOComponent.defaultProps = {
     pageSEO: {}
 };
 
-const SEOComponentConnected = (props) => (
-    <Query>
-        <SEOComponent {...props} />
-    </Query>
-);
+function SEOComponentConnected(props) {
+    return (
+        <Query>
+            <SEOComponent {...props} />
+        </Query>
+    );
+}
 
 export default SEOComponentConnected;

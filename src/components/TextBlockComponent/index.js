@@ -39,7 +39,7 @@ class TextBlockComponent extends React.Component {
                 isVisible
             });
         });
-    }
+    };
 
     render() {
         const {

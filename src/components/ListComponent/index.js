@@ -5,7 +5,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const ListComponent = (props) => {
+function ListComponent(props) {
     const {
         displayName
     } = ListComponent;
@@ -76,7 +76,7 @@ const ListComponent = (props) => {
             props
         }
     ]);
-};
+}
 
 ListComponent.displayName = 'ListComponent';
 

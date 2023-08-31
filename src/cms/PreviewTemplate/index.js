@@ -6,7 +6,7 @@ import '../../styles/global.scss';
 
 import './styles.scss';
 
-const PreviewTemplate = (props) => {
+function PreviewTemplate(props) {
     const {
         children,
         entry
@@ -29,7 +29,7 @@ const PreviewTemplate = (props) => {
             }
         </div>
     );
-};
+}
 
 PreviewTemplate.displayName = 'PreviewTemplate';
 

@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 $animation-delay: 0.3s;
 $duration-card-bounce: 1s;
@@ -8,7 +8,9 @@ $card-shadow: $planck-length * 4;
 @mixin box-shadow($scale: 1) {
     $card-shadow-calculated: #{$planck-length * 5 * $scale};
 
-    box-shadow: $card-shadow-calculated $card-shadow-calculated $card-shadow-calculated rgba($color-black, 0.9), -#{$card-shadow-calculated} -#{$card-shadow-calculated} $card-shadow-calculated rgba($color-white, 0.9);
+    box-shadow:
+        $card-shadow-calculated $card-shadow-calculated $card-shadow-calculated rgba($color-black, 0.9),
+        -#{$card-shadow-calculated} -#{$card-shadow-calculated} $card-shadow-calculated rgba($color-white, 0.9);
 }
 
 .PortfolioItemComponent {
@@ -64,7 +66,9 @@ $card-shadow: $planck-length * 4;
 
         background-color: $color-white-arctic;
         border-radius: $border-radius-large;
-        box-shadow: 5px 5px 10px $color-black, -5px -5px 10px $color-white;
+        box-shadow:
+            5px 5px 10px $color-black,
+            -5px -5px 10px $color-white;
     }
 
     &__placard {

@@ -44,7 +44,7 @@ class NavigationComponent extends React.Component {
                 isMobile: isViewportMobile
             });
         }
-    }
+    };
 
     render() {
         const {

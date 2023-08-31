@@ -6,7 +6,7 @@ import Grid from '../components/GridComponent';
 import GridItem from '../components/GridItemComponent';
 import Section from '../components/SectionComponent';
 
-const ArticlesPageTemplate = (props) => {
+function ArticlesPageTemplate(props) {
     const {
         content: {
             articleList = []
@@ -55,7 +55,7 @@ const ArticlesPageTemplate = (props) => {
             </Grid>
         </Section>
     );
-};
+}
 
 ArticlesPageTemplate.propTypes = {
     content: PropTypes.shape({

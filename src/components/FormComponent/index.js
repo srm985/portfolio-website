@@ -11,7 +11,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const FormComponent = (props) => {
+function FormComponent(props) {
     const {
         children,
         className,
@@ -34,6 +34,7 @@ const FormComponent = (props) => {
             className={componentClassNames}
             data-netlify={'true'}
             name={name}
+            // eslint-disable-next-line react/no-unknown-property
             netlify-honeypot={HIDDEN_FIELD_NAME}
         >
             <Input
@@ -44,7 +45,7 @@ const FormComponent = (props) => {
             {children}
         </form>
     );
-};
+}
 
 FormComponent.propTypes = {
     children: PropTypes.node,

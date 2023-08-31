@@ -10,7 +10,7 @@ import {
 
 import './styles.scss';
 
-const FooterComponent = (props) => {
+function FooterComponent(props) {
     const {
         content: {
             footerCopy = '',
@@ -57,7 +57,7 @@ const FooterComponent = (props) => {
             </div>
         </footer>
     );
-};
+}
 
 FooterComponent.displayName = 'FooterComponent';
 

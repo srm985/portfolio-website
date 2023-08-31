@@ -5,7 +5,7 @@ import FAB from '../components/FABComponent';
 import ProjectHeader from '../components/ProjectHeaderComponent';
 import ProjectSection from '../components/ProjectSectionComponent';
 
-const ProjectTemplate = (props) => {
+function ProjectTemplate(props) {
     const {
         content,
         content: {
@@ -32,7 +32,7 @@ const ProjectTemplate = (props) => {
             />
         </div>
     );
-};
+}
 
 ProjectTemplate.displayName = 'ProjectTemplate';
 

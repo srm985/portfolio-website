@@ -9,7 +9,7 @@ import {
 
 import './styles.scss';
 
-const ImageCitationComponent = (props) => {
+function ImageCitationComponent(props) {
     const {
         authorLink,
         authorName,
@@ -50,7 +50,7 @@ const ImageCitationComponent = (props) => {
             </p>
         )
     );
-};
+}
 
 ImageCitationComponent.displayName = 'ImageCitationComponent';
 

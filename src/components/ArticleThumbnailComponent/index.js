@@ -9,7 +9,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const ArticleThumbnailComponent = (props) => {
+function ArticleThumbnailComponent(props) {
     const {
         articleCategory,
         articleExcerpt,
@@ -93,7 +93,7 @@ const ArticleThumbnailComponent = (props) => {
             </>
         </Button>
     );
-};
+}
 
 ArticleThumbnailComponent.displayName = 'ArticleThumbnailComponent';
 

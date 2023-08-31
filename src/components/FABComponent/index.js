@@ -8,7 +8,7 @@ import Icon from '../IconComponent';
 
 import './styles.scss';
 
-const FABComponent = (props) => {
+function FABComponent(props) {
     const {
         handleClick,
         href,
@@ -51,7 +51,7 @@ const FABComponent = (props) => {
             </button>
         )
     );
-};
+}
 
 FABComponent.displayName = 'FABComponent';
 

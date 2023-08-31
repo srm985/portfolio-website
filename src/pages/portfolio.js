@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const PortfolioPage = (props) => {
+function PortfolioPage(props) {
     const {
         data: {
             pageQuery,
@@ -29,7 +29,7 @@ const PortfolioPage = (props) => {
             />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query {

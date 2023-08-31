@@ -5,7 +5,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const LoadingIndicatorComponent = (props) => {
+function LoadingIndicatorComponent(props) {
     const {
         isFullScreen,
         isVisible
@@ -44,20 +44,16 @@ const LoadingIndicatorComponent = (props) => {
     };
 
     return (
-        <>
-            {
-                isVisible
-                && (
-                    <div className={componentClassNames}>
-                        <div className={`${displayName}__loading-box`}>
-                            {renderDots(3)}
-                        </div>
-                    </div>
-                )
-            }
-        </>
+        isVisible
+        && (
+            <div className={componentClassNames}>
+                <div className={`${displayName}__loading-box`}>
+                    {renderDots(3)}
+                </div>
+            </div>
+        )
     );
-};
+}
 
 LoadingIndicatorComponent.displayName = 'LoadingIndicatorComponent';
 

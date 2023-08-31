@@ -15,50 +15,66 @@ import Navigation from '../components/NavigationComponent';
 
 import PreviewTemplate from './PreviewTemplate';
 
-CMS.registerPreviewTemplate('contact', (
-    <PreviewTemplate>
-        <ContactPageTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'contact', (
+        <PreviewTemplate>
+            <ContactPageTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('home', (
-    <PreviewTemplate>
-        <IndexPageTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'home', (
+        <PreviewTemplate>
+            <IndexPageTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('404', (
-    <PreviewTemplate>
-        <NotFoundPageTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    '404', (
+        <PreviewTemplate>
+            <NotFoundPageTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('portfolio', (
-    <PreviewTemplate>
-        <PortfolioPageTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'portfolio', (
+        <PreviewTemplate>
+            <PortfolioPageTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('projects', (
-    <PreviewTemplate>
-        <ProjectTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'projects', (
+        <PreviewTemplate>
+            <ProjectTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('articles', (
-    <PreviewTemplate>
-        <ArticleTemplate />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'articles', (
+        <PreviewTemplate>
+            <ArticleTemplate />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('footer', (
-    <PreviewTemplate>
-        <Footer />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'footer', (
+        <PreviewTemplate>
+            <Footer />
+        </PreviewTemplate>
+    )
+);
 
-CMS.registerPreviewTemplate('navigation', (
-    <PreviewTemplate>
-        <Navigation />
-    </PreviewTemplate>
-));
+CMS.registerPreviewTemplate(
+    'navigation', (
+        <PreviewTemplate>
+            <Navigation />
+        </PreviewTemplate>
+    )
+);

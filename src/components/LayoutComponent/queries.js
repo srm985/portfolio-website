@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Query = (props) => {
+function Query(props) {
     const {
         children
     } = props;
@@ -57,7 +57,7 @@ const Query = (props) => {
             render={(data) => React.cloneElement(children, data)}
         />
     );
-};
+}
 
 Query.propTypes = {
     children: PropTypes.node

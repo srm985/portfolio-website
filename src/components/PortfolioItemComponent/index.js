@@ -38,7 +38,7 @@ class PortfolioItemComponent extends React.Component {
                 isVisible
             });
         });
-    }
+    };
 
     render() {
         const {

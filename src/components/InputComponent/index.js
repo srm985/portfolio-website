@@ -11,7 +11,7 @@ import classNames from '../../utils/classNames';
 
 import './styles.scss';
 
-const InputComponent = (props) => {
+function InputComponent(props) {
     const {
         className,
         defaultValue,
@@ -97,7 +97,7 @@ const InputComponent = (props) => {
             }
         </label>
     );
-};
+}
 
 InputComponent.displayName = 'InputComponent';
 

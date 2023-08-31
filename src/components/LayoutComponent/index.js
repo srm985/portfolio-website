@@ -15,7 +15,7 @@ import '../../styles/global.scss';
 
 import './styles.scss';
 
-const LayoutComponent = (props) => {
+function LayoutComponent(props) {
     const {
         children,
         children: {
@@ -80,7 +80,7 @@ const LayoutComponent = (props) => {
             }
         </div>
     );
-};
+}
 
 LayoutComponent.displayName = 'LayoutComponent';
 
@@ -105,10 +105,12 @@ LayoutComponent.defaultProps = {
     navigationQuery: {}
 };
 
-const LayoutComponentConnected = (props) => (
-    <Query>
-        <LayoutComponent {...props} />
-    </Query>
-);
+function LayoutComponentConnected(props) {
+    return (
+        <Query>
+            <LayoutComponent {...props} />
+        </Query>
+    );
+}
 
 export default LayoutComponentConnected;

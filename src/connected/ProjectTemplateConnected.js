@@ -10,7 +10,7 @@ import Layout from '../components/LayoutComponent';
 
 import destructureNetlifyCMS from '../utils/destructureNetlifyCMS';
 
-const ProjectTemplateConnected = (props) => {
+function ProjectTemplateConnected(props) {
     const {
         data: {
             pageQuery: {
@@ -35,7 +35,7 @@ const ProjectTemplateConnected = (props) => {
             <ProjectTemplate />
         </Layout>
     );
-};
+}
 
 export const query = graphql`
     query($slug: String!) {

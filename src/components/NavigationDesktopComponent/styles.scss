@@ -1,4 +1,5 @@
-@import '../../styles/constants';
+@use 'sass:color';
+@use '../../styles/constants' as *;
 
 .NavigationDesktopComponent {
     position: fixed;
@@ -17,9 +18,11 @@
     color: $color-white;
     font-family: $font-stack;
 
-    background-color: adjust-color($color: $color-white, $alpha: -1);
+    background-color: color.adjust($color: $color-white, $alpha: -1);
 
-    transition: all 0.75s ease-in-out, color 0.75s ease-in-out;
+    transition:
+        all 0.75s ease-in-out,
+        color 0.75s ease-in-out;
 
     &--scrolled {
         @extend %overlay;
@@ -69,7 +72,9 @@
 
             background-color: $color-white;
 
-            transition: width $transition-timing-function-default $transition-slow, background-color $transition-timing-function-default 2s;
+            transition:
+                width $transition-timing-function-default $transition-slow,
+                background-color $transition-timing-function-default 2s;
 
             content: '';
         }

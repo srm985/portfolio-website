@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 .InputComponent {
     display: inline-block;
@@ -52,13 +52,19 @@
 
         &--dark {
             border: solid 2px transparent;
-            box-shadow: 5px 5px 5px rgba($color-black-absolute, 0.5) inset, -5px -5px 5px rgba($color-white, 0.3) inset;
+            box-shadow:
+                5px 5px 5px rgba($color-black-absolute, 0.5) inset,
+                -5px -5px 5px rgba($color-white, 0.3) inset;
         }
 
         &--light {
             // background: linear-gradient(to bottom right, rgba($color-black, 0.3), rgba($color-white, 0.2));
             border: solid 2px rgba($color-white, 0.1);
-            box-shadow: 10px 10px 15px rgba($color-black, 0.4), -10px -10px 15px $color-white, 3px 3px 15px rgba($color-black, 0.4) inset, -3px -3px 15px rgba($color-white, 0.7) inset;
+            box-shadow:
+                10px 10px 15px rgba($color-black, 0.4),
+                -10px -10px 15px $color-white,
+                3px 3px 15px rgba($color-black, 0.4) inset,
+                -3px -3px 15px rgba($color-white, 0.7) inset;
         }
     }
 }

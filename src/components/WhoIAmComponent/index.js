@@ -35,7 +35,7 @@ class WhoIAmComponent extends React.Component {
                 isVisible
             });
         });
-    }
+    };
 
     render() {
         const {

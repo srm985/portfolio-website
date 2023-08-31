@@ -1,5 +1,5 @@
-@import '../../styles/constants';
-@import '../../styles/mixins';
+@use '../../styles/constants' as *;
+@use '../../styles/mixins' as *;
 
 .FooterComponent {
     z-index: $z-index-footer;
@@ -35,9 +35,14 @@
 
         background-image: linear-gradient(to bottom right, rgba($color-white, 0.19), rgba($color-black-absolute, 0.9));
         border-radius: 50%;
-        box-shadow: 5px 5px 20px $color-black-absolute, -5px -5px 20px rgba($color-white, 0.3);
+        box-shadow:
+            5px 5px 20px $color-black-absolute,
+            -5px -5px 20px rgba($color-white, 0.3);
 
-        transition: box-shadow $transition-timing-function-default $transition-fast, transform $transition-timing-function-default $transition-fast, background-image $transition-timing-function-default $transition-fast;
+        transition:
+            box-shadow $transition-timing-function-default $transition-fast,
+            transform $transition-timing-function-default $transition-fast,
+            background-image $transition-timing-function-default $transition-fast;
 
         &:hover {
             @include is-desktop() {
@@ -52,7 +57,11 @@
 
         &:active {
             @include is-desktop() {
-                box-shadow: 5px 5px 20px $color-black-absolute inset, -5px -5px 20px rgba($color-white, 0.36) inset, -10px -10px 30px rgba($color-black-absolute, 0.7), 10px 10px 30px rgba($color-white, 0.17);
+                box-shadow:
+                    5px 5px 20px $color-black-absolute inset,
+                    -5px -5px 20px rgba($color-white, 0.36) inset,
+                    -10px -10px 30px rgba($color-black-absolute, 0.7),
+                    10px 10px 30px rgba($color-white, 0.17);
 
                 svg {
                     transform: scale(0.9);

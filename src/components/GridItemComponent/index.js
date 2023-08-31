@@ -13,7 +13,7 @@ const COLUMN_PROP_TYPES = PropTypes.shape({
     stop: PropTypes.number
 });
 
-const GridItemComponent = (props) => {
+function GridItemComponent(props) {
     const {
         breakpoints,
         children,
@@ -81,7 +81,7 @@ const GridItemComponent = (props) => {
             <div className={rightOffsetClassNames} />
         </>
     );
-};
+}
 
 GridItemComponent.displayName = 'GridItemComponent';
 

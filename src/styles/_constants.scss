@@ -1,5 +1,7 @@
 /* stylelint-disable  color-no-hex */
 
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700&display=swap';
+
 // Minimum Spacing Unit
 $planck-length: 8px;
 
@@ -16,19 +18,19 @@ $max-width-large: 960px;
 $max-width-extra-large: 1140px;
 
 // Application Colors
-$color-black-absolute: #000;
+$color-black-absolute: #000000;
 $color-black: #262626;
 $color-blue: #2980b9;
 $color-charcoal: #3b3d40;
 $color-gray-dark: #7f8c8d;
 $color-gray-light: #d8dee4;
-$color-gray-medium: #bbb;
+$color-gray-medium: #bbbbbb;
 $color-gray-very-dark: #555659;
 $color-green: #27ae60;
 $color-orange: #e67e22;
 $color-red: #e74c3c;
 $color-white-arctic: #f2f6fa;
-$color-white: #fff;
+$color-white: #ffffff;
 
 // Font Families
 $font-stack: 'Lato', sans-serif;
@@ -41,8 +43,12 @@ $font-size-small: 12px;
 // Box Shadows
 $box-shadow-default: 5px 5px 5px $color-black;
 $box-shadow-large: 20px 20px 30px $color-black;
-$box-shadow-default-neumorphic: 3px 3px 5px $color-black, -3px -3px 5px rgba($color-white, 0.3);
-$box-shadow-default-neumorphic-inset: 3px 3px 5px $color-black inset, -3px -3px 5px rgba($color-white, 0.3) inset;
+$box-shadow-default-neumorphic:
+    3px 3px 5px $color-black,
+    -3px -3px 5px rgba($color-white, 0.3);
+$box-shadow-default-neumorphic-inset:
+    3px 3px 5px $color-black inset,
+    -3px -3px 5px rgba($color-white, 0.3) inset;
 
 // Borders
 $border-thickness-default: 1px;

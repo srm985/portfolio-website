@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 .HeroComponent {
     position: relative;
@@ -9,7 +9,7 @@
     width: 100%;
     min-height: 100vh;
 
-    background: linear-gradient(90deg, rgba(12, 88, 100, 1) 0%, rgba(12, 88, 100, 1) 2%, rgba(12, 65, 100, 1) 100%);
+    background: linear-gradient(90deg, rgb(12 88 100 / 100%) 0%, rgb(12 88 100 / 100%) 2%, rgb(12 65 100 / 100%) 100%);
 
     &--half {
         min-height: 50vh;

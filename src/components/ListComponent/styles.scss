@@ -1,4 +1,4 @@
-@import '../../styles/constants';
+@use '../../styles/constants' as *;
 
 .ListComponent {
     margin-bottom: #{$planck-length * 2};
