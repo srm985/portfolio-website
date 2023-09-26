@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import React, {
-// Children,
-// cloneElement
+    Children, cloneElement
 } from 'react';
 
-// import Footer from '../FooterComponent';
+import Footer from '../FooterComponent';
 import Navigation from '../NavigationComponent';
 import SEO from '../SEOComponent';
 
-// import classNames from '../../utils/classNames';
+import classNames from '../../utils/classNames';
 import destructureNetlifyCMS from '../../utils/destructureNetlifyCMS';
 
 import Query from './queries';
@@ -18,20 +17,20 @@ import '../../styles/global.scss';
 
 import './styles.scss';
 
-export function LayoutComponent(props) {
+function LayoutComponent(props) {
     const {
-        // children,
-        // children: {
-        //     props: {
-        //         content: extractedContent = {}
-        //     } = {}
-        // },
-        // content,
+        children,
+        children: {
+            props: {
+                content: extractedContent = {}
+            } = {}
+        },
+        content,
         content: {
             pageSEO = {}
         },
-        // footerQuery,
-        // hasFooter,
+        footerQuery,
+        hasFooter,
         hasNavigation,
         hasNavigationDark,
         navigationQuery
@@ -41,21 +40,21 @@ export function LayoutComponent(props) {
         displayName
     } = LayoutComponent;
 
-    // const mainContentClassNames = classNames(
-    //     `${displayName}__main`,
-    //     {
-    //         [`${displayName}__main--has-footer`]: hasFooter,
-    //         [`${displayName}__main--has-navigation-dark`]: hasNavigationDark,
-    //         [`${displayName}__main--has-navigation`]: hasNavigation && !hasNavigationDark
-    //     }
-    // );
+    const mainContentClassNames = classNames(
+        `${displayName}__main`,
+        {
+            [`${displayName}__main--has-footer`]: hasFooter,
+            [`${displayName}__main--has-navigation-dark`]: hasNavigationDark,
+            [`${displayName}__main--has-navigation`]: hasNavigation && !hasNavigationDark
+        }
+    );
 
     const [
         navigationContent
     ] = destructureNetlifyCMS(navigationQuery);
-    // const [
-    //     footerContent
-    // ] = destructureNetlifyCMS(footerQuery);
+    const [
+        footerContent
+    ] = destructureNetlifyCMS(footerQuery);
 
     return (
         <div className={displayName}>
@@ -68,7 +67,7 @@ export function LayoutComponent(props) {
                     />
                 )
             }
-            {/* <main className={mainContentClassNames}>
+            <main className={mainContentClassNames}>
                 {
                     Children.map(children, (child) => cloneElement(child, {
                         content: {
@@ -77,10 +76,10 @@ export function LayoutComponent(props) {
                         }
                     }))
                 }
-            </main> */}
-            {/* {
+            </main>
+            {
                 hasFooter && <Footer content={footerContent} />
-            } */}
+            }
         </div>
     );
 }
@@ -88,12 +87,12 @@ export function LayoutComponent(props) {
 LayoutComponent.displayName = 'LayoutComponent';
 
 LayoutComponent.propTypes = {
-    // children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
     content: PropTypes.shape({
         pageSEO: PropTypes.shape({})
     }),
     footerQuery: PropTypes.shape({}),
-    // hasFooter: PropTypes.bool,
+    hasFooter: PropTypes.bool,
     hasNavigation: PropTypes.bool,
     hasNavigationDark: PropTypes.bool,
     navigationQuery: PropTypes.shape({})
@@ -102,7 +101,7 @@ LayoutComponent.propTypes = {
 LayoutComponent.defaultProps = {
     content: {},
     footerQuery: {},
-    // hasFooter: true,
+    hasFooter: true,
     hasNavigation: true,
     hasNavigationDark: false,
     navigationQuery: {}
