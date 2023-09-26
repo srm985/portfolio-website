@@ -1,8 +1,8 @@
 @use '../../styles/constants' as *;
 
-$icon-container-width: #{$planck-length * 4};
-$pill-padding: #{$planck-length};
-$pill-height: #{$planck-length * 4};
+$icon-container-width: calc($planck-length * 4);
+$pill-padding: calc($planck-length);
+$pill-height: calc($planck-length * 4);
 $border-radius: calc(#{$pill-height} / 2);
 
 .SkillPillComponent {

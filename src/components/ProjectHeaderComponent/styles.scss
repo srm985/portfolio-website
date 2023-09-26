@@ -36,7 +36,7 @@ $dot-spacing: 7px;
             background-position:
                 0 0,
                 $dot-spacing $dot-spacing;
-            background-size: #{$dot-spacing * 2} #{$dot-spacing * 2};
+            background-size: calc($dot-spacing * 2) calc($dot-spacing * 2);
 
             @media only screen and (min-width: $breakpoint-medium) {
                 display: inline-block;
@@ -66,7 +66,7 @@ $dot-spacing: 7px;
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin-bottom: #{$planck-length * 3};
+        margin-bottom: calc($planck-length * 3);
 
         font-weight: bold;
     }

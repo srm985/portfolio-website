@@ -38,8 +38,8 @@ $line-thickness: 4px;
     }
 
     &__logo-icon {
-        width: #{$planck-length * 3};
-        height: #{$planck-length * 3};
+        width: calc($planck-length * 3);
+        height: calc($planck-length * 3);
         margin-right: $planck-length;
     }
 
@@ -56,7 +56,7 @@ $line-thickness: 4px;
         height: 100%;
         max-height: 0;
         margin: 0;
-        padding: 0 #{$planck-length * 2};
+        padding: 0 calc($planck-length * 2);
         overflow: hidden;
 
         background-color: $color-black;
@@ -66,7 +66,7 @@ $line-thickness: 4px;
 
         &--open {
             max-height: calc(100vh - #{$navigation-height-mobile});
-            padding: #{$planck-length * 2};
+            padding: calc($planck-length * 2);
 
             opacity: 0.95;
         }
@@ -85,8 +85,8 @@ $line-thickness: 4px;
     }
 
     &__navigation-link {
-        margin-bottom: #{$planck-length * 3};
-        padding-bottom: #{$planck-length * 3};
+        margin-bottom: calc($planck-length * 3);
+        padding-bottom: calc($planck-length * 3);
 
         font-size: $font-size-large;
         text-align: center;
@@ -109,8 +109,8 @@ $line-thickness: 4px;
         position: relative;
 
         box-sizing: border-box;
-        width: #{$planck-length * 4};
-        height: #{$planck-length * 4};
+        width: calc($planck-length * 4);
+        height: calc($planck-length * 4);
 
         background-color: $color-white;
         border: none;
@@ -129,7 +129,7 @@ $line-thickness: 4px;
 
             background-clip: content-box;
             border: $border-thick;
-            border-radius: #{$line-thickness};
+            border-radius: calc($line-thickness);
 
             animation-duration: 0.6s;
             animation-timing-function: $transition-timing-function-default;
@@ -286,7 +286,7 @@ $line-thickness: 4px;
     }
 
     50% {
-        left: calc(50% - #{$line-thickness / 2});
+        left: calc(50% - calc($line-thickness / 2));
 
         width: $line-thickness + 2px;
 
@@ -403,7 +403,7 @@ $line-thickness: 4px;
     }
 
     50% {
-        left: calc(50% - #{$line-thickness / 2});
+        left: calc(50% - calc($line-thickness / 2));
 
         width: $line-thickness + 2px;
 

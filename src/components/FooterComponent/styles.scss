@@ -9,27 +9,27 @@
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    padding: #{$planck-length * 4} #{$planck-length * 2} #{$planck-length * 6};
+    padding: calc($planck-length * 4) calc($planck-length * 2) calc($planck-length * 6);
 
     color: $color-white;
 
     background-color: $color-black;
 
     &__copy {
-        margin-bottom: #{$planck-length * 4};
+        margin-bottom: calc($planck-length * 4);
     }
 
     &__links {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        max-width: #{$planck-length * 50};
+        max-width: calc($planck-length * 50);
     }
 
     &__link-icon {
-        width: #{$planck-length * 4};
-        height: #{$planck-length * 4};
-        padding: #{$planck-length * 2};
+        width: calc($planck-length * 4);
+        height: calc($planck-length * 4);
+        padding: calc($planck-length * 2);
 
         color: $color-white;
 

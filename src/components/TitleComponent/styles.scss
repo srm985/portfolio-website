@@ -22,7 +22,7 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
         &::before {
             position: absolute;
             top: 0;
-            bottom: -#{$planck-length / 2};
+            bottom: calc($planck-length / -2);
             left: 0;
 
             content: '';
@@ -53,7 +53,7 @@ $delay-subheading: ($delay-underline + $duration-underline) * 0.9;
 
         &--accented {
             &::before {
-                width: #{$planck-length * 10};
+                width: calc($planck-length * 10);
 
                 border-bottom: solid $border-thickness-thick $color-blue;
             }

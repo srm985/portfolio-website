@@ -51,7 +51,7 @@ $dot-color: $color-gray-dark;
         @extend %animated;
 
         position: absolute;
-        top: calc(50% - #{$dot-size / 2});
+        top: calc(50% - calc($dot-size / 2));
 
         width: $dot-size;
         height: $dot-size;

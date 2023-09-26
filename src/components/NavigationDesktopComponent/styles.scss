@@ -42,8 +42,8 @@
     }
 
     &__logo-icon {
-        width: #{$planck-length * 4};
-        height: #{$planck-length * 4};
+        width: calc($planck-length * 4);
+        height: calc($planck-length * 4);
         margin-right: $planck-length;
     }
 
@@ -51,7 +51,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-width: #{$planck-length * 32};
+        min-width: calc($planck-length * 32);
 
         list-style: none;
     }

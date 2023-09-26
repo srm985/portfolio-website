@@ -2,11 +2,11 @@
 
 .SkillsBlockComponent {
     &__title {
-        margin-bottom: #{$planck-length * 3};
+        margin-bottom: calc($planck-length * 3);
     }
 
     &__skills-section-block {
-        margin-bottom: #{$planck-length * 6};
+        margin-bottom: calc($planck-length * 6);
 
         &:last-of-type {
             margin-bottom: 0;
@@ -20,11 +20,11 @@
     &__skills-section {
         display: flex;
         flex-wrap: wrap;
-        margin-left: -#{$planck-length * 3};
+        margin-left: calc($planck-length * -3);
 
         & > * {
-            margin-top: #{$planck-length * 3};
-            margin-left: #{$planck-length * 3};
+            margin-top: calc($planck-length * 3);
+            margin-left: calc($planck-length * 3);
 
             &:last-of-type {
                 margin-right: 0;

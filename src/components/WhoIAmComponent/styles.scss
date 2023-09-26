@@ -1,15 +1,15 @@
 @use '../../styles/constants' as *;
 
-$decorator-slash-height: #{$planck-length * 4};
+$decorator-slash-height: calc($planck-length * 4);
 $graphic-height: $planck-length * 40;
 $line-thickness: $planck-length * 3;
 $offset: $planck-length * 3;
-$shadow-width: #{$planck-length / 2};
+$shadow-width: calc($planck-length / 2);
 
 .WhoIAmComponent {
     position: relative;
 
-    min-height: #{$planck-length * 50};
+    min-height: calc($planck-length * 50);
 
     &__content-block {
         position: relative;
@@ -20,7 +20,7 @@ $shadow-width: #{$planck-length / 2};
         position: relative;
 
         height: $graphic-height;
-        margin-top: #{$planck-length * 15};
+        margin-top: calc($planck-length * 15);
     }
 
     &__bounding-line {
@@ -37,7 +37,7 @@ $shadow-width: #{$planck-length / 2};
 
         @for $i from 0 through 3 {
             &:nth-of-type(#{$i + 1}) {
-                animation-delay: #{$transition-very-slow * $i};
+                animation-delay: calc($transition-very-slow * $i);
             }
         }
 
@@ -48,7 +48,7 @@ $shadow-width: #{$planck-length / 2};
 
             box-shadow:
                 0 $shadow-width $shadow-width rgba($color-black, 0.8),
-                0 -#{$shadow-width} $shadow-width $color-white;
+                0 calc($shadow-width * -1) $shadow-width $color-white;
 
             animation-name: grow-line-long;
         }
@@ -60,7 +60,7 @@ $shadow-width: #{$planck-length / 2};
 
             box-shadow:
                 0 $shadow-width $shadow-width rgba($color-black, 0.8),
-                0 -#{$shadow-width} $shadow-width $color-white;
+                0 calc($shadow-width * -1) $shadow-width $color-white;
             transform: rotate(-90deg);
 
             animation-name: grow-line-short;
@@ -73,19 +73,19 @@ $shadow-width: #{$planck-length / 2};
 
             box-shadow:
                 0 $shadow-width $shadow-width rgba($color-black, 0.8),
-                0 -#{$shadow-width} $shadow-width $color-white;
+                0 calc($shadow-width * -1) $shadow-width $color-white;
 
             animation-name: grow-line-long;
         }
 
         &:nth-of-type(4) {
-            bottom: calc(100% - #{($line-thickness / 2) - $offset});
-            left: calc(100% - #{$line-thickness / 2});
+            bottom: calc(100% - (($line-thickness / 2) - $offset));
+            left: calc(100% - ($line-thickness / 2));
             z-index: 1;
 
             box-shadow:
                 0 $shadow-width $shadow-width $color-white,
-                0 -#{$shadow-width} $shadow-width rgba($color-black, 0.8);
+                0 calc($shadow-width * -1) $shadow-width rgba($color-black, 0.8);
             transform: rotate(90deg);
 
             animation-name: grow-line-short;
@@ -99,10 +99,10 @@ $shadow-width: #{$planck-length / 2};
     &__image {
         position: absolute !important;
         right: 0;
-        bottom: #{$planck-length * 3};
+        bottom: calc($planck-length * 3);
         z-index: 4;
 
-        width: #{$planck-length * 40};
+        width: calc($planck-length * 40);
 
         animation-name: slide-in;
         animation-duration: $transition-very-slow;

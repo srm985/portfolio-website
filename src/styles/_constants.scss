@@ -52,18 +52,18 @@ $box-shadow-default-neumorphic-inset:
 
 // Borders
 $border-thickness-default: 1px;
-$border-thickness-thick: #{$planck-length / 2};
-$border-radius-small: #{$planck-length / 2};
-$border-radius-default: #{$planck-length * 2};
-$border-radius-large: #{$planck-length * 5};
+$border-thickness-thick: calc($planck-length / 2);
+$border-radius-small: calc($planck-length / 2);
+$border-radius-default: calc($planck-length * 2);
+$border-radius-large: calc($planck-length * 5);
 
 // Padding
 $padding-small: $planck-length;
-$padding-large: #{2 * $planck-length};
+$padding-large: calc(2 * $planck-length);
 
 // Navigation Height
-$navigation-height-desktop: #{$planck-length * 8};
-$navigation-height-mobile: #{$planck-length * 6};
+$navigation-height-desktop: calc($planck-length * 8);
+$navigation-height-mobile: calc($planck-length * 6);
 
 // Z-Index
 $z-index-modal: 9999;

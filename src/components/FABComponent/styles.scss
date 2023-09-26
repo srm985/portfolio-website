@@ -1,12 +1,12 @@
 @use '../../styles/constants' as *;
 @use '../../styles/mixins' as *;
 
-$fab-diameter: #{$planck-length * 6};
+$fab-diameter: calc($planck-length * 6);
 
 .FABComponent {
     position: fixed;
-    right: #{$planck-length * 2};
-    bottom: #{$planck-length * 2};
+    right: calc($planck-length * 2);
+    bottom: calc($planck-length * 2);
     z-index: $z-index-fab-button;
 
     display: flex;
@@ -30,8 +30,8 @@ $fab-diameter: #{$planck-length * 6};
     }
 
     &__icon {
-        width: #{$planck-length * 3};
-        height: #{$planck-length * 3};
+        width: calc($planck-length * 3);
+        height: calc($planck-length * 3);
 
         background-size: cover;
 

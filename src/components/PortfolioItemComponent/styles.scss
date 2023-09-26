@@ -6,7 +6,7 @@ $delay-underline: $animation-delay + $duration-card-bounce + 0.1s;
 $card-shadow: $planck-length * 4;
 
 @mixin box-shadow($scale: 1) {
-    $card-shadow-calculated: #{$planck-length * 5 * $scale};
+    $card-shadow-calculated: calc($planck-length * 5 * $scale);
 
     box-shadow:
         $card-shadow-calculated $card-shadow-calculated $card-shadow-calculated rgba($color-black, 0.9),
@@ -17,15 +17,15 @@ $card-shadow: $planck-length * 4;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
-    min-height: #{$planck-length * 25};
-    padding: #{$planck-length * 4};
+    min-height: calc($planck-length * 25);
+    padding: calc($planck-length * 4);
 
     color: $color-white;
 
     background-color: transparent;
     background-image: linear-gradient(to bottom right, rgba($color-black, 0.2), $color-white);
     background-clip: padding-box;
-    border: solid #{$planck-length / 2} $color-gray-medium;
+    border: solid calc($planck-length / 2) $color-gray-medium;
     border-radius: $border-radius-large;
     transform: scale(0.9);
 
@@ -80,8 +80,8 @@ $card-shadow: $planck-length * 4;
         justify-content: space-between;
         box-sizing: border-box;
         width: 80%;
-        min-height: #{$planck-length * 50};
-        padding: #{$planck-length * 3};
+        min-height: calc($planck-length * 50);
+        padding: calc($planck-length * 3);
 
         color: $color-white;
 
@@ -102,7 +102,7 @@ $card-shadow: $planck-length * 4;
             bottom: -#{$planck-length};
             z-index: -1;
 
-            height: #{$planck-length * 3};
+            height: calc($planck-length * 3);
 
             background-image: linear-gradient(to right, $color-blue, rgba($color-white, 0.4));
             opacity: 0.6;

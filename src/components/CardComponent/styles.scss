@@ -7,8 +7,8 @@ $darken-constant: 10%;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
-    min-height: #{$planck-length * 25};
-    padding: #{$planck-length * 2} #{$planck-length * 3};
+    min-height: calc($planck-length * 25);
+    padding: calc($planck-length * 2) calc($planck-length * 3);
 
     color: $color-white;
 
@@ -16,7 +16,7 @@ $darken-constant: 10%;
     box-shadow: $box-shadow-large;
 
     @media only screen and (min-width: $breakpoint-medium) {
-        padding: #{$planck-length * 3} #{$planck-length * 4};
+        padding: calc($planck-length * 3) calc($planck-length * 4);
     }
 
     &--background-blue {

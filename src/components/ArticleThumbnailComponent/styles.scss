@@ -30,14 +30,14 @@
 
     &__thumbnail-image {
         width: 100%;
-        height: #{$planck-length * 25};
+        height: calc($planck-length * 25);
         overflow: hidden;
 
         background-color: $color-gray-light;
         border-radius: $border-radius-small;
 
         @media only screen and (min-width: $breakpoint-medium) {
-            height: #{$planck-length * 40};
+            height: calc($planck-length * 40);
         }
     }
 

@@ -16,13 +16,17 @@ class NavigationComponent extends React.Component {
     }
 
     componentDidMount() {
-        window.addEventListener('resize', this.handleResize);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', this.handleResize);
+        }
 
         this.handleResize();
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.handleResize);
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('resize', this.handleResize);
+        }
     }
 
     handleResize = () => {

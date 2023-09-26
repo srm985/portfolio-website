@@ -3,7 +3,10 @@ import {
     StaticQuery
 } from 'gatsby';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {
+    Children,
+    cloneElement
+} from 'react';
 
 function Query(props) {
     const {
@@ -54,7 +57,13 @@ function Query(props) {
                     }
                 `
             }
-            render={(data) => React.cloneElement(children, data)}
+            render={(data) => (
+                <>
+                    {
+                        Children.map(children, (child) => cloneElement(child, data))
+                    }
+                </>
+            )}
         />
     );
 }

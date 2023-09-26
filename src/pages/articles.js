@@ -4,7 +4,7 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ArticlesPageTemplate from '../templates/ArticlesPageTemplate';
+// import ArticlesPageTemplate from '../templates/ArticlesPageTemplate';
 
 import Layout from '../components/LayoutComponent';
 
@@ -21,15 +21,16 @@ function ArticlesPage(props) {
     const pageData = destructureNetlifyCMS(pageQuery)[0];
     const articleList = destructureNetlifyCMS(articleListQuery);
 
+    console.log({
+        articleList
+    });
+
     return (
         <Layout
             content={pageData}
             hasNavigationDark
         >
-            <ArticlesPageTemplate content={{
-                articleList
-            }}
-            />
+            <div />
         </Layout>
     );
 }

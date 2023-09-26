@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../ButtonComponent';
-import Icon from '../IconComponent';
+// // import Icon from '../IconComponent';
 
 import {
     BUTTON_STYLE_TYPE_INLINE
 } from '../ButtonComponent/config';
 
-import bodyScrolling from '../../utils/bodyScrolling';
+// import bodyScrolling from '../../utils/bodyScrolling';
 import classNames from '../../utils/classNames';
 
 import './styles.scss';
@@ -18,43 +18,45 @@ class NavigationMobileComponent extends React.Component {
         super(props);
 
         this.state = {
-            hasClickedMenu: false,
+            // hasClickedMenu: false,
             isMenuOpen: false
         };
     }
 
-    handleMenuToggle = () => {
-        this.setState((previousState) => {
-            const {
-                isMenuOpen: wasMenuOpen
-            } = previousState;
+    // handleMenuToggle = () => {
+    //     this.setState((previousState) => {
+    //         const {
+    //             isMenuOpen: wasMenuOpen
+    //         } = previousState;
 
-            if (wasMenuOpen) {
-                bodyScrolling.enable();
-            } else {
-                bodyScrolling.disable();
-            }
+    //         if (wasMenuOpen) {
+    //             bodyScrolling.enable();
+    //         } else {
+    //             bodyScrolling.disable();
+    //         }
 
-            return {
-                hasClickedMenu: true,
-                isMenuOpen: !wasMenuOpen
-            };
-        });
-    };
+    //         return {
+    //             hasClickedMenu: true,
+    //             isMenuOpen: !wasMenuOpen
+    //         };
+    //     });
+    // };
 
     renderMenuButton = () => {
         const {
             state: {
-                hasClickedMenu,
+                // hasClickedMenu,
                 isMenuOpen
             }
         } = this;
+
+        console.log(isMenuOpen);
 
         const {
             displayName
         } = NavigationMobileComponent;
 
-        const lines = [];
+        // const lines = [];
 
         const controlButtonClassNames = classNames(
             `${displayName}__control-button`,
@@ -64,24 +66,24 @@ class NavigationMobileComponent extends React.Component {
             }
         );
 
-        const menuStyle = {
-            animationDuration: hasClickedMenu ? undefined : '0s'
-        };
+        // const menuStyle = {
+        //     animationDuration: hasClickedMenu ? undefined : '0s'
+        // };
 
-        for (let i = 0; i < 3; i++) {
-            lines.push(
-                <span
-                    key={i}
-                    style={menuStyle}
-                >
-                    {
-                        i === 0 && (
-                            <span style={menuStyle}>{'MENU'}</span>
-                        )
-                    }
-                </span>
-            );
-        }
+        // for (let i = 0; i < 3; i++) {
+        //     lines.push(
+        //         <span
+        //             key={i}
+        //             style={menuStyle}
+        //         >
+        //             {
+        //                 i === 0 && (
+        //                     <span style={menuStyle}>{'MENU'}</span>
+        //                 )
+        //             }
+        //         </span>
+        //     );
+        // }
 
         return (
             <Button
@@ -90,56 +92,56 @@ class NavigationMobileComponent extends React.Component {
                 shouldInheritStyling
                 styleType={BUTTON_STYLE_TYPE_INLINE}
             >
-                {lines}
+                <div />
             </Button>
         );
     };
 
-    renderLinks = () => {
-        const {
-            props: {
-                navigationLinks
-            }
-        } = this;
+    // renderLinks = () => {
+    //     const {
+    //         props: {
+    //             navigationLinks
+    //         }
+    //     } = this;
 
-        const {
-            displayName
-        } = NavigationMobileComponent;
+    //     const {
+    //         displayName
+    //     } = NavigationMobileComponent;
 
-        const linkClassNames = classNames(
-            `${displayName}__navigation-link`
-        );
+    //     const linkClassNames = classNames(
+    //         `${displayName}__navigation-link`
+    //     );
 
-        return navigationLinks.map((navigationLink) => {
-            const {
-                pageName,
-                pageURL
-            } = navigationLink;
+    //     return navigationLinks.map((navigationLink) => {
+    //         const {
+    //             pageName,
+    //             pageURL
+    //         } = navigationLink;
 
-            return (
-                <li
-                    className={linkClassNames}
-                    key={pageURL}
-                >
-                    <Button
-                        handleClick={bodyScrolling.enable}
-                        href={pageURL}
-                        label={pageName}
-                        styleType={BUTTON_STYLE_TYPE_INLINE}
-                    />
-                </li>
-            );
-        });
-    };
+    //         return (
+    //             <li
+    //                 className={linkClassNames}
+    //                 key={pageURL}
+    //             >
+    //                 <Button
+    //                     handleClick={bodyScrolling.enable}
+    //                     href={pageURL}
+    //                     label={pageName}
+    //                     styleType={BUTTON_STYLE_TYPE_INLINE}
+    //                 />
+    //             </li>
+    //         );
+    //     });
+    // };
 
     render() {
         const {
-            props: {
-                headerLogoCopy,
-                headerLogoIcon: {
-                    publicURL: iconURL = ''
-                }
-            },
+            // props: {
+            //     headerLogoCopy,
+            //     headerLogoIcon: {
+            //         publicURL: iconURL = ''
+            //     }
+            // },
             state: {
                 isMenuOpen
             }
@@ -157,18 +159,18 @@ class NavigationMobileComponent extends React.Component {
             }
         );
 
-        const navigationMenuClassNames = classNames(
-            `${displayName}__navigation-menu`,
-            {
-                [`${displayName}__navigation-menu--closed`]: !isMenuOpen,
-                [`${displayName}__navigation-menu--open`]: isMenuOpen
-            }
-        );
+        // const navigationMenuClassNames = classNames(
+        //     `${displayName}__navigation-menu`,
+        //     {
+        //         [`${displayName}__navigation-menu--closed`]: !isMenuOpen,
+        //         [`${displayName}__navigation-menu--open`]: isMenuOpen
+        //     }
+        // );
 
         return (
             <nav className={displayName}>
                 <div className={navigationClassNames}>
-                    <Button
+                    {/* <Button
                         href={'/'}
                         shouldInheritStyling
                         styleType={BUTTON_STYLE_TYPE_INLINE}
@@ -180,14 +182,14 @@ class NavigationMobileComponent extends React.Component {
                             />
                             <p>{headerLogoCopy}</p>
                         </div>
-                    </Button>
+                    </Button> */}
                     {this.renderMenuButton()}
                 </div>
-                <div className={navigationMenuClassNames}>
+                {/* <div className={navigationMenuClassNames}>
                     <ul className={`${displayName}__navigation-link-set`}>
                         {this.renderLinks()}
                     </ul>
-                </div>
+                </div> */}
             </nav>
         );
     }
@@ -196,20 +198,20 @@ class NavigationMobileComponent extends React.Component {
 NavigationMobileComponent.displayName = 'NavigationMobileComponent';
 
 NavigationMobileComponent.propTypes = {
-    headerLogoCopy: PropTypes.string,
+    // headerLogoCopy: PropTypes.string,
     headerLogoIcon: PropTypes.shape({
         publicURL: PropTypes.string
-    }),
-    navigationLinks: PropTypes.arrayOf(PropTypes.shape({
-        pageName: PropTypes.string,
-        pageURL: PropTypes.string
-    }))
+    })
+    // navigationLinks: PropTypes.arrayOf(PropTypes.shape({
+    //     pageName: PropTypes.string,
+    //     pageURL: PropTypes.string
+    // }))
 };
 
 NavigationMobileComponent.defaultProps = {
-    headerLogoCopy: '',
-    headerLogoIcon: {},
-    navigationLinks: []
+    // headerLogoCopy: '',
+    headerLogoIcon: {}
+    // navigationLinks: []
 };
 
 export default NavigationMobileComponent;

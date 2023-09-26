@@ -3,7 +3,7 @@
 .InputComponent {
     display: inline-block;
     width: 100%;
-    max-width: #{$planck-length * 70};
+    max-width: calc($planck-length * 70);
 
     font-family: $font-stack;
 
@@ -25,9 +25,9 @@
 
         box-sizing: border-box;
         width: 100%;
-        height: #{$planck-length * 6};
-        padding-right: #{$planck-length * 2};
-        padding-left: #{$planck-length * 2};
+        height: calc($planck-length * 6);
+        padding-right: calc($planck-length * 2);
+        padding-left: calc($planck-length * 2);
 
         color: inherit;
         font-size: $font-size-regular;
@@ -41,9 +41,9 @@
         }
 
         &--textarea {
-            height: #{$planck-length * 12};
-            padding-top: #{$planck-length / 2};
-            padding-bottom: #{$planck-length / 2};
+            height: calc($planck-length * 12);
+            padding-top: calc($planck-length / 2);
+            padding-bottom: calc($planck-length / 2);
 
             font-family: inherit;
 

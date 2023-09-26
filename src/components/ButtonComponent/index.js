@@ -117,9 +117,12 @@ class ButtonComponent extends React.Component {
         } = ButtonComponent;
 
         const buttonLabel = (
-            children ? ({
-                children
-            }) : (<span className={`${displayName}__label`}>{label}</span>)
+            children ? (
+                // eslint-disable-next-line react/jsx-no-useless-fragment
+                <>{children}</>
+            ) : (
+                <span className={`${displayName}__label`}>{label}</span>
+            )
         );
 
         const buttonClassNames = classNames(

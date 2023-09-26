@@ -2,63 +2,63 @@
 
 @mixin render-helpers($i, $size: '') {
     .mt#{$size}--#{$i} {
-        margin-top: #{$planck-length * $i};
+        margin-top: calc($planck-length * $i);
     }
 
     .mr#{$size}--#{$i} {
-        margin-right: #{$planck-length * $i};
+        margin-right: calc($planck-length * $i);
     }
 
     .mb#{$size}--#{$i} {
-        margin-bottom: #{$planck-length * $i};
+        margin-bottom: calc($planck-length * $i);
     }
 
     .ml#{$size}--#{$i} {
-        margin-left: #{$planck-length * $i};
+        margin-left: calc($planck-length * $i);
     }
 
     .mx#{$size}--#{$i} {
-        margin-right: #{$planck-length * $i};
-        margin-left: #{$planck-length * $i};
+        margin-right: calc($planck-length * $i);
+        margin-left: calc($planck-length * $i);
     }
 
     .my#{$size}--#{$i} {
-        margin-top: #{$planck-length * $i};
-        margin-bottom: #{$planck-length * $i};
+        margin-top: calc($planck-length * $i);
+        margin-bottom: calc($planck-length * $i);
     }
 
     .m#{$size}--#{$i} {
-        margin: #{$planck-length * $i};
+        margin: calc($planck-length * $i);
     }
 
     .pt#{$size}--#{$i} {
-        padding-top: #{$planck-length * $i};
+        padding-top: calc($planck-length * $i);
     }
 
     .pr#{$size}--#{$i} {
-        padding-right: #{$planck-length * $i};
+        padding-right: calc($planck-length * $i);
     }
 
     .pb#{$size}--#{$i} {
-        padding-bottom: #{$planck-length * $i};
+        padding-bottom: calc($planck-length * $i);
     }
 
     .pl#{$size}--#{$i} {
-        padding-left: #{$planck-length * $i};
+        padding-left: calc($planck-length * $i);
     }
 
     .px#{$size}--#{$i} {
-        padding-right: #{$planck-length * $i};
-        padding-left: #{$planck-length * $i};
+        padding-right: calc($planck-length * $i);
+        padding-left: calc($planck-length * $i);
     }
 
     .py#{$size}--#{$i} {
-        padding-top: #{$planck-length * $i};
-        padding-bottom: #{$planck-length * $i};
+        padding-top: calc($planck-length * $i);
+        padding-bottom: calc($planck-length * $i);
     }
 
     .p#{$size}--#{$i} {
-        padding: #{$planck-length * $i};
+        padding: calc($planck-length * $i);
     }
 }
 
@@ -150,10 +150,10 @@
 
 .padding-wrapper {
     box-sizing: border-box;
-    padding: #{$planck-length * 4} #{$planck-length * 2} #{$planck-length * 5};
+    padding: calc($planck-length * 4) calc($planck-length * 2) calc($planck-length * 5);
 
     @media only screen and (min-width: $breakpoint-medium) {
-        padding: #{$planck-length * 5} #{$planck-length * 3} #{$planck-length * 7};
+        padding: calc($planck-length * 5) calc($planck-length * 3) calc($planck-length * 7);
     }
 }
 

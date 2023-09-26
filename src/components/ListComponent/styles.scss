@@ -1,7 +1,7 @@
 @use '../../styles/constants' as *;
 
 .ListComponent {
-    margin-bottom: #{$planck-length * 2};
+    margin-bottom: calc($planck-length * 2);
 
     columns: 2;
 
