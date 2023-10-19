@@ -10,27 +10,29 @@ function ListComponent(props) {
         displayName
     } = ListComponent;
 
-    const renderListItems = (listItemsList) => listItemsList.map((listItemDetails) => {
+    console.log(props);
+
+    const renderListItems = (childList) => childList.map((childDetails) => {
         const {
+            children: nestedChildren,
             key,
-            props: nestedProps,
-            props: {
-                children: nestedChildren,
-                node: {
-                    ordered: isOrderedList,
-                    type: nodeType
-                } = {}
-            },
-            type: functionalType
-        } = listItemDetails;
+            tagName: elementType,
+            value
+        } = childDetails;
 
-        const isList = nodeType === 'list';
-        const isListItem = nodeType === 'listItem';
+        if (value === '\n') {
+            return undefined;
+        }
 
-        const isTypeFunction = functionalType !== undefined && typeof functionalType === 'function';
+        const isList = elementType === 'ul' || elementType === 'ol';
+
+        // console.log({
+        //     childDetails
+        // });
 
         if (isList) {
-            const isShortList = nestedChildren.length <= 10;
+            const isOrderedList = elementType === 'ol';
+            const isShortList = nestedChildren.length <= 14;
 
             const componentClassNames = classNames(
                 displayName,
@@ -46,57 +48,55 @@ function ListComponent(props) {
                     <ol
                         className={componentClassNames}
                         key={key}
-                    >
-                        {renderListItems(nestedChildren)}
+                    >{renderListItems(nestedChildren)}
                     </ol>
                 ) : (
                     <ul
                         className={componentClassNames}
                         key={key}
-                    >
-                        {renderListItems(nestedChildren)}
+                    >{renderListItems(nestedChildren)}
                     </ul>
                 )
             );
         }
 
-        if (isListItem) {
+        if (value) {
+            if (value === '.') {
+                console.log({
+                    childDetails
+                });
+            }
             return (
-                <li key={key}>
-                    {renderListItems(nestedChildren)}
-                </li>
+                <li>{value}</li>
             );
         }
 
-        return isTypeFunction ? functionalType(nestedProps) : renderListItems(nestedChildren);
-    });
+        return renderListItems(nestedChildren);
+    }).filter((listItem) => listItem);
 
     return renderListItems([
-        {
-            props
-        }
+        props.node
     ]);
 }
 
 ListComponent.displayName = 'ListComponent';
 
 ListComponent.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.string,
-        props: PropTypes.shape({
+    node: PropTypes.shape({
+        children: PropTypes.arrayOf(PropTypes.shape({
             children: PropTypes.arrayOf(PropTypes.shape({
-                props: PropTypes.shape({
-                    value: PropTypes.string
-                })
-            }))
-        })
-    })),
-    isOrderedList: PropTypes.bool
+                type: PropTypes.string,
+                value: PropTypes.string
+            })),
+            tagName: PropTypes.string
+        })),
+        key: PropTypes.string,
+        tagName: PropTypes.string
+    })
 };
 
 ListComponent.defaultProps = {
-    children: [],
-    isOrderedList: false
+    node: {}
 };
 
 export default ListComponent;

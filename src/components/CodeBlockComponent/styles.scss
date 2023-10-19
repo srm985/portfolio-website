@@ -11,4 +11,10 @@ $code-block-font-size: 16px !important;
     * {
         font-size: $code-block-font-size;
     }
+
+    &--inline {
+        padding: calc($planck-length / 2) $planck-length;
+
+        background-color: rgba($color-orange, 0.1);
+    }
 }

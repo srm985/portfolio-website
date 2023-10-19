@@ -13,10 +13,13 @@ import './styles.scss';
 
 function CodeBlockComponent(props) {
     const {
+        children,
         className,
-        language,
-        value
+        inline: isInline,
+        language
     } = props;
+
+    const fieldValue = children[0];
 
     const {
         displayName
@@ -24,34 +27,44 @@ function CodeBlockComponent(props) {
 
     const componentClassNames = classNames(
         displayName,
-        className
+        className,
+        {
+            [`${displayName}--inline`]: isInline
+        }
     );
 
     return (
-        <SyntaxHighlighter
-            className={componentClassNames}
-            language={language}
-            showLineNumbers
-            style={vscDarkPlus}
-            wrapLines
-        >
-            {value}
-        </SyntaxHighlighter>
+        isInline ? (
+            <code className={componentClassNames}>{fieldValue}</code>
+        ) : (
+            <SyntaxHighlighter
+                className={componentClassNames}
+                language={language}
+                showLineNumbers
+                style={vscDarkPlus}
+                wrapLines
+            >
+                {fieldValue}
+            </SyntaxHighlighter>
+        )
     );
 }
 
 CodeBlockComponent.displayName = 'CodeBlockComponent';
 
 CodeBlockComponent.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.string),
     className: PropTypes.string,
-    language: PropTypes.string,
-    value: PropTypes.string
+    // eslint-disable-next-line react/boolean-prop-naming
+    inline: PropTypes.bool,
+    language: PropTypes.string
 };
 
 CodeBlockComponent.defaultProps = {
+    children: [],
     className: '',
-    language: '',
-    value: ''
+    inline: false,
+    language: ''
 };
 
 export default CodeBlockComponent;

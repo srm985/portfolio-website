@@ -47,12 +47,12 @@ function FooterComponent(props) {
         );
     });
 
-    console.log(renderLinkButtons());
-
     return (
         <footer className={displayName}>
             <p className={`${displayName}__copy`}>{footerCopy}</p>
-            <div className={`${displayName}__links`} />
+            <div className={`${displayName}__links`}>
+                {renderLinkButtons()}
+            </div>
         </footer>
     );
 }

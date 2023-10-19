@@ -73,12 +73,13 @@ class TextBlockComponent extends React.Component {
         );
 
         // Hooking markdown components into React components.
-        const renderers = {
-            break: renderHardBreak,
+        const components = {
+            a: renderLink,
+            br: renderHardBreak,
             code: CodeBlock,
-            image: Image,
-            link: renderLink,
-            list: List
+            img: Image,
+            ol: List,
+            ul: List
         };
 
         const componentClassNames = classNames(
@@ -93,10 +94,9 @@ class TextBlockComponent extends React.Component {
         return (
             <VisibilityChecker handleChange={this.handleVisibilityChange}>
                 <div className={componentClassNames}>
-                    <ReactMarkdown
-                        renderers={renderers}
-                        source={text}
-                    />
+                    <ReactMarkdown components={components}>
+                        {text}
+                    </ReactMarkdown>
                 </div>
             </VisibilityChecker>
         );

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {
-    Children, cloneElement
+    cloneElement
 } from 'react';
 
 import Footer from '../FooterComponent';
@@ -69,12 +69,12 @@ function LayoutComponent(props) {
             }
             <main className={mainContentClassNames}>
                 {
-                    Children.map(children, (child) => cloneElement(child, {
+                    cloneElement(children, {
                         content: {
                             ...content,
                             ...extractedContent
                         }
-                    }))
+                    })
                 }
             </main>
             {

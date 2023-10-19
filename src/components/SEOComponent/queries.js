@@ -4,7 +4,6 @@ import {
 } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, {
-    Children,
     cloneElement
 } from 'react';
 
@@ -33,13 +32,7 @@ function Query(props) {
                     }
                 `
             }
-            render={(data) => (
-                <>
-                    {
-                        Children.map(children, (child) => cloneElement(child, data))
-                    }
-                </>
-            )}
+            render={(data) => cloneElement(children, data)}
         />
     );
 }

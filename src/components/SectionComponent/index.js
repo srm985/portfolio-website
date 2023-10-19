@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -33,9 +34,7 @@ function SectionComponent(props) {
 
     return (
         <section className={componentClassNames}>
-            {
-                children
-            }
+            <>{children}</>
         </section>
     );
 }
