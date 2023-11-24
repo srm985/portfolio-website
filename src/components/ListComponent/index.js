@@ -1,98 +1,93 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Button from '../ButtonComponent';
+
+import {
+    BUTTON_STYLE_TYPE_INLINE
+} from '../ButtonComponent/config';
+
 import classNames from '../../utils/classNames';
 
 import './styles.scss';
+
+export const SHORT_LIST_LIMIT = 20;
 
 function ListComponent(props) {
     const {
         displayName
     } = ListComponent;
 
-    console.log(props);
-
     const renderListItems = (childList) => childList.map((childDetails) => {
         const {
-            children: nestedChildren,
-            key,
-            tagName: elementType,
+            children,
+            isRootList = false,
+            properties,
+            tagName,
+            type,
             value
         } = childDetails;
 
-        if (value === '\n') {
-            return undefined;
-        }
-
-        const isList = elementType === 'ul' || elementType === 'ol';
-
-        // console.log({
-        //     childDetails
-        // });
-
-        if (isList) {
-            const isOrderedList = elementType === 'ol';
-            const isShortList = nestedChildren.length <= 14;
-
-            const componentClassNames = classNames(
-                displayName,
-                {
-                    [`${displayName}--ordered`]: isOrderedList,
-                    [`${displayName}--short`]: isShortList,
-                    [`${displayName}--unordered`]: !isOrderedList
-                }
-            );
-
-            return (
-                isOrderedList ? (
-                    <ol
-                        className={componentClassNames}
-                        key={key}
-                    >{renderListItems(nestedChildren)}
-                    </ol>
-                ) : (
-                    <ul
-                        className={componentClassNames}
-                        key={key}
-                    >{renderListItems(nestedChildren)}
-                    </ul>
-                )
-            );
-        }
-
-        if (value) {
-            if (value === '.') {
-                console.log({
-                    childDetails
-                });
+        const componentClassNames = isRootList ? classNames(
+            displayName,
+            {
+                [`${displayName}--ordered`]: tagName === 'ol',
+                [`${displayName}--short`]: (children.length / 2) <= SHORT_LIST_LIMIT,
+                [`${displayName}--unordered`]: tagName !== 'ol'
             }
+        ) : '';
+
+        // These are empty entries or new lines
+        if (type === 'text' && value === '\n') {
+            return null;
+        }
+
+        if (tagName === 'ul') {
+            return (<ul className={componentClassNames}>{renderListItems(children)}</ul>);
+        }
+
+        if (tagName === 'ol') {
+            return (<ol className={componentClassNames}>{renderListItems(children)}</ol>);
+        }
+
+        if (tagName === 'li' || tagName === 'p') {
+            return (<li>{renderListItems(children)}</li>);
+        }
+
+        if (tagName === 'a') {
             return (
-                <li>{value}</li>
+                <Button
+                    {...properties}
+                    isInternalURL={false}
+                    label={children[0].value}
+                    styleType={BUTTON_STYLE_TYPE_INLINE}
+                />
             );
         }
 
-        return renderListItems(nestedChildren);
+        return value;
     }).filter((listItem) => listItem);
 
     return renderListItems([
-        props.node
+        {
+            ...props.node,
+            isRootList: true
+        }
     ]);
 }
 
 ListComponent.displayName = 'ListComponent';
 
 ListComponent.propTypes = {
-    node: PropTypes.shape({
-        children: PropTypes.arrayOf(PropTypes.shape({
-            children: PropTypes.arrayOf(PropTypes.shape({
-                type: PropTypes.string,
-                value: PropTypes.string
-            })),
-            tagName: PropTypes.string
-        })),
-        key: PropTypes.string,
-        tagName: PropTypes.string
-    })
+    key: PropTypes.string,
+    node: PropTypes.arrayOf(PropTypes.shape({
+        children: PropTypes.shape({}),
+        isRootList: PropTypes.string,
+        properties: PropTypes.shape({}),
+        tagName: PropTypes.string,
+        type: PropTypes.string,
+        value: PropTypes.string
+    }))
 };
 
 ListComponent.defaultProps = {

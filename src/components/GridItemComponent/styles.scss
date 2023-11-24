@@ -8,7 +8,7 @@ $breakpoints: (
 );
 
 .GridItemComponent {
-    grid-column: 1 13;
+    grid-column: 1 / 13;
 
     & > * {
         width: 100%;

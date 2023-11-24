@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-    Prism as SyntaxHighlighter
-} from 'react-syntax-highlighter';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
     vscDarkPlus
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -15,19 +13,21 @@ function CodeBlockComponent(props) {
     const {
         children,
         className,
-        inline: isInline,
-        language
+        language,
+        node
     } = props;
 
-    const fieldValue = children[0];
+    const isInline = !node.properties?.className;
 
     const {
         displayName
     } = CodeBlockComponent;
 
+    const syntaxLanguage = language || className.replace('language-language', 'language');
+
     const componentClassNames = classNames(
         displayName,
-        className,
+        syntaxLanguage,
         {
             [`${displayName}--inline`]: isInline
         }
@@ -35,16 +35,16 @@ function CodeBlockComponent(props) {
 
     return (
         isInline ? (
-            <code className={componentClassNames}>{fieldValue}</code>
+            <code className={componentClassNames}>{children}</code>
         ) : (
             <SyntaxHighlighter
                 className={componentClassNames}
-                language={language}
+                language={syntaxLanguage}
                 showLineNumbers
                 style={vscDarkPlus}
                 wrapLines
             >
-                {fieldValue}
+                {children}
             </SyntaxHighlighter>
         )
     );
@@ -55,16 +55,19 @@ CodeBlockComponent.displayName = 'CodeBlockComponent';
 CodeBlockComponent.propTypes = {
     children: PropTypes.arrayOf(PropTypes.string),
     className: PropTypes.string,
-    // eslint-disable-next-line react/boolean-prop-naming
-    inline: PropTypes.bool,
-    language: PropTypes.string
+    language: PropTypes.string,
+    node: PropTypes.shape({
+        properties: PropTypes.shape({
+            className: PropTypes.arrayOf(PropTypes.string)
+        })
+    })
 };
 
 CodeBlockComponent.defaultProps = {
     children: [],
     className: '',
-    inline: false,
-    language: ''
+    language: '',
+    node: {}
 };
 
 export default CodeBlockComponent;
