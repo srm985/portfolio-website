@@ -2,7 +2,7 @@ const branchName = require('current-git-branch');
 
 const MAIN_BRANCH_NAMES = [
     'develop',
-    'master'
+    'main'
 ];
 
 const BRANCH_PREFIX_NAMES = [
