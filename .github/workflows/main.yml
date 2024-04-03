@@ -1,39 +1,167 @@
-name: CI/CD - Master
+name: Deploy to production
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
-    branches: [master]
+    branches: [main]
 
 jobs:
-  build:
+  lint-js:
+    name: Lint JavaScript
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      - name: Use NodeJS 16.x
-        uses: actions/setup-node@v1
+      - name: Use NodeJS 20.x
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '20.x'
 
-      # Install Packages
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      # Install Node Modules
       - name: Install
-        run: npm install
+        run: npm ci
+
+      # Lint JavaScript
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+  lint-css:
+    name: Lint CSS
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Use NodeJS 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      # Install Node Modules
+      - name: Install
+        run: npm ci
+
+      # Lint CSS
+      - name: Lint CSS
+        run: npm run lint:scss
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Use NodeJS 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      # Install Node Modules
+      - name: Install
+        run: npm ci
+
+      # Test
+      - name: Test
+        run: npm run test
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [lint-css, lint-js]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Use NodeJS 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      # Install Node Modules
+      - name: Install
+        run: npm ci
 
       # Build the website
       - name: Build
-        run: npm run build:deploy
+        run: npm run build
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      # Zip artifacts
+      - name: Zip artifacts
+        run: zip -r public.zip ./public
+
+      # Upload artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
         with:
-          ftp-server: ${{ secrets.FTP_HOST }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: public
+          name: public.zip
+          path: ./public.zip
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Download artifacts
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+
+      # Unzip artifacts
+      - name: Unzip artifacts
+        run: unzip -o ./public.zip -d ./public
+
+      # Prepare AWS SDK
+      - name: Prepare AWS SDK
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ var.AWS_REGION }}
+
+      # Deploy portfolio website
+      - name: Deploy
+        run: aws s3 sync ./public s3://${{ vars.S3_BUCKET_NAME }} --delete
