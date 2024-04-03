@@ -119,7 +119,7 @@ skillsSectionList:
       - icon: /assets/icon-atlassian.svg
         label: Atlassian Suite
       - icon: /assets/icon-circleci.svg
-        label: CircleCi
+        label: CircleCI
   - sectionLabel: Cloud Computing / Content Management
     skillsList:
       - icon: /assets/aws-2.svg
