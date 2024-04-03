@@ -4,6 +4,4 @@
 /public/
 /storybook-dist/
 
-package-lock.json
-
 .env
