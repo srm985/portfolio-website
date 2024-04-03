@@ -135,7 +135,7 @@ jobs:
 
       # Unzip artifacts
       - name: Unzip artifacts
-        run: unzip ./public.zip -d ./public
+        run: unzip ./public.zip -d ./
 
       # Prepare AWS SDK
       - name: Prepare AWS SDK
