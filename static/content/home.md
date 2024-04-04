@@ -120,7 +120,9 @@ skillsSectionList:
         label: Atlassian Suite
       - icon: /assets/icon-circleci.svg
         label: CircleCI
-  - sectionLabel: Cloud Computing / Content Management
+      - icon: /assets/icon-auth0.svg
+        label: Auth0
+  - sectionLabel: Cloud Services / Content Management
     skillsList:
       - icon: /assets/aws-2.svg
         label: AWS
@@ -132,6 +134,28 @@ skillsSectionList:
         label: NetlifyCMS
       - icon: /assets/icon-sitefinity.svg
         label: SiteFinity
+      - icon: /assets/icon-route53.svg
+        label: Route 53
+      - icon: /assets/icon-lambda.svg
+        label: Lambda
+      - icon: /assets/icon-s3.svg
+        label: S3
+      - icon: /assets/icon-ec2.svg
+        label: EC2
+      - icon: /assets/icon-cloudfront.svg
+        label: CloudFront
+      - icon: /assets/icon-cloudsearch.svg
+        label: CloudSearch
+      - icon: /assets/icon-rds.svg
+        label: RDS
+      - icon: /assets/icon-iam.svg
+        label: IAM
+      - icon: /assets/icon-vpc.svg
+        label: VPC
+      - icon: /assets/icon-api-gateway.svg
+        label: API Gateway
+      - icon: /assets/icon-serverless.svg
+        label: Serverless
   - sectionLabel: Databases
     skillsList:
       - icon: /assets/icon-mysql.svg
